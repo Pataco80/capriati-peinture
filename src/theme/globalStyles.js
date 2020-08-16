@@ -19,35 +19,48 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     font-family: ${setFont.bodyFont};
-    font-size:calc(12px + 1vw);
-    line-height: calc(12px + 1.05vw);
-    ${setLetterSpacing(1.25)};
-    background-color:${setColor.mainWhite};
-  }
-  h1,h2,h3,h4,h5,h6 {
-    font-family: ${setFont.headingsFont};
-    color:${setColor.primaryColor};
-    margin: calc(12px + 1.05vw) 0;
-  }
-  h1 {
-    font-size: 4.209rem;
-    line-height: calc(18px + 1.8vw); /* Responsive Vertical Rhythm */
+  font-size: calc(1rem + 0.35vw); /* Responsive base font size */
+  line-height: calc(1rem + 1.05vw); /* Responsive Vertical Rhythm */
+  ${setLetterSpacing(1.3)}
 }
-  h2 {
-    font-size: 3.157rem;
-    line-height: calc(18px + 1vw); /* Responsive Vertical Rhythm */
-  }
-  h3 {
-    font-size: 2.369rem;
-    line-height: calc(18px + .7vw); /* Responsive Vertical Rhythm */
-  }
-  h4 { font-size: 1.777rem; }
-  h5 { font-size: 1.333rem; }
-  h6 { font-size: 1.1rem; }
 
-  h4, h5, h6 { 
-    line-height: calc(18px + .2vw); /* Responsive Vertical Rhythm */
-  }
+main {
+  width: 100%; /* For small screens */
+  max-width: 1140px; /* For large screens */
+  margin: auto; /* Center the container in the viewport */
+  padding: 0 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: ${setFont.headingsFont};
+  margin: calc(1rem + 1vw) 0; /* Responsive margins */
+}
+
+h1 {
+  font-size: 3.713rem;
+  line-height: calc(1.3rem + 1.8vw); /* Responsive Vertical Rhythm */
+}
+
+h2 {
+  font-size: 2.856rem;
+  line-height: calc(1.3rem + 1vw); /* Responsive Vertical Rhythm */
+}
+
+h3 {
+  font-size: 2.197rem;
+  line-height: calc(1.3rem + 0.7vw); /* Responsive Vertical Rhythm */
+}
+
+h4 { font-size: 1.9rem; }
+h5 { font-size: 1.7rem; }
+h6 { font-size: 1.4rem; }
+
+h4, h5, h6 { 
+  line-height: calc(1.3rem + .2vw); /* Responsive Vertical Rhythm */
+  margin: calc(1rem + 0.2vw) 0;
+}
+p {
+  margin: 0 0 calc(1rem + 1vw) 0;
+}
 `
 
 export default GlobalStyle

@@ -4,7 +4,7 @@ const Layout = ({children}) => {
   return (
     <>
     <GlobalStyle/>
-      <main>{children}</main>
+      <main style={{maxWidth:'1170px'}}>{children}</main>
     </>
   )
 }
