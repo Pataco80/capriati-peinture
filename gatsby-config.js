@@ -69,7 +69,22 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Nato Sans JP',
+            weights: ['100..900']
+          },
+          {
+            family: 'Roboto',
+            weights: ['100..900', ['100..900']]
+          }
+        ]
+      }
+    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
