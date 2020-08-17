@@ -37,6 +37,15 @@ export const setColor = {
   mainGreyL3: `${polishedColor.greyLighten3}`,
 }
 
+const convertHexToRGBA = (hex, opacity) => {
+  const tempHex = hex.replace('#', '');
+  const r = parseInt(tempHex.substring(0, 2), 16);
+  const g = parseInt(tempHex.substring(2, 4), 16);
+  const b = parseInt(tempHex.substring(4, 6), 16);
+
+  return `rgba(${r},${g},${b},${opacity / 100})`;
+};
+
 /*
 // If project as theme, paste the variables and export in GlobalStyles
 export const setTheme = {
@@ -164,7 +173,19 @@ export const setTransition = ({
   return `transition: ${style} ${duration}s ${speedCurve}`
 }
 
-export const setShadow = {
+/*export const setShadow = {
   light: 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);',
   dark: 'box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);',
+}*/
+
+export const setShadow = (style = '', {x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100} = {}) => {
+  if (style === 'light') {
+    return `box-shadow: 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
+  }
+  if (style === 'dark') {
+    return `box-shadow: 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
+  }
+  else {
+    return `box-shadow: ${y}px ${x}px ${blur}px ${convertHexToRGBA(color,opacity)};`
+  }
 }
