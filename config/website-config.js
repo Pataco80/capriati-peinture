@@ -6,12 +6,12 @@ module.exports = {
   headline: 'Écrit et publié par DWDevelopment', // Headline for schema.org JSONLD
   url: 'http://www.capriati.ch', // Domain of your site. No trailing slash!
   siteLanguage: 'fr', // Language Tag on <html> element
-  logo: 'src/images/logos/', // Used for SEO
+  logo: 'src/assets/images/logos/', // Used for SEO
   ogLanguage: 'fr_CH', // Facebook Language
   keywords:'',
 
   // JSONLD / Manifest
-  favicon: 'src/images/icons/favicon.png', // Used for manifest favicon generation
+  favicon: 'src/assets/images/icons/favicon.png', // Used for manifest favicon generation
   shortName: 'Capriati', // shortname for manifest. MUST be shorter than 12 characters
   author: 'Vincent Capriati', // Author for schemaORGJSONLD
   themeColor: '#EE332D',
