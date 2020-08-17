@@ -105,9 +105,9 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         // lets you specify pages whose resources should be precached by the service worker. Ex: precachePages: [`/about_us/`, `/services/*`],
-        precachePages: [`/about/`, `/contact/`],
+        precachePages: [`/about`, `/contact`],
         workboxConfig: {
-          globPatterns: ['**/icon-path*']
+          globPatterns: ['**/assets/images/**/*']
         }
       }
     },
