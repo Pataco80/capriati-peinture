@@ -11,7 +11,7 @@ import Footer from './Footer'
 // Import styled-components and helpers
 import styled from 'styled-components'
 import GlobalStyles from '../theme/globalStyles'
-import { setColor, setPxToRem } from '../theme/helpers'
+import { setFlex, setColor, setPxToRem } from '../theme/helpers'
 
 // GraphQl Queries
 
@@ -43,7 +43,9 @@ const Layout = ({ children }) => {
       <GlobalStyles/>
       <AppWrapper>
         <MainNavigation toScroll={scrolled}/>
-        <PageContainer className={scrolled ? `isScroll` : ``}>{children}</PageContainer>
+        <PageContainer className={scrolled ? `isScroll` : ``}>
+          {children}
+        </PageContainer>
         <Footer/>
       </AppWrapper>
       
@@ -61,11 +63,13 @@ Layout.propTypes = {
 const AppWrapper = styled.div`
   background-color: ${setColor.mainWhite};
   width:100vw;
+  min-height:100vh;
 `
 
-const PageContainer = styled.div`
-  min-height:3000px;
-z-index:2;
+const PageContainer = styled.main`
+  ${setFlex({flDir:'column'})};
+  z-index:2;
+
   &.isScroll {
     margin-top:${setPxToRem(70)};
   }

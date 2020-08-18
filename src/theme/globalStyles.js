@@ -24,12 +24,6 @@ const GlobalStyle = createGlobalStyle`
   ${setLetterSpacing(1.3)}
 }
 
-main {
-  width: 100%; /* For small screens */
-  max-width: 1140px; /* For large screens */
-  margin: auto; /* Center the container in the viewport */
-  padding: 0 1rem;
-}
 h1, h2, h3, h4, h5, h6 {
   font-family: ${setFont.headingsFont};
   margin: calc(1rem + 1vw) 0; /* Responsive margins */
