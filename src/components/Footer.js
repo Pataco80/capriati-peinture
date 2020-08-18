@@ -1,6 +1,8 @@
 import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
+import Img from 'gatsby-image'
+import {graphql, useStaticQuery} from 'gatsby'
 
 // Import Components for App
 import MainMenu from './MainNavigation/links'
@@ -11,16 +13,29 @@ import {Section, SectionCenter} from './styledElements/SectionStyled'
 import { setColor } from '../theme/helpers'
 
 // GraphQl Queries
+const getImage = graphql`
+  {
+    footerImg: file(relativePath: {eq: "images/footerBande.png"}) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 // Component
 const Footer = () => {
   // Component Variables
+  const { footerImg } = useStaticQuery(getImage)
+
 
   // Render Component
   return (
     <FooterWrapper>
-      <Section>
-        immage de pied de page
+      <Section padding='0'>
+        <Img fluid={footerImg.childImageSharp.fluid} />
       </Section>
       <SectionCenter background='transparent'>
         <MainMenu className='footer'/>
