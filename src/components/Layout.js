@@ -5,13 +5,13 @@ import PropTypes from 'prop-types'
 
 
 // Import Components for App
-import NavBar from './NavBar'
-//import Footer from '../Footer'
+import MainNavigation from './MainNavigation'
+import Footer from './Footer'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
 import GlobalStyles from '../theme/globalStyles'
-import { setColor, layout, setPxToRem } from '../theme/helpers'
+import { setColor, setPxToRem } from '../theme/helpers'
 
 // GraphQl Queries
 
@@ -42,8 +42,9 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyles/>
       <AppWrapper>
-        <NavBar toScroll={scrolled}/>
+        <MainNavigation toScroll={scrolled}/>
         <PageContainer className={scrolled ? `isScroll` : ``}>{children}</PageContainer>
+        <Footer/>
       </AppWrapper>
       
     </>
@@ -56,6 +57,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+// Styles from styled-components
 const AppWrapper = styled.div`
   background-color: ${setColor.mainWhite};
   width:100vw;
@@ -63,7 +65,7 @@ const AppWrapper = styled.div`
 
 const PageContainer = styled.div`
   min-height:3000px;
-
+z-index:2;
   &.isScroll {
     margin-top:${setPxToRem(70)};
   }
