@@ -86,18 +86,8 @@ const MainNavLink = styled(Link)`
     transition:none;
   }
 
-  &:hover {
-    color: ${setColor.primaryDarken2};
-  }
-
-  &[aria-current] {
-    color: ${setColor.primaryDarken2};
-    text-decoration: underline;
-  }
-
   ${media.greaterThan('tablet')`
     padding: ${setPxToRem(0)} ${setPxToRem(16)};
-    transition:none;
     opacity:1;
     transition:none;
   `}
@@ -107,16 +97,25 @@ const MainNavMenu = styled.ul`
   ${layout()};
   ${setFlex({flDir:'column'})};
 
+  & ${MainNavLink} {
+    color: ${setColor.primaryColor};
+
+    &:hover {
+      color: ${setColor.primaryColorD2};
+    }
+
+    &[aria-current] {
+      color: ${setColor.primaryColorD2};
+      text-decoration: underline;
+    }
+  }
+
   ${media.greaterThan('tablet')`
     ${setFlex({x:'flex-end'})};
     height:auto;
     position:relative;
     top:0;
     transition:none;
-
-    & ${MainNavLink} {
-      color: ${setColor.primaryColor};
-    }
   `}
 
   &.footer {

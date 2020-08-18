@@ -11,20 +11,20 @@ const baseColor = {
 
 const polishedColor = {
   primaryDarken1: darken(0.15, `${baseColor.primaryColor}`),
-  primaryDarken2: darken(0.2, `${baseColor.primaryColor}`),
+  primaryDarken2: darken(0.25, `${baseColor.primaryColor}`),
   primaryLighten1: lighten(0.15, `${baseColor.primaryColor}`),
-  primaryLighten2: lighten(0.2, `${baseColor.primaryColor}`),
+  primaryLighten2: lighten(0.25, `${baseColor.primaryColor}`),
   greyDarken1: darken(0.15, `${baseColor.mainGrey}`),
-  greyDarken2: darken(0.2, `${baseColor.mainGrey}`),
-  greyLighten1: lighten(0.2, `${baseColor.mainGrey}`),
-  greyLighten2: lighten(0.3, `${baseColor.mainGrey}`),
+  greyDarken2: darken(0.25, `${baseColor.mainGrey}`),
+  greyLighten1: lighten(0.15, `${baseColor.mainGrey}`),
+  greyLighten2: lighten(0.25, `${baseColor.mainGrey}`),
   greyLighten3: lighten(0.45, `${baseColor.mainGrey}`),
 }
 
 export const setColor = {
   primaryColor: `${baseColor.primaryColor}`,
   primaryColorD1: `${polishedColor.primaryDarken1}`,
-  primaryColorD2: `${polishedColor.primaryDarken}`,
+  primaryColorD2: `${polishedColor.primaryDarken2}`,
   primaryColorL1: `${polishedColor.primaryLighten1}`,
   primaryColorL2: `${polishedColor.primaryLighten2}`,
   mainWhite: `${baseColor.mainWhite}`,
