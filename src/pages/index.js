@@ -1,9 +1,16 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Title from '../components/Title'
+import Hero from '../components/Hero'
+import Videobcg from '../components/VideoBcg'
 const indexPage = () => {
   return (
     <Layout>
+      <Hero home>
+        <Videobcg>
+          video
+        </Videobcg>
+      </Hero>
       <Title tag='h1' title='IndexPage 1'/>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi illo, eum dolorum nihil dolores eligendi earum nulla quae amet cumque voluptatum itaque laudantium ut deleniti repudiandae sapiente, sint consectetur eius.</p>
       <Title tag='h2'>IndexPage 2</Title>
