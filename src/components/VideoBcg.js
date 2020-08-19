@@ -10,7 +10,7 @@ const Videobcg = ({className, children}) => {
     <div className={className}>
       <span className='overlay'></span>
       {children}
-      <video id='video' autoPlay loop>
+      <video id='video' autoPlay loop playsInline>
         <source src={videoMp4} type="video/mp4" /> 
       </video>
     </div>
