@@ -72,19 +72,21 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
-            family: 'Nato Sans JP',
-            weights: ['100..900']
+            family: `Noto Sans JP`,
+            subsets: [`latin`],
+            variants: [`100`, `300`, `400`, `500`, `700`, `900`]
           },
           {
-            family: 'Roboto',
-            weights: ['100..900', ['100..900']]
-          }
-        ]
-      }
+            family: `Roboto`,
+            subsets: [`latin`],
+            variants: [`100`, `300`, `400`, `500`, `700`, `900`, `100i`, `300i`, `400i`, `500i`, `700i`, `900i`]
+          },
+        ],
+      },
     },
     `gatsby-plugin-styled-components`,
     {
