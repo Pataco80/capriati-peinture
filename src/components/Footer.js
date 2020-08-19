@@ -18,7 +18,7 @@ const getImage = graphql`
     footerImg: file(relativePath: {eq: "images/footerBande.png"}) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

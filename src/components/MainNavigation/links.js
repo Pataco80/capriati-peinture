@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, media, setFlex, setTransition, setPxToRem, setColor } from '../../theme/helpers'
+import { layout, media, setFlex, setTransition, setPxToRem, setColor, setBorder } from '../../theme/helpers'
 
 // Constants from the links list
 const linksList = [
@@ -49,7 +49,11 @@ const MainMenu = ({isOpen, className}) => {
         const {id, label, path} = itemLink
         return (
           <MainNavItem key={id}>
-            <MainNavLink className={isOpen ? `topBarOpen`:``} to={path}>{label}</MainNavLink>
+            <MainNavLink className={isOpen ? `topBarOpen`:``} to={path}>
+              <span className='span'>
+                {label}
+              </span>
+            </MainNavLink>
           </MainNavItem>
         )
       })}
@@ -65,7 +69,7 @@ const MainMenu = ({isOpen, className}) => {
 const MainNavItem = styled.li`
   width:100%;
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     width:auto;
     height:auto;
   `}
@@ -74,31 +78,37 @@ const MainNavItem = styled.li`
 const MainNavLink = styled(Link)`
   ${setFlex()};
   position:relative;
-  padding: ${setPxToRem(12)} ${setPxToRem(16)};
+  padding: ${setPxToRem(6)} ${setPxToRem(16)} ${setPxToRem(4)} ${setPxToRem(16)};
   width:100%;
   ${setTransition({delay:0.2, duration:0.8})};
   height:50px;
   opacity:0;
   color: ${setColor.primaryColor};
+  text-transform:uppercase;
+  text-decoration:none;
 
   &.topBarOpen {
     opacity:1;
     transition:none;
   }
 
-  ${media.greaterThan('tablet')`
-    padding: ${setPxToRem(0)} ${setPxToRem(16)};
+  ${media.greaterThan('lgTablet')`
+    padding: ${setPxToRem(9)} ${setPxToRem(16)} ${setPxToRem(12)} ${setPxToRem(16)};
     opacity:1;
     transition:none;
   `}
+
+  & .span {
+    border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.primaryColor}`})};
+  }
 `
 
 const MainNavMenu = styled.ul`
   ${layout()};
   ${setFlex({flDir:'column'})};
-
   & ${MainNavLink} {
     color: ${setColor.primaryColor};
+    text-decoration:none;
 
     &:hover {
       color: ${setColor.primaryColorD2};
@@ -106,12 +116,14 @@ const MainNavMenu = styled.ul`
 
     &[aria-current] {
       color: ${setColor.primaryColorD2};
-      text-decoration: underline;
+    }
+    & .span:hover, &[aria-current] .span{
+      border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.primaryColorD2}`})};
     }
   }
 
-  ${media.greaterThan('tablet')`
-    ${setFlex({x:'flex-end'})};
+  ${media.greaterThan('lgTablet')`
+    ${setFlex({flDir:'row', x:'flex-end'})};
     height:auto;
     position:relative;
     top:0;
@@ -130,6 +142,10 @@ const MainNavMenu = styled.ul`
       width:auto;
       transition:none;
       color: ${setColor.mainWhite};
+
+      & .span:hover, &[aria-current] .span{
+      border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.mainWhite}`})};
+    }
     }
   }
 `

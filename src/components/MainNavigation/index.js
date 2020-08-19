@@ -20,7 +20,7 @@ const getImage = graphql`
     logoMenu: file(relativePath: {eq: "images/top-bar-logo.png"}) {
       childImageSharp {
         fixed(width: 150) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
     }
@@ -86,7 +86,7 @@ const NavBarContainer = styled.div`
   background-color: ${setColor.mainWhite};
   ${setTransition()};
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     ${setFlex({y:'stretch', wrap:'nowrap'})};
     padding: ${setPxToRem(8)} 0;
   `}
@@ -100,7 +100,7 @@ const NavBarHeader = styled.div`
   width:100%;
   z-index:10;
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     background-color: ${setColor.mainWhite};
     width:auto;
   `}
@@ -110,7 +110,7 @@ const NavHeaderContent = styled.section`
   ${setFlex({x:'space-between'})};
   padding: ${setPxToRem(8)} ${setPxToRem(16)};
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     padding: 0 ${setPxToRem(16)};
     max-width:180px;
   `}
@@ -122,29 +122,30 @@ const NavbarToggle = styled.span`
   height:40px;
   ${setTransition()};
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     display:none;
   `}
 `
 
 const NavBarMenuContainer = styled.section`
-  top:-250px;
+  top:-256px;
   ${setTransition({duration:0.3})};
   background-color: ${setColor.mainWhite};
   position:relative;
   width:100%;
   height:0;
 
+
   &.show-nav {
-    height:250px;
+    height:256px;
     top:0;
 
-    ${media.greaterThan('tablet')`
+    ${media.greaterThan('lgTablet')`
       height:auto;
     `}
   }
 
-  ${media.greaterThan('tablet')`
+  ${media.greaterThan('lgTablet')`
     ${setFlex({x:'flex-end'})};
     height:auto;
     position:relative;
