@@ -6,7 +6,7 @@ import  { useStaticQuery, graphql } from 'gatsby'
 
 import videoMp4 from '../assets/video/paint.mp4'
 import videoOgv from '../assets/video/paint.mp4'
-import videoWebm from '../assets/video/paint.WebM'
+//import videoWebm from '../assets/video/paint.WebM'
 
 //import poster from '../assets/images/painting_poster_hero.jpg'
 
@@ -33,9 +33,9 @@ const Videobcg = ({className, children}) => {
       <span className='overlay'></span>
       {children}
       <video id='video' autoPlay loop playsInline poster={poster}>
-        <source src={videoWebm} type="video/webm" /> 
         <source src={videoMp4} type="video/mp4" /> 
         <source src={videoOgv} type="video/ogg" />
+        <track kind="captions" label="Video Hero" captions="Video Hero"/>
       </video>
     </div>
   )

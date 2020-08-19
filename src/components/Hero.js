@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {setFlex, setLinearBcg} from '../theme/helpers'
+import {setFlex} from '../theme/helpers'
 const Hero = (props) => {
   const {children, home} = props
   return (
