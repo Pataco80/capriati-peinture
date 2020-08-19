@@ -31,25 +31,35 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3.713rem;
-  line-height: calc(1.3rem + 1.8vw); /* Responsive Vertical Rhythm */
+  line-height: calc(3.713rem + 1.8vw); /* Responsive Vertical Rhythm */
 }
 
 h2 {
   font-size: 2.856rem;
-  line-height: calc(1.3rem + 1vw); /* Responsive Vertical Rhythm */
+  line-height: calc(2.856rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
 h3 {
   font-size: 2.197rem;
-  line-height: calc(1.3rem + 0.7vw); /* Responsive Vertical Rhythm */
+  line-height: calc(2.197rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
-h4 { font-size: 1.9rem; }
-h5 { font-size: 1.7rem; }
-h6 { font-size: 1.4rem; }
+h4 {
+  font-size: 1.9rem;
+  line-height: calc(1.9rem + 1vw); /* Responsive Vertical Rhythm */
+}
+
+h5 {
+  font-size: 1.7rem;
+  line-height: calc(1.7rem + 1vw); /* Responsive Vertical Rhythm */
+}
+
+h6 {
+  font-size: 1.4rem; 
+  line-height: calc(1.4rem + .2vw); /* Responsive Vertical Rhythm */
+}
 
 h4, h5, h6 { 
-  line-height: calc(1.3rem + .2vw); /* Responsive Vertical Rhythm */
   margin: calc(1rem + 0.2vw) 0;
 }
 p {
