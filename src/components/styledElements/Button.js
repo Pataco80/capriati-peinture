@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components'
 import { Link } from 'gatsby'
 
-import { setLetterSpacing, setColor, setBorder, setTransition, setPxToRem } from '../theme/helpers'
+import { setLetterSpacing, setColor, setBorder, setTransition, setPxToRem, setRadius } from '../../theme/helpers'
 
 const ButtonStyles = css`
   text-transform: uppercase;
@@ -12,7 +12,7 @@ const ButtonStyles = css`
   ${setTransition()};
   cursor: pointer;
   background:none;
-
+  ${setRadius(12)};
   
   ${({ primary }) => primary && `
     color: ${setColor.mainWhite};

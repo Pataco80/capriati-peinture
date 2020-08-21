@@ -97,9 +97,9 @@ export const layout = ({mW = 1140, pdX = 8, pdY = 0} = {}) => {
 
 
 
-export const setFlex = ({ x = 'center', y = 'center', flDir = 'row', wrap = 'wrap'} = {}) => {
+export const setFlex = ({flex = 'auto', x = 'center', y = 'center', flDir = 'row', wrap = 'wrap'} = {}) => {
   return `display: flex;
-  flex:auto;
+  flex:${flex};
   justify-content: ${x};
   align-items: ${y};
   flex-direction: ${flDir};
@@ -150,19 +150,28 @@ export const setBorder = ({
   return `${setPxToRem(size)} ${style} ${color}`
 }
 
-export const setRadius = ({
+export const setRadius = (all = null, {
   radius = 4,
   tl = radius,
   tr = radius,
   bl = radius,
   br = radius
 } = {}) => {
-  return `
+  if(all){
+    return`
+    border-radius: ${setPxToRem(all)};
+    `
+  }
+
+  else {
+    return `
     border-top-left-radius: ${setPxToRem(tl)};
     border-top-right-radius: ${setPxToRem(tr)};
     border-bottom-left-radius: ${setPxToRem(bl)};
     border-bottom-right-radius: ${setPxToRem(br)};
   `
+  }
+  
 }
 
 export const setTransition = ({

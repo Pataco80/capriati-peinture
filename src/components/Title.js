@@ -11,10 +11,10 @@ const Title = (props) => {
 }
 
 const TitleWrapper = styled.div`
-  ${setFlex()}
+  ${setFlex()};
 
   ${({hidden}) => hidden &&`
-    display:none !important;
+      display:none !important;
   `}
 `
 
