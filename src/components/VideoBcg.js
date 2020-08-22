@@ -26,7 +26,6 @@ const getImage = graphql`
 const Videobcg = ({className, children}) => {
   const data = useStaticQuery(getImage)
   const poster = data.posterImg.childImageSharp.fluid
-  console.log(poster)
   
   return (
     <div className={className}>
@@ -46,8 +45,7 @@ ${setFlex({flDir:'column'})};
 width:100%;
 height:100vh;
 overflow:hidden;
-z-index:1!important;
-position:relative;
+position:absolute;
 top:0;
 left:0;
 
@@ -56,6 +54,8 @@ left:0;
   width:100%;
   height:100%;
   ${setLinearBcg({colStart:'rgba(0,0,0,0.7)',colEtart:'rgba(0,0,0,0.2)'})};
+  opacity:0.3;
+  z-index:1;
 }
 
 video {
@@ -65,6 +65,5 @@ video {
   top:0;
   height:100%;
   object-fit:cover;
-  z-index:-1;
 }
 `
