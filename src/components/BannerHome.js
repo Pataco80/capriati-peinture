@@ -4,7 +4,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 import Image from './Image'
 import {Banner} from './styledElements/BannerStyled'
 import Title from './Title'
-import {ButtonLink} from './styledElements/Button'
+import {GatsbyLink} from './styledElements/Button'
 import { layout, setFlex, media, setShadow, setColor } from '../theme/helpers'
 
 
@@ -65,7 +65,7 @@ ${layout()};
   `}
 `
 
-const CallActionBtn = styled(ButtonLink)`
+const CallActionBtn = styled(GatsbyLink)`
   ${setShadow('light')};
   text-align:center;
   margin-top:3rem;
