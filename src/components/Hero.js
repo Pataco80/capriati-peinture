@@ -5,7 +5,7 @@ import Banner from './Banner'
 import { setFlex } from '../theme/helpers'
 import VideoBcg from './VideoBcg'
 import BcgImage from './BcgImage'
-const Herotest = (props) => {
+const Hero = (props) => {
   const {home, title, bcgImage} = props
 
   return (
@@ -34,4 +34,4 @@ width:100vw;
 overflow:hidden;
 `
 
-export default Herotest
+export default Hero
