@@ -1,32 +1,37 @@
 export default [
   {
     "id":1,
-    "name":"Plâtre",
-    "icon":"../images/icons/servicesIcon/platre-logo.png",
+    "nameService":"Plâtre",
+    "shortName":"platre",
+    "icon":"platre.png",
     "text":"Gypsage sous dalle en béton, sur murs en briques, lissage fins sur murs et plafonds"
   },
   {
     "id":2,
     "name":"Peinture",
-    "icon":"../images/icons/servicesIcon/peinture-logo.png",
+    "shortName":"peinture",
+    "iconName":"peinture.png",
     "text":"Toutes techniques, y compris revêtement style crépi"
   },
   {
     "id":3,
     "name":"Papier-peint",
-    "icon":"../images/icons/servicesIcon/papier-peint-logo.png",
+    "shortName":"papierPeint",
+    "icon":"papierPeint.png",
     "text":"Selon collections de nos divers fournisseurs, papiers vinyls, structurés à peindre, tissus sur papier, etc."
   },
   {
     "id":4,
     "name":"Décoration",
-    "icon":"../images/icons/servicesIcon/decoration-logo.png",
+    "shortName":"decoration",
+    "icon":"decoration.png",
     "text":"Peinture à l’essuyé, chaux brossée, plâtre cirés, masses structurées, stuccos et autres techniques sur demande, pose de corniches et moulures"
   },
   {
     "id":5,
     "name":"Giclage",
-    "icon":"../images/icons/servicesIcon/giclage-logo.png",
+    "shortName":"giclage",
+    "icon":"giclage.png",
     "text":"En cabine, airless, haute pression, basse pression, pour toute réalisation nécessitant l’emploi d’un pistolet"
   }
 ]
