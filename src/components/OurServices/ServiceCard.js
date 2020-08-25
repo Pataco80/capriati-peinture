@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Title from '../Title'
 
-const ServiceCard = ({name, shortName, alt, fluidImage, text }) => {
+const ServiceCard = ({name, shortName, alt, fixedImage, text }) => {
   return (
     <CardWrapper>
-      <CardIcon name={name} shortName={shortName} alt={alt} fluid={fluidImage} style={{ height: '400px' }}/>
+      <CardIcon name={name} shortName={shortName} alt={alt} fixed={fixedImage}/>
       <Title tag='h3' title={name}/>
       <CardDescription>
         <p>texte</p>
@@ -16,20 +16,18 @@ const ServiceCard = ({name, shortName, alt, fluidImage, text }) => {
 }
 
 const CardWrapper = styled.article`
-  background-color:green;
+  background-color:yellow;
   border: 2px solid red;
   padding:1rem;
 `
 
 const CardIcon = styled(Img)`
   border:1px solid violet;
-  max-width:400px;
-  margin:0 auto;
 `
 
 const CardDescription = styled.p`
   background-color:silver;
-  border: 1px solid yellow;
+  border: 1px solid green;
   padding:1rem;
 `
 

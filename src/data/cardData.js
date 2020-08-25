@@ -1,7 +1,7 @@
 export default [
   {
     "id":1,
-    "nameService":"Plâtre",
+    "name":"Plâtre",
     "shortName":"platre",
     "icon":"platre.png",
     "competences":[
