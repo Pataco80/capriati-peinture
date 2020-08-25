@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {graphql, useStaticQuery} from 'gatsby'
-import Image from './Image'
+import Img from 'gatsby-image'
 import {Banner} from './styledElements/BannerStyled'
 import Title from './Title'
 import {GatsbyLink} from './styledElements/Button'
@@ -12,8 +12,8 @@ const getImage = graphql`
   {
     logoImg: file(relativePath: {eq: "images/big-logo.png"}) {
       childImageSharp {
-        fluid (maxWidth: 400) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        fixed (width: 500) {
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
     }
@@ -25,7 +25,7 @@ const Bannerhometest = () => {
   return (
     <BannerWrapper>
       <LogoWrapper>
-          <Image maxWidth='500px' fluid={logoImg.childImageSharp.fluid} alt='Logo Capriati S.A.' />
+          <Img fixed={logoImg.childImageSharp.fixed} alt='Logo Capriati S.A.' />
         </LogoWrapper>
         <LayoutSection>
           <Title tag='h1' title='Bienvenue chez Capriati S.A.' hidden />
@@ -96,7 +96,7 @@ ${setFlex({x:'flex-end', y:'flex-end'})};
 `
 
 const LogoWrapper = styled.div`
-  ${setFlex({x:'flex-start', y:'flex-start'})};
+  ${setFlex({x:'flex-start'})};
   width:100%;
   z-index:2;
 `
