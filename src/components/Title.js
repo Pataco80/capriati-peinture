@@ -12,6 +12,7 @@ const Title = (props) => {
 
 const TitleWrapper = styled.div`
   ${setFlex()};
+  text-align:center;
 
   ${({hidden}) => hidden &&`
       display:none !important;

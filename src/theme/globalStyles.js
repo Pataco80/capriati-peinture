@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 
 h1, h2, h3, h4, h5, h6 {
   font-family: ${setFont.headingsFont};
-  margin: calc(1rem + 1vw) 0; /* Responsive margins */
+  margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
   color: ${setColor.primaryColor};
 }
 
