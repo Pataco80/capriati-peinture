@@ -12,8 +12,8 @@ const getImage = graphql`
   {
     logoImg: file(relativePath: {eq: "images/big-logo.png"}) {
       childImageSharp {
-        fixed (width: 500) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        fluid (maxWidth: 500) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
@@ -25,7 +25,7 @@ const Bannerhometest = () => {
   return (
     <BannerWrapper>
       <LogoWrapper>
-          <Img fixed={logoImg.childImageSharp.fixed} alt='Logo Capriati S.A.' />
+          <Img fluid={logoImg.childImageSharp.fluid} alt='Logo Capriati S.A.' />
         </LogoWrapper>
         <LayoutSection>
           <Title tag='h1' title='Bienvenue chez Capriati S.A.' hidden />
@@ -97,7 +97,9 @@ ${setFlex({x:'flex-end', y:'flex-end'})};
 
 const LogoWrapper = styled.div`
   ${setFlex({x:'flex-start'})};
+  align-self:flex-start;
   width:100%;
+  max-width:500px;
   z-index:2;
 `
 

@@ -66,6 +66,10 @@ h4, h5, h6 {
 p {
   margin: 0 0 calc(1rem + 1vw) 0;
 }
+
+.gatsby-image-wrapper {
+  width:100%;
+}
 `
 
 export default GlobalStyle
