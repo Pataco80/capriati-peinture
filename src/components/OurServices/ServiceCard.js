@@ -9,7 +9,7 @@ const ServiceCard = ({name, shortName, alt, fluidImage, text }) => {
       <CardIcon name={name} shortName={shortName} alt={alt} fluid={fluidImage} style={{ height: '400px' }}/>
       <Title tag='h3' title={name}/>
       <CardDescription>
-        {text}
+        <p>texte</p>
       </CardDescription>
     </CardWrapper>
   )
