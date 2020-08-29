@@ -7,9 +7,9 @@ import About from '../components/About/About'
 
 export const getImage = graphql`
   {
-    file(relativePath: {eq: "images/pinceaux.jpg"}) {
+    heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
       childImageSharp {
-        fluid (maxWidth: 400) {
+        fluid (maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
@@ -21,7 +21,7 @@ export const getImage = graphql`
 const aboutPage = ({data}) => {
   return (
     <Layout>
-      <Hero title='A Propos de nous' bcgImage={data.file.childImageSharp.fluid} />
+      <Hero title='A Propos de nous' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <About about />
     </Layout>
   )
