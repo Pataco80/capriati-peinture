@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
-import ServiceCard from './ServiceCard'
+import ServiceItem from './ServiceItem'
 
 
 import cardData from '../../data/cardData'
@@ -24,32 +24,32 @@ export const getData = graphql`
 `
 
 const Services = () => {
-  const servicesData = useStaticQuery(getData)
-  const servicesList = servicesData.servicesData.edges
-  //const testEdges = servicesData.edges 
-  const services = servicesList.map(({ node }) => ({
+  const data = useStaticQuery(getData)
+  const servicesList = data.servicesData.edges
+  const serviceItem = servicesList.map(({ node }) => ({
     icon: node.childImageSharp.fixed,
     originalName: node.childImageSharp.fixed.originalName,
-  }));
+  }))
   
 
   return (
     <Section>
         <SectionContentCenter>
           {
-            cardData.map(({name, shortName, text}) => {
+            cardData.map(({name, shortName, competences, gallery}) => {
               const regExp = new RegExp(shortName, "i");
               return (
-                <ServiceCard 
-                  key={name}
-                  shortName={shortName}
-                  fixedImage={
-                    services.find(({originalName}) => originalName.match(regExp))
-                    .icon
-                  }
-                  name={name}
-                  text={text}
-                />
+                  <ServiceItem 
+                    key={name}
+                    shortName={shortName}
+                    fixedImage={
+                      serviceItem.find(({originalName}) => originalName.match(regExp))
+                      .icon
+                    }
+                    name={name}
+                    competences={competences}
+                    gallery={gallery}
+                  />
               )
             })
           }
