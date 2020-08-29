@@ -2,7 +2,7 @@
   {
     "name":"Plâtre",
     "shortName":"platre",
-    "image":"assets/images/icons/servicesIcons/platre.png",
+    "icon":"assets/images/icons/servicesIcons/platre.png",
     "competences":[
       {
         "id":1,
@@ -20,49 +20,119 @@
         "id":4,
         "text":"Isolation phonique et thermique avec laine de pierre et laine de verre"
       }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
+      }
     ]
   },
   {
     "name":"Peinture",
     "shortName":"peinture",
-    "image":"assets/images/icons/servicesIcons/peinture.png",
+    "icon":"assets/images/icons/servicesIcons/peinture.png",
     "competences":[
       {
         "id":1,
         "text":"Toutes techniques, y compris revêtement style crépi"
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
       }
     ]
   },
   {
     "name":"Papier-peint",
     "shortName":"papierPeint",
-    "image":"assets/images/icons/servicesIcons/papierPeint.png",
+    "icon":"assets/images/icons/servicesIcons/papierPeint.png",
     "competences":[
       {
         "id":1,
         "text":"Selon collections de nos divers fournisseurs, papiers vinyls, structurés à peindre, tissus sur papier, etc."
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
       }
     ]
   },
   {
     "name":"Décoration",
     "shortName":"decoration",
-    "image":"assets/images/icons/servicesIcons/decoration.png",
+    "icon":"assets/images/icons/servicesIcons/decoration.png",
     "competences":[
       {
         "id":1,
         "text":"Peinture à l’essuyé, chaux brossée, plâtre cirés, masses structurées, stuccos et autres techniques sur demande, pose de corniches et moulures"
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
       }
     ]
   },
   {
     "name":"Giclage",
     "shortName":"giclage",
-    "image":"assets/images/icons/servicesIcons/giclage.png",
+    "icon":"assets/images/icons/servicesIcons/giclage.png",
     "competences":[
       {
         "id":1,
         "text":"En cabine, airless, haute pression, basse pression, pour toute réalisation nécessitant l’emploi d’un pistolet"
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
       }
     ]
   }

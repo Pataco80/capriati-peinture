@@ -21,6 +21,20 @@ export default [
         "id":4,
         "text":"Isolation phonique et thermique avec laine de pierre et laine de verre"
       }
+    ],
+    "gallery":[
+      {
+        "shortName":"platre1",
+        "image":"assets/images/gallery/services/platre1.jpg"
+      },
+      {
+        "shortName":"platre2",
+        "image":"assets/images/gallery/services/platre2.jpg"
+      },
+      {
+        "shortName":"platre3",
+        "image":"assets/images/gallery/services/platre3.jpg"
+      }
     ]
   },
   {
@@ -32,6 +46,20 @@ export default [
       {
         "id":1,
         "text":"Toutes techniques, y compris revêtement style crépi"
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"peinture1",
+        "image":"assets/images/gallery/services/peinture1.jpg"
+      },
+      {
+        "shortName":"peinture2",
+        "image":"assets/images/gallery/services/peinture2.jpg"
+      },
+      {
+        "shortName":"peinture3",
+        "image":"assets/images/gallery/services/peinture3.jpg"
       }
     ]
   },
@@ -45,6 +73,20 @@ export default [
         "id":1,
         "text":"Selon collections de nos divers fournisseurs, papiers vinyls, structurés à peindre, tissus sur papier, etc."
       }
+    ],
+    "gallery":[
+      {
+        "shortName":"papierPeint1",
+        "image":"assets/images/gallery/services/papierPeint1.jpg"
+      },
+      {
+        "shortName":"papierPeint2",
+        "image":"assets/images/gallery/services/papierPeint2.jpg"
+      },
+      {
+        "shortName":"papierPeint3",
+        "image":"assets/images/gallery/services/papierPeint3.jpg"
+      }
     ]
   },
   {
@@ -57,6 +99,20 @@ export default [
         "id":1,
         "text":"Peinture à l’essuyé, chaux brossée, plâtre cirés, masses structurées, stuccos et autres techniques sur demande, pose de corniches et moulures"
       }
+    ],
+    "gallery":[
+      {
+        "shortName":"decoration1",
+        "image":"assets/images/gallery/services/decoration1.jpg"
+      },
+      {
+        "shortName":"decoration2",
+        "image":"assets/images/gallery/services/decoration2.jpg"
+      },
+      {
+        "shortName":"decoration3",
+        "image":"assets/images/gallery/services/decoration3.jpg"
+      }
     ]
   },
   {
@@ -68,6 +124,20 @@ export default [
       {
         "id":1,
         "text":"En cabine, airless, haute pression, basse pression, pour toute réalisation nécessitant l’emploi d’un pistolet"
+      }
+    ],
+    "gallery":[
+      {
+        "shortName":"giclage1",
+        "image":"assets/images/gallery/services/giclage1.jpg"
+      },
+      {
+        "shortName":"giclage2",
+        "image":"assets/images/gallery/services/giclage2.jpg"
+      },
+      {
+        "shortName":"giclage3",
+        "image":"assets/images/gallery/services/giclage3.jpg"
       }
     ]
   }
