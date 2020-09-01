@@ -1,6 +1,6 @@
 import React, { useState, useEffect}from 'react'
 import PropTypes from 'prop-types'
-
+// import useScrollVertical from '../hooks/scrollVertical'
 // Import components from Gatsby and plugins Gatsby
 
 
@@ -18,9 +18,17 @@ import { setFlex, setColor, setPxToRem } from '../theme/helpers'
 // Component
 const Layout = ({ children }) => {
   // Component Variables
-
+  
   const [scrolled, setScrolled] = useState(false)
 
+  /* const scrollVertical = useScrollVertical(scrolled)
+  
+  const isScrolled = scrollVertical
+  if (isScrolled > 5) {
+    setScrolled(!scrolled)
+  }
+  console.log(scrollVertical)
+*/
 
   useEffect(() => {
     const handleScroll = () => {
