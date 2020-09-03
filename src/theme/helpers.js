@@ -19,6 +19,7 @@ const polishedColor = {
   greyLighten1: lighten(0.15, `${baseColor.mainGrey}`),
   greyLighten2: lighten(0.25, `${baseColor.mainGrey}`),
   greyLighten3: lighten(0.45, `${baseColor.mainGrey}`),
+  greyLighten4: lighten(0.60, `${baseColor.mainGrey}`),
 }
 
 export const setColor = {
@@ -35,6 +36,7 @@ export const setColor = {
   mainGreyL1: `${polishedColor.greyLighten1}`,
   mainGreyL2: `${polishedColor.greyLighten2}`,
   mainGreyL3: `${polishedColor.greyLighten3}`,
+  mainGreyL4: `${polishedColor.greyLighten4}`,
 }
 
 const convertHexToRGBA = (hex, opacity) => {
@@ -72,20 +74,26 @@ export const setFont = {
   "sans-serif"`,
 }
 
-
-
-export const media = generateMedia({
-  mobile: '15rem',
-  smTablet: '36rem',
-  tablet: '48rem',
-  lgTablet: '62rem',
-  desktop: '75rem',
-});
-
 // Unitie's Calc Functions
 export const setPxToRem = (px = 16) => {
   return `${px / 16}rem`
 }
+
+export const breakpoints = {
+  mobile: 240,
+  smTablet: 576,
+  tablet: 768,
+  lgTablet: 992,
+  desktop: 1200, 
+}
+
+export const media = generateMedia({
+  mobile: `${setPxToRem(breakpoints.mobile)}`,
+  smTablet: `${setPxToRem(breakpoints.smTablet)}`,
+  tablet: `${setPxToRem(breakpoints.tablet)}`,
+  lgTablet: `${setPxToRem(breakpoints.lgTablet)}`,
+  desktop: `${setPxToRem(breakpoints.desktop)}`,
+});
 
 // Layout's Functions
 export const layout = ({mW = 1140, pdX = 8, pdY = 0} = {}) => {

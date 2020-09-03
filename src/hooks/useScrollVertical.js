@@ -22,7 +22,7 @@ const useScrollVertical = () => {
       //Don't forget to remove any event listeners on unmount!  
       window.removeEventListener('scroll', onScrollHandler);  
     }  
-  }, []);  
+  }, [scrollY]);  
 
   //Finally return the value of interest  
   return scrollY;  
