@@ -5,13 +5,17 @@ import { layout, setColor, media } from '../../theme/helpers'
 const SectionCss = css`
   width:100%;
   background-color: ${props => props.background ? props.background : `${setColor.mainWhite}`};
-  padding: ${props => props.padding ? props.padding : `2rem`};
+  padding: ${props => props.padding ? props.padding : `1rem`};
 
   ${media.greaterThan('smTablet')`
-    padding: ${props => props.padding ? props.padding : `3.5rem`};
+    padding: ${props => props.padding ? props.padding : `2rem`};
   `}
 
   ${media.greaterThan('tablet')`
+    padding: ${props => props.padding ? props.padding : `3rem`};
+  `}
+
+  ${media.greaterThan('desktop')`
     padding: ${props => props.padding ? props.padding : `5rem`};
   `}
 `

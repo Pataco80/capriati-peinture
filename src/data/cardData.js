@@ -4,6 +4,7 @@ export default [
     "name":"Plâtre",
     "shortName":"platre",
     "icon":"platre.png",
+    "featuredImg":"platre.jpg",
     "competences":[
       {
         "id":1,
@@ -41,7 +42,8 @@ export default [
     "id":2,
     "name":"Peinture",
     "shortName":"peinture",
-    "iconName":"peinture.png",
+    "icon":"peinture.png",
+    "featuredImg":"peinture.jpg",
     "competences":[
       {
         "id":1,
@@ -67,7 +69,7 @@ export default [
     "id":3,
     "name":"Papier-peint",
     "shortName":"papierPeint",
-    "icon":"papierPeint.png",
+    "featuredImg":"papierPeint.jpg",
     "competences":[
       {
         "id":1,
@@ -76,16 +78,16 @@ export default [
     ],
     "gallery":[
       {
-        "shortName":"papierPeint1",
-        "image":"assets/images/gallery/services/papierPeint1.jpg"
+        "shortName":"papierspeints1",
+        "image":"assets/images/gallery/services/papierspeints1.jpg"
       },
       {
-        "shortName":"papierPeint2",
-        "image":"assets/images/gallery/services/papierPeint2.jpg"
+        "shortName":"papierspeints2",
+        "image":"assets/images/gallery/services/papierspeints2.jpg"
       },
       {
-        "shortName":"papierPeint3",
-        "image":"assets/images/gallery/services/papierPeint3.jpg"
+        "shortName":"papierspeints3",
+        "image":"assets/images/gallery/services/papierspeints3.jpg"
       }
     ]
   },
@@ -94,6 +96,7 @@ export default [
     "name":"Décoration",
     "shortName":"decoration",
     "icon":"decoration.png",
+    "featuredImg":"decoration.jpg",
     "competences":[
       {
         "id":1,
@@ -120,6 +123,7 @@ export default [
     "name":"Giclage",
     "shortName":"giclage",
     "icon":"giclage.png",
+    "featured":"giclage.jpg",
     "competences":[
       {
         "id":1,
