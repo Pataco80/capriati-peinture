@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: ${setFont.bodyFont};
   font-size: calc(1rem + 0.35vw); /* Responsive base font size */
-  line-height: calc(1rem + 1.05vw); /* Responsive Vertical Rhythm */
+  line-height: calc(1rem + 1.333vw); /* Responsive Vertical Rhythm */
   ${setLetterSpacing(1.3)}
 }
 
@@ -62,10 +62,10 @@ h6 {
 }
 
 h4, h5, h6 { 
-  margin: calc(1rem + 0.2vw) 0;
+  margin: calc(1rem + .2vw) 0;
 }
 p {
-  margin: 0 0 calc(1rem + 1vw) 0;
+  margin: 0 0 calc(1rem + .3vw) 0;
 }
 
 .gatsby-image-wrapper {
