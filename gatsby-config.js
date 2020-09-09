@@ -100,6 +100,9 @@ module.exports = {
         theme_color: website.themeColor,
         display: 'standalone',
         icon: website.favicon,
+        icon_options: {
+          purpose: `maskable`,
+        },
         cache_busting_mode: 'none'
       }
     },
@@ -107,7 +110,7 @@ module.exports = {
       resolve: 'gatsby-plugin-offline',
       options: {
         // lets you specify pages whose resources should be precached by the service worker. Ex: precachePages: [`/about_us/`, `/services/*`],
-        precachePages: [`/about`, `/contact`],
+        precachePages: [`/about/`, `/services/`, `/works/`, `/contact/`],
         workboxConfig: {
           globPatterns: ['**/assets/images/**/*']
         }
