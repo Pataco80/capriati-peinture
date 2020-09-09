@@ -1,10 +1,16 @@
 import React from 'react'
+
+// Import components from Gatsby and plugins Gatsby
 import { graphql } from 'gatsby'
+
+// Import Components for App
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Services from '../components/OurServices/Services'
 
+// Import styled-components and helpers
 
+// GraphQl Queries
 export const query = graphql`
   {
     heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
@@ -17,17 +23,23 @@ export const query = graphql`
   }
 `
 
-
+// Component
 const servicesPage = ({data}) => {
+  // Component Variables
+
+  // Render Component
   return (
     <Layout>
       <Hero title='Nos Services' bcgImage={data.heroBcg.childImageSharp.fluid} />
-      <Services />
-      
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, excepturi eaque corrupti ipsa ratione beatae quas tenetur architecto dolores, mollitia saepe accusantium amet recusandae dicta voluptatem explicabo illo aut a?s</p>
+      <Services/>
     </Layout>
   )
 }
+
+// React PropTypes and more...
+
+
+// Styles from styled-components
 
 
 export default servicesPage
