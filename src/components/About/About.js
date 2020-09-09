@@ -19,7 +19,7 @@ export const getImage = graphql`
     profilImage: file(relativePath: {eq: "images/profilImage.png"}) {
       childImageSharp {
         fluid (maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

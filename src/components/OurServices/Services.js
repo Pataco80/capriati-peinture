@@ -24,7 +24,7 @@ export const getData = graphql`
         node {
           childImageSharp {
             fluid (maxWidth: 200) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
               originalName
             }
           }
@@ -36,7 +36,7 @@ export const getData = graphql`
         node {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
               originalName
             }
           }
