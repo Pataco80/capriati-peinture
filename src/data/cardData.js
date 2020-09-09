@@ -4,7 +4,9 @@ export default [
     "name":"Plâtre",
     "shortName":"platre",
     "icon":"platre.png",
+    "altIcon":'Logo plâtre',
     "featuredImg":"platre.jpg",
+    "altFeatured":'photo featured plâtre',
     "competences":[
       {
         "id":1,
@@ -26,15 +28,18 @@ export default [
     "gallery":[
       {
         "shortName":"platre1",
-        "image":"assets/images/gallery/services/platre1.jpg"
+        "image":"assets/images/gallery/services/platre1.jpg",
+        "altGallery":'platre1',
       },
       {
         "shortName":"platre2",
-        "image":"assets/images/gallery/services/platre2.jpg"
+        "image":"assets/images/gallery/services/platre2.jpg",
+        "altGallery":'platre2',
       },
       {
         "shortName":"platre3",
-        "image":"assets/images/gallery/services/platre3.jpg"
+        "image":"assets/images/gallery/services/platre3.jpg",
+        "altGallery":'platre3',
       }
     ]
   },
@@ -43,7 +48,9 @@ export default [
     "name":"Peinture",
     "shortName":"peinture",
     "icon":"peinture.png",
+    "altIcon":'Logo peinture',
     "featuredImg":"peinture.jpg",
+    "altFeatured":'photo featured peinture',
     "competences":[
       {
         "id":1,
@@ -53,15 +60,18 @@ export default [
     "gallery":[
       {
         "shortName":"peinture1",
-        "image":"assets/images/gallery/services/peinture1.jpg"
+        "image":"assets/images/gallery/services/peinture1.jpg",
+        "altGallery":'peinture1',
       },
       {
         "shortName":"peinture2",
-        "image":"assets/images/gallery/services/peinture2.jpg"
+        "image":"assets/images/gallery/services/peinture2.jpg",
+        "altGallery":'peinture2',
       },
       {
         "shortName":"peinture3",
-        "image":"assets/images/gallery/services/peinture3.jpg"
+        "image":"assets/images/gallery/services/peinture3.jpg",
+        "altGallery":'peinture3',
       }
     ]
   },
@@ -69,7 +79,10 @@ export default [
     "id":3,
     "name":"Papier-peint",
     "shortName":"papierPeint",
+    "icon":"papierPeint.png",
+    "altIcon":'Logo Papier-Peint',
     "featuredImg":"papierPeint.jpg",
+    "altFeatured":'photo featured Papier-Peint',
     "competences":[
       {
         "id":1,
@@ -79,15 +92,18 @@ export default [
     "gallery":[
       {
         "shortName":"papierspeints1",
-        "image":"assets/images/gallery/services/papierspeints1.jpg"
+        "image":"assets/images/gallery/services/papierspeints1.jpg",
+        "altGallery":'papierspeints1',
       },
       {
         "shortName":"papierspeints2",
-        "image":"assets/images/gallery/services/papierspeints2.jpg"
+        "image":"assets/images/gallery/services/papierspeints2.jpg",
+        "altGallery":'papierspeints2',
       },
       {
         "shortName":"papierspeints3",
-        "image":"assets/images/gallery/services/papierspeints3.jpg"
+        "image":"assets/images/gallery/services/papierspeints3.jpg",
+        "altGallery":'papierspeints3',
       }
     ]
   },
@@ -96,7 +112,9 @@ export default [
     "name":"Décoration",
     "shortName":"decoration",
     "icon":"decoration.png",
+    "altIcon":'Logo decoration',
     "featuredImg":"decoration.jpg",
+    "altFeatured":'photo featured decoration',
     "competences":[
       {
         "id":1,
@@ -106,15 +124,18 @@ export default [
     "gallery":[
       {
         "shortName":"decoration1",
-        "image":"assets/images/gallery/services/decoration1.jpg"
+        "image":"assets/images/gallery/services/decoration1.jpg",
+        "altGallery":'decoration1',
       },
       {
         "shortName":"decoration2",
-        "image":"assets/images/gallery/services/decoration2.jpg"
+        "image":"assets/images/gallery/services/decoration2.jpg",
+        "altGallery":'decoration2',
       },
       {
         "shortName":"decoration3",
-        "image":"assets/images/gallery/services/decoration3.jpg"
+        "image":"assets/images/gallery/services/decoration3.jpg",
+        "altGallery":'decoration3',
       }
     ]
   },
@@ -123,7 +144,9 @@ export default [
     "name":"Giclage",
     "shortName":"giclage",
     "icon":"giclage.png",
+    "altIcon":'Logo giclage',
     "featured":"giclage.jpg",
+    "altFeatured":'photo featured giclage',
     "competences":[
       {
         "id":1,
@@ -133,15 +156,18 @@ export default [
     "gallery":[
       {
         "shortName":"giclage1",
-        "image":"assets/images/gallery/services/giclage1.jpg"
+        "image":"assets/images/gallery/services/giclage1.jpg",
+        "altGallery":'giclage1',
       },
       {
         "shortName":"giclage2",
-        "image":"assets/images/gallery/services/giclage2.jpg"
+        "image":"assets/images/gallery/services/giclage2.jpg",
+        "altGallery":'giclage2',
       },
       {
         "shortName":"giclage3",
-        "image":"assets/images/gallery/services/giclage3.jpg"
+        "image":"assets/images/gallery/services/giclage3.jpg",
+        "altGallery":'giclage3',
       }
     ]
   }
