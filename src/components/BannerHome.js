@@ -1,13 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
-import {graphql, useStaticQuery} from 'gatsby'
+
+// Import components from Gatsby and plugins Gatsby
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import {Banner} from './styledElements/BannerStyled'
+
+
+// Import Components for App
 import Title from './Title'
-import {GatsbyButtonLink} from './styledElements/Button'
+import { Banner } from './styledElements/BannerStyled'
+import { GatsbyButtonLink } from './styledElements/Button'
+
+// Import styled-components and helpers
+import styled from 'styled-components'
 import { layout, setFlex, media, setShadow, setColor } from '../theme/helpers'
 
-
+// GraphQl Queries
 const getImage = graphql`
   {
     logoImg: file(relativePath: {eq: "images/big-logo.png"}) {
@@ -19,9 +26,21 @@ const getImage = graphql`
     }
   }
 `
-const Bannerhometest = () => {
-  const { logoImg } = useStaticQuery(getImage)
 
+
+
+
+
+
+
+
+
+// Component
+const Bannerhome = () => {
+  // Component Variables
+  const { logoImg } = useStaticQuery(getImage)
+  
+  // Render Component
   return (
     <BannerWrapper>
       <LogoWrapper>
@@ -34,20 +53,23 @@ const Bannerhometest = () => {
         </Description>
         <CallActionBtn secondary to='/services/'>Nos Services</CallActionBtn>
         <CallActionBtn primary to='/contact/'>Nous Contacter</CallActionBtn>
-        </LayoutSection>
+      </LayoutSection>
     </BannerWrapper>
   )
 }
 
-const BannerWrapper = styled(Banner)`
-background-color:silver;
-flex-direction:column;
-align-self:stretch;
-${setFlex({flDir:'column'})};
+// React PropTypes and more...
 
-${media.greaterThan('smTablet')`
-flex-direction:column;
+
+// Styles from styled-components
+const BannerWrapper = styled(Banner)`
+  ${setFlex({flDir:'column'})};
+  align-self:stretch;
+  background-color:silver;
+
+  ${media.greaterThan('smTablet')`
     ${setFlex({flDir:'column', x:'flex-start', y:'space-around'})};
+    flex-direction:column;
   `}
 
   ${media.greaterThan('lgTablet')`
@@ -60,15 +82,13 @@ flex-direction:column;
 `
 
 const LayoutSection = styled.div`
-${setFlex({flDir:'column', x:'center',y:'center'})};
-align-content:flex-end;
-${layout()};
+  ${layout()};
+  ${setFlex({flDir:'column', x:'center',y:'center'})};
+  align-content:flex-end;
   position:relative;
   padding-bottom:3rem;
   width:100%;
   z-index:2;
-
-
 
   ${media.greaterThan('smTablet')`
     ${setFlex({x:'space-around', y:'space-around'})};
@@ -88,23 +108,22 @@ const CallActionBtn = styled(GatsbyButtonLink)`
 `
 
 const Description = styled.div`
-${setFlex({x:'flex-end', y:'flex-end'})};
+  ${setFlex({x:'flex-end', y:'flex-end'})};
   width:100%;
 
+  p {
+    color:${setColor.primaryColor};
+    text-align:right;
+    font-size:1.4rem;
+    font-size:1.4rem;
+    padding:0 1rem;
+    text-shadow: 3px 3px 3px ${setColor.mainBlack};
 
-    p {
-      color:${setColor.primaryColor};
-      text-align:right;
-      font-size:1.4rem;
-      font-size:1.4rem;
-      padding:0 1rem;
-      text-shadow: 3px 3px 3px ${setColor.mainBlack};
-
-      ${media.greaterThan('smTablet')`
-        font-size: 2.197rem;
-        line-height: calc(2.197rem + 1vw);
-      `}
-    }
+    ${media.greaterThan('smTablet')`
+      font-size: 2.197rem;
+      line-height: calc(2.197rem + 1vw);
+    `}
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -115,7 +134,4 @@ const LogoWrapper = styled.div`
   z-index:2;
 `
 
-
-
-
-export default Bannerhometest
+export default Bannerhome

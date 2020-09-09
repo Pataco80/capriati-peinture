@@ -1,12 +1,19 @@
 import React from 'react'
+
+// Import components from Gatsby and plugins Gatsby
 import {graphql, useStaticQuery} from 'gatsby'
-import styled from 'styled-components'
+import Img from 'gatsby-image'
+
+// Import Components for App
 import { Section , SectionContent } from '../styledElements/SectionStyled'
 import {GatsbyButtonLink} from '../styledElements/Button'
-import Img from 'gatsby-image'
 import Title from '../Title'
+
+// Import styled-components and helpers
+import styled from 'styled-components'
 import { layout, setFlex, media} from '../../theme/helpers'
 
+// GraphQl Queries
 export const getImage = graphql`
   {
     profilImage: file(relativePath: {eq: "images/profilImage.png"}) {
@@ -19,10 +26,13 @@ export const getImage = graphql`
   }
 `
 
+// Component
 const About = (props) => {
+  // Component Variables
+  const {home,background, padding} = props
   const { profilImage } = useStaticQuery(getImage)
 
-  const {home,background, padding} = props
+  // Render Component
   return (
     <AboutWrapper background={background} padding={padding}>
       {
@@ -30,11 +40,11 @@ const About = (props) => {
       }
       <AboutContent>
         <AboutArticle>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
         </AboutArticle>
         <AboutImgContainer>
-        <Img fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
+          <Img fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
         </AboutImgContainer>
       </AboutContent>
       {
@@ -44,8 +54,12 @@ const About = (props) => {
   )
 }
 
+// React PropTypes and more...
+
+
+// Styles from styled-components
 const AboutWrapper = styled(Section)`
-${setFlex({flDir:'column'})};
+  ${setFlex({flDir:'column'})};
 `
 
 const AboutContent = styled(SectionContent)`
@@ -68,9 +82,9 @@ const AboutArticle = styled.article`
 `
 
 const AboutImgContainer = styled.div`
-width:100%;
-max-width:300px;
-min-height:100px;
+  width:100%;
+  max-width:300px;
+  min-height:100px;
 `
 
 const AboutLink = styled(GatsbyButtonLink)`
