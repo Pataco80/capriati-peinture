@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql, useStaticQuery} from 'gatsby'
 import styled from 'styled-components'
 import { Section , SectionContent } from '../styledElements/SectionStyled'
-import {GatsbyLink} from '../styledElements/Button'
+import {GatsbyButtonLink} from '../styledElements/Button'
 import Img from 'gatsby-image'
 import Title from '../Title'
 import { layout, setFlex, media} from '../../theme/helpers'
@@ -11,7 +11,7 @@ export const getImage = graphql`
   {
     profilImage: file(relativePath: {eq: "images/profilImage.png"}) {
       childImageSharp {
-        fluid (maxWidth: 200) {
+        fluid (maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
@@ -22,11 +22,11 @@ export const getImage = graphql`
 const About = (props) => {
   const { profilImage } = useStaticQuery(getImage)
 
-  const {about,background, padding} = props
+  const {home,background, padding} = props
   return (
     <AboutWrapper background={background} padding={padding}>
       {
-        about ? '' : <Title tag='h2' title='A Propos de Nous' />
+        home ? <Title tag='h2' title='A Propos de Nous' /> : ''
       }
       <AboutContent>
         <AboutArticle>
@@ -38,7 +38,7 @@ const About = (props) => {
         </AboutImgContainer>
       </AboutContent>
       {
-        about ? '' : <AboutLink primary to='/about/' >En savoir plus</AboutLink>
+        home ? <AboutLink primary to='/about/' >En savoir plus</AboutLink> : ''
       }
     </AboutWrapper>
   )
@@ -69,11 +69,11 @@ const AboutArticle = styled.article`
 
 const AboutImgContainer = styled.div`
 width:100%;
-max-width:200px;
+max-width:300px;
 min-height:100px;
 `
 
-const AboutLink = styled(GatsbyLink)`
+const AboutLink = styled(GatsbyButtonLink)`
   margin-top:3rem;
 `
 
