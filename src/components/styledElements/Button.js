@@ -57,7 +57,7 @@ export const ButtonLink = styled.a`
   ${ButtonStyles};
 `
 
-export const GatsbyLink = styled(Link)`
+export const GatsbyButtonLink = styled(Link)`
   ${ButtonStyles};
 `
 

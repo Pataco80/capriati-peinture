@@ -4,7 +4,7 @@ import {graphql, useStaticQuery} from 'gatsby'
 import Img from 'gatsby-image'
 import {Banner} from './styledElements/BannerStyled'
 import Title from './Title'
-import {GatsbyLink} from './styledElements/Button'
+import {GatsbyButtonLink} from './styledElements/Button'
 import { layout, setFlex, media, setShadow, setColor } from '../theme/helpers'
 
 
@@ -40,12 +40,27 @@ const Bannerhometest = () => {
 }
 
 const BannerWrapper = styled(Banner)`
-${setFlex({flDir:'column'})};
+background-color:silver;
+flex-direction:column;
 align-self:stretch;
+${setFlex({flDir:'column'})};
+
+${media.greaterThan('smTablet')`
+flex-direction:column;
+    ${setFlex({flDir:'column', x:'flex-start', y:'space-around'})};
+  `}
+
+  ${media.greaterThan('lgTablet')`
+    padding:2rem 4rem;
+  `}
+
+  ${media.greaterThan('desktop')`
+    padding:6rem;
+  `}
 `
 
 const LayoutSection = styled.div`
-${setFlex({flDir:'column', x:'flex-end',y:'center'})};
+${setFlex({flDir:'column', x:'center',y:'center'})};
 align-content:flex-end;
 ${layout()};
   position:relative;
@@ -57,18 +72,15 @@ ${layout()};
 
   ${media.greaterThan('smTablet')`
     ${setFlex({x:'space-around', y:'space-around'})};
-    padding-bottom:10rem;
-  `}
-
-  ${media.greaterThan('desktop')`
-    padding-bottom:13rem;
+    padding-bottom:8rem;
+    align-self:flex-end;
   `}
 `
 
-const CallActionBtn = styled(GatsbyLink)`
+const CallActionBtn = styled(GatsbyButtonLink)`
   ${setShadow('light')};
   text-align:center;
-  margin-top:3rem;
+  margin:3rem 0.5rem 0 0.5rem;
 
   &:hover {
     ${setShadow('dark')};
