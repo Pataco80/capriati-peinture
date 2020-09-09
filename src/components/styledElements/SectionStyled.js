@@ -3,9 +3,9 @@ import { layout, setColor, media } from '../../theme/helpers'
 
 
 const SectionCss = css`
-  width:100%;
   background-color: ${props => props.background ? props.background : `${setColor.mainWhite}`};
-  padding: ${props => props.padding ? props.padding : `1rem`};
+  padding: ${props => props.padding ? props.padding : `1rem 1rem`};
+  width:100vw;
 
   ${media.greaterThan('smTablet')`
     padding: ${props => props.padding ? props.padding : `2rem`};
@@ -25,6 +25,7 @@ export const Section = styled.section`
 `
 export const SectionContent = styled.div`
   padding: ${props => props.padding ? props.padding : `1rem`};
+  width:100%;
 `
 
 export const SectionCenter = styled.section`
@@ -35,4 +36,5 @@ export const SectionCenter = styled.section`
 export const SectionContentCenter = styled.div`
   ${layout()};
   padding: ${props => props.padding ? props.padding : `1rem`};
+  width:100%;
 `

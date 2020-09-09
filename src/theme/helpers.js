@@ -100,7 +100,7 @@ export const layout = ({mW = 1140, pdX = 8, pdY = 0} = {}) => {
   return `
     max-width:${setPxToRem(mW)};
     margin: 0 auto;
-    padding: ${setPxToRem(pdY)} ${setPxToRem(pdX)};`
+  `
 }
 
 
