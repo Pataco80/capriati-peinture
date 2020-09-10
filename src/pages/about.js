@@ -10,7 +10,7 @@ export const getImage = graphql`
     heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

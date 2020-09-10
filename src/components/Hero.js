@@ -16,7 +16,7 @@ import { setFlex } from '../theme/helpers'
 // Component
 const Hero = (props) => {
   // Component Variables
-  const {home, title, bcgImage} = props
+  const {home, error, title, bcgImage, children } = props
   
   // Render Component
   return (
@@ -27,11 +27,13 @@ const Hero = (props) => {
         <BannerHome/>
       </HeroWrapper>
       : 
-      <HeroWrapper>
-        <BcgImage fluid={bcgImage}>
-          <Banner title={title}/> 
-        </BcgImage>
-      </HeroWrapper>
+        <HeroWrapper error={error}>
+          <BcgImage fluid={bcgImage} error={error}>
+            <Banner title={title}>
+            {children} 
+            </Banner>
+          </BcgImage>
+        </HeroWrapper>
       }
     </>
   )
@@ -42,11 +44,12 @@ const Hero = (props) => {
 
 // Styles from styled-components
 const HeroWrapper = styled.section`
-min-height:${props => (props.home ? "calc(100vh - 62px)" : "50vh")};
+min-height:${props => (props.home || props.error ? "calc(100vh - 62px)" : "50vh")};
 position: relative;
 ${setFlex({flDir:'column'})};
 width:100vw;
 overflow:hidden;
+flex-wrap:nowrap;
 `
 
 export default Hero

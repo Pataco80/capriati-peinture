@@ -24,44 +24,44 @@ const GlobalStyle = createGlobalStyle`
   ${setLetterSpacing(1.3)}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: ${setFont.headingsFont};
   margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
   color: ${setColor.primaryColor};
   font-weight:900;
 }
 
-h1 {
+h1, .h1 {
   font-size: 3.713rem;
   line-height: calc(3.713rem + 1.8vw); /* Responsive Vertical Rhythm */
 }
 
-h2 {
+h2, .h2 {
   font-size: 2.856rem;
   line-height: calc(2.856rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
-h3 {
+h3, .h3 {
   font-size: 2.197rem;
   line-height: calc(2.197rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
-h4 {
+h4, .h4 {
   font-size: 1.9rem;
   line-height: calc(1.9rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
-h5 {
+h5, .h5 {
   font-size: 1.7rem;
   line-height: calc(1.7rem + 1vw); /* Responsive Vertical Rhythm */
 }
 
-h6 {
+h6, .h6 {
   font-size: 1.4rem; 
   line-height: calc(1.4rem + .2vw); /* Responsive Vertical Rhythm */
 }
 
-h4, h5, h6 { 
+h4, .h4, h5, ..h5, h6, .h6 { 
   margin: calc(1rem + .2vw) 0;
 }
 p {

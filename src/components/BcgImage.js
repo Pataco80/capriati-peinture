@@ -1,9 +1,9 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
 import styled from 'styled-components'
-import { setFlex } from '../theme/helpers'
+import { setFlex, setLinearBcg } from '../theme/helpers'
 
-const Bcgimage = ({className, fluid, children}) => {
+const Bcgimage = ({className, fluid, children, error }) => {
   return (
     <BackgroundImage
           Tag="div"
@@ -11,6 +11,10 @@ const Bcgimage = ({className, fluid, children}) => {
           fluid={fluid}
           backgroundColor={`#fff`}
         >
+          {
+            error ? <span className='overlay' /> : ''
+          }
+          
           {children}
         </BackgroundImage>
   )
@@ -25,4 +29,16 @@ min-height: ${(props) => (props.home ? "calc(100vh - 62px)" : "50vh")};
   ${setFlex()};
   align-self:stretch;
   justify-content: center;
-  align-items: center;`
+  align-items: center;
+  
+  .overlay {
+  display: block;
+  width:100%;
+  height:100vh;
+  ${setLinearBcg({colStart:'rgba(0,0,0,0.7)',colEtart:'rgba(0,0,0,0.2)'})};
+  opacity:0.3;
+  z-index:-10;
+  position:absolute;
+}
+  
+`
