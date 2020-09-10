@@ -90,6 +90,10 @@ const LayoutSection = styled.div`
   width:100%;
   z-index:2;
 
+  ${media.greaterThan('mobile')`
+    padding-bottom:6rem;
+  `}
+
   ${media.greaterThan('smTablet')`
     ${setFlex({x:'space-around', y:'space-around'})};
     padding-bottom:8rem;
@@ -100,11 +104,15 @@ const LayoutSection = styled.div`
 const CallActionBtn = styled(GatsbyButtonLink)`
   ${setShadow('light')};
   text-align:center;
-  margin:3rem 0.5rem 0 0.5rem;
+  margin:1rem 0.5rem 0 0.5rem;
 
   &:hover {
     ${setShadow('dark')};
   }
+
+  ${media.greaterThan('mobile')`
+    margin:2rem 0.5rem 0 0.5rem;
+  `}
 `
 
 const Description = styled.div`
