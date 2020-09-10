@@ -30,7 +30,7 @@ const Title = (props) => {
 const TitleWrapper = styled.div`
   ${setFlex()};
   text-align:center;
-  text-shadow: 3px 3px 3px ${setColor.mainBlack};
+  text-shadow: 3px 3px 3px ${setColor.mainGreyL1};
 
   ${({hidden}) => hidden &&`
       display:none !important;

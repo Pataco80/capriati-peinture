@@ -86,7 +86,7 @@ const LayoutSection = styled.div`
   ${setFlex({flDir:'column', x:'center',y:'center'})};
   align-content:flex-end;
   position:relative;
-  padding-bottom:3rem;
+  padding-bottom:4rem;
   width:100%;
   z-index:2;
 

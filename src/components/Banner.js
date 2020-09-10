@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {BannerCenter} from './styledElements/BannerStyled'
 import Title from './Title'
-import { setColor, setFlex } from '../theme/helpers'
+import { setFlex } from '../theme/helpers'
 const Banner = ({title, children}) => {
   return (
     <BannerWrapper>
