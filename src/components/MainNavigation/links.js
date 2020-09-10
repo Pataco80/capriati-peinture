@@ -77,6 +77,7 @@ const MainNavItem = styled.li`
 
 const MainNavLink = styled(Link)`
   ${setFlex()};
+  align-content:center;
   position:relative;
   padding: ${setPxToRem(6)} ${setPxToRem(16)} ${setPxToRem(4)} ${setPxToRem(16)};
   width:100%;
@@ -85,7 +86,7 @@ const MainNavLink = styled(Link)`
   opacity:0;
   color: ${setColor.primaryColor};
   text-transform:uppercase;
-  text-decoration:none;
+  text-decoration:underline;
 
   &.topBarOpen {
     opacity:1;
@@ -93,13 +94,15 @@ const MainNavLink = styled(Link)`
   }
 
   ${media.greaterThan('lgTablet')`
-    padding: ${setPxToRem(9)} ${setPxToRem(16)} ${setPxToRem(12)} ${setPxToRem(16)};
+    padding: ${setPxToRem(0)} ${setPxToRem(16)} ${setPxToRem(0)} ${setPxToRem(16)};
     opacity:1;
     transition:none;
+    height:40px;
   `}
 
   & .span {
-    border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.primaryColor}`})};
+    border-bottom: none;
+    line-height:initial;
   }
 `
 

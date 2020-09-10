@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import useWindowSize from '../../hooks/useWindowSize'
 
 // Import components from Gatsby and plugins Gatsby
 import {graphql, useStaticQuery} from 'gatsby'
@@ -11,7 +12,7 @@ import {X} from '@styled-icons/heroicons-outline/X'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, media, setFlex, setTransition, setPxToRem, setShadow, setBorder, setColor } from '../../theme/helpers'
+import { layout, media, setFlex, setTransition, setPxToRem, setShadow, setBorder, setColor, breakpoints } from '../../theme/helpers'
 
 
 // GraphQl Queries
@@ -37,6 +38,9 @@ const MainNavigation = ({toScroll}) => {
     setNav(isOpen => !isOpen)
   }
 
+  const windowSize = useWindowSize()
+  const toNabBarMenu = breakpoints.lgTablet
+
   // Render Compoent
   return (
     <NavBarWrapper  data-active={toScroll}>
@@ -51,9 +55,16 @@ const MainNavigation = ({toScroll}) => {
             </NavbarToggle>
           </NavHeaderContent>
         </NavBarHeader>
-        <NavBarMenuContainer className={isOpen ? `show-nav`:``}>
-        <MainMenu isOpen={isOpen}/>
-        </NavBarMenuContainer>
+        {
+        windowSize < toNabBarMenu ? 
+        <NavBarMenuDropdown className={isOpen ? `show-nav`:``}>
+          <MainMenu isOpen={isOpen}/>
+        </NavBarMenuDropdown>
+        :
+        <NavBarMenu>
+          <MainMenu />
+        </NavBarMenu>
+        }
       </NavBarContainer>      
     </NavBarWrapper>
   )
@@ -101,6 +112,7 @@ const NavBarHeader = styled.div`
   z-index:10;
 
   ${media.greaterThan('lgTablet')`
+    ${setFlex({x:'flex-start'})};
     background-color: ${setColor.mainWhite};
     width:auto;
   `}
@@ -127,7 +139,7 @@ const NavbarToggle = styled.span`
   `}
 `
 
-const NavBarMenuContainer = styled.section`
+const NavBarMenuDropdown = styled.section`
   top:-256px;
   ${setTransition({duration:0.3})};
   background-color: ${setColor.mainWhite};
@@ -145,6 +157,10 @@ const NavBarMenuContainer = styled.section`
     `}
   }
 
+  
+`
+
+const NavBarMenu = styled.div`
   ${media.greaterThan('lgTablet')`
     ${setFlex({x:'flex-end'})};
     height:auto;

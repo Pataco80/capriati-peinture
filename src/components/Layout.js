@@ -70,7 +70,7 @@ const PageContainer = styled.main`
   z-index:2;
 
   &.isScroll {
-    margin-top:${setPxToRem(70)};
+    margin-top:${setPxToRem(62)};
   }
 `
 
