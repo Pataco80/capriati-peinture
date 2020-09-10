@@ -205,6 +205,9 @@ export const setShadow = (style = '', {x = 0, y = 0, blur = 0, color = setColor.
   if (style === 'dark') {
     return `box-shadow: 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
   }
+  if (style === 'none') {
+    return `box-shadow: none;`
+  }
   else {
     return `box-shadow: ${y}px ${x}px ${blur}px ${convertHexToRGBA(color,opacity)};`
   }

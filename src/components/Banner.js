@@ -14,7 +14,6 @@ const Banner = ({title, children}) => {
 
 const BannerWrapper = styled(BannerCenter)`
 ${setFlex({flDir:'column'})};
-text-shadow: 3px 3px 3px ${setColor.mainBlack};
 `
 
 export default Banner

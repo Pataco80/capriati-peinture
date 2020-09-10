@@ -6,7 +6,7 @@ import React from 'react'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { setFlex } from '../theme/helpers'
+import { setFlex, setColor } from '../theme/helpers'
 
 // GraphQl Queries
 
@@ -30,6 +30,7 @@ const Title = (props) => {
 const TitleWrapper = styled.div`
   ${setFlex()};
   text-align:center;
+  text-shadow: 3px 3px 3px ${setColor.mainBlack};
 
   ${({hidden}) => hidden &&`
       display:none !important;

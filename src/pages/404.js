@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 
 import { GatsbyButtonLink } from '../components/styledElements/Button'
 import styled from 'styled-components';
-import { setFlex, media, setShadow } from '../theme/helpers'
+import { setFlex, setColor, media, setShadow } from '../theme/helpers'
 
 export const getImage = graphql`
   {
@@ -22,9 +22,9 @@ export const getImage = graphql`
 const errorPage = ({data}) => {
   return (
     <Layout error>
-      <ErrorHero error title="Page d'erreur 404" bcgImage={data.heroBcg.childImageSharp.fluid} error>
+      <ErrorHero error title="Page d'erreur 404" bcgImage={data.heroBcg.childImageSharp.fluid}>
         <Text className='h5'>La page que vous demandez n'éxiste pas, ou l'url que vous avez taper n'est pas valide</Text>
-        <CallAction primary to='/'>Retour à la page d'accueil</CallAction>
+        <CallActionBtn primary to='/'>Retour à la page d'accueil</CallActionBtn>
       </ErrorHero>
     </Layout>
   )
@@ -40,20 +40,26 @@ const ErrorHero = styled(Hero)`
 const Text = styled.p`
   margin:0 0 3rem;
   text-align:center;
-  ${setShadow('light')};
+  text-shadow: 3px 3px 3px ${setColor.mainGreyD2};
+
 
   ${media.greaterThan('tablet')`
-    margin:0 0 5rem;
+    margin:0 0 3rem !important;
   `}
 
   ${media.greaterThan('desktop')`
-    margin:2rem 0 5rem;
+    font-size: 2.197rem;
+    line-height: calc(2.197rem + 1vw);
+    margin: calc(1.5rem + 1vw) 0;
   `}
 `
 
-const CallAction = styled(GatsbyButtonLink)`
-  text-shadow:none;
+const CallActionBtn = styled(GatsbyButtonLink)`
+  ${setShadow('light')};
   text-align:center;
-`
 
+  &:hover {
+    ${setShadow('dark')};
+  }
+`
 export default errorPage

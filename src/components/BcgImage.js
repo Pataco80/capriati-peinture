@@ -22,7 +22,7 @@ const Bcgimage = ({className, fluid, children, error }) => {
 
 
 export default styled(Bcgimage)`
-min-height: ${(props) => (props.home ? "calc(100vh - 62px)" : "50vh")};
+min-height: ${(props) => (props.home || props.error ? "calc(100vh - 62px)" : "50vh")};
   
   background-position: center;
   background-size: cover;

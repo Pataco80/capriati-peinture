@@ -61,7 +61,7 @@ h6, .h6 {
   line-height: calc(1.4rem + .2vw); /* Responsive Vertical Rhythm */
 }
 
-h4, .h4, h5, ..h5, h6, .h6 { 
+h4, .h4, h5, .h5, h6, .h6 { 
   margin: calc(1rem + .2vw) 0;
 }
 p {
