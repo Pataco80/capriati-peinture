@@ -4,10 +4,12 @@ import styled, {css} from 'styled-components'
 import {Section, SectionContent} from './styledElements/SectionStyled'
 import {ButtonForm} from './styledElements/Button'
 import { setFlex, layout, media, setRadius, setBorder, setColor, setShadow, setFont } from '../theme/helpers'
+import Title from './Title'
 
 const Contactform = () => {
   return (
     <Section padding='2rem'>
+      <Title tag='h3' title='Contactez-nous via notre formulaire' />
       <FormContainer padding='0'>
         <ContactForm
           action="https://formspree.io/xlenaazr"

@@ -13,11 +13,11 @@ import { setFlex, setColor } from '../theme/helpers'
 // Component
 const Title = (props) => {
   // Component Variables
-  const { title, tag:Tag, hidden, children } = props
+  const { title, tag:Tag, hidden, noShadow, children } = props
 
   // Render Component
   return (
-    <TitleWrapper hidden={hidden}>
+    <TitleWrapper hidden={hidden} noShadow={noShadow}>
       <Tag>{title || children}</Tag>
     </TitleWrapper>
   )
@@ -30,10 +30,14 @@ const Title = (props) => {
 const TitleWrapper = styled.div`
   ${setFlex()};
   text-align:center;
-  text-shadow: 3px 3px 3px ${setColor.mainGreyL1};
+  text-shadow: 2px 2px 3px ${setColor.mainGreyL1};
 
   ${({hidden}) => hidden &&`
       display:none !important;
+  `}
+
+  ${({noShadow}) => noShadow &&`
+    text-shadow: none !important;
   `}
 `
 
