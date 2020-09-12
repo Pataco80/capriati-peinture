@@ -56,7 +56,9 @@ export const Button = styled.button`
 export const ButtonLink = styled.a`
   ${ButtonStyles};
 `
-
+export const ButtonForm = styled.input`
+  ${ButtonStyles};
+`
 export const GatsbyButtonLink = styled(Link)`
   ${ButtonStyles};
 `

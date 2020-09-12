@@ -195,15 +195,15 @@ export const setTransition = ({
   dark: 'box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);',
 }*/
 
-export const setShadow = (style = '', {x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100} = {}) => {
+export const setShadow = (style = '', {inset = '', x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100} = {}) => {
   if (style === 'light') {
-    return `box-shadow: 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
+    return `box-shadow: ${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
   }
   if (style === 'medium') {
-    return `box-shadow: 0 3px 12px ${convertHexToRGBA(setColor.mainBlack,50)};`
+    return `box-shadow: ${inset} 0 3px 12px ${convertHexToRGBA(setColor.mainBlack,50)};`
   }
   if (style === 'dark') {
-    return `box-shadow: 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
+    return `box-shadow: ${inset} 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
   }
   if (style === 'none') {
     return `box-shadow: none;`

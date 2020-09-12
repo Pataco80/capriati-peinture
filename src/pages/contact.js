@@ -1,11 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Title from '../components/Title'
+import Contactform from '../components/ContactForm'
 const contactPage = () => {
   return (
     <Layout>
-      <Title tag='h1' title={'Contact Page'}/>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, excepturi eaque corrupti ipsa ratione beatae quas tenetur architecto dolores, mollitia saepe accusantium amet recusandae dicta voluptatem explicabo illo aut a?s</p>
+      <Title tag='h1' title={'Contactez-Nous'}/>
+      <Contactform/>
     </Layout>
   )
 }
