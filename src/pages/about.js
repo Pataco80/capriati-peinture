@@ -3,6 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import About from '../components/About/About'
+import History from '../components/History/History'
 
 
 export const getImage = graphql`
@@ -23,6 +24,7 @@ const aboutPage = ({data}) => {
     <Layout>
       <Hero title='A Propos de nous' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <About about />
+      <History />
     </Layout>
   )
 }
