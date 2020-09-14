@@ -1,6 +1,12 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import historyData from '../../data/cardData'
+import Title from '../Title'
+import historyData from '../../data/historyData'
+
+import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
+import styled from 'styled-components'
+
+import {setFlex, media, layout} from '../../theme/helpers'
 
 export const getHistoryImages = graphql`
   {
@@ -33,10 +39,39 @@ const History = (props) => {
 
 console.log(historyPhoto)
   return (
-    <div>
-      i Am History
-    </div>
+    <HistoryWrapper  background={background} padding={padding}>
+      <Title tag='h2' title='Notre Histore' titleSection/>
+      <ServicesContent padding='0'>
+        {
+          historyData.map(({name, shortName}) => {
+            const regExp = new RegExp(shortName, "i");
+            return (
+              <div>
+                <p>lorem</p>
+              </div>
+            )
+          })
+          } 
+      </ServicesContent>
+    </HistoryWrapper>
   )
 }
+
+
+// Styles from styled-components
+const HistoryWrapper = styled(Section)`
+  ${setFlex({flDir:'column'})};
+  padding-bottom:3rem;
+`
+const ServicesContent = styled(SectionContentCenter)`
+  ${setFlex({flDir:'column',y:'center'})};
+  flex-wrap:nowrap;
+
+  ${media.greaterThan('tablet')`
+    ${layout()};
+    ${setFlex({flDir:'row', x:'space-around', y:'space-around'})};
+    align-items:stretch;
+  `}
+`
 
 export default History
