@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Title from '../Title'
 import historyData from '../../data/historyData'
-
+import HistoryItem from './HistoryItem'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
 import styled from 'styled-components'
 
@@ -10,25 +10,25 @@ import {setFlex, media, layout} from '../../theme/helpers'
 
 export const getHistoryImages = graphql`
   {
-    photo:allFile(filter: {relativeDirectory: {regex: "/history/"}}) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-              originalName
-            }
+    historyPhoto:allFile(filter: {relativeDirectory: {regex: "/history/"}}) {
+    edges {
+      node {
+        childImageSharp {
+          fluid (maxWidth:400){
+            ...GatsbyImageSharpFluid_withWebp
+            originalName
           }
         }
       }
     }
+  }
 }
 `
 const History = (props) => {
   // Component Variables
   const {background, padding} = props
   const data = useStaticQuery(getHistoryImages)
-  const historyPhotoList = data.photo.edges
+  const historyPhotoList = data.historyPhoto.edges
 
   const historyPhoto = historyPhotoList.map(({ node }) => ({
     photo: node.childImageSharp.fluid,
@@ -41,21 +41,25 @@ console.log(historyPhoto)
   return (
     <HistoryWrapper  background={background} padding={padding}>
       <Title tag='h2' title='Notre Histore' titleSection/>
-      <ServicesContent padding='0'>
+      <HistoryContent>
         {
-          historyData.map(({name, shortName, photo, altPhoto, actions}) => {
-            const regExp = new RegExp(shortName, "i");
+          historyData.map(({name, shortName, altPhoto, actions}) => {
+            const regExp = new RegExp(shortName, "i")
             return (
-              <div>
-                <p>{name}</p>
-                <p>{shortName}</p>
-                <p>{photo}</p>
-                <p>{altPhoto}</p>
-              </div>
+              <HistoryItem
+                Key={name}
+                shortName={shortName}
+                imgProfile={
+                  historyPhoto.find(({originalName}) => originalName.match(regExp))
+                  .photo
+                }
+                altPhoto={altPhoto}
+                actions={actions}
+              />
             )
           })
-          } 
-      </ServicesContent>
+        } 
+      </HistoryContent>
     </HistoryWrapper>
   )
 }
@@ -66,7 +70,7 @@ const HistoryWrapper = styled(Section)`
   ${setFlex({flDir:'column'})};
   padding-bottom:3rem;
 `
-const ServicesContent = styled(SectionContentCenter)`
+const HistoryContent = styled(SectionContentCenter)`
   ${setFlex({flDir:'column',y:'center'})};
   flex-wrap:nowrap;
 
