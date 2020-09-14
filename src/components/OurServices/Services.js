@@ -67,7 +67,7 @@ export const getData = graphql`
     return (
       <ServicesWrapper  background={background} padding={padding}>
         {
-          home ? <Title tag='h2' title='Nos Services' /> : ''
+          home ? <Title tag='h2' title='Nos Services' titleSection/> : ''
         }
         <ServicesContent padding='0'>
           {
@@ -132,6 +132,7 @@ export const getData = graphql`
 // Styles from styled-components
 const ServicesWrapper = styled(Section)`
   ${setFlex({flDir:'column'})};
+  padding-bottom:3rem;
 `
 
 const ServicesContent = styled(SectionContentCenter)`
@@ -160,6 +161,10 @@ const ServiceItemCard = styled(Link)`
 
   &:hover {
     ${setShadow('dark')};
+  }
+
+  &:last-child {
+    margin-bottom:1rem;
   }
 
   ${media.greaterThan('tablet')`

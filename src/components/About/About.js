@@ -36,7 +36,7 @@ const About = (props) => {
   return (
     <AboutWrapper background={background} padding={padding}>
       {
-        home ? <Title tag='h2' title='A Propos de Nous' /> : ''
+        home ? <Title tag='h2' title='A Propos de Nous' titleSection /> : ''
       }
       <AboutContent>
         <AboutArticle>
@@ -60,6 +60,7 @@ const About = (props) => {
 // Styles from styled-components
 const AboutWrapper = styled(Section)`
   ${setFlex({flDir:'column'})};
+  padding-bottom:3rem;
 `
 
 const AboutContent = styled(SectionContent)`

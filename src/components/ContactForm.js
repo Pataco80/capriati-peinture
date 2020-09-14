@@ -8,8 +8,8 @@ import Title from './Title'
 
 const Contactform = () => {
   return (
-    <Section padding='2rem'>
-      <Title tag='h3' title='Contactez-nous via notre formulaire' />
+    <Section>
+      <Title tag='h3' title='Contactez-nous via notre formulaire' titleSection/>
       <FormContainer padding='0'>
         <ContactForm
           action="https://formspree.io/xlenaazr"

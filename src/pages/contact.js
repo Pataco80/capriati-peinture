@@ -33,7 +33,7 @@ const contactPage = ({data}) => {
       <Hero title='Nous Contacter' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Contactform/>
       <ContactSection>
-        <Title tag='h3' title='Nos Coordonées'/>
+        <Title tag='h3' title='Nos Coordonées' titleSection/>
         <ContactSectionContent>
         <ContactInfo>
           <Title tag='h5' title='Adresse' noShadow />
