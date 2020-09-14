@@ -43,7 +43,7 @@ console.log(historyPhoto)
       <Title tag='h2' title='Notre Histore' titleSection/>
       <ServicesContent padding='0'>
         {
-          historyData.map(({name, shortName, photo, altPhoto}) => {
+          historyData.map(({name, shortName, photo, altPhoto, actions}) => {
             const regExp = new RegExp(shortName, "i");
             return (
               <div>
