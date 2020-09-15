@@ -41,10 +41,11 @@ export const getData = graphql`
     const photoList = data.photo.edges
 
     const historyPhoto = photoList.map(({ node }) => ({
-      icon: node.childImageSharp.fluid,
+      photo: node.childImageSharp.fluid,
       originalName: node.childImageSharp.fluid.originalName,
     }))
-    
+
+
     // Render Component
     return (
       <ServicesWrapper  background={background} padding={padding}>
@@ -54,37 +55,43 @@ export const getData = graphql`
             historyData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
 
               const regExp = new RegExp(shortName, "i");
+              const competencesList = competences
+
               return (
                 <>
                   <div>
                     <header>
                       <Img fluid={historyPhoto.find(({originalName}) => originalName.match(regExp))
-              .icon}/>
+              .photo}/>
                       <p>{name}</p>
                     </header>
                     <div>
-                      <p>date.max()</p>
-                      <p>texte</p>
-
+                      {
+        competencesList.map((item,i)=>{
+          return (
+            <p key={i}>{item.text}</p>
+          )
+        })
+      }
                     </div>
                   </div>
 
 
 
 
-                <ServiceItem 
+                {/*<ServiceItem 
                   key={name}
                   shortName={shortName}
                   Icon={
                     historyPhoto.find(({originalName}) => originalName.match(regExp))
-                    .icon
+                    .photo
                   }
                   name={name}
                   competences={competences}
                   gallery={gallery}
                   altIcon={altIcon}
                   altFeatured={altFeatured}
-                />
+                />*/}
                 </>
                 
                 
