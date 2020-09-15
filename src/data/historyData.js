@@ -1,69 +1,59 @@
 export default [
   {
     "id":1,
-    "name":"Vincenzo Capriati",
-    "shortName":"vincenzo",
-    "photo":"vincenzo.jpg",
-    "altPhoto":"Vincenzo Capriati",
-    "actions": [
+    "name":"Plâtre",
+    "shortName":"platre",
+    "icon":"platre.png",
+    "altIcon":'Logo plâtre',
+    "featuredImg":"platre.jpg",
+    "altFeatured":'photo featured plâtre',
+    "competences":[
       {
-        "date":"1979",
-        "text":"Création de l’entreprise par Vincenzo Capriati."
+        "id":1,
+        "text":"Gypsage sous dalle en béton, sur murs en briques, lissage fins sur murs et plafonds"
       },
       {
-        "date":"1984",
-        "text":"Pierre, son fils, rejoint son père."
+        "id":2,
+        "text":"Doublages et cloisons en placoplâtre avec ossature métallique et/ou en carreaux de plâtre \"Alba\""
       },
       {
-        "date":"1986",
-        "text":"Claudio, frère de Pierre, rejoint le duo."
+        "id":3,
+        "text":"Faux-plafonds en placoplâtre avec châssis métallique"
       },
-    ]
+      {
+        "id":4,
+        "text":"Isolation phonique et thermique avec laine de pierre et laine de verre"
+      }
+    ],
   },
   {
     "id":2,
-    "name":"Pierre Capriati",
-    "shortName":"pierre",
-    "photo":"pierre.jpg",
-    "altPhoto":"Pierre Capriati",
-    "actions": [
+    "name":"Peinture",
+    "shortName":"peinture",
+    "icon":"peinture.png",
+    "altIcon":'Logo peinture',
+    "featuredImg":"peinture.jpg",
+    "altFeatured":'photo featured peinture',
+    "competences":[
       {
-        "date":"1993",
-        "text":"Obtention de la maîtrise Fédérale par Pierre qui reprend les rênes."
-      },
-      {
-        "date":"2002",
-        "text":"Vincent, fils de Pierre, effectue son apprentissage, qu’il termine avec succès"
-      },
-      {
-        "date":"2007",
-        "text":"Brigitte, épouse de Pierre et maman de Vincent, qui rejoint officiellement le team, après avoir travaillé dans l’ombre pendant toutes ces années."
-      },
-      {
-        "date":"2010",
-        "text":"Vincent obtient son certificat de chef de chantier."
-      },
-      {
-        "date":"2012",
-        "text":"Vincent obtient son brevet de contremaître peintre. Création d'une SA."
-      },
-      {
-        "date":"2015",
-        "text":"Vincent obtient sa maîtrise Fédérale."
-      },
-    ]
+        "id":1,
+        "text":"Toutes techniques, y compris revêtement style crépi"
+      }
+    ],
   },
   {
     "id":3,
-    "name":"Vincent Capriati",
-    "shortName":"vincent",
-    "photo":"vincent.jpg",
-    "altPhoto":"Vincent Capriati",
-    "actions": [
+    "name":"Papier-peint",
+    "shortName":"papierPeint",
+    "icon":"papierPeint.png",
+    "altIcon":'Logo Papier-Peint',
+    "featuredImg":"papierPeint.jpg",
+    "altFeatured":'photo featured Papier-Peint',
+    "competences":[
       {
-        "date":"2015",
-        "text":"Vincent obtient sa maîtrise Fédérale."
-      },
-    ]
+        "id":1,
+        "text":"Selon collections de nos divers fournisseurs, papiers vinyls, structurés à peindre, tissus sur papier, etc."
+      }
+    ],
   }
 ]
