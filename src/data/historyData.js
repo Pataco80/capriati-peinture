@@ -1,12 +1,10 @@
 export default [
   {
     "id":1,
-    "name":"Plâtre",
-    "shortName":"platre",
-    "photo":"platre.png",
-    "altIcon":'Logo plâtre',
-    "featuredImg":"platre.jpg",
-    "altFeatured":'photo featured plâtre',
+    "name":"Vincenzo",
+    "shortName":"vincenzo",
+    "photo":"vincenzo.jpg",
+    "altIcon":'Vincenzo',
     "competences":[
       {
         "id":1,
@@ -28,12 +26,10 @@ export default [
   },
   {
     "id":2,
-    "name":"Peinture",
-    "shortName":"peinture",
-    "photo":"peinture.png",
-    "altIcon":'Logo peinture',
-    "featuredImg":"peinture.jpg",
-    "altFeatured":'photo featured peinture',
+    "name":"Pierre",
+    "shortName":"pierre",
+    "photo":"pierre.jpg",
+    "altIcon":'Pierre',
     "competences":[
       {
         "id":1,
@@ -43,12 +39,10 @@ export default [
   },
   {
     "id":3,
-    "name":"Papier-peint",
-    "shortName":"papierPeint",
-    "photo":"papierPeint.png",
-    "altIcon":'Logo Papier-Peint',
-    "featuredImg":"papierPeint.jpg",
-    "altFeatured":'photo featured Papier-Peint',
+    "name":"Vincent",
+    "shortName":"vincent",
+    "photo":"vincent.jpg",
+    "altIcon":'Vincent',
     "competences":[
       {
         "id":1,
