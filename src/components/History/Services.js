@@ -18,7 +18,7 @@ import { layout, setFlex, media} from '../../theme/helpers'
 // GraphQl Queries
 export const getData = graphql`
   {
-    photo:allFile(filter: {relativePath: {regex: "/servicesIcons/"}}) {
+    photo:allFile(filter: {relativePath: {regex: "/familly/"}}) {
       edges {
         node {
           childImageSharp {
