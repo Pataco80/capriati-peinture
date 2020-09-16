@@ -13,13 +13,14 @@ import { setRadius, setShadow, media } from '../../theme/helpers'
 // GraphQl Queries
 
 // Component
-const ServiceGallery = ({shortName, fluidImage}) => {
+const ServiceGallery = ({shortName, fluidImage, altImg}) => {
+  console.log(altImg)
   // Component Variables
   
   // Render Component
   return (
     <ImageWrapper>
-      <GalleryImg fluid={fluidImage} shortName={shortName} />
+      <GalleryImg fluid={fluidImage} shortName={shortName} alt={altImg} title={altImg} />
     </ImageWrapper>
   )
 }

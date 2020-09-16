@@ -10,7 +10,7 @@ import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
 import {GatsbyButtonLink} from '../styledElements/Button'
 
 // Import data files
-import cardData from '../../data/cardData'
+import servicesData from '../../data/servicesData.json'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -18,32 +18,55 @@ import { layout, setFlex, media, setRadius, setColor,setShadow} from '../../them
 
 // GraphQl Queries
 export const getData = graphql`
-  {
-    servicesIcon:allFile(filter: {relativePath: {regex: "/servicesIcons/"}}) {
-      edges {
-        node {
-          childImageSharp {
-            fluid (maxWidth: 200) {
-              ...GatsbyImageSharpFluid_withWebp
-              originalName
-            }
-          }
-        }
-      }
-    }
-    featuredImg:allFile(filter: {relativePath: {regex: "/features/"}}) {
-      edges {
-        node {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_withWebp
-              originalName
-            }
+{
+  servicesIcon: allFile(filter: {relativePath: {regex: "/servicesIcons/"}}) {
+    edges {
+      node {
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid_withWebp
+            originalName
           }
         }
       }
     }
   }
+  featuredImg: allFile(filter: {relativePath: {regex: "/features/"}}) {
+    edges {
+      node {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+            originalName
+          }
+        }
+      }
+    }
+  }
+  servicesData: allServicesDataJson {
+    edges {
+      node {
+        id
+        name
+        shortName
+        icon
+        altIcon
+        featuredImg
+        altFeatured
+        competences {
+          id
+          text
+        }
+        gallery {
+          id
+          shortName
+          image
+          altImg
+        }
+      }
+    }
+  }
+}
 `
 
 // Component
@@ -71,7 +94,8 @@ export const getData = graphql`
         }
         <ServicesContent padding='0'>
           {
-            cardData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
+            servicesData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
+              console.log(gallery)
               const regExp = new RegExp(shortName, "i");
               return (
                 <>
@@ -156,7 +180,7 @@ const ServiceItemCard = styled(Link)`
   background-color:${setColor.mainWhite};
   margin-bottom:4rem;
   text-decoration:none;
-  ${setRadius(12)};
+  ${setRadius({allPx:12})};
   ${setShadow('medium')};
 
   &:hover {

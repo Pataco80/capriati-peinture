@@ -1,12 +1,12 @@
-export default [
+ [
   {
     "id":1,
     "name":"Plâtre",
     "shortName":"platre",
     "icon":"platre.png",
-    "altIcon":'Logo plâtre',
+    "altIcon":"Logo plâtre",
     "featuredImg":"platre.jpg",
-    "altFeatured":'photo featured plâtre',
+    "altFeatured":"photo featured plâtre",
     "competences":[
       {
         "id":1,
@@ -27,19 +27,22 @@ export default [
     ],
     "gallery":[
       {
+        "id":1,
         "shortName":"platre1",
         "image":"assets/images/gallery/services/platre1.jpg",
-        "altGallery":'platre1',
+        "altImg":"platre1"
       },
       {
+        "id":2,
         "shortName":"platre2",
         "image":"assets/images/gallery/services/platre2.jpg",
-        "altGallery":'platre2',
+        "altImg":"platre2"
       },
       {
+        "id":3,
         "shortName":"platre3",
         "image":"assets/images/gallery/services/platre3.jpg",
-        "altGallery":'platre3',
+        "altImg":"platre3"
       }
     ]
   },
@@ -48,9 +51,9 @@ export default [
     "name":"Peinture",
     "shortName":"peinture",
     "icon":"peinture.png",
-    "altIcon":'Logo peinture',
+    "altIcon":"Logo peinture",
     "featuredImg":"peinture.jpg",
-    "altFeatured":'photo featured peinture',
+    "altFeatured":"photo featured peinture",
     "competences":[
       {
         "id":1,
@@ -59,19 +62,22 @@ export default [
     ],
     "gallery":[
       {
+        "id":1,
         "shortName":"peinture1",
         "image":"assets/images/gallery/services/peinture1.jpg",
-        "altGallery":'peinture1',
+        "altImg":"peinture1"
       },
       {
+        "id":2,
         "shortName":"peinture2",
         "image":"assets/images/gallery/services/peinture2.jpg",
-        "altGallery":'peinture2',
+        "altImg":"peinture2"
       },
       {
+        "id":3,
         "shortName":"peinture3",
         "image":"assets/images/gallery/services/peinture3.jpg",
-        "altGallery":'peinture3',
+        "altImg":"peinture3"
       }
     ]
   },
@@ -80,9 +86,9 @@ export default [
     "name":"Papier-peint",
     "shortName":"papierPeint",
     "icon":"papierPeint.png",
-    "altIcon":'Logo Papier-Peint',
+    "altIcon":"Logo Papier-Peint",
     "featuredImg":"papierPeint.jpg",
-    "altFeatured":'photo featured Papier-Peint',
+    "altFeatured":"photo featured Papier-Peint",
     "competences":[
       {
         "id":1,
@@ -91,19 +97,22 @@ export default [
     ],
     "gallery":[
       {
+        "id":1,
         "shortName":"papierspeints1",
         "image":"assets/images/gallery/services/papierspeints1.jpg",
-        "altGallery":'papierspeints1',
+        "altImg":"papierspeints1"
       },
       {
+        "id":2,
         "shortName":"papierspeints2",
         "image":"assets/images/gallery/services/papierspeints2.jpg",
-        "altGallery":'papierspeints2',
+        "altImg":"papierspeints2"
       },
       {
+        "id":3,
         "shortName":"papierspeints3",
         "image":"assets/images/gallery/services/papierspeints3.jpg",
-        "altGallery":'papierspeints3',
+        "altImg":"papierspeints3"
       }
     ]
   },
@@ -112,9 +121,9 @@ export default [
     "name":"Décoration",
     "shortName":"decoration",
     "icon":"decoration.png",
-    "altIcon":'Logo decoration',
+    "altIcon":"Logo decoration",
     "featuredImg":"decoration.jpg",
-    "altFeatured":'photo featured decoration',
+    "altFeatured":"photo featured decoration",
     "competences":[
       {
         "id":1,
@@ -123,19 +132,22 @@ export default [
     ],
     "gallery":[
       {
+        "id":1,
         "shortName":"decoration1",
         "image":"assets/images/gallery/services/decoration1.jpg",
-        "altGallery":'decoration1',
+        "altImg":"decoration1"
       },
       {
+        "id":2,
         "shortName":"decoration2",
         "image":"assets/images/gallery/services/decoration2.jpg",
-        "altGallery":'decoration2',
+        "altImg":"decoration2"
       },
       {
+        "id":3,
         "shortName":"decoration3",
         "image":"assets/images/gallery/services/decoration3.jpg",
-        "altGallery":'decoration3',
+        "altImg":"decoration3"
       }
     ]
   },
@@ -144,9 +156,9 @@ export default [
     "name":"Giclage",
     "shortName":"giclage",
     "icon":"giclage.png",
-    "altIcon":'Logo giclage',
-    "featured":"giclage.jpg",
-    "altFeatured":'photo featured giclage',
+    "altIcon":"Logo giclage",
+    "featuredImg":"giclage.jpg",
+    "altFeatured":"photo featured giclage",
     "competences":[
       {
         "id":1,
@@ -155,19 +167,22 @@ export default [
     ],
     "gallery":[
       {
+        "id":1,
         "shortName":"giclage1",
         "image":"assets/images/gallery/services/giclage1.jpg",
-        "altGallery":'giclage1',
+        "altImg":"giclage1"
       },
       {
+        "id":2,
         "shortName":"giclage2",
         "image":"assets/images/gallery/services/giclage2.jpg",
-        "altGallery":'giclage2',
+        "altImg":"giclage2"
       },
       {
+        "id":3,
         "shortName":"giclage3",
         "image":"assets/images/gallery/services/giclage3.jpg",
-        "altGallery":'giclage3',
+        "altImg":"giclage3"
       }
     ]
   }

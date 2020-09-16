@@ -50,7 +50,6 @@ const ServiceItem = (props) => {
   const galleryList = gallery
   const windowSize = useWindowSize()
   const toHero = breakpoints.smTablet
-
   // Render Component
   return (
     <ServiceWrapper id={shortName} className={home ? 'home' : ''}>
@@ -58,14 +57,18 @@ const ServiceItem = (props) => {
       {
         windowSize < toHero || home ? 
         <ServiceSmallBanner padding='0'>
-          <ServiceIcon name={name} shortName={shortName} alt={altIcon} fluid={Icon}/>
+          <IconContainerCard>
+            <ServiceIcon name={name} shortName={shortName} alt={altIcon} fluid={Icon}/>
+          </IconContainerCard>
           <Title tag='h3' title={name}/>
         </ServiceSmallBanner>
         :
         <ServiceBcgImage name={name} shortName={shortName} fluid={featuredImage} altFeatured={altFeatured}>
           <ServiceBanner>
           <BannerContent padding='1rem'>
+          <IconContainer>
             <ServiceIcon name={name} shortName={shortName} alt={altIcon} fluid={Icon}/>
+          </IconContainer>
             <h3>{name}</h3>
             </BannerContent>
           </ServiceBanner>
@@ -85,16 +88,20 @@ const ServiceItem = (props) => {
         home ? '' :
         <GallerySection padding='3rem 0 5rem'>
         {
-          galleryList.map(({image, shortName}) => {
+          galleryList.map((props) => {
+            const {id, shortName, altImg} = props
+
             const regExp = new RegExp(shortName, "i");
             return (
               <ServiceGallery 
-                key={image}
+                key={id}
                 shortName={shortName}
+                title={shortName}
                 fluidImage={
                   galleryItem.find(({originalName}) => originalName.match(regExp))
                   .image
                 }
+                altImg={altImg}
               />
             )
           })
@@ -154,12 +161,21 @@ const ServiceBcgImage = styled(BcgImage)`
   margin-bottom:3rem;
 `
 
-const ServiceIcon = styled(Img)`
-  max-width:200px;
+const IconContainerCard = styled.div`
+  width:200px;
+  height: 200px;
 
-  ${media.greaterThan('smTablet')`
-    max-width:100px;
-  `}
+`
+
+const IconContainer = styled.div`
+  margin-right:1rem;
+  width:100px;
+  height: 100px;
+
+`
+
+const ServiceIcon = styled(Img)`
+height:inherit;
 `
 
 const ServiceBody = styled(Section)`
