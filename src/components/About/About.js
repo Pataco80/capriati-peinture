@@ -11,12 +11,12 @@ import Title from '../Title'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, setFlex, media} from '../../theme/helpers'
+import { layout, setFlex, media, setRadius, setShadow } from '../../theme/helpers'
 
 // GraphQl Queries
 export const getImage = graphql`
   {
-    profilImage: file(relativePath: {eq: "images/profilImage.png"}) {
+    profilImage: file(relativePath: {eq: "images/familly/vincent.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
@@ -44,7 +44,7 @@ const About = (props) => {
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
         </AboutArticle>
         <AboutImgContainer>
-          <Img fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
+          <ProfileImage fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
         </AboutImgContainer>
       </AboutContent>
       {
@@ -86,6 +86,10 @@ const AboutImgContainer = styled.div`
   width:100%;
   max-width:300px;
   min-height:100px;
+`
+const ProfileImage = styled(Img)`
+  ${setRadius({allPc:50})};
+  ${setShadow('light')};
 `
 
 const AboutLink = styled(GatsbyButtonLink)`

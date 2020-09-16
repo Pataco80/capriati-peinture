@@ -12,7 +12,7 @@ import historyData from '../../data/historyData'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, setFlex, media} from '../../theme/helpers'
+import { layout, setFlex, media, setRadius, setShadow } from '../../theme/helpers'
 
 // GraphQl Queries
 export const getData = graphql`
@@ -21,7 +21,7 @@ export const getData = graphql`
       edges {
         node {
           childImageSharp {
-            fluid (maxWidth: 200) {
+            fluid (maxWidth: 300) {
               ...GatsbyImageSharpFluid_withWebp
               originalName
             }
@@ -51,7 +51,7 @@ export const getData = graphql`
         <HistoryContent>
           <Title tag='h2' title='Notre Histore' titleSection/>
           {
-            historyData.map(({name, shortName, actions, gallery, altIcon, altFeatured}) => {
+            historyData.map(({name, shortName, altPhoto, actions}) => {
 
               const regExp = new RegExp(shortName, "i");
               const actionsList = actions
@@ -60,16 +60,17 @@ export const getData = graphql`
                   <ItemWrapper>
                     <ItemProfile>
                       <ItemImage fluid={historyPhoto.find(({originalName}) => originalName.match(regExp))
-                      .photo}/>
+                      .photo} alt={altPhoto} />
                       <ItemName>{name}</ItemName>
                     </ItemProfile>
                     <ItemDataContent>
                       {
-                        actionsList.map((item,i)=>{
+                        actionsList.map((item) => {
+                          const {id,date,text} = item
                           return (
-                            <ItemData Key={i}>
-                              <Date>{item.date}</Date>
-                              <Action>{item.text}</Action>
+                            <ItemData Key={id}>
+                              <Date>{date}</Date>
+                              <Action>{text}</Action>
                             </ItemData>
                           )
                         })
@@ -110,6 +111,10 @@ const ItemWrapper = styled.div`
   ${setFlex({flDir:'column'})};
   margin-bottom:2rem;
 
+  &:last-child {
+    margin-bottom:0;
+  }
+
   ${media.greaterThan('tablet')`
     ${setFlex({flDir:'row'})};
     flex-wrap:nowrap;
@@ -120,15 +125,17 @@ const ItemWrapper = styled.div`
 
 const ItemProfile = styled.div`
   width:100%;
-  max-width:25rem;
+  max-width:18.75rem;
 
   ${media.greaterThan('tablet')`
     width:30%;
-    margin-right:2rem;
+    margin-right:3rem;
   `}
 `
 
 const ItemImage = styled(Img)`
+  ${setRadius({allPc:50})};
+  ${setShadow('light')};
 `
 
 const ItemName = styled.h4`
