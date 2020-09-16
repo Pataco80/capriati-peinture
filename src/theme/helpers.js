@@ -158,16 +158,23 @@ export const setBorder = ({
   return `${setPxToRem(size)} ${style} ${color}`
 }
 
-export const setRadius = (all = null, {
+export const setRadius = ({
+  allPx = null, 
+  allPc = null,
   radius = 4,
   tl = radius,
   tr = radius,
   bl = radius,
   br = radius
 } = {}) => {
-  if(all){
+  if(allPx){
     return`
-    border-radius: ${setPxToRem(all)};
+    border-radius: ${setPxToRem(allPx)};
+    `
+  }
+  else if(allPc){
+    return`
+    border-radius: ${allPc}%;
     `
   }
 

@@ -12,7 +12,7 @@ const ButtonStyles = css`
   ${setTransition()};
   cursor: pointer;
   background:none;
-  ${setRadius(12)};
+  ${setRadius({allPx:12})};
   
   ${({ primary }) => primary && `
     color: ${setColor.mainWhite};
