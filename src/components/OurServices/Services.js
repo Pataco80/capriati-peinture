@@ -58,7 +58,6 @@ export const getData = graphql`
           text
         }
         gallery {
-          id
           shortName
           image
           altImg
@@ -95,7 +94,6 @@ export const getData = graphql`
         <ServicesContent padding='0'>
           {
             servicesData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
-              console.log(gallery)
               const regExp = new RegExp(shortName, "i");
               return (
                 <>
@@ -187,9 +185,6 @@ const ServiceItemCard = styled(Link)`
     ${setShadow('dark')};
   }
 
-  &:last-child {
-    margin-bottom:1rem;
-  }
 
   ${media.greaterThan('tablet')`
     max-width:45%;

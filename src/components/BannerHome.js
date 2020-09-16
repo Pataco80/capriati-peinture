@@ -20,7 +20,7 @@ const getImage = graphql`
     logoImg: file(relativePath: {eq: "images/big-logo.png"}) {
       childImageSharp {
         fluid (maxWidth: 500) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
