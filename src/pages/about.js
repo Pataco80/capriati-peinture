@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import About from '../components/About/About'
 import History from '../components/About/History'
+import Team from '../components/About/Team'
 
 import {setColor} from '../theme/helpers'
 
@@ -27,6 +28,7 @@ const aboutPage = ({data}) => {
       <Hero title='A Propos de nous' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <About about />
       <History background={setColor.mainGreyL3}/>
+      <Team />
     </Layout>
   )
 }
