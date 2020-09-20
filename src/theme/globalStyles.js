@@ -33,17 +33,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 h1, .h1 {
   font-size: 3.713rem;
-  line-height: calc(3.713rem + 1.8vw); /* Responsive Vertical Rhythm */
+  line-height: calc(3.713rem + 2.5vw); /* Responsive Vertical Rhythm */
 }
 
 h2, .h2 {
   font-size: 2.856rem;
-  line-height: calc(2.856rem + 1vw); /* Responsive Vertical Rhythm */
+  line-height: calc(2.856rem + 2.25vw); /* Responsive Vertical Rhythm */
 }
 
 h3, .h3 {
   font-size: 2.197rem;
-  line-height: calc(2.197rem + 1vw); /* Responsive Vertical Rhythm */
+  line-height: calc(2.197rem + 1.5vw); /* Responsive Vertical Rhythm */
 }
 
 h4, .h4 {

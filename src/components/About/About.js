@@ -16,7 +16,7 @@ import { layout, setFlex, media, setRadius, setShadow } from '../../theme/helper
 // GraphQl Queries
 export const getImage = graphql`
   {
-    profilImage: file(relativePath: {eq: "images/familly/vincent.jpg"}) {
+    profilImage: file(relativePath: {eq: "images/familly/vincentCapriati.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
