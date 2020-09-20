@@ -29,6 +29,22 @@ export const getData = graphql`
         }
       }
     }
+    historyData:allHistoryDataJson {
+    edges {
+      node {
+        id
+        name
+        shortName
+        photo
+        altPhoto
+        actions {
+          id
+          date
+          text
+        }
+      }
+    }
+  }
   }
 `
 
@@ -51,13 +67,13 @@ export const getData = graphql`
         <HistoryContent>
           <Title tag='h2' title='Notre Histore' titleSection/>
           {
-            historyData.map(({name, shortName, altPhoto, actions}) => {
+            historyData.map(({id, name, shortName, altPhoto, actions}) => {
 
               const regExp = new RegExp(shortName, "i");
               const actionsList = actions
 
               return (
-                  <ItemWrapper>
+                  <ItemWrapper key={id}>
                     <ItemProfile>
                       <ItemImage fluid={historyPhoto.find(({originalName}) => originalName.match(regExp))
                       .photo} alt={altPhoto} />

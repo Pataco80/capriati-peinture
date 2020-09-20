@@ -1,9 +1,9 @@
-export default [
+[
   {
     "id":1,
     "name":"Vincenzo Capriati",
-    "shortName":"vincenzo",
-    "photo":"vincenzo.jpg",
+    "shortName":"vincenzoCapriati",
+    "photo":"vincenzoCapriati.jpg",
     "altPhoto":"Vincenzo Capriati",
     "actions": [
       {
@@ -20,14 +20,14 @@ export default [
         "id":3,
         "date":"1986",
         "text":"Claudio, frère de Pierre, rejoint le duo."
-      },
-    ],
+      }
+    ]
   },
   {
     "id":2,
     "name":"Pierre Capriati",
-    "shortName":"pierre",
-    "photo":"pierre.jpg",
+    "shortName":"pierreCapriati",
+    "photo":"pierreCapriati.jpg",
     "altPhoto":"Pierre Capriati",
     "actions": [
       {
@@ -59,21 +59,21 @@ export default [
         "id":6,
         "date":"2015",
         "text":"Vincent obtient sa maîtrise Fédérale."
-      },
-    ],
+      }
+    ]
   },
   {
     "id":3,
     "name":"Vincent Capriati",
-    "shortName":"vincent",
-    "photo":"vincent.jpg",
+    "shortName":"vincentCapriati",
+    "photo":"vincentCapriati.jpg",
     "altPhoto":"Vincent Capriati",
     "actions": [
       {
         "id":1,
         "date":"2015",
         "text":"Vincent obtient sa maîtrise Fédérale."
-      },
-    ],
+      }
+    ]
   }
 ]
