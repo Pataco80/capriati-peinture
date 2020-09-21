@@ -20,7 +20,7 @@ export const Section = styled.section`
   ${SectionCss}
 `
 export const SectionContent = styled.div`
-  padding: ${props => props.padding ? props.padding : `1rem 0`};
+  padding: ${props => props.padding ? props.padding : `0`};
   width:100%;
 `
 
@@ -31,6 +31,6 @@ export const SectionCenter = styled.section`
 
 export const SectionContentCenter = styled.div`
   ${layout()};
-  padding: ${props => props.padding ? props.padding : `1rem 0`};
+  padding: ${props => props.padding ? props.padding : `0`};
   width:100%;
 `
