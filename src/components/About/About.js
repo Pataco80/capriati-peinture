@@ -40,8 +40,7 @@ const About = (props) => {
       }
       <AboutContent>
         <AboutArticle>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor consequatur a tempora nihil asperiores quibusdam cupiditate dicta ut atque nemo rem ipsa vero et dolorem eveniet, esse expedita facere voluptates?</p>
+          <p>Bienvenue chez Capriati peinture, entreprise familiale spécialisée dans les travaux d’entretien et de rénovation depuis plus de 40 ans. Bénéficiant d’une solide expérience afin de satisfaire à vos exigences pour une prestation de qualité, notre équipe de professionnels qualifiés, motivés et passionnés se tient à votre disposition pour vous accompagner à la réalisation de vos projets. </p>
         </AboutArticle>
         <AboutImgContainer>
           <ProfileImage fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
@@ -65,7 +64,7 @@ const AboutWrapper = styled(Section)`
 
 const AboutContent = styled(SectionContent)`
   ${layout()};
-  ${setFlex({flDir:'column',wrap:'nowrap'})};
+  ${setFlex({flDir:'column',wrap:'wrap'})};
 
   ${media.greaterThan('tablet')`
     ${setFlex({flDir:'row'})};

@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 // Import Components for App
 import Title from '../Title'
+import TeamTable from './teamTable'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
 
 // Import data files
@@ -41,6 +42,16 @@ export const getData = graphql`
         date
       }
     }
+    cFc:allTeanCfcDataJson {
+    nodes {
+      name
+    }
+  }
+  studeents:allTeamStudentsDataJson {
+    nodes {
+      name
+    }
+  }
   }
 `
 
@@ -50,12 +61,13 @@ export const getData = graphql`
     const {background, padding} = props
     const data = useStaticQuery(getData)
     const photoList = data.photo.edges
+    const teamCfc = data.cFc.nodes
+    const teamStudents = data.studeents.nodes
 
     const teamPhoto = photoList.map(({ node }) => ({
       photo: node.childImageSharp.fluid,
       originalName: node.childImageSharp.fluid.originalName,
     }))
-console.log(data)
 
     // Render Component
     return (
@@ -90,7 +102,10 @@ console.log(data)
             })
           }    
         </TeamContent>
-
+        <TeamContent>
+          <TeamTable team={teamCfc} title='Nos employés avec CFC' />
+          <TeamTable team={teamStudents} title='Nos aprentis' />
+        </TeamContent>
       </TeamWrapper>
     )
   }
@@ -160,34 +175,6 @@ const ItemDataContent = styled.div`
 ${setFlex({flDir:'column',x:'flex-start',y:'center'})};
 text-align:center;
 `
-
-const ServiceItemCard = styled.div`
-  ${setFlex({flDir:'column',x:'flex-start',y:'flex-start'})};
-  flex-flow:wrap;
-  align-content:flex-start;
-  width:100%;
-  max-width:400px;
-  color:${setColor.mainBlack};
-  background-color:${setColor.mainWhite};
-  margin-bottom:4rem;
-  text-decoration:none;
-  ${setRadius({allPx:12})};
-  ${setShadow('medium')};
-
-  &:hover {
-    ${setShadow('dark')};
-  }
-
-
-  ${media.greaterThan('tablet')`
-    max-width:45%;
-  `}
-
-  ${media.greaterThan('desktop')`
-    max-width:32%;
-  `}
-`
-
 
 
 export default Team

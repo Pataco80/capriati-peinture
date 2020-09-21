@@ -123,22 +123,6 @@ const HistoryContent = styled(SectionContentCenter)`
   `}
 `
 
-const ItemWrapper = styled.div`
-  ${setFlex({flDir:'column'})};
-  margin-bottom:2rem;
-
-  &:last-child {
-    margin-bottom:0;
-  }
-
-  ${media.greaterThan('tablet')`
-    ${setFlex({flDir:'row'})};
-    flex-wrap:nowrap;
-    margin-bottom:4rem;
-  `}
-
-`
-
 const ItemProfile = styled.div`
   width:100%;
   max-width:18.75rem;
@@ -166,15 +150,49 @@ const ItemDataContent = styled.table`
 `
 const ItemData = styled.tr`
   width:100%;
+  margin-bottom:1.5rem;
+
+  ${media.greaterThan('tablet')`
+    margin-bottom:1rem;
+  `}  
 `
 
 const Date = styled.td`
-  padding-right:1rem;
+width:100%;
+${media.greaterThan('tablet')`
+width:auto;
+padding-right:1rem;
+  `} 
+
+
+
 `
 
 const Action = styled.td`
+width:100%;
   padding-bottom:1rem;
 `
 
+const ItemWrapper = styled.div`
+  ${setFlex({flDir:'column'})};
+  margin-bottom:2rem;
+
+  &:last-child {
+    margin-bottom:0;
+  }
+
+  ${media.greaterThan('tablet')`
+    ${setFlex({flDir:'row'})};
+    flex-wrap:nowrap;
+    margin-bottom:4rem;
+
+    &:nth-child(odd) {
+      flex-direction:row-reverse;
+      ${ItemProfile} {
+        margin:0 0 0 3rem;
+      }
+    }
+  `}
+`
 
 export default History
