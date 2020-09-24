@@ -204,18 +204,18 @@ export const setTransition = ({
 
 export const setShadow = (style = '', {inset = '', x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100} = {}) => {
   if (style === 'light') {
-    return `box-shadow: ${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
+    return `${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
   }
   if (style === 'medium') {
-    return `box-shadow: ${inset} 0 3px 12px ${convertHexToRGBA(setColor.mainBlack,50)};`
+    return `${inset} 0 3px 12px ${convertHexToRGBA(setColor.mainBlack,50)};`
   }
   if (style === 'dark') {
-    return `box-shadow: ${inset} 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
+    return `${inset} 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
   }
   if (style === 'none') {
-    return `box-shadow: none;`
+    return `none;`
   }
   else {
-    return `box-shadow: ${y}px ${x}px ${blur}px ${convertHexToRGBA(color,opacity)};`
+    return `${y}px ${x}px ${blur}px ${convertHexToRGBA(color,opacity)};`
   }
 }
