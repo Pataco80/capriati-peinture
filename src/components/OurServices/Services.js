@@ -9,9 +9,6 @@ import ServiceItem from './ServiceItem'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
 import {GatsbyButtonLink} from '../styledElements/Button'
 
-// Import data files
-import servicesData from '../../data/servicesData.json'
-
 // Import styled-components and helpers
 import styled from 'styled-components'
 import { layout, setFlex, media, setRadius, setColor,setShadow} from '../../theme/helpers'
@@ -44,24 +41,22 @@ export const getData = graphql`
     }
   }
   servicesData: allServicesDataJson {
-    edges {
-      node {
+    nodes {
+      id
+      name
+      shortName
+      icon
+      altIcon
+      featuredImg
+      altFeatured
+      competences {
         id
-        name
+        text
+      }
+      gallery {
         shortName
-        icon
-        altIcon
-        featuredImg
-        altFeatured
-        competences {
-          id
-          text
-        }
-        gallery {
-          shortName
-          image
-          altImg
-        }
+        image
+        altImg
       }
     }
   }
@@ -75,6 +70,7 @@ export const getData = graphql`
     const data = useStaticQuery(getData)
     const servicesIconList = data.servicesIcon.edges
     const servicesFeaturedList = data.featuredImg.edges
+    const servicesJsonData = data.servicesData.nodes
 
     const servicefeatured = servicesFeaturedList.map(({ node }) => ({
       featuredImg: node.childImageSharp.fluid,
@@ -93,8 +89,13 @@ export const getData = graphql`
         }
         <ServicesContent padding='0'>
           {
-            servicesData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
+            servicesJsonData.map(({name, shortName, competences, gallery, altIcon, altFeatured}) => {
               const regExp = new RegExp(shortName, "i");
+              const iconPath = serviceIcon.find(({originalName}) => originalName.match(regExp))
+              .icon
+              const featuredImgPath = servicefeatured.find(({originalName}) => originalName.match(regExp))
+              .featuredImg
+
               return (
                 <>
                 {
@@ -103,10 +104,7 @@ export const getData = graphql`
                     <ServiceItem 
                     key={name}
                     shortName={shortName}
-                    Icon={
-                      serviceIcon.find(({originalName}) => originalName.match(regExp))
-                      .icon
-                    }
+                    Icon={iconPath}
                     name={name}
                     competences={competences}
                     home={home}
@@ -118,14 +116,8 @@ export const getData = graphql`
                 <ServiceItem 
                   key={name}
                   shortName={shortName}
-                  Icon={
-                    serviceIcon.find(({originalName}) => originalName.match(regExp))
-                    .icon
-                  }
-                  featuredImage={
-                    servicefeatured.find(({originalName}) => originalName.match(regExp))
-                    .featuredImg
-                  }
+                  Icon={iconPath}
+                  featuredImage={featuredImgPath}
                   name={name}
                   competences={competences}
                   gallery={gallery}
