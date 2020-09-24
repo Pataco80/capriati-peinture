@@ -1,25 +1,25 @@
 import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
-import {graphql, useStaticQuery} from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import { Section , SectionContent } from '../styledElements/SectionStyled'
 import {GatsbyButtonLink} from '../styledElements/Button'
 import Title from '../Title'
+import Avatar from '../Avatar'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, setFlex, media, setRadius, setShadow } from '../../theme/helpers'
+import { layout, setFlex, media } from '../../theme/helpers'
 
 // GraphQl Queries
 export const getImage = graphql`
   {
     profilImage: file(relativePath: {eq: "images/familly/vincentCapriati.jpg"}) {
       childImageSharp {
-        fluid (maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
+        fluid (maxWidth: 250) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -32,6 +32,7 @@ const About = (props) => {
   const {home,background, padding} = props
   const { profilImage } = useStaticQuery(getImage)
 
+
   // Render Component
   return (
     <AboutWrapper background={background} padding={padding}>
@@ -40,10 +41,11 @@ const About = (props) => {
       }
       <AboutContent>
         <AboutArticle>
-          <p>Bienvenue chez Capriati peinture, entreprise familiale spécialisée dans les travaux d’entretien et de rénovation depuis plus de 40 ans. Bénéficiant d’une solide expérience afin de satisfaire à vos exigences pour une prestation de qualité, notre équipe de professionnels qualifiés, motivés et passionnés se tient à votre disposition pour vous accompagner à la réalisation de vos projets. </p>
+          <p>Bienvenue chez Capriati peinture, entreprise familiale spécialisée dans les travaux d’entretien et de rénovation depuis plus de 40 ans.</p>
+          <p>Bénéficiant d’une solide expérience afin de satisfaire à vos exigences pour une prestation de qualité, notre équipe de professionnels qualifiés, motivés et passionnés se tient à votre disposition pour vous accompagner à la réalisation de vos projets. </p>
         </AboutArticle>
         <AboutImgContainer>
-          <ProfileImage fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
+          <Avatar fluid={profilImage.childImageSharp.fluid} alt='Vincent Capriati' />
         </AboutImgContainer>
       </AboutContent>
       {
@@ -64,7 +66,7 @@ const AboutWrapper = styled(Section)`
 
 const AboutContent = styled(SectionContent)`
   ${layout()};
-  ${setFlex({flDir:'column',wrap:'wrap'})};
+  ${setFlex({flDir:'column',wrap:'nowrap'})};
 
   ${media.greaterThan('tablet')`
     ${setFlex({flDir:'row'})};
@@ -76,23 +78,22 @@ const AboutArticle = styled.article`
 
   ${media.greaterThan('tablet')`
     width:60%;
-    margin-right:3rem;
   `}
 
 `
 
 const AboutImgContainer = styled.div`
-  width:100%;
-  max-width:300px;
-  min-height:100px;
-`
-const ProfileImage = styled(Img)`
-  ${setRadius({allPc:50})};
-  ${setShadow('light')};
+width:100%;
+  max-width:250px;
+  padding:2rem 0 0 0;
+
+  ${media.greaterThan('tablet')`
+    padding:0 0 0 1.5rem;
+  `}
 `
 
 const AboutLink = styled(GatsbyButtonLink)`
-  margin-top:3rem;
+  margin:3rem 0 1rem;
 `
 
 export default About

@@ -5,12 +5,12 @@ import Img from 'gatsby-image'
 import {graphql, useStaticQuery} from 'gatsby'
 
 // Import Components for App
-import MainMenu from './MainNavigation/links'
+import MainMenu from '../MainNavigation/links'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import {Section, SectionCenter} from './styledElements/SectionStyled'
-import { setColor } from '../theme/helpers'
+import {Section, SectionCenter} from '../styledElements/SectionStyled'
+import { setColor } from '../../theme/helpers'
 
 // GraphQl Queries
 const getImage = graphql`

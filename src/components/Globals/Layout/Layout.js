@@ -4,23 +4,21 @@ import PropTypes from 'prop-types'
 
 
 // Import Components for App
-import MainNavigation from './MainNavigation'
-import Footer from './Footer'
+import MainNavigation from '../../MainNavigation/MainNavigation'
+import Footer from '../Footer'
 
 // Import styled-components and helpers
-import styled from 'styled-components'
-import GlobalStyles from '../theme/globalStyles'
-import { setFlex, setColor, setPxToRem } from '../theme/helpers'
-//import useScrollVertical from '../hooks/useScrollVertical'
+import GlobalStyles from '../../../theme/globalStyles'
+import * as S from './LayoutStyled'
 
-// GraphQl Queries
+//import useScrollVertical from '../hooks/useScrollVertical'
 
 // Component
 const Layout = ({ children }) => {
   // Component Variables
-  
   const [scrolled, setScrolled] = useState(false)
 
+  // Hooks Effects
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 5
@@ -40,39 +38,20 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles/>
-      <AppWrapper>
+      <S.AppWrapper>
         <MainNavigation toScroll={scrolled}/>
-        <PageContainer className={scrolled ? `isScroll` : ``}>
+        <S.PageContainer className={scrolled ? `isScroll` : ``}>
           {children}
-        </PageContainer>
+        </S.PageContainer>
         <Footer/>
-      </AppWrapper>
-      
+      </S.AppWrapper>
     </>
   )
 }
-
 
 // React PropTypes and more...
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-// Styles from styled-components
-const AppWrapper = styled.div`
-  background-color: ${setColor.mainWhite};
-  width:100vw;
-  min-height:100vh;
-`
-
-const PageContainer = styled.main`
-  ${setFlex({flDir:'column'})};
-  z-index:2;
-
-  &.isScroll {
-    margin-top:${setPxToRem(62)};
-  }
-`
-
 
 export default Layout

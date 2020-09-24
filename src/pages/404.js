@@ -1,6 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/Globals/Layout/Layout'
 import Hero from '../components/Hero'
 
 import { GatsbyButtonLink } from '../components/styledElements/Button'

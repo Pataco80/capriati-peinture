@@ -1,10 +1,10 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/Globals/Layout/Layout'
 import Hero from '../components/Hero'
 import About from '../components/About/About'
-import History from '../components/About/History'
-import Team from '../components/About/Team'
+import History from '../components/History/History'
+import Team from '../components/Team/Team'
 
 import {setColor} from '../theme/helpers'
 

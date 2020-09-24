@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import Components for App
-import Layout from '../components/Layout'
+import Layout from '../components/Globals/Layout/Layout'
 import Hero from '../components/Hero'
 import About from '../components/About/About'
 import Services from '../components/OurServices/Services'

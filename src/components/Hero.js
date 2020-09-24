@@ -3,7 +3,7 @@ import React from 'react'
 // Import Components for App
 import BcgImage from './BcgImage'
 import VideoBcg from './VideoBcg'
-import BannerHome from './BannerHome'
+import BannerHome from './BannerHome/BannerHome'
 import Banner from './Banner'
 
 // Import styled-components and helpers
