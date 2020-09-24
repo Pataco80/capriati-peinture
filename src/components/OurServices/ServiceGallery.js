@@ -42,7 +42,7 @@ const ImageWrapper = styled.div`
 const GalleryImg = styled(Img)`
   width:100%;
   ${setRadius({allPx:12})};
-  ${setShadow('medium')};
+  box-shadow:${setShadow('medium')};
 `
 
 

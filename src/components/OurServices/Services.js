@@ -179,10 +179,10 @@ const ServiceItemCard = styled(Link)`
   margin-bottom:4rem;
   text-decoration:none;
   ${setRadius({allPx:12})};
-  ${setShadow('medium')};
+  box-shadow:${setShadow('medium')};
 
   &:hover {
-    ${setShadow('dark')};
+    box-shadow:${setShadow('dark')};
   }
 
 
@@ -196,7 +196,7 @@ const ServiceItemCard = styled(Link)`
 `
 
 const ServicesLink = styled(GatsbyButtonLink)`
-  margin-top:3rem;
+  margin:3rem 0 1rem;
 `
 
 
