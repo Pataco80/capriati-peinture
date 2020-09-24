@@ -8,7 +8,6 @@ import { media} from '../../theme/helpers'
 const Teamtable = (props) => {
   const {team, title} = props
 
-  console.log(team)
   return (
     <TeamWrapper>
       <Title tag='h3' title={title} />
@@ -18,7 +17,6 @@ const Teamtable = (props) => {
             return <TeamItem>{name}</TeamItem>
           })
         }
-  
       </ul>
     </TeamWrapper>
   )

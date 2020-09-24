@@ -2,18 +2,17 @@ import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 // Import Components for App
 import Title from '../Title'
+import TeamCadres from './TeamCadres'
 import TeamTable from './teamTable'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
 
 // Import data files
-import teamCadreData from '../../data/teamCadreData.json'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { layout, setFlex, media, setRadius, setShadow, setColor } from '../../theme/helpers'
+import { layout, setFlex, media } from '../../theme/helpers'
 
 // GraphQl Queries
 export const getData = graphql`
@@ -23,14 +22,14 @@ export const getData = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
               originalName
             }
           }
         }
       }
     }
-    teamCadre:allTeamCadreDataJson {
+    teamCadres:allTeamCadresDataJson {
       nodes {
         id
         name
@@ -43,15 +42,15 @@ export const getData = graphql`
       }
     }
     cFc:allTeanCfcDataJson {
-    nodes {
-      name
+      nodes {
+        name
+      }
     }
-  }
-  studeents:allTeamStudentsDataJson {
-    nodes {
-      name
+    studeents:allTeamStudentsDataJson {
+      nodes {
+        name
+      }
     }
-  }
   }
 `
 
@@ -61,6 +60,7 @@ export const getData = graphql`
     const {background, padding} = props
     const data = useStaticQuery(getData)
     const photoList = data.photo.edges
+    const teamCadres = data.teamCadres.nodes
     const teamCfc = data.cFc.nodes
     const teamStudents = data.studeents.nodes
 
@@ -74,34 +74,9 @@ export const getData = graphql`
       <TeamWrapper  background={background} padding={padding}>
         <Title tag='h2' title='Notre Équipe' titleSection/>
         <TeamContent>
-          {
-            teamCadreData.map(({name, shortName, altPhoto, job, certifications, date}) => {
-
-              const regExp = new RegExp(shortName, "i");
-
-              return (
-                  
-                  <ItemWrapper>
-                    <ItemProfile>
-                      <ItemImage fluid={teamPhoto.find(({originalName}) => originalName.match(regExp))
-                      .photo} alt={altPhoto} />
-                      <ItemName>{name}</ItemName>
-                    </ItemProfile>
-                    <ItemDataContent>
-                    <h5>{job}</h5>
-                    {
-                      certifications.map((item,i) => {
-                      return <p Key={i}>{item}</p>
-                      })
-                    }
-                    
-                    <p>{date}</p>
-                    </ItemDataContent>
-                  </ItemWrapper>
-              )
-            })
-          }    
-        </TeamContent>
+          
+          <TeamCadres teamPhoto={teamPhoto} team={teamCadres}/>
+        </TeamContent>    
         <TeamContent>
           <TeamTable team={teamCfc} title='Nos employés avec CFC' />
           <TeamTable team={teamStudents} title='Nos aprentis' />
@@ -130,51 +105,6 @@ const TeamContent = styled(SectionContentCenter)`
   `}
 `
 
-
-const ItemWrapper = styled.article`
-  ${setFlex({flDir:'column',x:'center',y:'flex-start'})};
-  flex-flow:wrap;
-  align-content:flex-start;
-  width:100%;
-  max-width:400px;
-  color:${setColor.mainBlack};
-  background-color:${setColor.mainWhite};
-  margin-bottom:3rem;
-  text-decoration:none;
-  padding:0 1rem;
-
-  &:last-child {
-    margin-bottom:0;
-  }
-
-  ${media.greaterThan('tablet')`
-    max-width:45%;
-  `}
-
-  ${media.greaterThan('desktop')`
-    max-width:30%;
-  `}  
-`
-
-const ItemProfile = styled.div`
-${setFlex({flDir:'column'})};
-
-`
-
-const ItemImage = styled(Img)`
-  ${setRadius({allPc:50})};
-  ${setShadow('light')};
-  max-width:300px;
-`
-
-const ItemName = styled.h3`
-  text-align:center;
-`
-
-const ItemDataContent = styled.div`
-${setFlex({flDir:'column',x:'flex-start',y:'center'})};
-text-align:center;
-`
 
 
 export default Team
