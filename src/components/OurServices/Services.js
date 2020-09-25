@@ -7,7 +7,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Title from '../Title'
 import ServiceItem from './ServiceItem'
 import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
-import {GatsbyButtonLink} from '../styledElements/Button'
+import {GatsbyButtonLink} from '../styledElements/ButtonsStyled'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -65,6 +65,7 @@ export const getData = graphql`
 
 // Component
   const Services = (props) => {
+
     // Component Variables
     const {home, background, padding} = props
     const data = useStaticQuery(getData)
@@ -72,15 +73,17 @@ export const getData = graphql`
     const servicesFeaturedList = data.featuredImg.edges
     const servicesJsonData = data.servicesData.nodes
 
+    // Component Functions
     const servicefeatured = servicesFeaturedList.map(({ node }) => ({
       featuredImg: node.childImageSharp.fluid,
       originalName: node.childImageSharp.fluid.originalName,
     }))
+
     const serviceIcon = servicesIconList.map(({ node }) => ({
       icon: node.childImageSharp.fluid,
       originalName: node.childImageSharp.fluid.originalName,
     }))
-    
+
     // Render Component
     return (
       <ServicesWrapper  background={background} padding={padding}>
@@ -99,9 +102,9 @@ export const getData = graphql`
               return (
                 <>
                 {
-                  home ? 
+                  home ?
                   <ServiceItemCard to={`/services/#${shortName}/`} className='cartelien'>
-                    <ServiceItem 
+                    <ServiceItem
                     key={name}
                     shortName={shortName}
                     Icon={iconPath}
@@ -111,37 +114,30 @@ export const getData = graphql`
                     altIcon={altIcon}
                     />
                   </ServiceItemCard>
-                  
-                :
-                <ServiceItem 
-                  key={name}
-                  shortName={shortName}
-                  Icon={iconPath}
-                  featuredImage={featuredImgPath}
-                  name={name}
-                  competences={competences}
-                  gallery={gallery}
-                  altIcon={altIcon}
-                  altFeatured={altFeatured}
-                />
+                  :
+                  <ServiceItem
+                    key={name}
+                    shortName={shortName}
+                    Icon={iconPath}
+                    featuredImage={featuredImgPath}
+                    name={name}
+                    competences={competences}
+                    gallery={gallery}
+                    altIcon={altIcon}
+                    altFeatured={altFeatured}
+                  />
                 }
                 </>
-                
-                
               )
             })
-          }    
+          }
         </ServicesContent>
         {
-          home ? <ServicesLink primary to='/services/' >En savoir plus</ServicesLink>: '' 
+          home ? <ServicesLink primary to='/services/' >En savoir plus</ServicesLink>: ''
         }
       </ServicesWrapper>
     )
   }
-
-
-  // React PropTypes and more...
-
 
 // Styles from styled-components
 const ServicesWrapper = styled(Section)`
@@ -190,6 +186,5 @@ const ServiceItemCard = styled(Link)`
 const ServicesLink = styled(GatsbyButtonLink)`
   margin:3rem 0 1rem;
 `
-
 
 export default Services

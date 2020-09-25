@@ -2,13 +2,12 @@ import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
 import { graphql, useStaticQuery } from 'gatsby'
+
 // Import Components for App
 import Title from '../Title'
 import TeamCadres from './TeamCadres'
 import TeamTable from './teamTable'
-import {Section, SectionContentCenter} from '../styledElements/SectionStyled'
-
-// Import data files
+import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -55,39 +54,36 @@ export const getData = graphql`
 `
 
 // Component
-  const Team = (props) => {
-    // Component Variables
-    const {background, padding} = props
-    const data = useStaticQuery(getData)
-    const photoList = data.photo.edges
-    const teamCadres = data.teamCadres.nodes
-    const teamCfc = data.cFc.nodes
-    const teamStudents = data.studeents.nodes
+const Team = (props) => {
 
-    const teamPhoto = photoList.map(({ node }) => ({
-      photo: node.childImageSharp.fluid,
-      originalName: node.childImageSharp.fluid.originalName,
-    }))
+  // Component Variables
+  const { background, padding } = props
+  const data = useStaticQuery(getData)
+  const photoList = data.photo.edges
+  const teamCadres = data.teamCadres.nodes
+  const teamCfc = data.cFc.nodes
+  const teamStudents = data.studeents.nodes
 
-    // Render Component
-    return (
-      <TeamWrapper  background={background} padding={padding}>
-        <Title tag='h2' title='Notre Équipe' titleSection/>
-        <TeamContent>
-          
-          <TeamCadres teamPhoto={teamPhoto} team={teamCadres}/>
-        </TeamContent>    
-        <TeamContent>
-          <TeamTable team={teamCfc} title='Nos employés avec CFC' />
-          <TeamTable team={teamStudents} title='Nos aprentis' />
-        </TeamContent>
-      </TeamWrapper>
-    )
-  }
+  // Component Functions
+  const teamPhoto = photoList.map(({ node }) => ({
+    photo: node.childImageSharp.fluid,
+    originalName: node.childImageSharp.fluid.originalName,
+  }))
 
-
-  // React PropTypes and more...
-
+  // Render Component
+  return (
+    <TeamWrapper  background={background} padding={padding}>
+      <Title tag='h2' title='Notre Équipe' titleSection/>
+      <TeamContent>
+        <TeamCadres teamPhoto={teamPhoto} team={teamCadres}/>
+      </TeamContent>
+      <TeamContent>
+        <TeamTable team={teamCfc} title='Nos employés avec CFC' />
+        <TeamTable team={teamStudents} title='Nos aprentis' />
+      </TeamContent>
+    </TeamWrapper>
+  )
+}
 
 // Styles from styled-components
 const TeamWrapper = styled(Section)`
@@ -104,7 +100,5 @@ const TeamContent = styled(SectionContentCenter)`
     align-items:stretch;
   `}
 `
-
-
 
 export default Team

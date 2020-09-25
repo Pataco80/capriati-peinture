@@ -4,7 +4,6 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-
 // Import Components for App
 import Title from '../Title'
 
@@ -26,6 +25,7 @@ const getImage = graphql`
 
 // Component
 const Bannerhome = () => {
+
   // Component Variables
   const { logoImg } = useStaticQuery(getImage)
   
@@ -38,7 +38,7 @@ const Bannerhome = () => {
         <S.LayoutSection>
           <Title tag='h1' title='Bienvenue chez Capriati S.A.' hidden />
         <S.Description>
-          <p>Entreprise de peinture familiale depuis 1979</p>
+          <S.Text>Entreprise de peinture familiale depuis 1979</S.Text>
         </S.Description>
         <S.CallActionBtn secondary to='/services/'>Nos Services</S.CallActionBtn>
         <S.CallActionBtn primary to='/contact/'>Nous Contacter</S.CallActionBtn>
@@ -46,9 +46,5 @@ const Bannerhome = () => {
     </S.BannerWrapper>
   )
 }
-
-// React PropTypes and more...
-
-
 
 export default Bannerhome

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
+// Import helpers
 import { layout, media, setFlex, setTransition, setPxToRem, setShadow, setBorder, setColor } from '../../theme/helpers'
 
-// Styles from styled-components
+// Export Styles for the component
 export const NavBarWrapper = styled.nav`
   ${setFlex()};
   border-bottom: ${setBorder({size:1,style:'solid', color:`${setColor.primaryColor}`})};
@@ -21,7 +22,6 @@ export const NavBarWrapper = styled.nav`
 
 export const NavBarContainer = styled.div`
   ${layout()};
-
   ${setFlex({flDir:'column'})};
   background-color: ${setColor.mainWhite};
   ${setTransition()};
@@ -85,8 +85,6 @@ export const NavBarMenuDropdown = styled.section`
       height:auto;
     `}
   }
-
-  
 `
 
 export const NavBarMenu = styled.div`

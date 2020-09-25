@@ -3,20 +3,15 @@ import React from 'react'
 // Import components from Gatsby and plugins Gatsby
 import Img from 'gatsby-image'
 
-
-// Import Components for App
-
 // Import styled-components and helpers
 import styled from 'styled-components'
 import { setRadius, setShadow, media } from '../../theme/helpers'
-
-// GraphQl Queries
 
 // Component
 const ServiceGallery = ({shortName, fluidImage, altImg}) => {
   console.log(altImg)
   // Component Variables
-  
+
   // Render Component
   return (
     <ImageWrapper>
@@ -24,10 +19,6 @@ const ServiceGallery = ({shortName, fluidImage, altImg}) => {
     </ImageWrapper>
   )
 }
-
-
-// React PropTypes and more...
-
 
 // Styles from styled-components
 const ImageWrapper = styled.div`
@@ -44,6 +35,5 @@ const GalleryImg = styled(Img)`
   ${setRadius({allPx:12})};
   box-shadow:${setShadow('medium')};
 `
-
 
 export default ServiceGallery

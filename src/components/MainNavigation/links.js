@@ -61,10 +61,6 @@ const MainMenu = ({isOpen, className}) => {
   )
 }
 
-
-// React PropTypes and more...
-
-
 // Styles from styled-components
 const MainNavItem = styled.li`
   width:100%;
@@ -109,6 +105,7 @@ const MainNavLink = styled(Link)`
 const MainNavMenu = styled.ul`
   ${layout()};
   ${setFlex({flDir:'column'})};
+
   & ${MainNavLink} {
     color: ${setColor.primaryColor};
     text-decoration:none;
@@ -146,9 +143,9 @@ const MainNavMenu = styled.ul`
       transition:none;
       color: ${setColor.mainWhite};
 
-      & .span:hover, &[aria-current] .span{
-      border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.mainWhite}`})};
-    }
+      & .span:hover, &[aria-current] .span {
+        border-bottom: ${setBorder({size:2, style:'solid', color:`${setColor.mainWhite}`})};
+      }
     }
   }
 `

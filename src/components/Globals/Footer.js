@@ -2,14 +2,14 @@ import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
 import Img from 'gatsby-image'
-import {graphql, useStaticQuery} from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import MainMenu from '../MainNavigation/links'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import {Section, SectionCenter} from '../styledElements/SectionStyled'
+import { Section, SectionCenter } from '../styledElements/SectionStyled'
 import { setColor } from '../../theme/helpers'
 
 // GraphQl Queries
@@ -27,9 +27,9 @@ const getImage = graphql`
 
 // Component
 const Footer = () => {
+
   // Component Variables
   const { footerImg } = useStaticQuery(getImage)
-
 
   // Render Component
   return (
@@ -44,10 +44,7 @@ const Footer = () => {
   )
 }
 
-// React PropTypes and more...
-
-
-// Styles for the component
+// Styles from styled-components
 const FooterWrapper = styled.footer`
   background-color:${setColor.primaryColor};
 `

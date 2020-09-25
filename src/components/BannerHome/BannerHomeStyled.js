@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-import { GatsbyButtonLink } from '../styledElements/Button'
+// Import Components for App
+import { GatsbyButtonLink } from '../styledElements/ButtonsStyled'
 import { Banner } from '../styledElements/BannerStyled'
 
+// Import helpers
 import { layout, setFlex, media, setShadow, setColor } from '../../theme/helpers'
 
-// Styles from styled-components
+// Export Styles for the component
 export const BannerWrapper = styled(Banner)`
   ${setFlex({flDir:'column'})};
   align-self:stretch;
@@ -62,20 +64,20 @@ export const CallActionBtn = styled(GatsbyButtonLink)`
 export const Description = styled.div`
   ${setFlex({x:'flex-end', y:'flex-end'})};
   width:100%;
+`
 
-  p {
-    color:${setColor.primaryColor};
-    text-align:right;
-    font-size:1.4rem;
-    font-size:1.4rem;
-    padding:0 1rem;
-    text-shadow:${setShadow('medium')};
+export const Text = styled.p`
+  color:${setColor.primaryColor};
+  text-align:right;
+  font-size:1.4rem;
+  font-size:1.4rem;
+  padding:0 1rem;
+  text-shadow:${setShadow('medium')};
 
-    ${media.greaterThan('smTablet')`
-      font-size: 2.197rem;
-      line-height: calc(2.197rem + 1vw);
-    `}
-  }
+  ${media.greaterThan('smTablet')`
+    font-size: 2.197rem;
+    line-height: calc(2.197rem + 1vw);
+  `}
 `
 
 export const LogoWrapper = styled.div`

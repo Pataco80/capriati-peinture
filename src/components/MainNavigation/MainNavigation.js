@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
+
+// Import Hooks
 import useWindowSize from '../../hooks/useWindowSize'
 
 // Import components from Gatsby and plugins Gatsby
-import {graphql, useStaticQuery} from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 // Import Components for App
 import MainMenu from './links'
-import {MenuAlt3} from '@styled-icons/heroicons-outline/MenuAlt3'
-import {X} from '@styled-icons/heroicons-outline/X'
+import { MenuAlt3 } from '@styled-icons/heroicons-outline/MenuAlt3'
+import { X}  from '@styled-icons/heroicons-outline/X'
 
 // Import styled-components and helpers
 import * as S from './MainNavigationStyled'
 import { breakpoints } from '../../theme/helpers'
-
 
 // GraphQl Queries
 const getImage = graphql`
@@ -30,16 +31,17 @@ const getImage = graphql`
 
 // Component
 const MainNavigation = ({toScroll}) => {
+
   // Component Variables
   const { logoMenu } = useStaticQuery(getImage)
-
   const [isOpen, setNav] = useState(false)
+  const windowSize = useWindowSize()
+  const toNabBarMenu = breakpoints.lgTablet
+
+  //Component Functions
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
-
-  const windowSize = useWindowSize()
-  const toNabBarMenu = breakpoints.lgTablet
 
   // Render Compoent
   return (
@@ -56,7 +58,7 @@ const MainNavigation = ({toScroll}) => {
           </S.NavHeaderContent>
         </S.NavBarHeader>
         {
-        windowSize < toNabBarMenu ? 
+        windowSize < toNabBarMenu ?
         <S.NavBarMenuDropdown className={isOpen ? `show-nav`:``}>
           <MainMenu isOpen={isOpen}/>
         </S.NavBarMenuDropdown>
@@ -65,11 +67,9 @@ const MainNavigation = ({toScroll}) => {
           <MainMenu />
         </S.NavBarMenu>
         }
-      </S.NavBarContainer>      
+      </S.NavBarContainer>
     </S.NavBarWrapper>
   )
 }
-
-// React PropTypes and more...
 
 export default MainNavigation

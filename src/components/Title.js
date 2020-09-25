@@ -1,17 +1,12 @@
 import React from 'react'
 
-// Import components from Gatsby and plugins Gatsby
-
-// Import Components for App
-
 // Import styled-components and helpers
 import styled from 'styled-components'
 import { setFlex, setColor } from '../theme/helpers'
 
-// GraphQl Queries
-
 // Component
 const Title = (props) => {
+
   // Component Variables
   const { title, tag:Tag, hidden, titleSection, noShadow, children } = props
 
@@ -23,9 +18,6 @@ const Title = (props) => {
   )
 }
 
-
-// React PropTypes and more...
-
 // Styles from styled-components
 const TitleWrapper = styled.div`
   ${setFlex()};
@@ -33,9 +25,9 @@ const TitleWrapper = styled.div`
   text-shadow: 2px 2px 3px ${setColor.mainGreyL1};
 
   ${({titleSection}) => titleSection &&`
-      > * {
-        margin-top:0 !important;
-      }
+    > * {
+      margin-top:0 !important;
+    }
   `}
 
   ${({hidden}) => hidden &&`

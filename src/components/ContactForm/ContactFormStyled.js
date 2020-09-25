@@ -1,7 +1,12 @@
 import styled, {css} from 'styled-components'
-import {SectionContent} from '../styledElements/SectionStyled'
+
+// Import Components for App
+import { SectionContent } from '../styledElements/SectionStyled'
+
+// Import helpers
 import { setFlex, layout, media, setRadius, setBorder, setColor, setShadow, setFont } from '../../theme/helpers'
 
+// Styled CSS
 const ContactInput = css`
   font-family: ${setFont.bodyFont};
   font-size:1rem;
@@ -21,36 +26,40 @@ const ContactInput = css`
   }
 `
 
+// Export Styles for the component
 export const FormContainer = styled(SectionContent)`
-${layout({mW:800})};
+  ${layout({mW:800})};
   ${setFlex({flDir:'column'})};
-
 `
+
 export const ContactForm = styled.form`
   ${setFlex({flDir:'column'})};
   width:100%;
 `
+
 export const ContactInfo = styled.section`
   width:100%;
 
-
-
   ${media.greaterThan('smTablet')`
-  ${setFlex({x:'space-between'})};
+    ${setFlex({x:'space-between'})};
   `}
 `
+
 export const ContactMessage = styled.section`
   width:100%;
 `
 
 export const ContactName = styled.div`
   width:100%;
+  
   ${media.greaterThan('smTablet')`
     width:45%;
   `}
 `
+
 export const ContactMail = styled.div`
   width:100%;
+  
   ${media.greaterThan('smTablet')`
     width:45%;
   `}
@@ -63,8 +72,6 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   ${ContactInput}
-
-
 `
 
 export const TextArea = styled.textarea`

@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Globals/Layout/Layout'
+import Layout from '../components/Globals/Layout'
 import Title from '../components/Title'
 import Hero from '../components/Hero'
 import Contactform from '../components/ContactForm/ContactForm'

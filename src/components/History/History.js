@@ -4,7 +4,7 @@ import React from 'react'
 
 // Import Components for App
 import Title from '../Title'
-import HistoryProfile from './HistoryProfile/HistoryProfile'
+import HistoryProfile from './HistoryProfile'
 import Historical from './Historical'
 import { Section } from '../styledElements/SectionStyled'
 
@@ -20,7 +20,7 @@ import { setFlex } from '../../theme/helpers'
 // Component
   const History = (props) => {
     // Component Variables
-    const {background, padding} = props
+    const { background, padding } = props
 
     // Render Component
     return (
@@ -32,15 +32,10 @@ import { setFlex } from '../../theme/helpers'
     )
   }
 
-
-  // React PropTypes and more...
-
-
 // Styles from styled-components
 const HistoryWrapper = styled(Section)`
   ${setFlex({flDir:'column'})};
   padding-bottom:3rem;
 `
-
 
 export default History

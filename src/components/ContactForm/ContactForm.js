@@ -1,11 +1,17 @@
 import React from 'react'
 
-import {ButtonForm} from '../styledElements/Button'
+// Import Components for App
 import Title from '../Title'
-import {Section} from '../styledElements/SectionStyled'
+import { Section } from '../styledElements/SectionStyled'
+import { ButtonForm } from '../styledElements/ButtonsStyled'
 
+// Import styled-components and helpers
 import * as S from './ContactFormStyled'
+
+// Component
 const Contactform = () => {
+
+  // Render Component
   return (
     <Section>
       <Title tag='h3' title='Contactez-nous via notre formulaire' titleSection/>
@@ -42,18 +48,13 @@ const Contactform = () => {
               placeholder="Saisissez votre Message"
               rows="10"
             />
-            <S.Input type="text" name="_gotcha" style={{display:'none'}} />
           </S.ContactMessage>
-          <>
-            <ButtonForm primary type="submit" value='Envoyer' />
-          </>
+          <S.Input type="text" name="_gotcha" style={{display:'none'}} />
+          <ButtonForm primary type="submit" value='Envoyer' />
         </S.ContactForm>
       </S.FormContainer>
     </Section>
-    
   )
 }
-
-
 
 export default Contactform

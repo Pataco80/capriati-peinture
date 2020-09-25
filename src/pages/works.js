@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/Globals/Layout/Layout'
+import Layout from '../components/Globals/Layout'
 import Title from '../components/Title'
 const worksPage = () => {
   return (
