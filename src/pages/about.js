@@ -7,6 +7,7 @@ import History from '../components/History/History'
 import Team from '../components/Team/Team'
 
 import {setColor} from '../theme/helpers'
+import Parteners from '../components/Parteners'
 
 
 export const getImage = graphql`
@@ -29,6 +30,7 @@ const aboutPage = ({data}) => {
       <About about />
       <History background={setColor.mainGreyL3}/>
       <Team />
+      <Parteners />
     </Layout>
   )
 }
