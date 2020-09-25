@@ -4,16 +4,17 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import Profile from '../../Profile/Profile'
+import Profile from '../Profile/Profile'
 
 // Import data files
-import historyProfileData from '../../../data/historyProfileData.json'
+import historyProfileData from '../../data/historyProfileData.json'
 
-// Import styled-components and helpers
-import * as S from './HistoryProfileStyled'
+// Import styled-components, styledElements and helpers
+import styled from 'styled-components'
+import { setFlex, media } from '../../theme/helpers'
 
 // GraphQl Queries
-export const getData = graphql`
+const getData = graphql`
   {
     photo:allFile(filter: {relativePath: {regex: "/familly/"}}) {
       edges {
@@ -32,6 +33,8 @@ export const getData = graphql`
 
 // Component
 const Historyprofile = () => {
+
+  // Component Variables
   const data = useStaticQuery(getData)
   const photoList = data.photo.edges
 
@@ -40,8 +43,9 @@ const Historyprofile = () => {
     originalName: node.childImageSharp.fluid.originalName,
   }))
 
+  // Render Component
   return (
-    <S.HistoryProfileWrapper>
+    <HistoryProfileWrapper>
       {
         historyProfileData.map(({id, name, shortName, altPhoto}) => {
 
@@ -50,15 +54,35 @@ const Historyprofile = () => {
           .photo
 
           return (
-            <S.ProfileItem>
+            <ProfileItem>
               <Profile id={id} name={name} fluid={photoPath} altPhoto={altPhoto} />
-            </S.ProfileItem>
+            </ProfileItem>
           )
         })
-      }    
-    </S.HistoryProfileWrapper>
+      }
+    </HistoryProfileWrapper>
   )
 }
 
+// Styles from styled-components
+const HistoryProfileWrapper = styled.div`
+  ${setFlex({flDir:'column'})};
+  width:100%;
+
+  ${media.greaterThan('tablet')`
+    ${setFlex({flDir:'row',y:'flex-start'})};
+  `}
+`
+
+const ProfileItem = styled.div`
+  margin-bottom:2rem;
+  width:100%;
+
+  ${media.greaterThan('tablet')`
+    width:33%;
+    margin-bottom:0;
+    padding:0 1rem;
+  `}
+`
 
 export default Historyprofile

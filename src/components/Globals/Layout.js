@@ -1,20 +1,20 @@
 import React, { useState, useEffect}from 'react'
 import PropTypes from 'prop-types'
-// Import components from Gatsby and plugins Gatsby
-
 
 // Import Components for App
-import MainNavigation from '../../MainNavigation/MainNavigation'
-import Footer from '../Footer'
-
-// Import styled-components and helpers
-import GlobalStyles from '../../../theme/globalStyles'
-import * as S from './LayoutStyled'
+import MainNavigation from '../MainNavigation/MainNavigation'
+import Footer from './Footer'
 
 //import useScrollVertical from '../hooks/useScrollVertical'
 
+// Import styled-components and helpers
+import styled from 'styled-components'
+import GlobalStyles from '../../theme/globalStyles'
+import { setColor, setFlex, setPxToRem } from '../../theme/helpers'
+
 // Component
 const Layout = ({ children }) => {
+
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
 
@@ -38,16 +38,32 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles/>
-      <S.AppWrapper>
+      <AppWrapper>
         <MainNavigation toScroll={scrolled}/>
-        <S.PageContainer className={scrolled ? `isScroll` : ``}>
+        <PageContainer className={scrolled ? `isScroll` : ``}>
           {children}
-        </S.PageContainer>
+        </PageContainer>
         <Footer/>
-      </S.AppWrapper>
+      </AppWrapper>
     </>
   )
 }
+
+// Styles from styled-components
+const AppWrapper = styled.div`
+  background-color: ${setColor.mainWhite};
+  width:100vw;
+  min-height:100vh;
+`
+
+const PageContainer = styled.main`
+  ${setFlex({flDir:'column'})};
+  z-index:2;
+
+  &.isScroll {
+    margin-top:${setPxToRem(62)};
+  }
+`
 
 // React PropTypes and more...
 Layout.propTypes = {
