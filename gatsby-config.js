@@ -89,7 +89,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-minify`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
