@@ -17,6 +17,7 @@ const ButtonStyles = css`
   cursor: pointer;
   background:none;
   ${setRadius({allPx:12})};
+  font-weight:900;
 
   ${({ primary }) => primary &&`
     color: ${setColor.mainWhite};
