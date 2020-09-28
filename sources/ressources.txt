@@ -1,0 +1,3 @@
+usages de plugins ultérieurs
+@browniebroke/gatsby-image-gallery
+gatsby-plugin-minify
