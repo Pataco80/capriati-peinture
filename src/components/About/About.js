@@ -25,7 +25,7 @@ export const getImage = graphql`
 
 // Component
 const About = (props) => {
-  
+
   // Component Variables
   const { home, background } = props
   const { profilImage } = useStaticQuery(getImage)
@@ -46,7 +46,7 @@ const About = (props) => {
         </S.AboutImgContainer>
       </S.AboutContent>
       {
-        home ? <S.AboutLink primary to='/about/' >En savoir plus</S.AboutLink> : ''
+        home ? <S.AboutLink primary to='/about/' title='Aller à la page À Propos de Nous'>En savoir plus</S.AboutLink> : ''
       }
     </S.AboutWrapper>
   )

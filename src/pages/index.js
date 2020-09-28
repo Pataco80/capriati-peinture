@@ -2,10 +2,10 @@ import React from 'react'
 
 // Import Components for App
 import Layout from '../components/Globals/Layout'
+import SEO from '../components/Globals/SEO'
 import Hero from '../components/Hero'
 import About from '../components/About/About'
 import Services from '../components/OurServices/Services'
-import SEO from '../components/Globals/SEO'
 
 // Import styled-components and helpers
 import { setColor } from '../theme/helpers'

@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { setFlex, setLinearBcg } from '../theme/helpers'
+import { setFlex, setColor, setLinearBcg } from '../theme/helpers'
 
 // Component
 const Bcgimage = ({className, fluid, children, error }) => {
@@ -16,7 +16,7 @@ const Bcgimage = ({className, fluid, children, error }) => {
       Tag="div"
       className={className}
       fluid={fluid}
-      backgroundColor={`#fff`}
+      backgroundColor={setColor.mainWhite}
     >
       {
         error ? <span className='overlay' /> : ''

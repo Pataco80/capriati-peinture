@@ -1,19 +1,19 @@
 import React from 'react'
-import Layout from '../components/Globals/Layout'
-import Title from '../components/Title'
-import Hero from '../components/Hero'
-import Contactform from '../components/ContactForm/ContactForm'
-import {SectionCenter, SectionContent } from '../components/styledElements/SectionStyled'
-import SEO from '../components/Globals/SEO'
-
-import { setFlex, media } from '../theme/helpers'
-import styled from 'styled-components'
 
 // Import components from Gatsby and plugins Gatsby
 import { graphql } from 'gatsby'
 
+// Import Components for App
+import Layout from '../components/Globals/Layout'
+import Title from '../components/Title'
+import Hero from '../components/Hero'
+import Contactform from '../components/ContactForm/ContactForm'
+import { SectionCenter, SectionContent } from '../components/styledElements/SectionStyled'
+import SEO from '../components/Globals/SEO'
 
 // Import styled-components and helpers
+import styled from 'styled-components'
+import { setFlex, media } from '../theme/helpers'
 
 // GraphQl Queries
 export const query = graphql`
@@ -61,6 +61,7 @@ const contactPage = ({data}) => {
   )
 }
 
+// Styles from styled-components
 const ContactSection = styled(SectionCenter)`
   ${setFlex({flDir:'column'})};
 

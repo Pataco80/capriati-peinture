@@ -37,7 +37,7 @@ const linksList = [
     path: '/contact/'
   },
 ]
- 
+
 // Component
 const MainMenu = ({isOpen, className}) => {
   // Component Variables

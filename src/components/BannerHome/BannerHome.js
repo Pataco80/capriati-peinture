@@ -40,8 +40,8 @@ const Bannerhome = () => {
         <S.Description>
           <S.Text>Entreprise de peinture familiale depuis 1979</S.Text>
         </S.Description>
-        <S.CallActionBtn secondary to='/services/'>Nos Services</S.CallActionBtn>
-        <S.CallActionBtn primary to='/contact/'>Nous Contacter</S.CallActionBtn>
+        <S.CallActionBtn secondary to='/services/' title='Voir nos Services'>Nos Services</S.CallActionBtn>
+        <S.CallActionBtn primary to='/contact/' title='Nous contacter'>Nous Contacter</S.CallActionBtn>
       </S.LayoutSection>
     </S.BannerWrapper>
   )

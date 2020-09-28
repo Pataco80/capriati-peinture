@@ -5,11 +5,9 @@ import { graphql } from 'gatsby'
 
 // Import Components for App
 import Layout from '../components/Globals/Layout'
+import SEO from '../components/Globals/SEO'
 import Hero from '../components/Hero'
 import Services from '../components/OurServices/Services'
-import SEO from '../components/Globals/SEO'
-
-// Import styled-components and helpers
 
 // GraphQl Queries
 export const query = graphql`
@@ -26,7 +24,6 @@ export const query = graphql`
 
 // Component
 const servicesPage = ({data}) => {
-  // Component Variables
 
   // Render Component
   return (
@@ -37,11 +34,5 @@ const servicesPage = ({data}) => {
     </Layout>
   )
 }
-
-// React PropTypes and more...
-
-
-// Styles from styled-components
-
 
 export default servicesPage

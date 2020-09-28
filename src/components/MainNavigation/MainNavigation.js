@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 // Import Components for App
 import MainMenu from './links'
 import { MenuAlt3 } from '@styled-icons/heroicons-outline/MenuAlt3'
-import { X}  from '@styled-icons/heroicons-outline/X'
+import { X }  from '@styled-icons/heroicons-outline/X'
 
 // Import styled-components and helpers
 import * as S from './MainNavigationStyled'
@@ -45,7 +45,7 @@ const MainNavigation = ({toScroll}) => {
 
   // Render Compoent
   return (
-    <S.NavBarWrapper  data-active={toScroll}>
+    <S.NavBarWrapper role='navigation' aria-label='Navigation Principale' data-active={toScroll}>
       <S.NavBarContainer>
         <S.NavBarHeader>
           <S.NavHeaderContent>

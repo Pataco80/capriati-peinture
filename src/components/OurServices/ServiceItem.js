@@ -26,7 +26,7 @@ import { setFlex, media, breakpoints } from '../../theme/helpers'
           node {
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid_withWebp
+                ...GatsbyImageSharpFluid
                 originalName
               }
             }

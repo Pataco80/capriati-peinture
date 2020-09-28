@@ -8,10 +8,10 @@ import styled from 'styled-components'
 import { setRadius, setShadow } from '../theme/helpers'
 
 // Component
-const Avatar = ({ fluid, alt, width, height }) => {
+const Avatar = ({ fluid, alt }) => {
 
   // Render Component
-  return <AvatarImage fluid={fluid} alt={alt} width={width} height={height} />
+  return <AvatarImage fluid={fluid} alt={alt} />
 }
 
 // Styles from styled-components

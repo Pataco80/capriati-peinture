@@ -39,7 +39,7 @@ const Hero = (props) => {
 
 // Styles from styled-components
 const HeroWrapper = styled.section`
-  min-height:${props => (props.home || props.error ? "calc(100vh - 62px)" : "50vh")};
+  min-height:${props => (props.home || props.error ? "calc(100vh - 56px)" : "50vh")};
   position: relative;
   ${setFlex({flDir:'column'})};
   width:100vw;

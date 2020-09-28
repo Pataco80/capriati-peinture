@@ -24,7 +24,7 @@ const errorPage = ({data}) => {
     <Layout error>
       <ErrorHero error title="Page d'erreur 404" bcgImage={data.heroBcg.childImageSharp.fluid}>
         <Text className='h5'>La page que vous demandez n'éxiste pas, ou l'url que vous avez taper n'est pas valide</Text>
-        <CallActionBtn primary to='/'>Retour à la page d'accueil</CallActionBtn>
+        <CallActionBtn primary to='/' title="Retour à la page d'Accueil" >Retour à la page d'accueil</CallActionBtn>
       </ErrorHero>
     </Layout>
   )
@@ -33,8 +33,6 @@ const errorPage = ({data}) => {
 const ErrorHero = styled(Hero)`
   ${setFlex({flDir:'column', x:'space-around'})};
   background-color: rgba(0,0,0,0.5);
-
-  
 `
 
 const Text = styled.p`

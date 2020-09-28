@@ -19,6 +19,7 @@ const Contactform = () => {
         <S.ContactForm
           action="https://formspree.io/xlenaazr"
           method="POST"
+          autocomplete='on'
         >
           <S.ContactInfo>
             <S.ContactName>

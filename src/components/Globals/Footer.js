@@ -18,7 +18,7 @@ const getImage = graphql`
     footerImg: file(relativePath: {eq: "images/footerBande.png"}) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -35,7 +35,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <Section padding='0'>
-        <Img fluid={footerImg.childImageSharp.fluid} />
+        <Img fluid={footerImg.childImageSharp.fluid} alt='Banière colorée'/>
       </Section>
       <SectionCenter background='transparent'>
         <MainMenu className='footer'/>
