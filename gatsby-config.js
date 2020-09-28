@@ -17,10 +17,9 @@ module.exports = {
   siteUrl: siteUrl, // For gatsby-plugin-sitemap
   pathPrefix,
   title: website.title,
-  titleAlt: website.titleAlt,
   description: website.description,
+  keywords: website.keywords,
   banner: website.logo,
-  headline: website.headline,
   siteLanguage: website.siteLanguage,
   ogLanguage: website.ogLanguage,
   author: website.author,
@@ -61,7 +60,6 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-
     {
       resolve: 'gatsby-background-image-es5',
       options: {

@@ -4,6 +4,8 @@ import Title from '../components/Title'
 import Hero from '../components/Hero'
 import Contactform from '../components/ContactForm/ContactForm'
 import {SectionCenter, SectionContent } from '../components/styledElements/SectionStyled'
+import SEO from '../components/Globals/SEO'
+
 import { setFlex, media } from '../theme/helpers'
 import styled from 'styled-components'
 
@@ -30,6 +32,7 @@ export const query = graphql`
 const contactPage = ({data}) => {
   return (
     <Layout>
+      <SEO title='Nous Contacter' description="Contactez l'entreprise Capriati S.A." keywords="Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail"/>
       <Hero title='Nous Contacter' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Contactform/>
       <ContactSection>
@@ -53,8 +56,6 @@ const contactPage = ({data}) => {
           </p>
         </ContactInfo>
         </ContactSectionContent>
-        
-
       </ContactSection>
     </Layout>
   )

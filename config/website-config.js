@@ -3,10 +3,9 @@ module.exports = {
   title: 'Capriati SA', // Navigation and Site Title
   titleAlt: 'Capriati Peinture', // Title for JSONLD
   description: 'Société de peinture en bâtiments de la famille Capriati. Entreprise familiale basée à Rolle et travaillant sur la région de "La Côte" dans le canton de Vaud (CH)',
-  headline: 'Écrit et publié par DWDevelopment', // Headline for schema.org JSONLD
   url: 'http://www.capriati.ch', // Domain of your site. No trailing slash!
   siteLanguage: 'fr', // Language Tag on <html> element
-  logo: 'src/assets/images/logos/', // Used for SEO
+  logo: 'src/assets/images/logos/logoCapriatiSA.png', // Used for SEO
   ogLanguage: 'fr_CH', // Facebook Language
   keywords:'',
 

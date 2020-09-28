@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Globals/Layout'
 import Hero from '../components/Hero'
 import Services from '../components/OurServices/Services'
+import SEO from '../components/Globals/SEO'
 
 // Import styled-components and helpers
 
@@ -30,6 +31,7 @@ const servicesPage = ({data}) => {
   // Render Component
   return (
     <Layout>
+      <SEO title='Nos Services' description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives" keywords="Plâtre, crépi, papiers-peints, giclage, fresques décoratives"/>
       <Hero title='Nos Services' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Services/>
     </Layout>

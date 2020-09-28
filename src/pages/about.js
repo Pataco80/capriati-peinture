@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 import About from '../components/About/About'
 import History from '../components/History/History'
 import Team from '../components/Team/Team'
-
+import SEO from '../components/Globals/SEO'
 import {setColor} from '../theme/helpers'
 import Parteners from '../components/Parteners'
 
@@ -26,6 +26,7 @@ export const getImage = graphql`
 const aboutPage = ({data}) => {
   return (
     <Layout>
+      <SEO title='A Propos de Nous' description="A Propos de l'entrerise Capriati S.A., son histoire, son équipe et ces partenaires" keywords="A Propos, entreprise peinture, entreprise familiale, entretien, rénovation peinture, historique"/>
       <Hero title='A Propos de nous' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <About about />
       <History background={setColor.mainGreyL3}/>
