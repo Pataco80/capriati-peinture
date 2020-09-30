@@ -6,7 +6,7 @@ import  { useStaticQuery, graphql } from 'gatsby'
 // Import Files from component
 import videoMp4 from '../assets/video/paint.mp4'
 import videoOgv from '../assets/video/paint.mp4'
-import videoWebm from '../assets/video/paint.webm'
+import videoWebm from '../assets/video/paints.webm'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
