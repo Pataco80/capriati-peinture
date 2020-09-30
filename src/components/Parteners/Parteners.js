@@ -4,13 +4,13 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import Title from './Title'
+import Title from '../Title'
 import PartenersItem from './PartenersItem'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { Section, SectionContentCenter } from './styledElements/SectionStyled'
-import { media, setFlex } from '../theme/helpers'
+import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
+import { media, setFlex } from '../../theme/helpers'
 
 // GraphQl Queries
 const getData = graphql`

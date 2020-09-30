@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { media, setFlex } from '../theme/helpers'
+import { media, setFlex } from '../../theme/helpers'
 
 // Component
 const PartenersItem = (props) => {

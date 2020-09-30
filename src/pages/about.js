@@ -10,7 +10,7 @@ import Hero from '../components/Hero'
 import About from '../components/About/About'
 import History from '../components/History/History'
 import Team from '../components/Team/Team'
-import Parteners from '../components/Parteners'
+import Parteners from '../components/Parteners/Parteners'
 
 // Import styled-components, styledElements and helpers
 import {setColor} from '../theme/helpers'
