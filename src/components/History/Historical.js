@@ -1,30 +1,42 @@
 import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
+import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import Title from '../Title'
-
-// Import data files
-import historyData from '../../data/historyData'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
 import { setFlex, media } from '../../theme/helpers'
 
 // GraphQl Queries
-
+export const getData = graphql`
+  {
+    hisoryData: allHistoryDataJson {
+      nodes {
+        id
+        date
+        text
+      }
+    }
+  }
+`
 
 // Component
 const Historical = () => {
+
+  const data = useStaticQuery(getData)
+  const historyJsonData = data.hisoryData.nodes
+
   return (
     <HistoricalWrapper>
       <Title tag='h3' title='Historique'/>
       <HistoricalTable>
       {
-        historyData.map((item) => {
+        historyJsonData.map((item,i) => {
           return(
-            <HistoricalItem Key={item.id}>
+            <HistoricalItem Key={i}>
               <HistoricalDate>{item.date}</HistoricalDate>
               <HistoricaText>{item.text}</HistoricaText>
             </HistoricalItem>
