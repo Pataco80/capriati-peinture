@@ -28,7 +28,7 @@ const Bannerhome = () => {
 
   // Component Variables
   const { logoImg } = useStaticQuery(getImage)
-  
+
   // Render Component
   return (
     <S.BannerWrapper>
@@ -38,10 +38,10 @@ const Bannerhome = () => {
         <S.LayoutSection>
           <Title tag='h1' title='Bienvenue chez Capriati S.A.' hidden />
         <S.Description>
-          <S.Text>Entreprise de peinture familiale depuis 1979</S.Text>
+          <S.Text className='h4'>Entreprise de peinture familiale depuis 1979</S.Text>
         </S.Description>
-        <S.CallActionBtn secondary to='/services/' title='Voir nos Services'>Nos Services</S.CallActionBtn>
-        <S.CallActionBtn primary to='/contact/' title='Nous contacter'>Nous Contacter</S.CallActionBtn>
+        <S.CallActionBtn secondary='true' to='/services/' title='Voir nos Services'>Nos Services</S.CallActionBtn>
+        <S.CallActionBtn primary='true' to='/contact/' title='Nous contacter'>Nous Contacter</S.CallActionBtn>
       </S.LayoutSection>
     </S.BannerWrapper>
   )

@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     color: ${setColor.mainBlack};
   }
-  
+
   body {
     font-family: ${setFont.bodyFont};
   font-size: calc(1rem + 0.35vw); /* Responsive base font size */

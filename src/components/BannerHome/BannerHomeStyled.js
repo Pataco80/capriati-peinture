@@ -5,7 +5,7 @@ import { GatsbyButtonLink } from '../styledElements/ButtonsStyled'
 import { Banner } from '../styledElements/BannerStyled'
 
 // Import helpers
-import { layout, setFlex, media, setShadow, setColor } from '../../theme/helpers'
+import { layout, setFlex, media, setShadow } from '../../theme/helpers'
 
 // Export Styles for the component
 export const BannerWrapper = styled(Banner)`
@@ -50,34 +50,32 @@ export const LayoutSection = styled.div`
 export const CallActionBtn = styled(GatsbyButtonLink)`
   box-shadow:${setShadow('medium')};
   text-align:center;
-  margin:1rem 0.5rem 0 0.5rem;
+  margin:2rem 0.5rem 0 0.5rem;
 
   &:hover {
     box-shadow:${setShadow('dark')};
   }
 
   ${media.greaterThan('mobile')`
-    margin:2rem 0.5rem 0 0.5rem;
+    margin:3rem 0.5rem 0 0.5rem;
   `}
 `
 
 export const Description = styled.div`
   ${setFlex({x:'flex-end', y:'flex-end'})};
   width:100%;
+  margin-bottom:1rem;
+
+  ${media.greaterThan('tablet')`
+    margin-bottom:4rem;
+  `}
 `
 
 export const Text = styled.p`
-  color:${setColor.primaryColor};
   text-align:right;
-  font-size:1.4rem;
-  font-size:1.4rem;
   padding:0 1rem;
   text-shadow:${setShadow('medium')};
 
-  ${media.greaterThan('smTablet')`
-    font-size: 2.197rem;
-    line-height: calc(2.197rem + 1vw);
-  `}
 `
 
 export const LogoWrapper = styled.div`
