@@ -49,7 +49,9 @@ const MainNavigation = ({toScroll}) => {
       <S.NavBarContainer>
         <S.NavBarHeader>
           <S.NavHeaderContent>
-          <Img fixed={logoMenu.childImageSharp.fixed} alt="Logo Capriati SA TopBar" />
+          <S.LogoLink to='/' title="Aller à la page d'Accueil">
+            <Img fixed={logoMenu.childImageSharp.fixed} alt="Logo Capriati SA TopBar" />
+          </S.LogoLink>
             <S.NavbarToggle onClick={toggleNav}>
               {
                 isOpen ? <X/> : <MenuAlt3/>

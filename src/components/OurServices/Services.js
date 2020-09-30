@@ -21,7 +21,7 @@ export const getData = graphql`
       node {
         childImageSharp {
           fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
             originalName
           }
         }
@@ -33,7 +33,7 @@ export const getData = graphql`
       node {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
             originalName
           }
         }

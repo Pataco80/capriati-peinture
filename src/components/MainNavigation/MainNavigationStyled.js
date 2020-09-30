@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+// Import components from Gatsby and plugins Gatsby
+import { Link } from 'gatsby'
+
 // Import helpers
 import { layout, media, setFlex, setTransition, setPxToRem, setShadow, setBorder, setColor } from '../../theme/helpers'
 
@@ -45,6 +48,10 @@ export const NavBarHeader = styled.div`
     background-color: ${setColor.mainWhite};
     width:auto;
   `}
+`
+
+export const LogoLink = styled(Link)`
+  display:flex;
 `
 
 export const NavHeaderContent = styled.section`
