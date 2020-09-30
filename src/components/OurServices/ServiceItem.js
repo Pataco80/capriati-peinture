@@ -38,6 +38,7 @@ import { setFlex, media, breakpoints } from '../../theme/helpers'
 
 // Component
 const ServiceItem = (props) => {
+
   // Component Variables
   const { name, shortName, altIcon, altFeatured, Icon, featuredImage, competences, gallery, home } = props
 

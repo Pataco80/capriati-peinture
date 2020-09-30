@@ -45,5 +45,4 @@ export default styled(Bcgimage)`
     z-index:-10;
     position:absolute;
   }
-
 `

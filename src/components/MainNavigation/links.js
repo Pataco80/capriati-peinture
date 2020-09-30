@@ -40,7 +40,6 @@ const linksList = [
 
 // Component
 const MainMenu = ({isOpen, className}) => {
-  // Component Variables
 
   // Render Compoent
   return(

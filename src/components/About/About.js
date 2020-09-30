@@ -46,7 +46,7 @@ const About = (props) => {
         </S.AboutImgContainer>
       </S.AboutContent>
       {
-        home ? <S.AboutLink primary to='/about/' title='Aller à la page À Propos de Nous'>En savoir plus</S.AboutLink> : ''
+        home ? <S.AboutLink primary='true' to='/about/' title='Aller à la page À Propos de Nous'>En savoir plus</S.AboutLink> : ''
       }
     </S.AboutWrapper>
   )

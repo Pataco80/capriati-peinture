@@ -105,7 +105,7 @@ export const getData = graphql`
                   home ?
                   <ServiceItemCard to={`/services/#${shortName}/`} className='cartelien' title={`Voir le service de ${name}`}>
                     <ServiceItem
-                    key={name}
+                    key={shortName}
                     shortName={shortName}
                     Icon={iconPath}
                     name={name}
@@ -116,7 +116,7 @@ export const getData = graphql`
                   </ServiceItemCard>
                   :
                   <ServiceItem
-                    key={name}
+                    key={shortName}
                     shortName={shortName}
                     Icon={iconPath}
                     featuredImage={featuredImgPath}
@@ -133,7 +133,7 @@ export const getData = graphql`
           }
         </ServicesContent>
         {
-          home ? <ServicesLink primary to='/services/' title='Voir nos Services' >En savoir plus</ServicesLink>: ''
+          home ? <ServicesLink primary='true' to='/services/' title='Voir nos Services' >En savoir plus</ServicesLink>: ''
         }
       </ServicesWrapper>
     )
