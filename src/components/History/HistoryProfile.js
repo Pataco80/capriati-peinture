@@ -5,9 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import Profile from '../Profile/Profile'
-
-// Import data files
-import historyProfileData from '../../data/historyProfileData.json'
+import { SectionContentCenter } from '../styledElements/SectionStyled'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
@@ -28,15 +26,23 @@ const getData = graphql`
         }
       }
     }
+    historyProfile: allHistoryProfileDataJson {
+      nodes {
+        id
+        name
+        shortName
+        altPhoto
+      }
+    }
   }
 `
-
 // Component
 const Historyprofile = () => {
 
   // Component Variables
   const data = useStaticQuery(getData)
   const photoList = data.photo.edges
+  const historyProfile = data.historyProfile.nodes
 
   const historyPhoto = photoList.map(({ node }) => ({
     photo: node.childImageSharp.fluid,
@@ -47,7 +53,7 @@ const Historyprofile = () => {
   return (
     <HistoryProfileWrapper>
       {
-        historyProfileData.map(({id, name, shortName, altPhoto}) => {
+        historyProfile.map(({id, name, shortName, altPhoto}) => {
 
           const regExp = new RegExp(shortName, "i");
           const photoPath = historyPhoto.find(({originalName}) => originalName.match(regExp))
@@ -65,7 +71,7 @@ const Historyprofile = () => {
 }
 
 // Styles from styled-components
-const HistoryProfileWrapper = styled.div`
+const HistoryProfileWrapper = styled(SectionContentCenter)`
   ${setFlex({flDir:'column'})};
   width:100%;
 

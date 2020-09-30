@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import Title from '../Title'
+import { SectionContentCenter } from '../styledElements/SectionStyled'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -26,9 +27,11 @@ export const getData = graphql`
 // Component
 const Historical = () => {
 
+  // Component Variables
   const data = useStaticQuery(getData)
   const historyJsonData = data.hisoryData.nodes
 
+  // Render Component
   return (
     <HistoricalWrapper>
       <Title tag='h3' title='Historique'/>
@@ -48,7 +51,7 @@ const Historical = () => {
   )
 }
 
-const HistoricalWrapper = styled.div`
+const HistoricalWrapper = styled(SectionContentCenter)`
   ${setFlex({flDir:'column'})};
 `
 
