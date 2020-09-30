@@ -111,7 +111,7 @@ module.exports = {
         // lets you specify pages whose resources should be precached by the service worker. Ex: precachePages: [`/about_us/`, `/services/*`],
         precachePages: [`/about/`, `/services/`, `/contact/`],
         workboxConfig: {
-          globPatterns: ['**/assets/**/*']
+          globPatterns: ['**/assets/images/**/*']
         }
       }
     },
