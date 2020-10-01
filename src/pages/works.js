@@ -31,7 +31,6 @@ const worksPage = ({data}) => {
       <SEO title='Nos Travaux' description="Nos travaux éféctués au fil des années" />
       <Hero title='Nos Travaux' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <References />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, excepturi eaque corrupti ipsa ratione beatae quas tenetur architecto dolores, mollitia saepe accusantium amet recusandae dicta voluptatem explicabo illo aut a?s</p>
     </Layout>
   )
 }
