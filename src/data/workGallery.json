@@ -1,0 +1,54 @@
+[
+  {
+    "workName":"work1",
+    "galleryContent":[
+      {
+        "name":"workName1 image 1",
+        "shortName":"workName1Image1",
+        "thumbnail":"workName1Image1.jpg",
+        "fullImg":"workName1Image1.jpg",
+        "caption":"Caption from workName 1 Image 1"
+      },
+      {
+        "name":"workName1 image 2",
+        "shortName":"workName1Image2",
+        "thumbnail":"workName1Image2.jpg",
+        "fullImg":"workName1Image2.jpg",
+        "caption":"Caption from workName 1 Image2"
+      },
+      {
+        "name":"workName1 image 3",
+        "shortName":"workName1Image3",
+        "thumbnail":"workName1Image3.jpg",
+        "fullImg":"workName1Image3.jpg",
+        "caption":"Caption from workName 1 Image 3"
+      }
+    ]
+  },
+  {
+    "workName":"work2",
+    "galleryContent":[
+      {
+        "name":"workName2 image 1",
+        "shortName":"workName2Image1",
+        "thumbnail":"workName2Image1.jpg",
+        "fullImg":"workName2Image1.jpg",
+        "caption":"Caption from workName 2 Image 1"
+      },
+      {
+        "name":"workName2 image 2",
+        "shortName":"workName2Image2",
+        "thumbnail":"workName2Image2.jpg",
+        "fullImg":"workName2Image2.jpg",
+        "caption":"Caption from workName 2 Image2"
+      },
+      {
+        "name":"workName2 image 3",
+        "shortName":"workName2Image3",
+        "thumbnail":"workName2Image3.jpg",
+        "fullImg":"workName2Image3.jpg",
+        "caption":"Caption from workName 2 Image 3"
+      }
+    ]
+  }
+]
