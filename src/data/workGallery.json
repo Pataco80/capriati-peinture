@@ -1,6 +1,20 @@
 [
   {
     "workName":"work1",
+    "infos":[
+      {
+        "id":1,
+        "text":"Construction de parois en plâtre"
+      },
+      {
+        "id":2,
+        "text":"Rafraichissement de façade"
+      },
+      {
+        "id":3,
+        "text":"Dessin de fresque"
+      }
+    ],
     "galleryContent":[
       {
         "name":"workName1 image 1",
@@ -27,6 +41,12 @@
   },
   {
     "workName":"work2",
+    "infos":[
+      {
+        "id":1,
+        "text":"Peinture des nouveaux locaux commerciaux"
+      }
+    ],
     "galleryContent":[
       {
         "name":"workName2 image 1",

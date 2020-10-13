@@ -8,6 +8,7 @@ import Layout from '../components/Globals/Layout'
 import SEO from '../components/Globals/SEO'
 import Hero from '../components/Hero'
 import References from '../components/References'
+import Works from '../components/Works/Works'
 
 // GraphQl Queries
 export const getImage = graphql`
@@ -30,6 +31,7 @@ const worksPage = ({data}) => {
     <Layout>
       <SEO title='Nos Travaux' description="Nos travaux éféctués au fil des années" />
       <Hero title='Nos Travaux' bcgImage={data.heroBcg.childImageSharp.fluid} />
+      <Works />
       <References />
     </Layout>
   )
