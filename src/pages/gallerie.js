@@ -30,7 +30,7 @@ const galleriePage = ({data}) => {
     // Use original name as caption.
     // The `originalName` is queried inside the `thumb` field,
     // but the `Gallery` component expects `caption` at the top level.
-    caption: node.childImageSharp.thumb.originalName,
+    //caption: node.childImageSharp.thumb.originalName,
   }))
 
   // Override some of Lightbox options to localise labels in French
@@ -42,7 +42,7 @@ const galleriePage = ({data}) => {
     zoomOutLabel: 'Dézoomer',
     closeLabel: 'Fermer',
   }
-  return (<Gallery images={images} />)
+  return (<Gallery images={images} lightboxOptions={lightboxOptions} />)
 }
 
 export default galleriePage
