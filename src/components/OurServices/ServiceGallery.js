@@ -9,7 +9,7 @@ import { setRadius, setShadow, media } from '../../theme/helpers'
 
 // Component
 const ServiceGallery = ({shortName, fluidImage, altImg}) => {
-  console.log(altImg)
+
   // Component Variables
 
   // Render Component

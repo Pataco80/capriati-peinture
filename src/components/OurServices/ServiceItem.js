@@ -51,7 +51,7 @@ const ServiceItem = (props) => {
 
   // Component Functions
   const galleryItem = serviceItemGallery.map(({ node }) => ({
-  image: node.childImageSharp.fluid,
+    image: node.childImageSharp.fluid,
     originalName: node.childImageSharp.fluid.originalName,
   }))
 
