@@ -33,11 +33,6 @@ const linksList = [
   },
   {
     id:5,
-    label: 'gallerie',
-    path: '/gallerie/'
-  },
-  {
-    id:5,
     label: 'Contact',
     path: '/contact/'
   },
