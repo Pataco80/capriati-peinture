@@ -13,6 +13,7 @@ import BcgImage from '../BcgImage'
 import { Banner } from '../styledElements/BannerStyled'
 import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
 import ServiceGallery from './ServiceGallery'
+import { SRLWrapper } from 'simple-react-lightbox'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -92,25 +93,27 @@ const ServiceItem = (props) => {
       {
         home ? '' :
         <GallerySection padding='3rem 0 5rem'>
-        {
-          galleryList.map((props) => {
-            const {id, shortName, altImg} = props
+          <SRLWrapper className='LightboxWrapper'>
+            {
+              galleryList.map((props) => {
+                const {id, shortName, altImg} = props
+                const regExp = new RegExp(shortName, "i");
 
-            const regExp = new RegExp(shortName, "i");
-            return (
-              <ServiceGallery
-                key={id}
-                shortName={shortName}
-                title={shortName}
-                fluidImage={
-                  galleryItem.find(({originalName}) => originalName.match(regExp))
-                  .image
-                }
-                altImg={altImg}
-              />
-            )
-          })
-        }
+                return (
+                  <ServiceGallery
+                    key={id}
+                    shortName={shortName}
+                    title={shortName}
+                    fluidImage={
+                      galleryItem.find(({originalName}) => originalName.match(regExp))
+                      .image
+                    }
+                    altImg={altImg}
+                  />
+                )
+              })
+            }
+          </SRLWrapper>
         </GallerySection>
       }
     </ServiceWrapper>
@@ -198,11 +201,15 @@ const ServiceWrapper = styled.article`
 `
 
 const GallerySection = styled(Section)`
-  ${setFlex({flDir:'column'})};
+  div {
+    ${setFlex({flDir:'column'})};
 
   ${media.greaterThan('smTablet')`
     ${setFlex({flDir:'row',x:'space-around'})};
   `}
+  }
 `
+
+
 
 export default ServiceItem

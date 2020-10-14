@@ -26,7 +26,8 @@ const ImageWrapper = styled.div`
   width:100%;
 
   ${media.greaterThan('smTablet')`
-    width:30%;
+    width:calc(100%/3);
+    padding:0 1rem;
   `}
 `
 

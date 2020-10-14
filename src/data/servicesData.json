@@ -30,19 +30,19 @@
         "id":1,
         "shortName":"platre1",
         "image":"assets/images/gallery/services/platre1.jpg",
-        "altImg":"platre1"
+        "altImg":"Quand on fait des bétises..."
       },
       {
         "id":2,
         "shortName":"platre2",
         "image":"assets/images/gallery/services/platre2.jpg",
-        "altImg":"platre2"
+        "altImg":"On se casse la figure..."
       },
       {
         "id":3,
         "shortName":"platre3",
         "image":"assets/images/gallery/services/platre3.jpg",
-        "altImg":"platre3"
+        "altImg":"Et on finit avec un plâtre"
       }
     ]
   },
