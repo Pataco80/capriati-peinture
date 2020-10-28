@@ -23,7 +23,9 @@ const ServiceGallery = ({gallery, servicesGalleryImg}) => {
           const imagePath = galleryItem.find(({originalName}) => originalName.match(regExp))
           .image
           return (
-            <GalleryImg key={id} fluid={imagePath} alt={altImg}/>
+            <ImgWrapper key={id}>
+              <Image fluid={imagePath} alt={altImg}/>
+            </ImgWrapper>
           )
         })
       }
@@ -41,7 +43,7 @@ const GallerySection = styled(SectionContentCenter)`
   `}
 `
 
-const GalleryImg = styled(Img)`
+const ImgWrapper = styled.div`
   width:100%;
   ${setRadius({allPx:12})};
   box-shadow:${setShadow('medium')};
@@ -50,6 +52,10 @@ const GalleryImg = styled(Img)`
   ${media.greaterThan('tablet')`
     width: 30%;
   `}
+`
+
+const Image = styled(Img)`
+  ${setRadius({allPx:12})}; 
 `
 
 export default ServiceGallery

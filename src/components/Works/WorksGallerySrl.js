@@ -14,7 +14,9 @@ const GallerySrl = ({galleryQuery}) => {
     <SRLWrapper>
       <GallerySection>
         {galleryQuery.map((e) => (
-          <GalleryImg key={e.node.id} fluid={e.node.childImageSharp.fluid} />
+          <ImgWrapper key={e.node.id}>
+            <Image fluid={e.node.childImageSharp.fluid} />
+          </ImgWrapper>
         ))}
       </GallerySection>
     </SRLWrapper>
@@ -32,7 +34,7 @@ const GallerySection = styled(SectionContentCenter)`
   `}
 `
 
-const GalleryImg = styled(Img)`
+const ImgWrapper = styled.div`
   width:100%;
   ${setRadius({allPx:12})};
   box-shadow:${setShadow('medium')};
@@ -42,4 +44,9 @@ const GalleryImg = styled(Img)`
     width: 30%;
   `}
 `
+
+const Image = styled(Img)`
+  ${setRadius({allPx:12})}; 
+`
+
 export default GallerySrl
