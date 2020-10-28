@@ -54,6 +54,7 @@ export const getData = graphql`
         text
       }
       gallery {
+        id
         shortName
         image
         altImg
@@ -103,7 +104,7 @@ export const getData = graphql`
                 <>
                 {
                   home ?
-                  <ServiceItemCard to={`/services/#${shortName}/`} className='cartelien' title={`Voir le service de ${name}`}>
+                  <ServiceItemCard to={`/services/#${shortName}`} className='cartelien' title={`Voir le service de ${name}`}>
                     <ServiceItem
                     key={shortName}
                     shortName={shortName}

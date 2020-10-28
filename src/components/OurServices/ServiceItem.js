@@ -11,13 +11,12 @@ import Img from 'gatsby-image'
 import Title from '../Title'
 import BcgImage from '../BcgImage'
 import { Banner } from '../styledElements/BannerStyled'
-import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
+import { SectionContentCenter } from '../styledElements/SectionStyled'
 import ServiceGallery from './ServiceGallery'
-import { SRLWrapper } from 'simple-react-lightbox'
-
 // Import styled-components and helpers
 import styled from 'styled-components'
 import { setFlex, media, breakpoints } from '../../theme/helpers'
+
 
 // GraphQl Queries
   export const getGalleryImages = graphql`
@@ -41,15 +40,13 @@ import { setFlex, media, breakpoints } from '../../theme/helpers'
 const ServiceItem = (props) => {
 
   // Component Variables
-  const { name, shortName, altIcon, altFeatured, Icon, featuredImage, competences, gallery, home } = props
+  const {id, name, shortName, altIcon, altFeatured, Icon, featuredImage, competences, gallery, home } = props
 
   const data = useStaticQuery(getGalleryImages)
   const serviceItemGallery = data.servicesGallery.edges
   const competencesList = competences
-  const galleryList = gallery
   const windowSize = useWindowSize()
   const toHero = breakpoints.smTablet
-
   // Component Functions
   const galleryItem = serviceItemGallery.map(({ node }) => ({
     image: node.childImageSharp.fluid,
@@ -58,7 +55,7 @@ const ServiceItem = (props) => {
 
   // Render Component
   return (
-    <ServiceWrapper id={shortName} className={home ? 'home' : ''}>
+    <ServiceWrapper key={id} className={home ? 'home' : ''}>
       <ServiceHeader home={home}>
       {
         windowSize < toHero || home ?
@@ -91,30 +88,8 @@ const ServiceItem = (props) => {
       }
       </ServiceBody>
       {
-        home ? '' :
-        <GallerySection padding='3rem 0 5rem'>
-          <SRLWrapper className='LightboxWrapper'>
-            {
-              galleryList.map((props) => {
-                const {id, shortName, altImg} = props
-                const regExp = new RegExp(shortName, "i");
-
-                return (
-                  <ServiceGallery
-                    key={id}
-                    shortName={shortName}
-                    title={shortName}
-                    fluidImage={
-                      galleryItem.find(({originalName}) => originalName.match(regExp))
-                      .image
-                    }
-                    altImg={altImg}
-                  />
-                )
-              })
-            }
-          </SRLWrapper>
-        </GallerySection>
+        !home &&
+        <ServiceGallery gallery={gallery} servicesGalleryImg={galleryItem}/>
       }
     </ServiceWrapper>
   )
@@ -197,16 +172,6 @@ const ServiceWrapper = styled.article`
     ${ServiceBanner} {
       ${setFlex({flDir:'column'})};
     }
-  }
-`
-
-const GallerySection = styled(Section)`
-  div {
-    ${setFlex({flDir:'column'})};
-
-  ${media.greaterThan('smTablet')`
-    ${setFlex({flDir:'row',x:'space-around'})};
-  `}
   }
 `
 
