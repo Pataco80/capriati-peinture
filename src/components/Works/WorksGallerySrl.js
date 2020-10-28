@@ -15,7 +15,9 @@ const GallerySrl = ({galleryQuery}) => {
       <GallerySection>
         {galleryQuery.map((e) => (
           <ImgWrapper key={e.node.id}>
+            <a href={e.node.childImageSharp.fluid.src} data-attribute="SRL">
             <Image fluid={e.node.childImageSharp.fluid} />
+            </a>
           </ImgWrapper>
         ))}
       </GallerySection>
