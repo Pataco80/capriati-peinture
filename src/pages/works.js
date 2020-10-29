@@ -8,7 +8,7 @@ import Layout from '../components/Globals/Layout'
 import SEO from '../components/Globals/SEO'
 import Hero from '../components/Hero'
 import References from '../components/References'
-import Works from '../components/Works/Works'
+import Works from '../components/Works'
 
 // GraphQl Queries
 export const getImage = graphql`

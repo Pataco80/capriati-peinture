@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
 import Title from './Title'
-import { Section } from './styledElements/SectionStyled'
+import { Section, SectionContentCenter } from './styledElements/SectionStyled'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
@@ -33,13 +33,15 @@ const References = () => {
   return (
     <ReferencesWrapper>
       <Title tag='h2' title='Nos Références' titleSection/>
-      <ul>
-        {
-          referencesJsonData.map((item,i) => {
-            return <ReferenceItem key={i}>{item.text}</ReferenceItem>
-          })
-        }
-      </ul>
+      <SectionContentCenter>
+        <ul>
+          {
+            referencesJsonData.map((item,i) => {
+              return <ReferenceItem key={i}>{item.text}</ReferenceItem>
+            })
+          }
+        </ul>
+      </SectionContentCenter>
     </ReferencesWrapper>
   )
 }
