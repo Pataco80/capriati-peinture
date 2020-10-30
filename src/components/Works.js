@@ -93,7 +93,7 @@ export const getData = graphql`
         ...GatsbyImageSharpFluid
         originalName
       }
-      full: fluid(maxWidth: 1200) {
+      full: fluid(maxWidth: 1200, , maxHeight: 1200) {
         ...GatsbyImageSharpFluid
       }
     }
