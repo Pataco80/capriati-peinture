@@ -23,11 +23,13 @@ const Works = () => {
     // Use original name as caption.
     // The `originalName` is queried inside the `thumb` field,
     // but the `Gallery` component expects `caption` at the top level.
+    // caption: node.name
     // caption: node.childImageSharp.thumb.originalName,
   }))
 
   const anciensTravaux = data.anciensTravaux.edges.map(({ node }) => ({
     ...node.childImageSharp,
+    // caption: node.name
   }))
 
   // Override some of Lightbox options to localise labels in French
@@ -88,13 +90,19 @@ export const getData = graphql`
   }
 
   fragment getImage on File {
+    name
     childImageSharp {
       thumb: fluid(maxWidth: 270, maxHeight: 270) {
         ...GatsbyImageSharpFluid
         originalName
+        aspectRatio
+        sizes
+
       }
       full: fluid(maxWidth: 1200, , maxHeight: 1200) {
         ...GatsbyImageSharpFluid
+        aspectRatio
+        sizes
       }
     }
   }

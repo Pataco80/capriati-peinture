@@ -25,9 +25,11 @@ import { setFlex, media, breakpoints } from '../../theme/helpers'
         edges {
           node {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 400) {
                 ...GatsbyImageSharpFluid
                 originalName
+                aspectRatio
+                sizes
               }
             }
           }

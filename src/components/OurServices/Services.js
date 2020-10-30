@@ -23,6 +23,8 @@ export const getData = graphql`
           fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid
             originalName
+            aspectRatio
+            sizes
           }
         }
       }
@@ -32,9 +34,11 @@ export const getData = graphql`
     edges {
       node {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200){
             ...GatsbyImageSharpFluid
             originalName
+            aspectRatio
+            sizes
           }
         }
       }
