@@ -32,7 +32,7 @@ const SEO = ({ description, lang, meta, title, image, logo, keywords }) => {
   const metaDescription = description || site.siteMetadata.description
 
   const url = site.siteMetadata.siteUrl
-  const metaImage = `${url}${image || logo}`
+  const metaImage = `${image || logo}`
   const metaKeywords = keywords || site.siteMetadata.keywords
 
 
