@@ -4,27 +4,26 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
- // Import informations from website configuration. For more details see the comments of the website-config-example.js configuration file
-const website = require('./config/website-config')
+ // Import informations from websiteConfig configuration. For more details see the comments of the websiteConfig-config-example.js configuration file
+const websiteConfig = require('./config/website-config')
 
-const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
-const siteUrl = website.url + pathPrefix
+const pathPrefix = websiteConfig.pathPrefix
+const siteUrl = websiteConfig.siteUrl + pathPrefix
 
 module.exports = {
 /* General Information */
-  pathPrefix: website.pathPrefix,
+  pathPrefix: websiteConfig.pathPrefix,
   siteMetadata: {
   siteUrl: siteUrl, // For gatsby-plugin-sitemap
   pathPrefix,
-  title: website.title,
-  description: website.description,
-  keywords: website.keywords,
-  banner: website.logo,
-  siteLanguage: website.siteLanguage,
-  ogLanguage: website.ogLanguage,
-  author: website.author,
-  twitter: website.twitter,
-  facebook: website.facebook,
+  title: websiteConfig.siteTitle,
+  description: websiteConfig.siteDescription,
+  keywords: websiteConfig.keywords,
+  logo: websiteConfig.siteLogo,
+  siteLanguage: websiteConfig.siteLanguage,
+  author: websiteConfig.author,
+  twitterUserName: websiteConfig.twitterUserName,
+  facebookUserName: websiteConfig.facebookUserName,
 },
 
 /* Your site config here */
@@ -48,9 +47,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
+        name: `srcAssets`,
         path: `${__dirname}/src/assets/`,
       },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "assets",
+        path: `${__dirname}/static/`
+      }
     },
     `gatsby-transformer-json`,
     {
@@ -91,14 +97,52 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: website.title,
-        short_name: website.titleAlt,
-        description: website.description,
+        name: websiteConfig.siteTitle,
+        short_name: websiteConfig.siteTitleShort,
+        description: websiteConfig.siteDescription,
         start_url: pathPrefix,
-        background_color: website.backgroundColor,
-        theme_color: website.themeColor,
+        background_color: websiteConfig.backgroundColor,
+        theme_color: websiteConfig.themeColor,
         display: 'standalone',
-        icon: website.favicon,
+        icon: websiteConfig.favicon,
+        icons: [
+          {
+           src: "\/favicons/android-icon-36x36.png",
+           sizes: "36x36",
+           type: "image\/png",
+           density: "0.75"
+          },
+          {
+           src: "\/favicons/android-icon-48x48.png",
+           sizes: "48x48",
+           type: "image\/png",
+           density: "1.0"
+          },
+          {
+           src: "\/favicons/android-icon-72x72.png",
+           sizes: "72x72",
+           type: "image\/png",
+           density: "1.5"
+          },
+          {
+           src: "\/favicons/android-icon-96x96.png",
+           sizes: "96x96",
+           type: "image\/png",
+           density: "2.0"
+          },
+          {
+           src: "\/favicons/android-icon-144x144.png",
+           sizes: "144x144",
+           type: "image\/png",
+           density: "3.0"
+          },
+          {
+           src: "\/favicons/android-icon-192x192.png",
+           sizes: "192x192",
+           type: "image\/png",
+           density: "4.0"
+          }
+        ],
         icon_options: {
           purpose: `maskable`,
         },
