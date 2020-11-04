@@ -13,7 +13,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "preload-fonts": "gatsby-preload-fonts",
-    "restart": "gatsby clean && gatsby develop"
+    "refrech": "gatsby clean && gatsby develop"
   },
   "dependencies": {
     "@browniebroke/gatsby-image-gallery": "^4.0.1",

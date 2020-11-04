@@ -15,7 +15,7 @@ export const query = graphql`
     heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -24,12 +24,11 @@ export const query = graphql`
 
 // Component
 const servicesPage = ({data}) => {
-const Image = data.heroBcg.childImageSharp.fluid
   // Render Component
   return (
     <Layout>
-      <SEO title='Nos Services' description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives" keywords="Plâtre, crépi, papiers-peints, giclage, fresques décoratives" image={Image}/>
-      <Hero title='Nos Services' bcgImage={Image} />
+      <SEO title='Nos Services' description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives" keywords="Plâtre, crépi, papiers-peints, giclage, fresques décoratives"/>
+      <Hero title='Nos Services' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Services/>
     </Layout>
   )

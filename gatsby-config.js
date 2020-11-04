@@ -47,16 +47,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `srcAssets`,
+        name: `assets`,
         path: `${__dirname}/src/assets/`,
       },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "assets",
-        path: `${__dirname}/static/`
-      }
     },
     `gatsby-transformer-json`,
     {
