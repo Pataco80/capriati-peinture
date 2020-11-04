@@ -38,7 +38,7 @@ const websiteConfig = {
   favicon: 'src/assets/images/icons/favicon.png',
   siteLogo: '/assets/images/logos/logoCapriati.png', // Logo used for SEO and manifest.
   siteLanguage: 'fr',
-  siteUrl: 'https://www.capriati.ch', // Domain of your website without pathPrefix.
+  siteUrl: 'https://capriati-peinture.netlify.app', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: "Société de peinture en bâtiments de la famille Capriati. Entreprise familiale basée à Rolle et travaillant sur la région de 'La Côte' dans le canton de Vaud (CH)",
   // Website description used for RSS feeds/meta description tag.
