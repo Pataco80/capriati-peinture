@@ -32,7 +32,7 @@ export const query = graphql`
 const contactPage = ({data}) => {
   return (
     <Layout>
-      <SEO title='Nous Contacter' description="Contactez l'entreprise Capriati S.A." keywords="Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail"/>
+      <SEO title='Nous Contacter' description="Contactez l'entreprise Capriati S.A." keywords="Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail" image='contact'/>
       <Hero title='Nous Contacter' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Contactform/>
       <ContactSection>

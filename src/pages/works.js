@@ -29,7 +29,7 @@ const worksPage = ({data}) => {
   // Render Component
   return (
     <Layout>
-      <SEO title='Nos Travaux' description="Nos travaux éféctués au fil des années" />
+      <SEO title='Nos Travaux' description="Nos travaux éféctués au fil des années" keywords="nos travaux, nos références, gallerie" image='work'/>
       <Hero title='Nos Travaux' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <References />
       <Works />
