@@ -18,10 +18,10 @@ import { setFlex, media } from '../theme/helpers'
 // GraphQl Queries
 export const query = graphql`
   {
-    heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
+    heroBcg:file(relativePath: {eq: "images/banners/contact-page-banner.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }

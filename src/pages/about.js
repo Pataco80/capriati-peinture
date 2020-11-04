@@ -18,10 +18,10 @@ import {setColor} from '../theme/helpers'
 // GraphQl Queries
 export const getImage = graphql`
   {
-    heroBcg:file(relativePath: {eq: "images/pinceaux.jpg"}) {
+    heroBcg:file(relativePath: {eq: "images/banners/about-page-banner.jpg"}) {
       childImageSharp {
         fluid (maxWidth: 1200) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid
         }
       }
     }
