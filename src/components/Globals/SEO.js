@@ -32,6 +32,7 @@ function SEO({ description, lang, meta, title, image, keywords }) {
   const url = site.siteMetadata.siteUrl
   const metaImage = `${url}/assets/images/logos/${image || "logoCapriati.png"}`
   const metaKeywords = keywords || site.siteMetadata.keywords
+  const titleSocialCard = `%s | ${site.siteMetadata.title}`
 
 
   return (
@@ -48,7 +49,7 @@ function SEO({ description, lang, meta, title, image, keywords }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: titleSocialCard,
         },
         {
           property: `og:description`,
@@ -68,7 +69,7 @@ function SEO({ description, lang, meta, title, image, keywords }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: titleSocialCard,
         },
         {
           name: `twitter:description`,
