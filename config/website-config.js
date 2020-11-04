@@ -36,7 +36,7 @@ const websiteConfig = {
   siteTitleShort: `${businessInfo.shortName}`, // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: `${businessInfo.altName}`, // Alternative site title for SEO.
   favicon: 'src/assets/images/icons/favicon.png',
-  siteLogo: '/images/cover.png', // Logo used for SEO and manifest.
+  siteLogo: 'cover.png', // Logo used for SEO and manifest.
   siteLanguage: 'fr',
   siteUrl: 'https://www.capriati.ch', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.

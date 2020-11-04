@@ -27,7 +27,7 @@ const servicesPage = ({data}) => {
   // Render Component
   return (
     <Layout>
-      <SEO title='Nos Services' description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives" keywords="Plâtre, crépi, papiers-peints, giclage, fresques décoratives"/>
+      <SEO title='Nos Services' description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives" keywords="Plâtre, crépi, papiers-peints, giclage, fresques décoratives" image='pinceaux.jpg'/>
       <Hero title='Nos Services' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Services/>
     </Layout>
