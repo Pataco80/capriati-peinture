@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import components from Gatsby and plugins Gatsby
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 
 // Import Components for App
 import Layout from '../components/Globals/Layout'
@@ -13,9 +13,9 @@ import Works from '../components/Works'
 // GraphQl Queries
 export const getImage = graphql`
   {
-    heroBcg:file(relativePath: {eq: "images/banners/work-page-banner.jpg"}) {
+    heroBcg: file(relativePath: { eq: "images/banners/work-page-banner.jpg" }) {
       childImageSharp {
-        fluid (maxWidth: 1200) {
+        fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -24,13 +24,17 @@ export const getImage = graphql`
 `
 
 // Component
-const worksPage = ({data}) => {
-
+const worksPage = ({ data }) => {
   // Render Component
   return (
     <Layout>
-      <SEO title='Nos Travaux' description="Nos travaux éféctués au fil des années" keywords="nos travaux, nos références, gallerie" image='work'/>
-      <Hero title='Nos Travaux' bcgImage={data.heroBcg.childImageSharp.fluid} />
+      <SEO
+        title="Nos Travaux"
+        description="Nos travaux éféctués au fil des années"
+        keywords="nos travaux, nos références, gallerie"
+        image="work"
+      />
+      <Hero title="Nos Travaux" bcgImage={data.heroBcg.childImageSharp.fluid} />
       <References />
       <Works />
     </Layout>
