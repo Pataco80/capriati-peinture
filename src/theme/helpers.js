@@ -1,5 +1,5 @@
 import { generateMedia } from 'styled-media-query'
-import {lighten,darken} from 'polished'
+import { lighten, darken } from 'polished'
 
 // Colors Palette
 const baseColor = {
@@ -19,7 +19,7 @@ const polishedColor = {
   greyLighten1: lighten(0.15, `${baseColor.mainGrey}`),
   greyLighten2: lighten(0.25, `${baseColor.mainGrey}`),
   greyLighten3: lighten(0.45, `${baseColor.mainGrey}`),
-  greyLighten4: lighten(0.60, `${baseColor.mainGrey}`),
+  greyLighten4: lighten(0.6, `${baseColor.mainGrey}`),
 }
 
 export const setColor = {
@@ -40,13 +40,13 @@ export const setColor = {
 }
 
 const convertHexToRGBA = (hex, opacity) => {
-  const tempHex = hex.replace('#', '');
-  const r = parseInt(tempHex.substring(0, 2), 16);
-  const g = parseInt(tempHex.substring(2, 4), 16);
-  const b = parseInt(tempHex.substring(4, 6), 16);
+  const tempHex = hex.replace('#', '')
+  const r = parseInt(tempHex.substring(0, 2), 16)
+  const g = parseInt(tempHex.substring(2, 4), 16)
+  const b = parseInt(tempHex.substring(4, 6), 16)
 
-  return `rgba(${r},${g},${b},${opacity / 100})`;
-};
+  return `rgba(${r},${g},${b},${opacity / 100})`
+}
 
 /*
 // If project as theme, paste the variables and export in GlobalStyles
@@ -54,10 +54,8 @@ export const setTheme = {
   dark : {
   },
   light : {
-    
   }
 }*/
-
 
 // Fonts Palette
 export const setFont = {
@@ -69,8 +67,8 @@ export const setFont = {
   "San Francisco",
   "Roboto",
   "Segoe UI",
-  'Helvetica',
-  'Arial',
+  "Helvetica",
+  "Arial",
   "sans-serif"`,
 }
 
@@ -84,7 +82,7 @@ export const breakpoints = {
   smTablet: 576,
   tablet: 768,
   lgTablet: 992,
-  desktop: 1200, 
+  desktop: 1200,
 }
 
 export const media = generateMedia({
@@ -93,19 +91,23 @@ export const media = generateMedia({
   tablet: `${setPxToRem(breakpoints.tablet)}`,
   lgTablet: `${setPxToRem(breakpoints.lgTablet)}`,
   desktop: `${setPxToRem(breakpoints.desktop)}`,
-});
+})
 
 // Layout's Functions
-export const layout = ({mW = 1140, pdX = 8, pdY = 0} = {}) => {
+export const layout = ({ mW = 1140, pdX = 8, pdY = 0 } = {}) => {
   return `
     max-width:${setPxToRem(mW)};
     margin: 0 auto;
   `
 }
 
-
-
-export const setFlex = ({flex = 'auto', x = 'center', y = 'center', flDir = 'row', wrap = 'wrap'} = {}) => {
+export const setFlex = ({
+  flex = 'auto',
+  x = 'center',
+  y = 'center',
+  flDir = 'row',
+  wrap = 'wrap',
+} = {}) => {
   return `display: flex;
   flex:${flex};
   justify-content: ${x};
@@ -115,7 +117,7 @@ export const setFlex = ({flex = 'auto', x = 'center', y = 'center', flDir = 'row
   `
 }
 
-export const setGrid = ({ x = 'space-evenly', y = 'space-evenly', xgap = 0, ygap = 0} = {}) => {
+export const setGrid = ({ x = 'space-evenly', y = 'space-evenly', xgap = 0, ygap = 0 } = {}) => {
   return `display: grid;
   justify-content: ${x};
   align-content: ${y};
@@ -134,12 +136,7 @@ export const setLinearBcg = ({
 `
 }
 
-
-export const setImgBcg = ({
-  size = 'cover',
-  position = 'center',
-  repeat = 'no-repeat',
-} = {}) => {
+export const setImgBcg = ({ size = 'cover', position = 'center', repeat = 'no-repeat' } = {}) => {
   return `background-size: ${size} !important;
   background-position: ${position} !important;background-repeat: ${repeat} !important;
 `
@@ -150,35 +147,28 @@ export const setLetterSpacing = (number = 3.2) => {
   return `letter-spacing: ${setPxToRem(number)}`
 }
 
-export const setBorder = ({
-  size = 2,
-  style = 'solid',
-  color = 'transparent',
-} = {}) => {
+export const setBorder = ({ size = 2, style = 'solid', color = 'transparent' } = {}) => {
   return `${setPxToRem(size)} ${style} ${color}`
 }
 
 export const setRadius = ({
-  allPx = null, 
+  allPx = null,
   allPc = null,
   radius = 4,
   tl = radius,
   tr = radius,
   bl = radius,
-  br = radius
+  br = radius,
 } = {}) => {
-  if(allPx){
-    return`
+  if (allPx) {
+    return `
     border-radius: ${setPxToRem(allPx)};
     `
-  }
-  else if(allPc){
-    return`
+  } else if (allPc) {
+    return `
     border-radius: ${allPc}%;
     `
-  }
-
-  else {
+  } else {
     return `
     border-top-left-radius: ${setPxToRem(tl)};
     border-top-right-radius: ${setPxToRem(tr)};
@@ -186,36 +176,33 @@ export const setRadius = ({
     border-bottom-right-radius: ${setPxToRem(br)};
   `
   }
-  
 }
 
-export const setTransition = ({
-  style = 'all',
-  duration = 0.3,
-  speedCurve = 'linear',
-} = {}) => {
+export const setTransition = ({ style = 'all', duration = 0.3, speedCurve = 'linear' } = {}) => {
   return `transition: ${style} ${duration}s ${speedCurve}`
 }
 
 /*export const setShadow = {
-  light: 'box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);',
-  dark: 'box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);',
+  light: "box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);",
+  dark: "box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);",
 }*/
 
-export const setShadow = (style = '', {inset = '', x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100} = {}) => {
+export const setShadow = (
+  style = '',
+  { inset = '', x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100 } = {}
+) => {
   if (style === 'light') {
-    return `${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack,30)};`
+    return `${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack, 30)};`
   }
   if (style === 'medium') {
-    return `${inset} 0 3px 12px ${convertHexToRGBA(setColor.mainBlack,50)};`
+    return `${inset} 0 3px 12px ${convertHexToRGBA(setColor.mainBlack, 50)};`
   }
   if (style === 'dark') {
-    return `${inset} 0 5px 15px ${convertHexToRGBA(setColor.mainBlack,80)};`
+    return `${inset} 0 5px 15px ${convertHexToRGBA(setColor.mainBlack, 80)};`
   }
   if (style === 'none') {
     return `none;`
-  }
-  else {
-    return `${y}px ${x}px ${blur}px ${convertHexToRGBA(color,opacity)};`
+  } else {
+    return `${y}px ${x}px ${blur}px ${convertHexToRGBA(color, opacity)};`
   }
 }

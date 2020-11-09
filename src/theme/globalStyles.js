@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 import { setColor, setFont, setLetterSpacing } from './helpers'
 
@@ -28,7 +28,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: ${setFont.headingsFont};
   margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
   color: ${setColor.primaryColor};
-  font-weight:900;
+  font-weight: 900;
 }
 
 h1, .h1 {
@@ -57,19 +57,24 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1.4rem; 
+  font-size: 1.4rem;
   line-height: calc(1.4rem + .2vw); /* Responsive Vertical Rhythm */
 }
 
-h4, .h4, h5, .h5, h6, .h6 { 
+h4, .h4, h5, .h5, h6, .h6 {
   margin: calc(1rem + .2vw) 0;
 }
+
 p {
   margin: 0 0 calc(1rem + .3vw) 0;
 }
 
+small, .small {
+  font-size: 80%;
+}
+
 .gatsby-image-wrapper {
-  width:100%;
+  width: 100%;
 }
 `
 
