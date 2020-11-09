@@ -15,11 +15,11 @@ import { media, setFlex } from '../../theme/helpers'
 // GraphQl Queries
 const getData = graphql`
   {
-    logos:allFile(filter: {relativePath: {regex: "/parteners/"}}) {
+    logos: allFile(filter: { relativePath: { regex: "/parteners/" } }) {
       edges {
         node {
           childImageSharp {
-            fluid (maxWidth:400) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -43,7 +43,6 @@ const getData = graphql`
 
 // Component
 const Parteners = () => {
-
   // Component Variables
   const data = useStaticQuery(getData)
   const logoList = data.logos.edges
@@ -58,24 +57,26 @@ const Parteners = () => {
   // Render Component
   return (
     <PartenersWrapper>
-      <Title tag='h2' title='Nos Partenaires' titleSection />
+      <Title tag="h2" title="Nos Partenaires" titleSection />
       <PartenersLogosContainer>
-        {
-          parteners.map((item,i) => {
-            const { shortName, altLogo, url, urlTitle } = item
-            const regExp = new RegExp(shortName, "i");
-            const logoPath = partenersLogo.find(({originalName}) => originalName.match(regExp))
-            .logo
+        {parteners.map((item, i) => {
+          const { shortName, altLogo, url, urlTitle } = item
 
-            return <PartenersItem
+          // Variables and Functions for icon and featured images
+          const regExp = new RegExp(shortName, 'i')
+          const logoPath = partenersLogo.find(({ originalName }) => originalName.match(regExp)).logo
+
+          // Return Item on Card or page format
+          return (
+            <PartenersItem
               Key={i}
               fluid={logoPath}
               altLogo={altLogo}
               url={url}
               urlTitle={urlTitle}
             />
-          })
-        }
+          )
+        })}
       </PartenersLogosContainer>
     </PartenersWrapper>
   )
@@ -83,14 +84,14 @@ const Parteners = () => {
 
 // Styles from styled-components
 const PartenersWrapper = styled(Section)`
-  ${setFlex({flDir:'column'})};
+  ${setFlex({ flDir: 'column' })};
 `
 
 const PartenersLogosContainer = styled(SectionContentCenter)`
-  ${setFlex({flDir:'column'})};
+  ${setFlex({ flDir: 'column' })};
 
   ${media.greaterThan('tablet')`
-    ${setFlex({flDir:'row', x:'space-around'})};
+    ${setFlex({ flDir: 'row', x: 'space-around' })};
   `}
 `
 

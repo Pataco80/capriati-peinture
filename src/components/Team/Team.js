@@ -16,7 +16,7 @@ import { layout, setFlex, media } from '../../theme/helpers'
 // GraphQl Queries
 export const getData = graphql`
   {
-    photo: allFile(filter: {relativeDirectory: {regex: "/team/"}}) {
+    photo: allFile(filter: { relativeDirectory: { regex: "/team/" } }) {
       edges {
         node {
           childImageSharp {
@@ -28,7 +28,7 @@ export const getData = graphql`
         }
       }
     }
-    teamCadres:allTeamCadresDataJson {
+    teamCadres: allTeamCadresDataJson {
       nodes {
         id
         name
@@ -40,12 +40,12 @@ export const getData = graphql`
         date
       }
     }
-    cFc:allTeanCfcDataJson {
+    cFc: allTeanCfcDataJson {
       nodes {
         name
       }
     }
-    studeents:allTeamStudentsDataJson {
+    studeents: allTeamStudentsDataJson {
       nodes {
         name
       }
@@ -54,8 +54,7 @@ export const getData = graphql`
 `
 
 // Component
-const Team = (props) => {
-
+const Team = props => {
   // Component Variables
   const { background, padding } = props
   const data = useStaticQuery(getData)
@@ -72,14 +71,14 @@ const Team = (props) => {
 
   // Render Component
   return (
-    <TeamWrapper  background={background} padding={padding}>
-      <Title tag='h2' title='Notre Équipe' titleSection/>
+    <TeamWrapper background={background} padding={padding}>
+      <Title tag="h2" title="Notre Équipe" titleSection />
       <TeamContent>
-        <TeamCadres teamPhoto={teamPhoto} team={teamCadres}/>
+        <TeamCadres teamPhoto={teamPhoto} team={teamCadres} />
       </TeamContent>
       <TeamContent>
-        <TeamTable team={teamCfc} title='Nos employés avec CFC' />
-        <TeamTable team={teamStudents} title='Nos aprentis' />
+        <TeamTable team={teamCfc} title="Nos employés avec CFC" />
+        <TeamTable team={teamStudents} title="Nos aprentis" />
       </TeamContent>
     </TeamWrapper>
   )
@@ -87,17 +86,16 @@ const Team = (props) => {
 
 // Styles from styled-components
 const TeamWrapper = styled(Section)`
-  ${setFlex({flDir:'column'})};
+  ${setFlex({ flDir: 'column' })};
 `
 
 const TeamContent = styled(SectionContentCenter)`
-  ${setFlex({flDir:'column',y:'center'})};
-  flex-wrap:nowrap;
+  ${setFlex({ flDir: 'column', y: 'center', wrap: 'nowrap' })};
 
   ${media.greaterThan('tablet')`
     ${layout()};
-    ${setFlex({flDir:'row', x:'space-around', y:'space-around'})};
-    align-items:stretch;
+    ${setFlex({ flDir: 'row', x: 'space-around', y: 'space-around' })};
+    align-items: stretch;
   `}
 `
 

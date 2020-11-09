@@ -1,4 +1,4 @@
-import React, { useState, useEffect}from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 // Import Components for App
@@ -14,7 +14,6 @@ import { setColor, setFlex, setPxToRem } from '../../theme/helpers'
 
 // Component
 const Layout = ({ children }) => {
-
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
 
@@ -26,9 +25,7 @@ const Layout = ({ children }) => {
         setScrolled(!scrolled)
       }
     }
-
-    document.addEventListener('scroll', handleScroll, {passive: true})
-
+    document.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       document.removeEventListener('scroll', handleScroll)
     }
@@ -37,13 +34,11 @@ const Layout = ({ children }) => {
   // Render Component
   return (
     <>
-      <GlobalStyles/>
+      <GlobalStyles />
       <AppWrapper>
-        <MainNavigation toScroll={scrolled}/>
-        <PageContainer className={scrolled ? `isScroll` : ``}>
-          {children}
-        </PageContainer>
-        <Footer/>
+        <MainNavigation toScroll={scrolled} />
+        <PageContainer className={scrolled ? `isScroll` : ``}>{children}</PageContainer>
+        <Footer />
       </AppWrapper>
     </>
   )
@@ -52,16 +47,16 @@ const Layout = ({ children }) => {
 // Styles from styled-components
 const AppWrapper = styled.div`
   background-color: ${setColor.mainWhite};
-  width:100vw;
-  min-height:100vh;
+  width: 100vw;
+  min-height: 100vh;
 `
 
 const PageContainer = styled.main`
-  ${setFlex({flDir:'column'})};
-  z-index:2;
+  ${setFlex({ flDir: 'column' })};
+  z-index: 2;
 
   &.isScroll {
-    margin-top:${setPxToRem(62)};
+    margin-top: ${setPxToRem(62)};
   }
 `
 

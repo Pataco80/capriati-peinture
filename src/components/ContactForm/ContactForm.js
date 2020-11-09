@@ -10,26 +10,16 @@ import * as S from './ContactFormStyled'
 
 // Component
 const Contactform = () => {
-
   // Render Component
   return (
     <Section>
-      <Title tag='h3' title='Contactez-nous via notre formulaire' titleSection/>
-      <S.FormContainer padding='0'>
-        <S.ContactForm
-          action="https://formspree.io/xlenaazr"
-          method="POST"
-          autocomplete='on'
-        >
+      <Title tag="h3" title="Contactez-nous via notre formulaire" titleSection />
+      <S.FormContainer padding="0">
+        <S.ContactForm action="https://formspree.io/xlenaazr" method="POST" autocomplete="on">
           <S.ContactInfo>
             <S.ContactName>
               <S.Label htmlFor="name">Nom</S.Label>
-              <S.Input
-                type='text'
-                name='name'
-                id='name'
-                placeholder='Saisissez votre Nom'
-              />
+              <S.Input type="text" name="name" id="name" placeholder="Saisissez votre Nom" />
             </S.ContactName>
             <S.ContactMail>
               <S.Label htmlFor="email">Email</S.Label>
@@ -37,7 +27,7 @@ const Contactform = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder='Saisissez votre adresse mail'
+                placeholder="Saisissez votre adresse mail"
               />
             </S.ContactMail>
           </S.ContactInfo>
@@ -50,8 +40,8 @@ const Contactform = () => {
               rows="10"
             />
           </S.ContactMessage>
-          <S.Input type="text" name="_gotcha" style={{display:'none'}} />
-          <ButtonForm primary type="submit" value='Envoyer' />
+          <S.Input type="text" name="_gotcha" style={{ display: 'none' }} />
+          <ButtonForm primary type="submit" value="Envoyer" title="Envoyer le formulaire" />
         </S.ContactForm>
       </S.FormContainer>
     </Section>

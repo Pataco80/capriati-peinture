@@ -24,7 +24,6 @@ export const getData = graphql`
 
 // Component
 const References = () => {
-
   // Component Variables
   const data = useStaticQuery(getData)
   const referencesJsonData = data.referencesData.nodes
@@ -32,14 +31,12 @@ const References = () => {
   // Render Component
   return (
     <ReferencesWrapper>
-      <Title tag='h2' title='Nos Références' titleSection/>
+      <Title tag="h2" title="Nos Références" titleSection />
       <SectionContentCenter>
         <ul>
-          {
-            referencesJsonData.map((item,i) => {
-              return <ReferenceItem key={i}>{item.text}</ReferenceItem>
-            })
-          }
+          {referencesJsonData.map((item, i) => {
+            return <ReferenceItem key={i}>{item.text}</ReferenceItem>
+          })}
         </ul>
       </SectionContentCenter>
     </ReferencesWrapper>
@@ -47,12 +44,12 @@ const References = () => {
 }
 
 const ReferencesWrapper = styled(Section)`
-  ${setFlex({flDir:'column'})};
-  padding-bottom:3rem;
+  ${setFlex({ flDir: 'column' })};
+  padding-bottom: 3rem;
 `
 
 const ReferenceItem = styled.li`
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
 `
 
 export default References

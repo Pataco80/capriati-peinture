@@ -14,11 +14,11 @@ import { setFlex, media } from '../../theme/helpers'
 // GraphQl Queries
 const getData = graphql`
   {
-    photo:allFile(filter: {relativePath: {regex: "/familly/"}}) {
+    photo: allFile(filter: { relativePath: { regex: "/familly/" } }) {
       edges {
         node {
           childImageSharp {
-            fluid (maxWidth: 300) {
+            fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
               originalName
             }
@@ -38,12 +38,12 @@ const getData = graphql`
 `
 // Component
 const Historyprofile = () => {
-
   // Component Variables
   const data = useStaticQuery(getData)
   const photoList = data.photo.edges
   const historyProfile = data.historyProfile.nodes
 
+  // Component Functions
   const historyPhoto = photoList.map(({ node }) => ({
     photo: node.childImageSharp.fluid,
     originalName: node.childImageSharp.fluid.originalName,
@@ -52,42 +52,40 @@ const Historyprofile = () => {
   // Render Component
   return (
     <HistoryProfileWrapper>
-      {
-        historyProfile.map(({id, name, shortName, altPhoto}) => {
+      {historyProfile.map(({ id, name, shortName, altPhoto }) => {
+        // Images Variables and Functions
+        const regExp = new RegExp(shortName, 'i')
+        const photoPath = historyPhoto.find(({ originalName }) => originalName.match(regExp)).photo
 
-          const regExp = new RegExp(shortName, "i");
-          const photoPath = historyPhoto.find(({originalName}) => originalName.match(regExp))
-          .photo
-
-          return (
-            <ProfileItem>
-              <Profile id={id} name={name} fluid={photoPath} altPhoto={altPhoto} />
-            </ProfileItem>
-          )
-        })
-      }
+        // Return Profile Images
+        return (
+          <ProfileItem>
+            <Profile id={id} name={name} fluid={photoPath} altPhoto={altPhoto} />
+          </ProfileItem>
+        )
+      })}
     </HistoryProfileWrapper>
   )
 }
 
 // Styles from styled-components
 const HistoryProfileWrapper = styled(SectionContentCenter)`
-  ${setFlex({flDir:'column'})};
-  width:100%;
+  ${setFlex({ flDir: 'column' })};
+  width: 100%;
 
   ${media.greaterThan('tablet')`
-    ${setFlex({flDir:'row',y:'flex-start'})};
+    ${setFlex({ flDir: 'row', y: 'flex-start' })};
   `}
 `
 
 const ProfileItem = styled.div`
-  margin-bottom:2rem;
-  width:100%;
+  margin-bottom: 2rem;
+  width: 100%;
 
   ${media.greaterThan('tablet')`
-    width:33%;
-    margin-bottom:0;
-    padding:0 1rem;
+    width: 33%;
+    margin-bottom: 0;
+    padding: 0 1rem;
   `}
 `
 

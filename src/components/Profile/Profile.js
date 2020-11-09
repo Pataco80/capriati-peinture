@@ -7,8 +7,7 @@ import Avatar from '../Avatar'
 import * as S from './ProfileStyled'
 
 // Component
-const Profile = (props) => {
-
+const Profile = props => {
   // Component Variables
   const { fluid, altPhoto, name, job } = props
 

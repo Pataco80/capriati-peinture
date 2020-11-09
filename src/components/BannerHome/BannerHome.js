@@ -13,9 +13,9 @@ import * as S from './BannerHomeStyled'
 // GraphQl Queries
 const getImage = graphql`
   {
-    logoImg: file(relativePath: {eq: "images/big-logo.png"}) {
+    logoImg: file(relativePath: { eq: "images/big-logo.png" }) {
       childImageSharp {
-        fluid (maxWidth: 500) {
+        fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -25,7 +25,6 @@ const getImage = graphql`
 
 // Component
 const Bannerhome = () => {
-
   // Component Variables
   const { logoImg } = useStaticQuery(getImage)
 
@@ -33,15 +32,31 @@ const Bannerhome = () => {
   return (
     <S.BannerWrapper>
       <S.LogoWrapper>
-          <Img fluid={logoImg.childImageSharp.fluid} alt='Logo Capriati S.A.' />
-        </S.LogoWrapper>
-        <S.LayoutSection>
-          <Title tag='h1' title='Bienvenue chez Capriati S.A.' hidden />
+        <Img fluid={logoImg.childImageSharp.fluid} alt="Logo Capriati S.A." />
+      </S.LogoWrapper>
+      <S.LayoutSection>
+        <Title tag="h1" title="Bienvenue chez Capriati S.A." hidden />
         <S.Description>
-          <S.Text className='h4'>Entreprise de peinture familiale depuis 1979</S.Text>
+          <S.Text className="h4">Entreprise de peinture familiale depuis 1979</S.Text>
         </S.Description>
-        <S.CallActionBtn secondary='true' to='/services/' title='Voir nos Services'>Nos Services</S.CallActionBtn>
-        <S.CallActionBtn primary='true' to='/contact/' title='Nous contacter'>Nous Contacter</S.CallActionBtn>
+        <S.CallActionBtn
+          secondary="true"
+          to="/services/"
+          title="Voir nos Services"
+          fade
+          duration={1}
+          hex="#ffffff">
+          Nos Services
+        </S.CallActionBtn>
+        <S.CallActionBtn
+          primary="true"
+          to="/contact/"
+          title="Nous contacter"
+          fade
+          duration={1}
+          hex="#ffffff">
+          Nous Contacter
+        </S.CallActionBtn>
       </S.LayoutSection>
     </S.BannerWrapper>
   )

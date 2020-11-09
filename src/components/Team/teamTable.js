@@ -7,22 +7,18 @@ import Title from '../Title'
 import styled from 'styled-components'
 import { media } from '../../theme/helpers'
 
-
-const Teamtable = (props) => {
-
+const Teamtable = props => {
   // Component Variables
   const { team, title } = props
 
   // Render Component
   return (
     <TeamWrapper>
-      <Title tag='h3' title={title} />
+      <Title tag="h3" title={title} />
       <ul>
-        {
-          team.map(({name}) => {
-            return <TeamItem>{name}</TeamItem>
-          })
-        }
+        {team.map(({ name }) => {
+          return <TeamItem>{name}</TeamItem>
+        })}
       </ul>
     </TeamWrapper>
   )
@@ -30,14 +26,15 @@ const Teamtable = (props) => {
 
 // Styles from styled-components
 const TeamWrapper = styled.article`
-  padding:1rem;
+  padding: 1rem;
+
   ${media.greaterThan('tablet')`
-    max-width:48%;
+    max-width: 48%;
   `}
 `
 
 const TeamItem = styled.li`
-  text-align:center;
+  text-align: center;
 `
 
 export default Teamtable

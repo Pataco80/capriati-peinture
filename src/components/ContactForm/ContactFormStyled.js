@@ -1,67 +1,76 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components'
 
 // Import Components for App
 import { SectionContent } from '../styledElements/SectionStyled'
 
 // Import helpers
-import { setFlex, layout, media, setRadius, setBorder, setColor, setShadow, setFont } from '../../theme/helpers'
+import {
+  setFlex,
+  layout,
+  media,
+  setRadius,
+  setBorder,
+  setColor,
+  setShadow,
+  setFont,
+} from '../../theme/helpers'
 
 // Styled CSS
 const ContactInput = css`
   font-family: ${setFont.bodyFont};
-  font-size:1rem;
-  width:100%;
-  padding:1.5rem;
-  margin:1rem 0 3rem;
+  font-size: 1rem;
+  width: 100%;
+  padding: 1.5rem;
+  margin: 1rem 0 3rem;
   ${setRadius(12)};
-  border:${setBorder({size:1, style:'solid', color:setColor.primaryColor})};
-  box-shadow:${setShadow('light')};
+  border: ${setBorder({ size: 1, style: 'solid', color: setColor.primaryColor })};
+  box-shadow: ${setShadow('light')};
 
   &:focus {
-    box-shadow:${setShadow('light', {inset:'inset'})};
-    outline:none;
+    box-shadow: ${setShadow('light', { inset: 'inset' })};
+    outline: none;
   }
   &::placeholder {
-    font-style:italic;
+    font-style: italic;
   }
 `
 
 // Export Styles for the component
 export const FormContainer = styled(SectionContent)`
-  ${layout({mW:800})};
-  ${setFlex({flDir:'column'})};
+  ${layout({ mW: 800 })};
+  ${setFlex({ flDir: 'column' })};
 `
 
 export const ContactForm = styled.form`
-  ${setFlex({flDir:'column'})};
-  width:100%;
+  ${setFlex({ flDir: 'column' })};
+  width: 100%;
 `
 
 export const ContactInfo = styled.section`
-  width:100%;
+  width: 100%;
 
   ${media.greaterThan('smTablet')`
-    ${setFlex({x:'space-between'})};
+    ${setFlex({ x: 'space-between' })};
   `}
 `
 
 export const ContactMessage = styled.section`
-  width:100%;
+  width: 100%;
 `
 
 export const ContactName = styled.div`
-  width:100%;
-  
+  width: 100%;
+
   ${media.greaterThan('smTablet')`
-    width:45%;
+    width: 45%;
   `}
 `
 
 export const ContactMail = styled.div`
-  width:100%;
-  
+  width: 100%;
+
   ${media.greaterThan('smTablet')`
-    width:45%;
+    width: 45%;
   `}
 `
 

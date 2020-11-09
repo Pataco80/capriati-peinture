@@ -1,10 +1,17 @@
-import styled, {css} from 'styled-components'
+import styled, { css } from 'styled-components'
 
 // Import Components for App
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Import helpers
-import { setLetterSpacing, setColor, setBorder, setTransition, setPxToRem, setRadius } from '../../theme/helpers'
+import {
+  setLetterSpacing,
+  setColor,
+  setBorder,
+  setTransition,
+  setPxToRem,
+  setRadius,
+} from '../../theme/helpers'
 
 // Styled CSS
 const ButtonStyles = css`
@@ -15,40 +22,52 @@ const ButtonStyles = css`
   display: inline-block;
   ${setTransition()};
   cursor: pointer;
-  background:none;
-  ${setRadius({allPx:12})};
-  font-weight:900;
+  background: none;
+  ${setRadius({ allPx: 12 })};
+  font-weight: 900;
 
-  ${({ primary }) => primary &&`
+  ${({ primary }) =>
+    primary &&
+    `
     color: ${setColor.mainWhite};
-    border: ${setBorder({color:setColor.primaryColor})};
+    border: ${setBorder({ color: setColor.primaryColor })};
     background:${setColor.primaryColor};
   `}
 
-  ${({ secondary }) => secondary &&`
+  ${({ secondary }) =>
+    secondary &&
+    `
     color: ${setColor.primaryColor};
-    border: ${setBorder({color:setColor.mainWhite})};
+    border: ${setBorder({ color: setColor.mainWhite })};
     background:${setColor.mainWhite};
   `}
 
-  ${({ primaryOutline }) => primaryOutline &&`
+  ${({ primaryOutline }) =>
+    primaryOutline &&
+    `
     color: ${setColor.primaryColor};
-    border: ${setBorder({color:setColor.primaryColor})};
+    border: ${setBorder({ color: setColor.primaryColor })};
   `}
 
-  ${({ outline }) => outline &&`
+  ${({ outline }) =>
+    outline &&
+    `
     color: ${setColor.mainWhite};
-    border: ${setBorder({size:2,color:setColor.mainWhite})};
+    border: ${setBorder({ size: 2, color: setColor.mainWhite })};
   `}
 
   &:hover {
-    ${({ primary, secondary, primaryOutline }) => (primary || secondary || primaryOutline) &&`
+    ${({ primary, secondary, primaryOutline }) =>
+      (primary || secondary || primaryOutline) &&
+      `
       color: ${setColor.mainWhite};
-      border: ${setBorder({color:setColor.primaryColorD1})};
+      border: ${setBorder({ color: setColor.primaryColorD1 })};
       background:${setColor.primaryColorD1};
     `}
 
-    ${({ outline }) => outline &&`
+    ${({ outline }) =>
+      outline &&
+      `
       background: ${setColor.mainWhite};
       color: ${setColor.primaryColor};
     `}
@@ -68,6 +87,6 @@ export const ButtonForm = styled.input`
   ${ButtonStyles};
 `
 
-export const GatsbyButtonLink = styled(Link)`
+export const GatsbyButtonLink = styled(AniLink)`
   ${ButtonStyles};
 `

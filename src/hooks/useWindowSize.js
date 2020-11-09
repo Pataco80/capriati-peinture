@@ -1,17 +1,15 @@
-import {useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const useWindowSize = () => {
-const isWindowClient = typeof window === 'object'
+  const isWindowClient = typeof window === 'object'
 
-  const [windowSize, setWindowSize] = useState(
-    isWindowClient ? window.innerWidth : undefined
-  )
+  const [windowSize, setWindowSize] = useState(isWindowClient ? window.innerWidth : undefined)
   useEffect(() => {
     const setSize = () => {
       setWindowSize(window.innerWidth)
     }
 
-    if(isWindowClient) {
+    if (isWindowClient) {
       window.addEventListener('resize', setSize)
     }
     return () => {
@@ -19,7 +17,7 @@ const isWindowClient = typeof window === 'object'
     }
   }, [isWindowClient, setWindowSize])
 
-  return windowSize;
+  return windowSize
 }
 
 export default useWindowSize

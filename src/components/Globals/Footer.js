@@ -15,7 +15,7 @@ import { setColor } from '../../theme/helpers'
 // GraphQl Queries
 const getImage = graphql`
   {
-    footerImg: file(relativePath: {eq: "images/footerBande.png"}) {
+    footerImg: file(relativePath: { eq: "images/footerBande.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -27,18 +27,17 @@ const getImage = graphql`
 
 // Component
 const Footer = () => {
-
   // Component Variables
   const { footerImg } = useStaticQuery(getImage)
 
   // Render Component
   return (
     <FooterWrapper>
-      <Section padding='0'>
-        <Img fluid={footerImg.childImageSharp.fluid} alt='Banière colorée'/>
+      <Section padding="0">
+        <Img fluid={footerImg.childImageSharp.fluid} alt="Banière colorée" />
       </Section>
-      <SectionCenter background='transparent'>
-        <MainMenu className='footer'/>
+      <SectionCenter background="transparent">
+        <MainMenu className="footer" />
       </SectionCenter>
     </FooterWrapper>
   )
@@ -46,7 +45,7 @@ const Footer = () => {
 
 // Styles from styled-components
 const FooterWrapper = styled.footer`
-  background-color:${setColor.primaryColor};
+  background-color: ${setColor.primaryColor};
 `
 
 export default Footer

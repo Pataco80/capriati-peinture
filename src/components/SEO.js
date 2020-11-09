@@ -9,7 +9,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import website from '../../config/website-config'
 
 const SEO = ({ description, lang, meta, title, image, logo, keywords }) => {
   const { site } = useStaticQuery(
@@ -34,7 +33,6 @@ const SEO = ({ description, lang, meta, title, image, logo, keywords }) => {
   const url = site.siteMetadata.siteUrl
   const metaImage = `${image || logo}`
   const metaKeywords = keywords || site.siteMetadata.keywords
-
 
   return (
     <Helmet
@@ -75,43 +73,48 @@ const SEO = ({ description, lang, meta, title, image, logo, keywords }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
-        }
-      ].concat(
+        },
+      ]
+        .concat(
           metaKeywords.length > 0
             ? {
                 name: `keywords`,
                 content: metaKeywords,
               }
             : []
-      ).concat(
-        metaImage ? [
-          {
-            property: 'og:image',
-            content: metaImage
-          },
-          {
-            property: 'og:image:width',
-            content: metaImage.width
-          },
-          {
-            property: 'og:image:height',
-            content: metaImage.height
-          },
-          {
-            name:`twitter:image.src`,
-            content:metaImage,
-          },
-          {
-            name: "twitter:card",
-            content: "summary_large_image",
-          },
-        ]:[
-          {
-            name: "twitter:card",
-            content: "summary",
-          },
-        ]
-      ).concat(meta)}
+        )
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: 'og:image',
+                  content: metaImage,
+                },
+                {
+                  property: 'og:image:width',
+                  content: metaImage.width,
+                },
+                {
+                  property: 'og:image:height',
+                  content: metaImage.height,
+                },
+                {
+                  name: `twitter:image.src`,
+                  content: metaImage,
+                },
+                {
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
+                },
+              ]
+            : [
+                {
+                  name: 'twitter:card',
+                  content: 'summary',
+                },
+              ]
+        )
+        .concat(meta)}
     />
   )
 }
@@ -132,8 +135,8 @@ SEO.propTypes = {
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
     width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired
-  })
+    height: PropTypes.number.isRequired,
+  }),
 }
 
 export default SEO

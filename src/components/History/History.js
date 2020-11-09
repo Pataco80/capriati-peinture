@@ -11,15 +11,11 @@ import styled from 'styled-components'
 import { setFlex } from '../../theme/helpers'
 
 // Component
-const History = (props) => {
-
-  // Component Variables
-  const { background, padding } = props
-
+const History = () => {
   // Render Component
   return (
-    <HistoryWrapper  background={background} padding={padding}>
-      <Title tag='h2' title='Notre Histoire' titleSection/>
+    <HistoryWrapper>
+      <Title tag="h2" title="Notre Histoire" titleSection />
       <HistoryProfile />
       <Historical />
     </HistoryWrapper>
@@ -28,8 +24,8 @@ const History = (props) => {
 
 // Styles from styled-components
 const HistoryWrapper = styled(Section)`
-  ${setFlex({flDir:'column'})};
-  padding-bottom:3rem;
+  ${setFlex({ flDir: 'column' })};
+  padding-bottom: 3rem;
 `
 
 export default History

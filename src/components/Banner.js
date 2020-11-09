@@ -9,12 +9,11 @@ import styled from 'styled-components'
 import { setFlex } from '../theme/helpers'
 
 // Component
-const Banner = ({title, children}) => {
-
+const Banner = ({ title, children }) => {
   // Render Component
   return (
     <BannerWrapper>
-      <Title tag='h1' title={title} />
+      <Title tag="h1" title={title} />
       {children}
     </BannerWrapper>
   )
@@ -22,7 +21,7 @@ const Banner = ({title, children}) => {
 
 // Styles from styled-components
 const BannerWrapper = styled(BannerCenter)`
-  ${setFlex({flDir:'column'})};
+  ${setFlex({ flDir: 'column' })};
 `
 
 export default Banner
