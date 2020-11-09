@@ -1,57 +1,57 @@
 [
   {
-    "id":1,
-    "date":"1979",
-    "text":"Création de l’entreprise par Vincenzo Capriati."
+    "id": 1,
+    "date": "1979",
+    "text": "Création de l’entreprise par Vincenzo Capriati."
   },
   {
-    "id":2,
-    "date":"1984",
-    "text":"Pierre, son fils, rejoint son père."
+    "id": 2,
+    "date": "1984",
+    "text": "Pierre, son fils, rejoint son père."
   },
   {
-    "id":3,
-    "date":"1986",
-    "text":"Claudio, frère de Pierre, rejoint le duo."
+    "id": 3,
+    "date": "1986",
+    "text": "Claudio, frère de Pierre, rejoint le duo."
   },
   {
-    "id":4,
-    "date":"1993",
-    "text":"Obtention de la maîtrise Fédérale par Pierre qui par la même occasion, reprend les rênes de l’entreprise."
+    "id": 4,
+    "date": "1993",
+    "text": "Obtention de la maîtrise Fédérale par Pierre qui par la même occasion, reprend les rênes de l’entreprise."
   },
   {
-    "id":5,
-    "date":"2002",
-    "text":"Vincent, fils de Pierre, effectue son apprentissage, qu’il termine avec succès."
+    "id": 5,
+    "date": "2002",
+    "text": "Vincent, fils de Pierre, effectue son apprentissage, qu’il termine avec succès."
   },
   {
-    "id":6,
-    "date":"2007",
-    "text":"Brigitte, épouse de Pierre et maman de Vincent, rejoint officiellement le team, après avoir travaillé dans l’ombre pendant toutes ces années."
+    "id": 6,
+    "date": "2007",
+    "text": "Brigitte, épouse de Pierre et maman de Vincent, rejoint officiellement le team, après avoir travaillé dans l’ombre pendant toutes ces années."
   },
   {
-    "id":7,
-    "date":"2010",
-    "text":"Vincent obtient son certificat de chef de chantier."
+    "id": 7,
+    "date": "2010",
+    "text": "Vincent obtient son certificat de chef de chantier."
   },
   {
-    "id":8,
-    "date":"2012",
-    "text":"Vincent reprend la direction de l’entreprise. Il obtient son brevet de contremaître peintre dans la foulée. Création d'une SA."
+    "id": 8,
+    "date": "2012",
+    "text": "Vincent reprend la direction de l’entreprise. Il obtient son brevet de contremaître peintre dans la foulée. Création d'une SA."
   },
   {
-    "id":9,
-    "date":"2013",
-    "text":"La raison individuelle devient une SA."
+    "id": 9,
+    "date": "2013",
+    "text": "La raison individuelle devient une SA."
   },
   {
-    "id":10,
-    "date":"2014",
-    "text":"L’entreprise déménage ses locaux à la Zone artisanale La Pièce 20 à Rolle."
+    "id": 10,
+    "date": "2014",
+    "text": "L’entreprise déménage ses locaux à la Zone artisanale La Pièce 20 à Rolle."
   },
   {
-    "id":11,
-    "date":"2015",
-    "text":"Vincent obtient sa maîtrise Fédérale."
+    "id": 11,
+    "date": "2015",
+    "text": "Vincent obtient sa maîtrise Fédérale."
   }
 ]

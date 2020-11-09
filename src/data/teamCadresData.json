@@ -1,32 +1,32 @@
 [
   {
-    "id":1,
-    "name":"Capriati Vincent",
-    "shortName":"vincentCapriati",
-    "photo":"vincentCapriati.jpg",
-    "altPhoto":"Vincent Capriati",
-    "job":"Directeur Administratif",
-    "certifications": ["CFC Peintre", "Maitrise Fédérale"],
-    "date": "Repris l'entreprise depuis mars 2020"
+    "id": 1,
+    "name": "Capriati Vincent",
+    "shortName": "vincentCapriati",
+    "photo": "vincentCapriati.jpg",
+    "altPhoto": "Vincent Capriati",
+    "job": "Directeur Administratif",
+    "certifications":  ["CFC Peintre", "Maitrise Fédérale"],
+    "date":  "Repris l'entreprise depuis mars 2020"
   },
   {
-    "id":2,
-    "name":"Rodriguez José",
-    "shortName":"joseRodriguez",
-    "photo":"joseRodriguez.jpg",
-    "altPhoto":"José Rodriguez",
-    "job":"Contremaître",
-    "certifications": ["CFC Peintre", "Chef de Chantier"],
-    "date": "A notre Service depuis juin 2020"
+    "id": 2,
+    "name": "Rodriguez José",
+    "shortName": "joseRodriguez",
+    "photo": "joseRodriguez.jpg",
+    "altPhoto": "José Rodriguez",
+    "job": "Contremaître",
+    "certifications":  ["CFC Peintre", "Chef de Chantier"],
+    "date":  "A notre Service depuis juin 2020"
   },
   {
-    "id":3,
-    "name":"Schmid Valentin",
-    "shortName":"valentinSchmid",
-    "photo":"valentinSchmid.jpg",
-    "altPhoto":"Valentin Schmid",
-    "job":"Contremaître",
-    "certifications": ["CFC Peintre", "Maitrise Fédérale"],
-    "date": "A notre Service depuis juillet 2020"
+    "id": 3,
+    "name": "Schmid Valentin",
+    "shortName": "valentinSchmid",
+    "photo": "valentinSchmid.jpg",
+    "altPhoto": "Valentin Schmid",
+    "job": "Contremaître",
+    "certifications":  ["CFC Peintre", "Maitrise Fédérale"],
+    "date":  "A notre Service depuis juillet 2020"
   }
-]    
+]

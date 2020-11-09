@@ -1,23 +1,23 @@
 [
   {
-    "id":1,
-    "name":"Vincenzo Capriati",
-    "shortName":"vincenzoCapriati",
-    "photo":"vincenzoCapriati.jpg",
-    "altPhoto":"Vincenzo Capriati"
+    "id": 1,
+    "name": "Vincenzo Capriati",
+    "shortName": "vincenzoCapriati",
+    "photo": "vincenzoCapriati.jpg",
+    "altPhoto": "Vincenzo Capriati"
   },
   {
-    "id":2,
-    "name":"Pierre Capriati",
-    "shortName":"pierreCapriati",
-    "photo":"pierreCapriati.jpg",
-    "altPhoto":"Pierre Capriati"
+    "id": 2,
+    "name": "Pierre Capriati",
+    "shortName": "pierreCapriati",
+    "photo": "pierreCapriati.jpg",
+    "altPhoto": "Pierre Capriati"
   },
   {
-    "id":3,
-    "name":"Vincent Capriati",
-    "shortName":"vincentCapriati",
-    "photo":"vincentCapriati.jpg",
-    "altPhoto":"Vincent Capriati"
+    "id": 3,
+    "name": "Vincent Capriati",
+    "shortName": "vincentCapriati",
+    "photo": "vincentCapriati.jpg",
+    "altPhoto": "Vincent Capriati"
   }
 ]
