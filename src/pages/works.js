@@ -10,6 +10,9 @@ import Hero from '../components/Hero'
 import References from '../components/References'
 import Works from '../components/Works'
 
+// Import styled-components and helpers
+import { setColor } from '../theme/helpers'
+
 // GraphQl Queries
 export const getImage = graphql`
   {
@@ -36,7 +39,7 @@ const worksPage = ({ data }) => {
       />
       <Hero title="Nos Travaux" bcgImage={data.heroBcg.childImageSharp.fluid} />
       <References />
-      <Works />
+      <Works background={setColor.mainGreyL3} />
     </Layout>
   )
 }

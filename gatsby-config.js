@@ -27,6 +27,7 @@ module.exports = {
     authorSlogan: websiteConfig.authorSlogan,
     twitterUserName: websiteConfig.twitterUserName,
     facebookUserName: websiteConfig.facebookUserName,
+    copyright: websiteConfig.copyright,
   },
 
   /* Your site config here */
@@ -147,8 +148,8 @@ module.exports = {
             density: '3.0',
           },
           {
-            src: '/favicons/android-icon-192x192.png',
-            sizes: '192x192',
+            src: '/favicons/favicon.png',
+            sizes: '512x512',
             type: 'image/png',
             density: '4.0',
           },

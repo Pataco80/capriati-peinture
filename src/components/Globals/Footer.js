@@ -13,7 +13,7 @@ import { Section, SectionCenter } from '../styledElements/SectionStyled'
 import { setColor } from '../../theme/helpers'
 
 // GraphQl Queries
-const getImage = graphql`
+const getData = graphql`
   {
     footerImg: file(relativePath: { eq: "images/footerBande.png" }) {
       childImageSharp {
@@ -22,13 +22,18 @@ const getImage = graphql`
         }
       }
     }
+    siteData: site {
+      siteMetadata {
+        copyright
+      }
+    }
   }
 `
 
 // Component
 const Footer = () => {
   // Component Variables
-  const { footerImg } = useStaticQuery(getImage)
+  const { footerImg, siteData } = useStaticQuery(getData)
 
   // Render Component
   return (
@@ -38,6 +43,7 @@ const Footer = () => {
       </Section>
       <SectionCenter background="transparent">
         <MainMenu className="footer" />
+        <Copyright>{`${siteData.siteMetadata.copyright}`} - Tous droits réservés.</Copyright>
       </SectionCenter>
     </FooterWrapper>
   )
@@ -46,6 +52,12 @@ const Footer = () => {
 // Styles from styled-components
 const FooterWrapper = styled.footer`
   background-color: ${setColor.primaryColor};
+`
+
+const Copyright = styled.p`
+  margin: 2rem 0 0 0;
+  color: ${setColor.mainWhite};
+  text-align: center;
 `
 
 export default Footer

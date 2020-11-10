@@ -105,7 +105,7 @@ const websiteConfig = {
   authorPosition: `${businessInfo.bossInfo.position}`,
   twitterUserName: `${businessInfo.userTwitter}`,
   facebookUserName: `${businessInfo.userFacebook}`,
-  copyright: `Copyright © ${new Date().getFullYear()}. Capriati S.A.`, // Copyright string for the footer of the website and RSS feed.
+  copyright: `Copyright © ${businessInfo.name} ${new Date().getFullYear()}`, // Copyright string for the footer of the website and RSS feed.
   themeColor: '#EE332D', // Used for setting manifest and progress theme colors.
   backgroundColor: '#fff', // Used for setting manifest background color.
 }

@@ -9,6 +9,7 @@ import Services from '../components/OurServices/Services'
 
 // Import styled-components and helpers
 import { setColor } from '../theme/helpers'
+
 const indexPage = () => {
   return (
     <Layout home>

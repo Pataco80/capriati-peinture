@@ -22,7 +22,7 @@ const ContactInput = css`
   width: 100%;
   padding: 1.5rem;
   margin: 1rem 0 3rem;
-  ${setRadius(12)};
+  ${setRadius({ allPx: 12 })};
   border: ${setBorder({ size: 1, style: 'solid', color: setColor.primaryColor })};
   box-shadow: ${setShadow('light')};
 

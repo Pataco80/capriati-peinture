@@ -13,7 +13,7 @@ import '@browniebroke/gatsby-image-gallery/dist/style.css'
 import styled from 'styled-components'
 import { layout, setFlex, media, setRadius, setShadow } from '../theme/helpers'
 
-const Works = () => {
+const Works = ({ background }) => {
   // Component Variables
   const data = useStaticQuery(getData)
 
@@ -44,24 +44,10 @@ const Works = () => {
 
   // Render Component
   return (
-    <WorksWrapper>
+    <WorksWrapper background={background}>
       <Title tag="h2" title="Nos Réalisations" titleSection />
       <WorksContent>
         <WorkItem>
-          <Title tag="h3" title="Centre ProJeunesse de Rolle" titleSection />
-          <Text>
-            Rénovation intérieure et extérieure du centre pour jeunes et fresques murales.
-          </Text>
-          <GallerySection padding="3rem 0 5rem">
-            <Gallery imgClass="galleryImg" images={work1} lightboxOptions={lightboxOptions} />
-          </GallerySection>
-        </WorkItem>
-        <WorkItem>
-          <Title tag="h3" title="Nos Anciens Travaux" titleSection />
-          <Text>
-            Voici certains des divers travaux et chantiers que nous avions effectués entre 19xx et
-            20xx.
-          </Text>
           <GallerySection padding="3rem 0 5rem">
             <Gallery
               imgClass="galleryImg"
