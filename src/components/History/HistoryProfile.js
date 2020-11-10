@@ -19,7 +19,7 @@ const getData = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               originalName
             }
           }

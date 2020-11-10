@@ -22,7 +22,7 @@ const getImage = graphql`
     logoMenu: file(relativePath: { eq: "images/top-bar-logo.png" }) {
       childImageSharp {
         fixed(width: 150) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }

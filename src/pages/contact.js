@@ -22,7 +22,7 @@ export const query = graphql`
     heroBcg: file(relativePath: { eq: "images/banners/contact-page-banner.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

@@ -101,13 +101,13 @@ export const getData = graphql`
     name
     childImageSharp {
       thumb: fluid(maxWidth: 270, maxHeight: 270) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
         originalName
         aspectRatio
         sizes
       }
       full: fluid(maxWidth: 1200, maxHeight: 1200) {
-        ...GatsbyImageSharpFluid
+        ...GatsbyImageSharpFluid_withWebp
         aspectRatio
         sizes
       }

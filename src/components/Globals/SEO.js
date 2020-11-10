@@ -30,7 +30,7 @@ function SEO({ description, lang, meta, title, image, keywords }) {
   const metaDescription = description || site.siteMetadata.description
 
   const url = site.siteMetadata.siteUrl
-  const metaImage = `${url}/assets/images/${image || 'default'}-social-card.jpg`
+  const metaImage = `${url}/assets/images/${image || 'default'}-social-card.webp`
   const metaKeywords = keywords || site.siteMetadata.keywords
   const titleTemplate = `${title} | ${site.siteMetadata.title}`
 

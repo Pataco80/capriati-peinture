@@ -21,7 +21,7 @@ export const getData = graphql`
         node {
           childImageSharp {
             fluid(maxWidth: 200) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
               originalName
               aspectRatio
               sizes

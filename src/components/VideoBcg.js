@@ -18,7 +18,7 @@ const getImage = graphql`
     posterImg: file(relativePath: { eq: "images/painting_poster_hero.jpg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
