@@ -7,7 +7,7 @@ const businessInfo = {
     lastName: 'Capriati',
     fullName: 'Vincent Capriati', // Username to display in the author segment.
     birthday: '13 January 1985',
-    position: 'Directuer Administratif',
+    position: 'Directeur Administratif',
     bossDescription:
       "Entré en tant qu'apprentis peintre au sein de l'entreprise familiale, j'ai effectué ma formation CFC et suivi par l'obtention d'une Maîtrise fédérale de Chef d'Entreprise. Depuis mars 2020, j'ai repris la succession de l'entreprise.",
     bossSlogan: 'Notre qualité au service des couleurs de votre lieu de vie.',

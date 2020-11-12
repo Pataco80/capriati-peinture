@@ -64,6 +64,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@components': 'src/components',
+          '@styles': 'src/theme/helpers',
+          '@stylesElements': 'src/components/styledElements',
+        },
+      },
+    },
+    {
       resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
