@@ -9,7 +9,7 @@ const websiteConfig = require('./config/website-config')
 
 const pathPrefix = websiteConfig.pathPrefix
 const siteUrl = websiteConfig.siteUrl + pathPrefix
-
+console.log(pathPrefix)
 module.exports = {
   /* General Information */
   pathPrefix: websiteConfig.pathPrefix,
@@ -68,8 +68,9 @@ module.exports = {
       options: {
         alias: {
           '@components': 'src/components',
+          '@styledElements': 'src/components/styledElements',
           '@styles': 'src/theme/helpers',
-          '@stylesElements': 'src/components/styledElements',
+          '@hooks': 'src/hooks',
         },
       },
     },
@@ -82,38 +83,16 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-transition-link`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [
-          {
-            family: `Noto Sans JP`,
-            subsets: [`latin`],
-            variants: [`100`, `300`, `400`, `500`, `700`, `900`],
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin`],
-            variants: [
-              `100`,
-              `300`,
-              `400`,
-              `500`,
-              `700`,
-              `900`,
-              `100i`,
-              `300i`,
-              `400i`,
-              `500i`,
-              `700i`,
-              `900i`,
-            ],
-          },
-        ],
+        google: {
+          families: ['Noto Sans JP', 'Roboto'],
+        },
       },
     },
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-manifest',
@@ -121,7 +100,7 @@ module.exports = {
         name: websiteConfig.siteTitle,
         short_name: websiteConfig.siteTitleShort,
         description: websiteConfig.siteDescription,
-        start_url: pathPrefix,
+        start_url: `${pathPrefix} || '/'`,
         background_color: websiteConfig.backgroundColor,
         theme_color: websiteConfig.themeColor,
         display: 'standalone',
@@ -131,37 +110,31 @@ module.exports = {
             src: '/favicons/android-icon-36x36.png',
             sizes: '36x36',
             type: 'image/png',
-            density: '0.75',
           },
           {
             src: '/favicons/android-icon-48x48.png',
             sizes: '48x48',
             type: 'image/png',
-            density: '1.0',
           },
           {
             src: '/favicons/android-icon-72x72.png',
             sizes: '72x72',
             type: 'image/png',
-            density: '1.5',
           },
           {
             src: '/favicons/android-icon-96x96.png',
             sizes: '96x96',
             type: 'image/png',
-            density: '2.0',
           },
           {
             src: '/favicons/android-icon-144x144.png',
             sizes: '144x144',
             type: 'image/png',
-            density: '3.0',
           },
           {
             src: '/favicons/favicon.png',
             sizes: '512x512',
             type: 'image/png',
-            density: '4.0',
           },
         ],
         icon_options: {
