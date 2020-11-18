@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 // Import Components for App
-import { layout } from '../../theme/helpers'
+import { layout } from '@helpers'
 
 // Styled CSS
 const BannerCss = css`
@@ -9,11 +9,11 @@ const BannerCss = css`
 `
 
 // Export Styles for the component
-export const Banner = styled.div`
+export const BannerStyled = styled.div`
   ${BannerCss}
 `
 
-export const BannerCenter = styled.div`
+export const BannerStyledCenter = styled.div`
   ${BannerCss}
   ${layout()};
 `

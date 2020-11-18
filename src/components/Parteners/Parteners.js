@@ -4,13 +4,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import Title from '../Title'
-import PartenersItem from './PartenersItem'
+import { Title, PartenersItem } from '@components'
 
-// Import styled-components and helpers
-import styled from 'styled-components'
-import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
-import { media, setFlex } from '../../theme/helpers'
+// Import styles from styled-components file
+import * as S from './PartenersStyled'
 
 // GraphQl Queries
 const getData = graphql`
@@ -42,7 +39,7 @@ const getData = graphql`
 `
 
 // Component
-const Parteners = () => {
+const Parteners = ({ background }) => {
   // Component Variables
   const data = useStaticQuery(getData)
   const logoList = data.logos.edges
@@ -56,9 +53,9 @@ const Parteners = () => {
 
   // Render Component
   return (
-    <PartenersWrapper>
+    <S.PartenersWrapper background={background}>
       <Title tag="h2" title="Nos Partenaires" titleSection />
-      <PartenersLogosContainer>
+      <S.PartenersLogosContainer>
         {parteners.map((item, i) => {
           const { shortName, altLogo, url, urlTitle } = item
 
@@ -77,22 +74,9 @@ const Parteners = () => {
             />
           )
         })}
-      </PartenersLogosContainer>
-    </PartenersWrapper>
+      </S.PartenersLogosContainer>
+    </S.PartenersWrapper>
   )
 }
-
-// Styles from styled-components
-const PartenersWrapper = styled(Section)`
-  ${setFlex({ flDir: 'column' })};
-`
-
-const PartenersLogosContainer = styled(SectionContentCenter)`
-  ${setFlex({ flDir: 'column' })};
-
-  ${media.greaterThan('tablet')`
-    ${setFlex({ flDir: 'row', x: 'space-around' })};
-  `}
-`
 
 export default Parteners

@@ -3,12 +3,12 @@ import React from 'react'
 // Import components from Gatsby and plugins Gatsby
 import BackgroundImage from 'gatsby-background-image'
 
-// Import styled-components and helpers
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setFlex, setColor, setLinearBcg } from '../theme/helpers'
+import { setFlex, setColor, setLinearBcg } from '@helpers'
 
 // Component
-const Bcgimage = ({ className, fluid, children, error }) => {
+const BcgImage = ({ className, fluid, children, error }) => {
   // Render Component
   return (
     <BackgroundImage
@@ -22,7 +22,8 @@ const Bcgimage = ({ className, fluid, children, error }) => {
   )
 }
 
-export default styled(Bcgimage)`
+export default styled(BcgImage)`
+  // Styles from styled-components
   min-height: ${props => (props.home || props.error ? 'calc(100vh - 62px)' : '50vh')};
   background-position: center;
   background-size: cover;

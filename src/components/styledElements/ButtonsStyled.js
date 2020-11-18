@@ -11,7 +11,7 @@ import {
   setTransition,
   setPxToRem,
   setRadius,
-} from '../../theme/helpers'
+} from '@helpers'
 
 // Styled CSS
 const ButtonStyles = css`

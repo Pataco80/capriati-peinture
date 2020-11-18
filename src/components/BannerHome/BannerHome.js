@@ -5,15 +5,15 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
 // Import Components for App
-import Title from '../Title'
+import { Title } from '@components'
 
-// Import styled-components and helpers
+// Import styles from styled-components file
 import * as S from './BannerHomeStyled'
 
 // GraphQl Queries
 const getImage = graphql`
   {
-    logoImg: file(relativePath: { eq: "images/big-logo.png" }) {
+    logoImg: file(relativePath: { eq: "images/logos/logoCapriati.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {
           ...GatsbyImageSharpFluid_withWebp

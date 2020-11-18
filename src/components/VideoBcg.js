@@ -8,9 +8,9 @@ import videoMp4 from '../assets/video/paint.mp4'
 import videoOgv from '../assets/video/paint.mp4'
 import videoWebm from '../assets/video/paints.webm'
 
-// Import styled-components and helpers
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setLinearBcg, setFlex } from '../theme/helpers'
+import { setLinearBcg, setFlex } from '@helpers'
 
 // GraphQl Queries
 const getImage = graphql`
@@ -46,8 +46,9 @@ const Videobcg = ({ className, children }) => {
 }
 
 export default styled(Videobcg)`
-  ${setFlex({ flDir: 'column' })};
+  // Styles from styled-components
   width: 100%;
+  ${setFlex({ flDir: 'column' })};
   height: 100vh;
   overflow: hidden;
   position: absolute;

@@ -4,17 +4,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 // Import Components for App
-import Layout from '../components/Globals/Layout'
-import Title from '../components/Title'
-import Hero from '../components/Hero'
-import Contactform from '../components/ContactForm/ContactForm'
-import { SectionCenter, SectionContent } from '../components/styledElements/SectionStyled'
+import { Layout, SEO, Hero, Title, ContactForm } from '@components'
 import { Fax, PhoneAlt, Envelope } from '@styled-icons/fa-solid'
-import SEO from '../components/Globals/SEO'
 
-// Import styled-components and helpers
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setFlex, media, setColor } from '../theme/helpers'
+import { SectionCenter, SectionContent } from '@styledElements/SectionStyled'
+import { setFlex, media, setColor } from '@helpers'
 
 // GraphQl Queries
 export const query = graphql`
@@ -31,6 +27,7 @@ export const query = graphql`
 
 // Component
 const contactPage = ({ data }) => {
+  // Render Component
   return (
     <Layout>
       <SEO
@@ -40,7 +37,7 @@ const contactPage = ({ data }) => {
         image="contact"
       />
       <Hero title="Nous Contacter" bcgImage={data.heroBcg.childImageSharp.fluid} />
-      <Contactform />
+      <ContactForm />
       <ContactSection>
         <Title tag="h3" title="Nos Coordonées" titleSection />
         <ContactSectionContent>

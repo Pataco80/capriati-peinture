@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Import helpers
-import { setFlex } from '../../theme/helpers'
+import { setFlex } from '@helpers'
 
 // Export Styles for the component
 export const ProfileWrapper = styled.div`

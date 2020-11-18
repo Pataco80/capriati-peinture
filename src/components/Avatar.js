@@ -3,9 +3,9 @@ import React from 'react'
 // Import components from Gatsby and plugins Gatsby
 import Img from 'gatsby-image'
 
-// Import styled-components and helpers
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setRadius, setShadow } from '../theme/helpers'
+import { setRadius, setShadow } from '@helpers'
 
 // Component
 const Avatar = ({ fluid, alt }) => {

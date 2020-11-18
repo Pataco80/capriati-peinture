@@ -1,12 +1,12 @@
 import React from 'react'
 
 // Import Components for App
-import Title from './Title'
-import { BannerCenter } from './styledElements/BannerStyled'
+import { Title } from '@components'
+import { BannerStyledCenter } from '@styledElements/BannerStyled'
 
 // Import styled-components and helpers
 import styled from 'styled-components'
-import { setFlex } from '../theme/helpers'
+import { setFlex } from '@helpers'
 
 // Component
 const Banner = ({ title, children }) => {
@@ -20,7 +20,7 @@ const Banner = ({ title, children }) => {
 }
 
 // Styles from styled-components
-const BannerWrapper = styled(BannerCenter)`
+const BannerWrapper = styled(BannerStyledCenter)`
   ${setFlex({ flDir: 'column' })};
 `
 

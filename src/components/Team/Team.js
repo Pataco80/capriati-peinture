@@ -4,14 +4,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import Title from '../Title'
-import TeamCadres from './TeamCadres'
-import TeamTable from './teamTable'
-import { Section, SectionContentCenter } from '../styledElements/SectionStyled'
+import { Title, TeamCadres, TeamTable } from '@components'
 
-// Import styled-components and helpers
-import styled from 'styled-components'
-import { layout, setFlex, media } from '../../theme/helpers'
+// Import styles from styled-components file
+import * as S from './TeamStyled'
 
 // GraphQl Queries
 export const getData = graphql`
@@ -54,9 +50,8 @@ export const getData = graphql`
 `
 
 // Component
-const Team = props => {
+const Team = ({ background, padding }) => {
   // Component Variables
-  const { background, padding } = props
   const data = useStaticQuery(getData)
   const photoList = data.photo.edges
   const teamCadres = data.teamCadres.nodes
@@ -71,32 +66,17 @@ const Team = props => {
 
   // Render Component
   return (
-    <TeamWrapper background={background} padding={padding}>
+    <S.TeamWrapper background={background} padding={padding}>
       <Title tag="h2" title="Notre Équipe" titleSection />
-      <TeamContent>
+      <S.TeamContent>
         <TeamCadres teamPhoto={teamPhoto} team={teamCadres} />
-      </TeamContent>
-      <TeamContent>
+      </S.TeamContent>
+      <S.TeamContent>
         <TeamTable team={teamCfc} title="Nos employés avec CFC" />
         <TeamTable team={teamStudents} title="Nos aprentis" />
-      </TeamContent>
-    </TeamWrapper>
+      </S.TeamContent>
+    </S.TeamWrapper>
   )
 }
-
-// Styles from styled-components
-const TeamWrapper = styled(Section)`
-  ${setFlex({ flDir: 'column' })};
-`
-
-const TeamContent = styled(SectionContentCenter)`
-  ${setFlex({ flDir: 'column', y: 'center', wrap: 'nowrap' })};
-
-  ${media.greaterThan('tablet')`
-    ${layout()};
-    ${setFlex({ flDir: 'row', x: 'space-around', y: 'space-around' })};
-    align-items: stretch;
-  `}
-`
 
 export default Team

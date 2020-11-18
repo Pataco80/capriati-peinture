@@ -4,8 +4,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import Title from '../Title'
-import Avatar from '../Avatar'
+import { Title, Avatar } from '@components'
 
 // Import styles from styled-components file
 import * as S from './AboutStyled'

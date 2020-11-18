@@ -1,11 +1,13 @@
 import React from 'react'
 
 // Import Components for App
-import Title from '../Title'
-import { Section } from '../styledElements/SectionStyled'
-import { ButtonForm } from '../styledElements/ButtonsStyled'
+import { Title } from '@components'
 
-// Import styled-components and helpers
+// Import StyledElements for basic styles
+import { Section } from '@styledElements/SectionStyled'
+import { ButtonForm } from '@styledElements/ButtonsStyled'
+
+// Import styles from styled-components file
 import * as S from './ContactFormStyled'
 
 // Component

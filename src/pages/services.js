@@ -4,10 +4,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 // Import Components for App
-import Layout from '../components/Globals/Layout'
-import SEO from '../components/Globals/SEO'
-import Hero from '../components/Hero'
-import Services from '../components/OurServices/Services'
+import { Layout, SEO, Hero, Services } from '@components'
 
 // GraphQl Queries
 export const query = graphql`

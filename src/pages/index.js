@@ -1,18 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
-// Import Components for App
-import Layout from '../components/Globals/Layout'
-import SEO from '../components/Globals/SEO'
-import Hero from '../components/Hero'
-import About from '../components/About/About'
-import Services from '../components/OurServices/Services'
 
-// Import styled-components and helpers
-import { setColor } from '../theme/helpers'
+// Import Components for App
+import { Layout, SEO, Hero, About, Services } from '@components'
+
+// Import styled-components, styledElements and helpers
+import { setColor } from '@helpers'
 
 const indexPage = () => {
   return (
-    <Layout home>
+    <Layout home background={setColor.mainGreyL3}>
       <SEO title="Accueil" keywords="Page d'Accueil, A propos de nous, Nos Services" />
       <Hero home title="Home Page" />
       <About home />

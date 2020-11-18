@@ -4,22 +4,22 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 // Import Components for App
-import Layout from '../components/Globals/Layout'
-import SEO from '../components/Globals/SEO'
-import Hero from '../components/Hero'
-import About from '../components/About/About'
-import Valeurs from '../components/About/Valeurs'
-import History from '../components/History/History'
-import Team from '../components/Team/Team'
-import Parteners from '../components/Parteners/Parteners'
+import { Layout, SEO, Hero, About, History, ParallaxImg, Team, Parteners } from '@components'
 
 // Import styled-components, styledElements and helpers
-import { setColor } from '../theme/helpers'
+import { setColor } from '@helpers'
 
 // GraphQl Queries
 export const getImage = graphql`
   {
     heroBcg: file(relativePath: { eq: "images/banners/about-page-banner.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    parallaxBcg: file(relativePath: { eq: "images/banners/about-page-banner-parallax.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
@@ -42,8 +42,11 @@ const aboutPage = ({ data }) => {
       />
       <Hero title="A Propos de nous" bcgImage={data.heroBcg.childImageSharp.fluid} />
       <About about />
-      <Valeurs background={setColor.mainGreyL3} />
-      <History />
+      <History background={setColor.mainGreyL3} />
+      <ParallaxImg
+        fluid={data.parallaxBcg.childImageSharp.fluid}
+        altImg="Peinture de facade boisée"
+      />
       <Team background={setColor.mainGreyL3} />
       <Parteners />
     </Layout>

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 // Import helpers
-import { layout, setColor, media } from '../../theme/helpers'
+import { layout, setColor, media } from '@helpers'
 
 // Styled CSS
 const SectionCss = css`

@@ -1,15 +1,20 @@
 import React from 'react'
+
+// Import components from Gatsby and plugins Gatsby
 import { graphql } from 'gatsby'
-import Layout from '../components/Globals/Layout'
-import Hero from '../components/Hero'
 
-import { GatsbyButtonLink } from '../components/styledElements/ButtonsStyled'
+// Import Components for App
+import { Layout, SEO, Hero } from '@components'
+
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setFlex, setColor, media, setShadow } from '../theme/helpers'
+import { GatsbyButtonLink } from '@styledElements/ButtonsStyled'
+import { setFlex, setColor, media, setShadow } from '@helpers'
 
+// GraphQl Queries
 export const getImage = graphql`
   {
-    heroBcg: file(relativePath: { eq: "images/pinceaux.jpg" }) {
+    heroBcg: file(relativePath: { eq: "images/banners/about-page-banner.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
@@ -19,9 +24,12 @@ export const getImage = graphql`
   }
 `
 
+// Component
 const errorPage = ({ data }) => {
+  // Render Component
   return (
     <Layout error>
+      <SEO title="404" />
       <ErrorHero error title="Page d'erreur 404" bcgImage={data.heroBcg.childImageSharp.fluid}>
         <Text className="h5">
           La page que vous demandez n'éxiste pas, ou l'url que vous avez taper n'est pas valide
@@ -34,6 +42,7 @@ const errorPage = ({ data }) => {
   )
 }
 
+// Styles from styled-components
 const ErrorHero = styled(Hero)`
   ${setFlex({ flDir: 'column', x: 'space-around' })};
   background-color: rgba(0, 0, 0, 0.5);

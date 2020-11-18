@@ -1,31 +1,21 @@
 import React from 'react'
 
 // Import Components for App
-import Title from '../Title'
-import HistoryProfile from './HistoryProfile'
-import Historical from './Historical'
-import { Section } from '../styledElements/SectionStyled'
+import { Title, HistoryProfile, Historical } from '@components'
 
-// Import styled-components and helpers
-import styled from 'styled-components'
-import { setFlex } from '../../theme/helpers'
+// Import styles from styled-components file
+import * as S from './HistoryStyled'
 
 // Component
-const History = () => {
+const History = ({ background }) => {
   // Render Component
   return (
-    <HistoryWrapper>
+    <S.HistoryWrapper background={background}>
       <Title tag="h2" title="Notre Histoire" titleSection />
       <HistoryProfile />
       <Historical />
-    </HistoryWrapper>
+    </S.HistoryWrapper>
   )
 }
-
-// Styles from styled-components
-const HistoryWrapper = styled(Section)`
-  ${setFlex({ flDir: 'column' })};
-  padding-bottom: 3rem;
-`
 
 export default History

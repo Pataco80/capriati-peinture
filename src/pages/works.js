@@ -4,14 +4,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 // Import Components for App
-import Layout from '../components/Globals/Layout'
-import SEO from '../components/Globals/SEO'
-import Hero from '../components/Hero'
-import References from '../components/References'
-import Works from '../components/Works'
+import { Layout, SEO, Hero, References, Works } from '@components'
 
-// Import styled-components and helpers
-import { setColor } from '../theme/helpers'
+// Import styled-components, styledElements and helpers
+import { setColor } from '@helpers'
 
 // GraphQl Queries
 export const getImage = graphql`
@@ -30,7 +26,7 @@ export const getImage = graphql`
 const worksPage = ({ data }) => {
   // Render Component
   return (
-    <Layout>
+    <Layout background={setColor.mainGreyL3}>
       <SEO
         title="Nos Travaux"
         description="Nos travaux éféctués au fil des années"
@@ -38,8 +34,8 @@ const worksPage = ({ data }) => {
         image="work"
       />
       <Hero title="Nos Travaux" bcgImage={data.heroBcg.childImageSharp.fluid} />
-      <References />
-      <Works background={setColor.mainGreyL3} />
+      <Works />
+      <References background={setColor.mainGreyL3} />
     </Layout>
   )
 }

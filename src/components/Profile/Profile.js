@@ -1,15 +1,14 @@
 import React from 'react'
 
 // Import Components for App
-import Avatar from '../Avatar'
+import { Avatar } from '@components'
 
-// Import styled-components and helpers
+// Import styles from component styled file
 import * as S from './ProfileStyled'
 
 // Component
-const Profile = props => {
+const Profile = ({ fluid, altPhoto, name, job }) => {
   // Component Variables
-  const { fluid, altPhoto, name, job } = props
 
   // Render Component
   return (

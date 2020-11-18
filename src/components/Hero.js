@@ -1,20 +1,14 @@
 import React from 'react'
 
 // Import Components for App
-import BcgImage from './BcgImage'
-import VideoBcg from './VideoBcg'
-import BannerHome from './BannerHome/BannerHome'
-import Banner from './Banner'
+import { Banner, BannerHome, BcgImage, VideoBcg } from '@components'
 
-// Import styled-components and helpers
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { setFlex } from '../theme/helpers'
+import { setFlex } from '@helpers'
 
 // Component
-const Hero = props => {
-  // Component Variables
-  const { home, error, title, bcgImage, children } = props
-
+const Hero = ({ home, error, title, bcgImage, children }) => {
   // Render Component
   return (
     <>
@@ -38,10 +32,9 @@ const Hero = props => {
 const HeroWrapper = styled.section`
   min-height: ${props => (props.home || props.error ? 'calc(100vh - 56px)' : '50vh')};
   position: relative;
-  ${setFlex({ flDir: 'column' })};
+  ${setFlex({ flDir: 'column', wrap: 'nowrap' })};
   width: 100vw;
   overflow: hidden;
-  flex-wrap: nowrap;
 `
 
 export default Hero

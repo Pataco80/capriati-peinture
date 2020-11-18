@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components'
 
-// Import Components for App
-import { Section, SectionContent } from '../styledElements/SectionStyled'
-import { GatsbyButtonLink } from '../styledElements/ButtonsStyled'
+// Import StyledElements for basic styles
+import { Section, SectionContent } from '@styledElements/SectionStyled'
+import { GatsbyButtonLink } from '@styledElements/ButtonsStyled'
 
 // Import helpers
-import { layout, setFlex, media, setColor, setRadius, setBorder } from '../../theme/helpers'
+import { layout, setFlex, media, setColor, setRadius, setBorder } from '@helpers'
 
 // Styled CSS
 const ArticleCSS = css`
