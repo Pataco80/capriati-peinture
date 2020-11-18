@@ -69,7 +69,7 @@ module.exports = {
         alias: {
           '@components': 'src/components',
           '@styledElements': 'src/components/styledElements',
-          '@styles': 'src/theme/helpers',
+          '@helpers': 'src/theme/helpers',
           '@hooks': 'src/hooks',
         },
       },
@@ -100,7 +100,7 @@ module.exports = {
         name: websiteConfig.siteTitle,
         short_name: websiteConfig.siteTitleShort,
         description: websiteConfig.siteDescription,
-        start_url: `${pathPrefix} || '/'`,
+        start_url: `${pathPrefix} || /`,
         background_color: websiteConfig.backgroundColor,
         theme_color: websiteConfig.themeColor,
         display: 'standalone',
