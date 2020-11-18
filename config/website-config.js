@@ -88,9 +88,10 @@ const websiteConfig = {
       url: 'https://facebook.com/Capriati-Peinture',
       iconClassName: 'fa fa-facebook',
     },
+    // twitter pret à sa demande
     {
       label: 'Twitter',
-      url: 'https://twitter.com/Vagr9K',
+      url: 'https://twitter.com/Capriati-Peinture',
       iconClassName: 'fa fa-twitter',
     },
     {
@@ -122,9 +123,5 @@ if (websiteConfig.pathPrefix === '/') {
 
 // Make sure siteUrl doesn"t have an ending forward slash
 if (websiteConfig.siteUrl.substr(-1) === '/') websiteConfig.siteUrl = config.siteUrl.slice(0, -1)
-
-// Make sure siteRss has a starting forward slash
-if (websiteConfig.siteRss && websiteConfig.siteRss[0] !== '/')
-  websiteConfig.siteRss = `/${websiteConfig.siteRss}`
 
 module.exports = websiteConfig

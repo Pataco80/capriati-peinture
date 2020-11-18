@@ -6,6 +6,9 @@ import Img from 'gatsby-image'
 // Import Components for App
 import { Parallax, Background } from 'react-parallax'
 
+// Import helpers
+import { setColor } from '@helpers'
+
 // Styled CSS
 const ImgSize = css`
   width: 100%;
@@ -17,6 +20,7 @@ const ImgSize = css`
 // Export Styles for the component
 export const ParallaxContainer = styled(Parallax)`
   ${ImgSize};
+  background-color: ${props => (props.background ? props.background : `${setColor.mainWhite}`)};
 
   .react-parallax-background-children {
     width: 100%;

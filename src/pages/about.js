@@ -46,6 +46,7 @@ const aboutPage = ({ data }) => {
       <ParallaxImg
         fluid={data.parallaxBcg.childImageSharp.fluid}
         altImg="Peinture de facade boisée"
+        background={setColor.mainGreyL3}
       />
       <Team background={setColor.mainGreyL3} />
       <Parteners />

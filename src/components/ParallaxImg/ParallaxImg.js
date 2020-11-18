@@ -10,11 +10,11 @@ import * as S from './ParallaxImgStyled'
 import { breakpoints } from '@helpers'
 
 // Component
-const ParallaxImg = ({ fluid, altImg }) => {
+const ParallaxImg = ({ fluid, altImg, background }) => {
   // Component Variables
   const windowSize = useWindowSize()
 
-  let strength = 100
+  let strength = 150
   if (windowSize > breakpoints.tablet) {
     strength = 250
   }
@@ -24,7 +24,7 @@ const ParallaxImg = ({ fluid, altImg }) => {
 
   // Render Component
   return (
-    <S.ParallaxContainer bgImageAlt="the cat" strength={strength}>
+    <S.ParallaxContainer bgImageAlt={altImg} strength={strength} background={background}>
       <S.BackgroundImg>
         <S.Image fluid={fluid} alt={altImg} />
       </S.BackgroundImg>
