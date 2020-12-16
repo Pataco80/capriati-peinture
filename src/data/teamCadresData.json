@@ -11,6 +11,16 @@
   },
   {
     "id": 2,
+    "name": "Brigitte Capriati",
+    "shortName": "brigitteCapriati",
+    "photo": "brigitteCapriati.jpg",
+    "altPhoto": "Brigitte Capriati",
+    "job": "Secrétaire",
+    "certifications":  ["CFC de Commerce"],
+    "date":  "A notre Service depuis janvier 2007"
+  },
+  {
+    "id": 3,
     "name": "Rodriguez José",
     "shortName": "joseRodriguez",
     "photo": "joseRodriguez.jpg",
@@ -20,7 +30,7 @@
     "date":  "A notre Service depuis juin 2020"
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Schmid Valentin",
     "shortName": "valentinSchmid",
     "photo": "valentinSchmid.jpg",
