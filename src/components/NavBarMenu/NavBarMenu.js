@@ -28,7 +28,6 @@ const getImage = graphql`
     }
   }
 `
-
 // Component
 const NavBarMenu = ({ toScroll }) => {
   // Component Variables

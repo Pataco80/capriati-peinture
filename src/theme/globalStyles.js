@@ -24,6 +24,13 @@ const GlobalStyle = createGlobalStyle`
     ${setLetterSpacing(1.3)}
   }
 
+body.light {
+  background-color: blue;
+}
+body.dark {
+  background-color: green;
+}
+
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: ${setFont.headingsFont};
     margin: calc(1.5rem + 1vw) 0; /* Responsive margins */

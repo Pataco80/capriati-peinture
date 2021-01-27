@@ -48,14 +48,16 @@ const convertHexToRGBA = (hex, opacity) => {
   return `rgba(${r},${g},${b},${opacity / 100})`
 }
 
-/*
+
 // If project as theme, paste the variables and export in GlobalStyles
 export const setTheme = {
   dark : {
+    background: `${setColor.mainGreyD2}`
   },
   light : {
+    background: `${setColor.mainWhite}`
   }
-}*/
+}
 
 // Fonts Palette
 export const setFont = {

@@ -4,16 +4,18 @@ import PropTypes from 'prop-types'
 //import useScrollVertical from '../hooks/useScrollVertical'
 
 // Import Components for App
-import { NavBarMenu, Footer } from '@components'
+import { NavBarMenu, Footer, BtnBar, ToTopBtn } from '@components'
 
 // Import styles from styled-components file and helpers
 import * as S from './LayoutStyled'
 import GlobalStyles from '../../theme/globalStyles'
+import useDeviceDetect from '../../hooks/useDeviceDetect'
 
 // Component
 const Layout = ({ children, background }) => {
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
+  const {isMobile} = useDeviceDetect()
 
   // Hooks Effects
   useEffect(() => {
@@ -33,10 +35,12 @@ const Layout = ({ children, background }) => {
   return (
     <>
       <GlobalStyles />
-      <S.AppWrapper className="test-layout">
+      <S.AppWrapper>
         <NavBarMenu toScroll={scrolled} />
+        
         <S.PageContainer className={scrolled ? `isScroll` : ``}>{children}</S.PageContainer>
         <Footer background={background} />
+        <BtnBar />
       </S.AppWrapper>
     </>
   )

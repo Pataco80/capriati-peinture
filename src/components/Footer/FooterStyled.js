@@ -12,4 +12,5 @@ export const Copyright = styled.p`
   margin: 2rem 0 0 0;
   color: ${setColor.mainWhite};
   text-align: center;
+  margin-bottom:1rem;
 `
