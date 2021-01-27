@@ -18,7 +18,6 @@ export { default as Historical } from './Historical/Historical'
 export { default as ToTopBtn } from './ToTopBtn'
 export { default as ThemeBtn } from './ThemeBtn'
 export { default as MenuRightBar } from './MenuRightBar/MenuRightBar'
-export { default as BottomBar } from './BottomBar/BottomBar'
 export { default as BtnBar } from './BtnBar/BtnBar'
 
 
