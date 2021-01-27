@@ -71,6 +71,7 @@ module.exports = {
           '@styledElements': 'src/components/styledElements',
           '@helpers': 'src/theme/helpers',
           '@hooks': 'src/hooks',
+          '@utils': 'src/utils'
         },
       },
     },
@@ -100,7 +101,7 @@ module.exports = {
         name: websiteConfig.siteTitle,
         short_name: websiteConfig.siteTitleShort,
         description: websiteConfig.siteDescription,
-        start_url: `${pathPrefix} || /`,
+        start_url: '/',
         background_color: websiteConfig.backgroundColor,
         theme_color: websiteConfig.themeColor,
         display: 'standalone',
@@ -144,15 +145,6 @@ module.exports = {
         cache_busting_mode: 'none',
       },
     },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        // lets you specify pages whose resources should be precached by the service worker. Ex: precachePages: [`/about_us/`, `/services/*`],
-        precachePages: [`/about/`, `/services/`, `/contact/`],
-        workboxConfig: {
-          globPatterns: ['**/assets/images/**/*'],
-        },
-      },
-    },
+    'gatsby-plugin-offline',
   ],
 }
