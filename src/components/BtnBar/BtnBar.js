@@ -52,6 +52,7 @@ const MenuBar = () => {
             {isDarkTheme ? <Sun /> : <Moon />}
         </S.MenuBarItem>
         {!isMobile && <ToTopBtn showBelow={300}/>}
+        {isMobile && <ToTopBtn/>}
        
       </S.MenuBarGroup>
     </S.MenuBarWrapper>
