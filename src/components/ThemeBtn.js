@@ -6,12 +6,14 @@ import { MoonOutline as Moon } from '@styled-icons/evaicons-outline/MoonOutline'
 
 // Import Styles
 import styled from 'styled-components'
+import {Button} from '@styledElements/ButtonsStyled'
+
 // Import helpers
 import { setTransition, setPxToRem, setShadow, setColor } from '@helpers'
 import getThemeColor from '../utils/getThemeColor'
 
 // Component
-const ThemeBtn = () => {
+const ThemeBtn = ({className}) => {
   // Variables pour la fonctionalité de theme
 
   // Utiliser useState avant le contrôle de la variable is"Name"theme
@@ -28,33 +30,13 @@ console.log(pageYOffset)
 
   // Render Component
   return(
-    <ThemeButton title='Theme Light / Dark' onClick={() => {
+    <Button className={className} title='Theme Light / Dark' onClick={() => {
             window.__setPreferredTheme(isDarkTheme ? 'light' : 'dark')
           }}>
             {isDarkTheme ? <Sun /> : <Moon />}
-    </ThemeButton>
+    </Button>
   )
 }
 
 
 export default ThemeBtn
-
-export const ThemeButton = styled.button`
-background:transparent;
-
-padding: 0.5rem;
-  border: none;
-  ${setTransition()};
-  width:3rem;
-  height:auto;
-  color: ${setColor.mainWhite};
-
-  &:hover {
-    background: ${setColor.primaryColor};
-    border-radius:inherit;
-  }
-  &:focus,
-  &:active {
-    outline: none;
-  }
-`

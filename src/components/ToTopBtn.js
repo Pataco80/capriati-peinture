@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
-
+import {Button} from '@styledElements/ButtonsStyled'
 import styled from 'styled-components'
 
 // Import helpers
@@ -27,43 +27,16 @@ const ToTopBtn = ({className, showBelow }) => {
   const handleClick = () => {
     window[`scrollTo`]({ top: 0, behavior: `smooth` })
   }
-  console.log(show)
+
   return (
     <>
       {show && (
-        <TopButton className={className} onClick={handleClick} title='Aller en haut'>
+        <Button className={show ? `isShow ${className}` : `${className}`} showBelow={showBelow} onClick={handleClick} title='Aller en haut'>
           <Arrow />
-        </TopButton>
+        </Button>
       )}
     </>
   )
 }
 
 export default ToTopBtn
-
-
-export const TopButton = styled.button`
-background:transparent;
-  padding: 0.5rem;
-  border: none;
-  ${setTransition()};
-  width:3rem;
-  height:auto;
-  color: ${setColor.mainWhite};
-
-  &:hover {
-    background: ${setColor.primaryColor};
-        border-radius:inherit;
-
-  }
-  &:focus,
-  &:active {
-    outline: none;
-  }
-  &.test {
-    position:fixed;
-    top:100px;
-    left:10px;
-    background-color:red;
-  }
-`

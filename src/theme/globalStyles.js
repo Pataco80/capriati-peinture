@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-import { setColor, setFont, setLetterSpacing } from './helpers'
-
+import { setColor, setTheme, setFont, setLetterSpacing, setShadow } from './helpers'
+const {light,dark} =setTheme
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
@@ -25,17 +25,31 @@ const GlobalStyle = createGlobalStyle`
   }
 
 body.light {
-  background-color: blue;
+  --background: ${light.background};
+  --text: ${light.text};
+  --textShadow: ${light.textShadow};
+  --highlight: ${light.highlight};
+  --highlightHovered: ${light.highlightHovered};
+  --mediumBackground:${light.mediumBackground};
+  --white: ${light.white};
 }
 body.dark {
-  background-color: green;
+  --background: ${dark.background};
+  --text: ${dark.text};
+  --textShadow: ${dark.textShadow};
+  --highlight: ${dark.highlight};
+  --highlightHovered: ${dark.highlightHovered};
+  --mediumBackground:${dark.mediumBackground};
+  --white: ${dark.white};
 }
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: ${setFont.headingsFont};
     margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
-    color: ${setColor.primaryColor};
+    color: var(--highlight);
     font-weight: 900;
+    text-shadow: 2px 2px 3px var(--textShadow);
+    ${setLetterSpacing()};
   }
 
   h1, .h1 {

@@ -51,12 +51,28 @@ const convertHexToRGBA = (hex, opacity) => {
 
 // If project as theme, paste the variables and export in GlobalStyles
 export const setTheme = {
-  dark : {
-    background: `${setColor.mainGreyD2}`
-  },
   light : {
-    background: `${setColor.mainWhite}`
-  }
+    background: `${setColor.mainWhite}`,
+    border: `${setColor.primaryColor}`,
+    text: `${setColor.mainBlack}`,
+    textShadow:`${setColor.mainGreyL1}`,
+    highlight: `${setColor.primaryColor}`,
+    highlightHovered: `${setColor.primaryColorD1}`,
+    mediumBackground: `${setColor.mainGreyL3}`,
+    white: `${setColor.mainWhite}`,
+    black: `${setColor.mainWhite}`,
+  },
+  dark : {
+    background: `${setColor.mainGreyD2}`,
+    border: `${setColor.primaryColor}`,
+    text: `${setColor.mainWhite}`,
+    textShadow:`${setColor.mainGrey}`,
+    highlight: `${setColor.primaryColorD1}`,
+    highlightHovered: `${setColor.primaryColorD2}`,
+    mediumBackground: `${setColor.mainGreyL2}`,
+    white: `${setColor.mainWhite}`,
+    black: `${setColor.mainBlack}`,    
+  },
 }
 
 // Fonts Palette
