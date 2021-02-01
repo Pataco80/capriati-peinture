@@ -32,11 +32,11 @@ export default function HTML(props) {
                     localStorage.setItem('theme', newTheme);
                   } catch (err) {}
                 }
-                var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                var darkQuery = window.matchMedia('(prefers-color-scheme: light)');
                 darkQuery.addListener(function(e) {
-                  window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+                  window.__setPreferredTheme(e.matches ? 'dark' : 'light')
                 });
-                setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+                setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
               })();
             `,
           }}

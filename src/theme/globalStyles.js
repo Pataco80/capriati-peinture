@@ -30,7 +30,9 @@ body.light {
   --textShadow: ${light.textShadow};
   --highlight: ${light.highlight};
   --highlightHovered: ${light.highlightHovered};
+  --highlightTopNavActive: ${light.highlightTopNavActive};
   --mediumBackground:${light.mediumBackground};
+  --lightBackground: ${light.lightBackground};
   --white: ${light.white};
 }
 body.dark {
@@ -39,7 +41,9 @@ body.dark {
   --textShadow: ${dark.textShadow};
   --highlight: ${dark.highlight};
   --highlightHovered: ${dark.highlightHovered};
+  --highlightTopNavActive: ${dark.highlightTopNavActive};
   --mediumBackground:${dark.mediumBackground};
+  --lightBackground: ${dark.lightBackground};
   --white: ${dark.white};
 }
 
@@ -48,7 +52,7 @@ body.dark {
     margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
     color: var(--highlight);
     font-weight: 900;
-    text-shadow: 2px 2px 3px var(--textShadow);
+    text-shadow: 2px 2px 2px var(--textShadow);
     ${setLetterSpacing()};
   }
 
