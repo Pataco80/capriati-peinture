@@ -40,3 +40,23 @@ console.log(pageYOffset)
 
 
 export default ThemeBtn
+
+export const ThemeButton = styled(Button)`
+background:transparent;
+
+padding: 0.25rem;
+  border: none;
+  ${setTransition()};
+  width:3rem;
+  height:auto;
+  color: ${setColor.mainWhite};
+
+  &:hover {
+    background: ${setColor.primaryColor};
+    border-radius:inherit;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+`

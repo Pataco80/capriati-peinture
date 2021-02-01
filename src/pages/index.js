@@ -8,11 +8,11 @@ import { setColor } from '@helpers'
 
 const indexPage = () => {
   return (
-    <Layout home background={setColor.mainGreyL3}>
+    <Layout home background={`var(--mediumBackground)`}>
       <SEO title="Accueil" keywords="Page d'Accueil, A propos de nous, Nos Services" />
       <Hero home title="Home Page" />
       <About home />
-      <Services background={setColor.mainGreyL3} card home />
+      <Services background={`var(--mediumBackground)`} card home />
     </Layout>
   )
 }

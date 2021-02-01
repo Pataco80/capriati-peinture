@@ -7,6 +7,7 @@ import { setFlex } from '@helpers'
 export const ProfileWrapper = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
+  text-shadow:2px 2px 2px var(--textShadow);
 `
 
 export const ProfileName = styled.h4`

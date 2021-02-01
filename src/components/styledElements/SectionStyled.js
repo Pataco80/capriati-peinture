@@ -5,7 +5,7 @@ import { layout, setColor, media } from '@helpers'
 
 // Styled CSS
 const SectionCss = css`
-  background-color: ${props => (props.background ? props.background : `${setColor.mainWhite}`)};
+  background-color: ${props => (props.background ? props.background : 'var(--white)')};
   padding: ${props => (props.padding ? props.padding : `2rem`)};
   width: 100vw;
 

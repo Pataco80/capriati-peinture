@@ -26,7 +26,7 @@ export const getImage = graphql`
 const worksPage = ({ data }) => {
   // Render Component
   return (
-    <Layout background={setColor.mainGreyL3}>
+    <Layout background='var(--mediumBackground)'>
       <SEO
         title="Nos Travaux"
         description="Nos travaux éféctués au fil des années"

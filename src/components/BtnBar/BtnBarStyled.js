@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { setFlex, setBorder, setRadius, setPxToRem, setColor, setTransition } from '@helpers'
-import media from 'styled-media-query'
+import { setFlex, setBorder, setRadius, setPxToRem, setColor, setTransition, media } from '@helpers'
 
 // Import Components for App
 import {Button} from '@styledElements/ButtonsStyled'
@@ -16,17 +15,28 @@ export const MobileWrapper = styled.section`
   border-top:${setBorder({size:2})};
   padding: 0 ${setPxToRem(16)};
   z-index:200;
+  color:${setColor.mainWhite};
 `
 
 export const DesktopWrapper = styled.div`
-${setFlex({flDir:'column'})};
-    position:fixed;
+  ${setFlex({flDir:'column'})};
+  position:fixed;
+  right:0.5rem;
+  bottom:70vw;
+  height:auto;
+  width:auto;
+  padding: ${setPxToRem(16)} ${setPxToRem(4)};
+  z-index:200;
+
+  ${media.greaterThan('tablet')`
+    right:0.5rem;
+    bottom:30vw;
+  `}
+
+  ${media.greaterThan('desktop')`
     right:1rem;
-    bottom:4vw;
-    height:auto;
-    width:auto;
-    padding: ${setPxToRem(16)} ${setPxToRem(4)};
-      z-index:200;
+    bottom:20vw;
+  `}
 `
 
 export const MenuBarGroup = styled.div`
@@ -64,7 +74,7 @@ export const MenuBarGroup = styled.div`
     }
     .btnIconBar.isShow {
       position:relative;
-      top:0.5rem;
+      top:0.3rem;
       padding-bottom:0.5rem;
       ${setRadius({tl:8,tr:8,bl:0,br:0})};
     }

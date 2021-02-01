@@ -14,7 +14,7 @@ import * as S from './ContactFormStyled'
 const Contactform = () => {
   // Render Component
   return (
-    <Section>
+    <Section background='var(--background)'>
       <Title tag="h3" title="Contactez-nous via notre formulaire" titleSection />
       <S.FormContainer padding="0">
         <S.ContactForm action="https://formspree.io/xlenaazr" method="POST" autocomplete="on">

@@ -14,4 +14,5 @@ export const TeamWrapper = styled.article`
 
 export const TeamItem = styled.li`
   text-align: center;
+  color:var(--text);
 `

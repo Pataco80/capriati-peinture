@@ -9,4 +9,5 @@ import { setFlex } from '@helpers'
 // Export Styles for the component
 export const HistoryWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
+  background:var(--mediumBackground);
 `

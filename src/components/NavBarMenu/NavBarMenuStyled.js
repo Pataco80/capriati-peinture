@@ -18,8 +18,8 @@ import {
 // Export Styles for the component
 export const NavBarWrapper = styled.nav`
   ${setFlex()};
-  border-bottom: ${setBorder({ size: 1, style: 'solid', color: `${setColor.primaryColor}` })};
-  background-color: ${setColor.mainWhite};
+  border-bottom: ${setBorder({ size: 1, style: 'solid', color: 'var(--highlight)' })};
+  background-color: var(--background);
   width: 100vw;
   position: relative;
   top: 0;
@@ -35,18 +35,20 @@ export const NavBarWrapper = styled.nav`
 export const NavBarContainer = styled.div`
   ${layout()};
   ${setFlex({ flDir: 'column' })};
-  background-color: ${setColor.mainWhite};
+  background-color: var(--white);
   ${setTransition()};
 
   ${media.greaterThan('lgTablet')`
     ${setFlex({ y: 'stretch', wrap: 'nowrap' })};
     padding: ${setPxToRem(8)} 0;
+    background-color: var(--background);
+    ${setTransition({style:'none'})};
   `}
 `
 
 export const NavBarHeader = styled.div`
   ${setFlex()};
-  background-color: ${setColor.mainWhite};
+  background-color: var(--background);
   position: relative;
   top: 0;
   width: 100%;
@@ -54,7 +56,7 @@ export const NavBarHeader = styled.div`
 
   ${media.greaterThan('lgTablet')`
     ${setFlex({ x: 'flex-start' })};
-    background-color: ${setColor.mainWhite};
+    background-color: var(--background);
     width: auto;
   `}
 `
@@ -74,7 +76,7 @@ export const NavHeaderContent = styled.section`
 `
 
 export const NavbarToggle = styled.span`
-  color: ${setColor.primaryColor};
+  color: var(--highlight);
   width: 40px;
   height: 40px;
   ${setTransition()};
@@ -87,7 +89,7 @@ export const NavbarToggle = styled.span`
 export const NavBarMenuDropdown = styled.section`
   top: -256px;
   ${setTransition({ duration: 0.3 })};
-  background-color: ${setColor.mainWhite};
+  background-color: var(--white);
   position: relative;
   width: 100%;
   height: 0;

@@ -9,7 +9,7 @@ import { Fax, PhoneAlt, Envelope } from '@styled-icons/fa-solid'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
-import { SectionCenter, SectionContent } from '@styledElements/SectionStyled'
+import { SectionContent, Section } from '@styledElements/SectionStyled'
 import { setFlex, media, setColor } from '@helpers'
 
 // GraphQl Queries
@@ -29,7 +29,7 @@ export const query = graphql`
 const contactPage = ({ data }) => {
   // Render Component
   return (
-    <Layout>
+    <Layout background='var(--mediumBackground)'>
       <SEO
         title="Nous Contacter"
         description="Contactez l'entreprise Capriati S.A."
@@ -38,7 +38,7 @@ const contactPage = ({ data }) => {
       />
       <Hero title="Nous Contacter" bcgImage={data.heroBcg.childImageSharp.fluid} />
       <ContactForm />
-      <ContactSection>
+      <ContactSection background='var(--mediumBackground)'>
         <Title tag="h3" title="Nos Coordonées" titleSection />
         <ContactSectionContent>
           <ContactInfo>
@@ -77,7 +77,7 @@ const contactPage = ({ data }) => {
 }
 
 // Styles from styled-components
-const ContactSection = styled(SectionCenter)`
+const ContactSection = styled(Section)`
   ${setFlex({ flDir: 'column' })};
 
   ${media.greaterThan('smTablet')`

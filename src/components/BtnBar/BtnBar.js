@@ -57,7 +57,7 @@ const MenuBar = () => {
     {!isMobile &&
         <S.DesktopWrapper>
       <S.MenuBarGroup className="desktop">
-        <ToTopBtn showBelow={500} className="btnIconBar"/>
+        <ToTopBtn showBelow={500} className="btnIconBar btnTop"/>
         <ThemeBtn className="btnIconBar"/>
       </S.MenuBarGroup>
     </S.DesktopWrapper>

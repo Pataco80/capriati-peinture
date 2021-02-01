@@ -50,7 +50,7 @@ export const getData = graphql`
 `
 
 // Component
-const Team = ({ background, padding }) => {
+const Team = ({ padding }) => {
   // Component Variables
   const data = useStaticQuery(getData)
   const photoList = data.photo.edges
@@ -66,7 +66,7 @@ const Team = ({ background, padding }) => {
 
   // Render Component
   return (
-    <S.TeamWrapper background={background} padding={padding}>
+    <S.TeamWrapper padding={padding}>
       <Title tag="h2" title="Notre Équipe" titleSection />
       <S.TeamContent>
         <TeamCadres teamPhoto={teamPhoto} team={teamCadres} />

@@ -24,7 +24,7 @@ const ParallaxImg = ({ fluid, altImg, background }) => {
 
   // Render Component
   return (
-    <S.ParallaxContainer bgImageAlt={altImg} strength={strength} background={background}>
+    <S.ParallaxContainer bgImageAlt={altImg} strength={strength} background='var(--background)'>
       <S.BackgroundImg>
         <S.Image fluid={fluid} alt={altImg} />
       </S.BackgroundImg>

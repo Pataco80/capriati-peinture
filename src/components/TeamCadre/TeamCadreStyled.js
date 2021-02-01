@@ -10,6 +10,7 @@ export const CadreItemWrapper = styled.div`
   width: 100%;
   max-width: 25rem;
   text-align: center;
+  color:var(--text);
 
   ${media.greaterThan('tablet')`
     width: 50%;

@@ -24,6 +24,7 @@ const ContactInput = css`
   margin: 1rem 0 3rem;
   ${setRadius({ allPx: 12 })};
   border: ${setBorder({ size: 1, style: 'solid', color: setColor.primaryColor })};
+  background:var(--lightBackground);
   box-shadow: ${setShadow('light')};
 
   &:focus {

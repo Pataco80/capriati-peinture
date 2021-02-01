@@ -5,7 +5,7 @@ import { setColor, setFlex, setPxToRem } from '@helpers'
 
 // Export Styles for the component
 export const AppWrapper = styled.div`
-  background-color: ${setColor.mainWhite};
+  background-color: var(--background);
   width: 100vw;
   min-height: 100vh;
 `

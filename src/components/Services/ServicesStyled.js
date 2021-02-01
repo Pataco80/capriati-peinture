@@ -33,8 +33,8 @@ export const ServiceItemCard = styled(Link)`
   align-content: flex-start;
   width: 100%;
   max-width: 400px;
-  color: ${setColor.mainBlack};
-  background-color: ${setColor.mainWhite};
+  color: var(--text);
+  background-color: var(--background);
   margin-bottom: 4rem;
   text-decoration: none;
   ${setRadius({ allPx: 12 })};

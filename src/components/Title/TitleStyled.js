@@ -7,7 +7,7 @@ import { setFlex, setColor } from '@helpers'
 export const TitleWrapper = styled.div`
   ${setFlex()};
   text-align: center;
-  text-shadow: 2px 2px 8px var(--textShadow);
+  text-shadow: 2px 2px 2px var(--textShadow);
 
   ${({ titleSection }) =>
     titleSection &&

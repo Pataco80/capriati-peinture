@@ -10,6 +10,7 @@ import { layout, setFlex, media, setRadius, setShadow } from '@helpers'
 export const WorksWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
   padding-bottom: 3rem;
+  background:var(--background);
 `
 
 export const WorksContent = styled(SectionContentCenter)`

@@ -56,16 +56,25 @@ export const MainNavMenu = styled.ul`
     text-decoration: none;
 
     &:hover {
-      color: ${setColor.primaryColorD2};
+      color: var(--highlightHovered);
     }
 
     &[aria-current] {
-      color: ${setColor.primaryColorD2};
+      color: var(--highlightHovered);
     }
     & .span:hover,
     &[aria-current] .span {
-      border-bottom: ${setBorder({ size: 2, style: 'solid', color: `${setColor.primaryColorD2}` })};
+      border-bottom: ${setBorder({ size: 2, style: 'solid', color: 'var(--highlightHovered)'})};
     }
+    
+    ${media.greaterThan('lgTablet')`
+    &[aria-current] {
+      color: var(--highlightTopNavActive);
+    }
+    &[aria-current] .span {
+      border-bottom: ${setBorder({ size: 2, style: 'solid', color: 'var(--highlightTopNavActive)'})};
+    }
+  `}
   }
 
   ${media.greaterThan('lgTablet')`
@@ -74,6 +83,8 @@ export const MainNavMenu = styled.ul`
     position: relative;
     top: 0;
     transition: none;
+    color: ${setColor.mainWhite};
+
   `}
 
   &.footer {

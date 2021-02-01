@@ -39,7 +39,7 @@ const getData = graphql`
 `
 
 // Component
-const Parteners = ({ background }) => {
+const Parteners = () => {
   // Component Variables
   const data = useStaticQuery(getData)
   const logoList = data.logos.edges
@@ -53,7 +53,7 @@ const Parteners = ({ background }) => {
 
   // Render Component
   return (
-    <S.PartenersWrapper background={background}>
+    <S.PartenersWrapper>
       <Title tag="h2" title="Nos Partenaires" titleSection />
       <S.PartenersLogosContainer>
         {parteners.map((item, i) => {

@@ -7,10 +7,10 @@ import { Title, HistoryProfile, Historical } from '@components'
 import * as S from './HistoryStyled'
 
 // Component
-const History = ({ background }) => {
+const History = () => {
   // Render Component
   return (
-    <S.HistoryWrapper background={background}>
+    <S.HistoryWrapper>
       <Title tag="h2" title="Notre Histoire" titleSection />
       <HistoryProfile />
       <Historical />

@@ -19,6 +19,7 @@ const ArticleCSS = css`
 // Export Styles for the component
 export const AboutWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
+  background:var(--background);
 `
 
 export const AboutContent = styled(SectionContent)`
@@ -33,6 +34,7 @@ export const AboutContent = styled(SectionContent)`
 export const AboutArticle = styled.article`
   ${ArticleCSS}
   margin-bottom: 1rem;
+  color:var(--text);
 
   ${media.greaterThan('tablet')`
     margin-bottom: 2rem;
@@ -44,9 +46,9 @@ export const Blockuote = styled.blockquote`
 
   footer {
     text-align: right;
-    border-right: ${setBorder({ size: 4, style: 'solid', color: setColor.primaryColor })};
+    border-right: ${setBorder({ size: 4, style: 'solid', color: 'var(--border)' })};
     padding-right: 1rem;
-    color: ${setColor.primaryColor};
+    color: var(--highlight);
 
     h6 {
       margin: 0.5rem 0;
@@ -62,13 +64,22 @@ export const Blockuote = styled.blockquote`
 export const AboutAuthorContainer = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
+  padding-left: 0;
+
+  ${media.greaterThan('tablet')`
   padding-left: 2rem;
+  `
+}
+
+  small {
+    color: var(--text);
+  }
 
   ${({ about }) =>
     about &&
     `
     ${setFlex({ flDir: 'column-reverse' })};
-    background-color: ${setColor.mainGreyL3};
+    background-color: var(--mediumBackground);
     ${setRadius({ allPx: 12 })};
     padding: 2rem;
   `}
@@ -100,6 +111,7 @@ export const AuthorImgContainer = styled.div`
 
 export const AuthorName = styled.h5`
   margin-bottom: 0.5rem;
+  text-align:center;
 `
 
 export const AboutLink = styled(GatsbyButtonLink)`

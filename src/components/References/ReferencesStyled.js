@@ -10,6 +10,7 @@ import { setFlex } from '@helpers'
 export const ReferencesWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
   padding-bottom: 3rem;
+  background:var(--mediumBackground);
 `
 
 export const ReferenceItem = styled.li`

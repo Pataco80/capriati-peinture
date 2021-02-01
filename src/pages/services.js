@@ -23,7 +23,7 @@ export const query = graphql`
 const servicesPage = ({ data }) => {
   // Render Component
   return (
-    <Layout>
+    <Layout background='var(--mediumBackground)'>
       <SEO
         title="Nos Services"
         description="Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives"
@@ -31,7 +31,7 @@ const servicesPage = ({ data }) => {
         image="services"
       />
       <Hero title="Nos Services" bcgImage={data.heroBcg.childImageSharp.fluid} />
-      <Services />
+      <Services background='var(--mediumBackground)'/>
     </Layout>
   )
 }
