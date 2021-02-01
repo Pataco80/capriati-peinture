@@ -19,7 +19,6 @@ const ThemeBtn = ({className}) => {
   // Utiliser useState avant le contrôle de la variable is"Name"theme
   const [theme, setTheme] = useState(null)
   const isDarkTheme = theme === 'dark'
-console.log(pageYOffset)
   // Utiliser le useEffect remplace la fonctionalité componentDidMount. Laisser un array vide à la fin pour ne pas répéter la fonctionalité et causer une erreur.
   useEffect(() => {
     setTheme(window.__theme)
