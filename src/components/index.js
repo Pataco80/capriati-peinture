@@ -21,7 +21,6 @@ export { default as MapBtn } from './MapBtn'
 export { default as MenuRightBar } from './MenuRightBar/MenuRightBar'
 export { default as BtnBar } from './BtnBar/BtnBar'
 
-
 // Components for pages
 export { default as Layout } from './Layout/Layout'
 export { default as SEO } from './SEO'

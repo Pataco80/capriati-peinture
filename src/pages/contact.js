@@ -1,4 +1,5 @@
 import React from 'react'
+import mapsSelector from '../utils/getGoogleMap'
 
 // Import components from Gatsby and plugins Gatsby
 import { graphql } from 'gatsby'
@@ -6,11 +7,13 @@ import { graphql } from 'gatsby'
 // Import Components for App
 import { Layout, SEO, Hero, Title, ContactForm } from '@components'
 import { Fax, PhoneAlt, Envelope } from '@styled-icons/fa-solid'
+import { Map } from '@styled-icons/boxicons-regular'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
 import { SectionContent, Section } from '@styledElements/SectionStyled'
-import { setFlex, media, setColor } from '@helpers'
+import { Button } from '@styledElements/ButtonsStyled'
+import { setFlex, media, setColor, setPxToRem } from '@helpers'
 
 // GraphQl Queries
 export const query = graphql`
@@ -29,7 +32,7 @@ export const query = graphql`
 const contactPage = ({ data }) => {
   // Render Component
   return (
-    <Layout background='var(--mediumBackground)'>
+    <Layout background="var(--mediumBackground)">
       <SEO
         title="Nous Contacter"
         description="Contactez l'entreprise Capriati S.A."
@@ -38,7 +41,7 @@ const contactPage = ({ data }) => {
       />
       <Hero title="Nous Contacter" bcgImage={data.heroBcg.childImageSharp.fluid} />
       <ContactForm />
-      <ContactSection background='var(--mediumBackground)'>
+      <ContactSection background="var(--mediumBackground)">
         <Title tag="h3" title="Nos Coordonées" titleSection />
         <ContactSectionContent>
           <ContactInfo>
@@ -48,6 +51,7 @@ const contactPage = ({ data }) => {
               Z.A. La Pièce 20 <br />
               1180 Rolle
             </p>
+            <ButtonMap primary onClick={mapsSelector}><MapIcon/>Nous trouver</ButtonMap>
           </ContactInfo>
           <ContactInfo>
             <Title tag="h5" title="Contact" noShadow />
@@ -110,6 +114,16 @@ const ContactInfo = styled.div`
     color: ${setColor.primaryColor};
     width: 1.5rem;
   }
+`
+
+export const ButtonMap = styled(Button)`
+${setFlex()};
+padding: ${setPxToRem(8)} ${setPxToRem(26)}
+`
+
+export const MapIcon = styled(Map)`
+width:1.6rem;
+height:auto;
 `
 
 export default contactPage

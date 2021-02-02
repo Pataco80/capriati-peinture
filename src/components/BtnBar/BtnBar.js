@@ -39,7 +39,7 @@ const MenuBar = () => {
             <Button className="btnIconBar">
               <MailSend />
             </Button>
-            <MapBtn className="btnIconBar" />
+            <MapBtn className="btnIconBar mapIconBar" />
           </S.MenuBarGroup>
           <S.MenuBarGroup>
             <ThemeBtn className="btnIconBar" />

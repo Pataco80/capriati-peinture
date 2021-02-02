@@ -10,7 +10,6 @@ import { Button } from '@styledElements/ButtonsStyled'
 
 // Import helpers
 import { setTransition, setPxToRem, setShadow, setColor } from '@helpers'
-import getThemeColor from '../utils/getThemeColor'
 
 // Component
 const ThemeBtn = ({ className }) => {
