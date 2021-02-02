@@ -17,7 +17,7 @@ const ThemeBtn = ({ className }) => {
 
   // Utiliser useState avant le contrôle de la variable is"Name"theme
   const [theme, setTheme] = useState(null)
-  const isDarkTheme = theme === 'dark'
+  const isLightTheme = theme === 'light'
   // Utiliser le useEffect remplace la fonctionalité componentDidMount. Laisser un array vide à la fin pour ne pas répéter la fonctionalité et causer une erreur.
   useEffect(() => {
     setTheme(window.__theme)
@@ -31,9 +31,9 @@ const ThemeBtn = ({ className }) => {
       className={className}
       title="Theme Light / Dark"
       onClick={() => {
-        window.__setPreferredTheme(isDarkTheme ? 'light' : 'dark')
+        window.__setPreferredTheme(isLightTheme ? 'dark' : 'light')
       }}>
-      {isDarkTheme ? <Sun /> : <Moon />}
+      {isLightTheme ? <Moon /> : <Sun />}
     </ThemeButton>
   )
 }
