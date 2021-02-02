@@ -17,6 +17,7 @@ export { default as HistoryProfile } from './HistoryProfile/HistoryProfile'
 export { default as Historical } from './Historical/Historical'
 export { default as ToTopBtn } from './ToTopBtn'
 export { default as ThemeBtn } from './ThemeBtn'
+export { default as MapBtn } from './MapBtn'
 export { default as MenuRightBar } from './MenuRightBar/MenuRightBar'
 export { default as BtnBar } from './BtnBar/BtnBar'
 
