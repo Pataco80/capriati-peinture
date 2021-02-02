@@ -51,7 +51,10 @@ const contactPage = ({ data }) => {
               Z.A. La Pièce 20 <br />
               1180 Rolle
             </p>
-            <ButtonMap primary onClick={mapsSelector}><MapIcon/>Nous trouver</ButtonMap>
+            <ButtonMap primary onClick={mapsSelector}>
+              <MapIcon />
+              Nous trouver
+            </ButtonMap>
           </ContactInfo>
           <ContactInfo>
             <Title tag="h5" title="Contact" noShadow />
@@ -117,13 +120,13 @@ const ContactInfo = styled.div`
 `
 
 export const ButtonMap = styled(Button)`
-${setFlex()};
-padding: ${setPxToRem(8)} ${setPxToRem(26)}
+  ${setFlex()};
+  padding: ${setPxToRem(8)} ${setPxToRem(26)};
 `
 
 export const MapIcon = styled(Map)`
-width:1.6rem;
-height:auto;
+  width: 1.6rem;
+  height: auto;
 `
 
 export default contactPage

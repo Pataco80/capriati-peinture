@@ -6,7 +6,7 @@ import { ToTopBtn, ThemeBtn, MapBtn } from '@components'
 
 // Import Styles
 import * as S from './BtnBarStyled'
-import { Button } from '@styledElements/ButtonsStyled'
+import { ButtonLink } from '@styledElements/ButtonsStyled'
 import useDeviceDetect from '../../hooks/useDeviceDetect'
 
 // Component
@@ -33,12 +33,12 @@ const MenuBar = () => {
       {isMobile && (
         <S.MobileWrapper>
           <S.MenuBarGroup>
-            <Button className="btnIconBar">
+            <ButtonLink className="btnIconBar" href="tel:0218254017">
               <Phone />
-            </Button>
-            <Button className="btnIconBar">
+            </ButtonLink>
+            <ButtonLink className="btnIconBar" href="mailto:capriati@bluewin.ch">
               <MailSend />
-            </Button>
+            </ButtonLink>
             <MapBtn className="btnIconBar mapIconBar" />
           </S.MenuBarGroup>
           <S.MenuBarGroup>
