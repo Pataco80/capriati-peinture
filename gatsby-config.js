@@ -14,6 +14,7 @@ module.exports = {
   /* General Information */
   pathPrefix: websiteConfig.pathPrefix,
   siteMetadata: {
+    config: websiteConfig,
     siteUrl: siteUrl, // For gatsby-plugin-sitemap
     pathPrefix,
     title: websiteConfig.siteTitle,
@@ -71,7 +72,7 @@ module.exports = {
           '@styledElements': 'src/components/styledElements',
           '@helpers': 'src/theme/helpers',
           '@hooks': 'src/hooks',
-          '@utils': 'src/utils'
+          '@utils': 'src/utils',
         },
       },
     },
