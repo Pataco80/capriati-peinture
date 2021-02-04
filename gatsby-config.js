@@ -5,16 +5,15 @@
  */
 
 // Import informations from websiteConfig configuration. For more details see the comments of the websiteConfig-config-example.js configuration file
-const websiteConfig = require('./config/website-config')
+const websiteConfig = require('./.config/website-config')
 
 const pathPrefix = websiteConfig.pathPrefix
 const siteUrl = websiteConfig.siteUrl + pathPrefix
-console.log(pathPrefix)
+
 module.exports = {
   /* General Information */
   pathPrefix: websiteConfig.pathPrefix,
   siteMetadata: {
-    config: websiteConfig,
     siteUrl: siteUrl, // For gatsby-plugin-sitemap
     pathPrefix,
     title: websiteConfig.siteTitle,
@@ -22,13 +21,24 @@ module.exports = {
     keywords: websiteConfig.keywords,
     logo: websiteConfig.siteLogo,
     siteLanguage: websiteConfig.siteLanguage,
-    author: websiteConfig.author,
-    authorPosition: websiteConfig.authorPosition,
-    authorDescription: websiteConfig.authorDescription,
-    authorSlogan: websiteConfig.authorSlogan,
+    bossName: websiteConfig.bossFullName,
+    bossPosition: websiteConfig.bossPosition,
+    bossDescription: websiteConfig.bossDescription,
+    bossSlogan: websiteConfig.bossSlogan,
+    businessRoad: websiteConfig.businessAdressRoad,
+    businessRoadNumber: websiteConfig.businessAdressRoadNumber,
+    businessZipCode: websiteConfig.businessAdressZipCode,
+    businessCity: websiteConfig.businessAdressCity,
+    businessCanton: websiteConfig.businessAdressCanton,
+    businessShortCanton: websiteConfig.businessAdressShortCanton,
+    businessContry: websiteConfig.businessAdressCountry,
+    businessShortCountry: websiteConfig.businessAdressShortCountry,
+    businessPhone: websiteConfig.businessPhone,
+    businessFax: websiteConfig.businessFax,
+    businessEmail: websiteConfig.businessEmail,
+    copyright: websiteConfig.copyright,
     twitterUserName: websiteConfig.twitterUserName,
     facebookUserName: websiteConfig.facebookUserName,
-    copyright: websiteConfig.copyright,
   },
 
   /* Your site config here */

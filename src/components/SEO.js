@@ -19,7 +19,7 @@ const SEO = ({ description, lang, meta, title, image, keywords }) => {
             title
             description
             keywords
-            author
+            bossName
             siteUrl
           }
         }
@@ -64,7 +64,7 @@ const SEO = ({ description, lang, meta, title, image, keywords }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.bossName,
         },
         {
           name: `twitter:title`,

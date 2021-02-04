@@ -70,6 +70,7 @@ yarn-error.log
 
 # personal folder and files
 ressources/
+.config/
 
 # vscode files
 .vscode/
