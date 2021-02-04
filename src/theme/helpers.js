@@ -48,14 +48,13 @@ const convertHexToRGBA = (hex, opacity) => {
   return `rgba(${r},${g},${b},${opacity / 100})`
 }
 
-
 // If project as theme, paste the variables and export in GlobalStyles
 export const setTheme = {
-  light : {
+  light: {
     background: `${setColor.mainWhite}`,
     border: `${setColor.primaryColor}`,
     text: `${setColor.mainBlack}`,
-    textShadow:`${setColor.mainGreyL1}`,
+    textShadow: `${setColor.mainGreyL1}`,
     highlight: `${setColor.primaryColor}`,
     highlightTopNavActive: `${setColor.primaryColor}`,
     highlightHovered: `${setColor.primaryColorD1}`,
@@ -64,18 +63,18 @@ export const setTheme = {
     white: `${setColor.mainWhite}`,
     black: `${setColor.mainWhite}`,
   },
-  dark : {
+  dark: {
     background: `${setColor.mainGreyD2}`,
     border: `${setColor.primaryColor}`,
     text: `${setColor.mainWhite}`,
-    textShadow:`${setColor.mainBlack}`,
+    textShadow: `${setColor.mainBlack}`,
     highlight: `${setColor.primaryColorD1}`,
     highlightTopNavActive: `${setColor.mainWhite}`,
     highlightHovered: `${setColor.primaryColorD2}`,
     mediumBackground: `${setColor.mainGreyL2}`,
     lightBackground: `${setColor.mainGreyL2}`,
     white: `${setColor.mainWhite}`,
-    black: `${setColor.mainBlack}`,    
+    black: `${setColor.mainBlack}`,
   },
 }
 

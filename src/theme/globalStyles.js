@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-import { setColor, setTheme, setFont, setLetterSpacing, setShadow } from './helpers'
-const {light,dark} =setTheme
+
+import { setColor, setTheme, setFont, setLetterSpacing } from './helpers'
+const { light, dark } = setTheme
+
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
@@ -22,9 +24,18 @@ const GlobalStyle = createGlobalStyle`
     font-size: calc(1rem + 0.35vw); /* Responsive base font size */
     line-height: calc(1rem + 1.333vw); /* Responsive Vertical Rhythm */
     ${setLetterSpacing(1.3)}
+    --background: ${light.background};
+    --text: ${light.text};
+    --textShadow: ${light.textShadow};
+    --highlight: ${light.highlight};
+    --highlightHovered: ${light.highlightHovered};
+    --highlightTopNavActive: ${light.highlightTopNavActive};
+    --mediumBackground:${light.mediumBackground};
+    --lightBackground: ${light.lightBackground};
+    --white: ${light.white};
   }
-
-body.light {
+  /** Désactivation des class de thématisation.
+  body.light {
   --background: ${light.background};
   --text: ${light.text};
   --textShadow: ${light.textShadow};
@@ -46,6 +57,7 @@ body.dark {
   --lightBackground: ${dark.lightBackground};
   --white: ${dark.white};
 }
+*/
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: ${setFont.headingsFont};
