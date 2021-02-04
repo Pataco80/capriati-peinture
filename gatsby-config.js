@@ -5,7 +5,7 @@
  */
 
 // Import informations from websiteConfig configuration. For more details see the comments of the websiteConfig-config-example.js configuration file
-const websiteConfig = require('./.config/website-config')
+const websiteConfig = require('./config/website-config')
 
 const pathPrefix = websiteConfig.pathPrefix
 const siteUrl = websiteConfig.siteUrl + pathPrefix
