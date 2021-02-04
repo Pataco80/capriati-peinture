@@ -1,11 +1,19 @@
 import React from 'react'
+
+// Import functions map
 import mapsSelector from '../utils/getGoogleMap'
+
+// Import Components for App
 import { Map } from '@styled-icons/boxicons-regular'
+
+// Import styled-components, styledElements and helpers
 import styled from 'styled-components'
 import { Button } from '@styledElements/ButtonsStyled'
 import { setTransition, setColor, setFlex } from '@helpers'
 
+// Component
 const MapBtn = ({ className }) => {
+  // Render Component
   return (
     <MapButton className={className} onClick={mapsSelector}>
       <Map />
@@ -15,6 +23,7 @@ const MapBtn = ({ className }) => {
 
 export default MapBtn
 
+// Styles from styled-components
 export const MapButton = styled(Button)`
   background: transparent;
 

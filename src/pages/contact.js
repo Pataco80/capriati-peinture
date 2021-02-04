@@ -2,7 +2,7 @@ import React from 'react'
 import mapsSelector from '../utils/getGoogleMap'
 
 // Import components from Gatsby and plugins Gatsby
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 // Import Components for App
 import { Layout, SEO, Hero, Title, ContactForm } from '@components'
@@ -16,7 +16,7 @@ import { Button } from '@styledElements/ButtonsStyled'
 import { setFlex, media, setColor, setPxToRem } from '@helpers'
 
 // GraphQl Queries
-export const query = graphql`
+const getData = graphql`
   {
     heroBcg: file(relativePath: { eq: "images/banners/contact-page-banner.jpg" }) {
       childImageSharp {
@@ -25,31 +25,62 @@ export const query = graphql`
         }
       }
     }
+    site {
+      siteMetadata {
+        title
+        businessRoad
+        businessRoadNumber
+        businessZipCode
+        businessCity
+        businessShortCanton
+        businessContry
+        businessPhone
+        businessFax
+        businessEmail
+      }
+    }
   }
 `
 
 // Component
-const contactPage = ({ data }) => {
+const contactPage = () => {
+  const { heroBcg, site } = useStaticQuery(getData)
+  const {
+    title,
+    businessRoad,
+    businessRoadNumber,
+    businessZipCode,
+    businessCity,
+    businessShortCanton,
+    businessContry,
+    businessPhone,
+    businessFax,
+    businessEmail,
+  } = site.siteMetadata
+
+  const hrefPhone = `tel:${businessPhone}`.replaceAll(' ', '')
+  const hrefEmail = `mailto:${businessEmail}`
+
   // Render Component
   return (
     <Layout background="var(--mediumBackground)">
       <SEO
         title="Nous Contacter"
-        description="Contactez l'entreprise Capriati S.A."
+        description={`Contactez l'entreprise ${title}.`}
         keywords="Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail"
         image="contact"
       />
-      <Hero title="Nous Contacter" bcgImage={data.heroBcg.childImageSharp.fluid} />
+      <Hero title="Nous Contacter" bcgImage={heroBcg.childImageSharp.fluid} />
       <ContactForm />
       <ContactSection background="var(--mediumBackground)">
         <Title tag="h3" title="Nos Coordonées" titleSection />
         <ContactSectionContent>
           <ContactInfo>
             <Title tag="h5" title="Adresse" noShadow />
-            <Title tag="h6" title="Capriati S.A." noShadow />
+            <Title tag="h6" title={`${title}`} noShadow />
             <p>
-              Z.A. La Pièce 20 <br />
-              1180 Rolle
+              {businessRoad} {businessRoadNumber} <br />
+              {businessZipCode} {businessCity} <br /> {businessShortCanton} - {businessContry}
             </p>
             <ButtonMap primary onClick={mapsSelector}>
               <MapIcon />
@@ -62,19 +93,19 @@ const contactPage = ({ data }) => {
               <strong>
                 <PhoneAlt className="contactInfo-icon" /> :{' '}
               </strong>
-              <a href="tel:0218254017">021 825 40 17</a>
+              <a href={hrefPhone}>{businessPhone}</a>
             </p>
             <p>
               <strong>
                 <Fax className="contactInfo-icon" /> :{' '}
               </strong>
-              021 825 50 11
+              {businessFax}
             </p>
             <p>
               <strong>
                 <Envelope className="contactInfo-icon" /> :{' '}
               </strong>
-              <a href="mailto:capriati@bluewin.ch">capriati@bluewin.ch</a>
+              <a href={hrefEmail}>{businessEmail}</a>
             </p>
           </ContactInfo>
         </ContactSectionContent>

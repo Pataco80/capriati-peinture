@@ -33,7 +33,7 @@ export const getImage = graphql`
 const aboutPage = ({ data }) => {
   // Render Component
   return (
-    <Layout background='var(--mediumBackground)'>
+    <Layout background='var(--lightBackground)'>
       <SEO
         title="A Propos de Nous"
         description="A Propos de l'entrerise Capriati S.A., son histoire, son équipe et ces partenaires"

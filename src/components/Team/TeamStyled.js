@@ -9,7 +9,7 @@ import { layout, setFlex, media } from '@helpers'
 // Export Styles for the component
 export const TeamWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background:var(--background);
+  background: var(--mediumBackground);
 `
 
 export const TeamContent = styled(SectionContentCenter)`

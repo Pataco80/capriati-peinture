@@ -4,7 +4,6 @@ import React from 'react'
 import { Layout, SEO, Hero, About, Services } from '@components'
 
 // Import styled-components, styledElements and helpers
-import { setColor } from '@helpers'
 
 const indexPage = () => {
   return (

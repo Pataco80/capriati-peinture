@@ -19,12 +19,12 @@ export const getData = graphql`
         }
       }
     }
-    authorData: site {
+    bossData: site {
       siteMetadata {
-        author
-        authorPosition
-        authorDescription
-        authorSlogan
+        bossName
+        bossPosition
+        bossDescription
+        bossSlogan
       }
     }
   }
@@ -34,8 +34,8 @@ export const getData = graphql`
 const About = props => {
   // Component Variables
   const { home, about, background } = props
-  const { profilImage, authorData } = useStaticQuery(getData)
-  const { author, authorPosition, authorDescription, authorSlogan } = authorData.siteMetadata
+  const { profilImage, bossData } = useStaticQuery(getData)
+  const { bossName, bossPosition, bossDescription, bossSlogan } = bossData.siteMetadata
 
   // Render Component
   return (
@@ -56,13 +56,13 @@ const About = props => {
         <S.AboutAuthorContainer about={about}>
           {about ? (
             <S.Blockuote>
-              <p>{authorDescription}</p>
+              <p>{bossDescription}</p>
               <footer>
-                <h6>{authorSlogan}</h6>
+                <h6>{bossSlogan}</h6>
                 <cite>
-                  {author}{' '}
+                  {bossName}{' '}
                   <small>
-                    <em>- {authorPosition}</em>
+                    <em>- {bossPosition}</em>
                   </small>
                 </cite>
               </footer>
@@ -71,12 +71,12 @@ const About = props => {
             ''
           )}
           <S.AuthorImgContainer>
-            <Avatar fluid={profilImage.childImageSharp.fluid} alt={author} />
+            <Avatar fluid={profilImage.childImageSharp.fluid} alt={bossName} />
           </S.AuthorImgContainer>
           {home ? (
             <>
-              <S.AuthorName>{author}</S.AuthorName>
-              <small>{authorPosition}</small>
+              <S.AuthorName>{bossName}</S.AuthorName>
+              <small>{bossPosition}</small>
             </>
           ) : (
             ''

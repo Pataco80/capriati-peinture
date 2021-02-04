@@ -19,7 +19,7 @@ const ArticleCSS = css`
 // Export Styles for the component
 export const AboutWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background:var(--background);
+  background: var(--background);
 `
 
 export const AboutContent = styled(SectionContent)`
@@ -34,12 +34,13 @@ export const AboutContent = styled(SectionContent)`
 export const AboutArticle = styled.article`
   ${ArticleCSS}
   margin-bottom: 1rem;
-  color:var(--text);
+  color: var(--text);
 
   ${media.greaterThan('tablet')`
     margin-bottom: 2rem;
   `}
 `
+
 export const Blockuote = styled.blockquote`
   ${ArticleCSS}
   justify-content: flex-end;
@@ -68,8 +69,7 @@ export const AboutAuthorContainer = styled.div`
 
   ${media.greaterThan('tablet')`
   padding-left: 2rem;
-  `
-}
+  `}
 
   small {
     color: var(--text);
@@ -111,7 +111,7 @@ export const AuthorImgContainer = styled.div`
 
 export const AuthorName = styled.h5`
   margin-bottom: 0.5rem;
-  text-align:center;
+  text-align: center;
 `
 
 export const AboutLink = styled(GatsbyButtonLink)`

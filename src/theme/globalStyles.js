@@ -20,10 +20,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${setFont.bodyFont};
-    font-size: calc(1rem + 0.35vw); /* Responsive base font size */
-    line-height: calc(1rem + 1.333vw); /* Responsive Vertical Rhythm */
-    ${setLetterSpacing(1.3)}
     --background: ${light.background};
     --text: ${light.text};
     --textShadow: ${light.textShadow};
@@ -33,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
     --mediumBackground:${light.mediumBackground};
     --lightBackground: ${light.lightBackground};
     --white: ${light.white};
+    font-family: ${setFont.bodyFont};
+    font-size: calc(1rem + 0.35vw); /* Responsive base font size */
+    line-height: calc(1rem + 1.333vw); /* Responsive Vertical Rhythm */
+    ${setLetterSpacing(1.3)}
   }
   /** Désactivation des class de thématisation.
   body.light {

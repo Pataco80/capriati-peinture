@@ -1,31 +1,41 @@
 import React from 'react'
 
+// Import Hooks
+import useDeviceDetect from '../../hooks/useDeviceDetect'
+
+// Import components from Gatsby and plugins Gatsby
+import { useStaticQuery, graphql } from 'gatsby'
+
 // Import Components for App
 import { Phone, MailSend, Map } from '@styled-icons/boxicons-regular'
-import { ToTopBtn, ThemeBtn, MapBtn } from '@components'
+import { ToTopBtn, MapBtn } from '@components'
 
-// Import Styles
+// Import styles from styled-components file
 import * as S from './BtnBarStyled'
+
+// Import StyledElements for basic styles
 import { ButtonLink } from '@styledElements/ButtonsStyled'
-import useDeviceDetect from '../../hooks/useDeviceDetect'
+
+const getData = graphql`
+  {
+    site {
+      siteMetadata {
+        businessPhone
+        businessEmail
+      }
+    }
+  }
+`
 
 // Component
 const MenuBar = () => {
-  // Variables pour la fonctionalité de theme
-
-  // Utiliser useState avant le contrôle de la variable is"Name"theme
-  //const [theme, setTheme] = useState(null)
-
-  //const isDarkTheme = theme === 'dark'
+  // component variables
+  const { site } = useStaticQuery(getData)
+  const { businessPhone, businessEmail } = site.siteMetadata
   const { isMobile } = useDeviceDetect()
 
-  // Utiliser le useEffect remplace la fonctionalité componentDidMount. Laisser un array vide à la fin pour ne pas répéter la fonctionalité et causer une erreur.
-  {
-    /*  useEffect(() => {
-    setTheme(window.__theme)
-    window.__onThemeChange = () => setTheme(window.__theme)
-  }, [])*/
-  }
+  const hrefPhone = `tel:${businessPhone}`.replaceAll(' ', '')
+  const hrefEmail = `mailto:${businessEmail}`
 
   // Render Component
   return (
@@ -33,16 +43,15 @@ const MenuBar = () => {
       {isMobile && (
         <S.MobileWrapper>
           <S.MenuBarGroup>
-            <ButtonLink className="btnIconBar" href="tel:0218254017">
+            <ButtonLink className="btnIconBar" href={hrefPhone}>
               <Phone />
             </ButtonLink>
-            <ButtonLink className="btnIconBar" href="mailto:capriati@bluewin.ch">
+            <ButtonLink className="btnIconBar" href={hrefEmail}>
               <MailSend />
             </ButtonLink>
             <MapBtn className="btnIconBar mapIconBar" />
           </S.MenuBarGroup>
           <S.MenuBarGroup>
-            <ThemeBtn className="btnIconBar" />
             <ToTopBtn className="btnIconBar" />
           </S.MenuBarGroup>
         </S.MobileWrapper>
@@ -51,7 +60,6 @@ const MenuBar = () => {
         <S.DesktopWrapper>
           <S.MenuBarGroup className="desktop">
             <ToTopBtn showBelow={500} className="btnIconBar btnTop" />
-            <ThemeBtn className="btnIconBar" />
           </S.MenuBarGroup>
         </S.DesktopWrapper>
       )}
