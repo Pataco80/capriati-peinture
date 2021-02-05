@@ -9,8 +9,7 @@ import Img from 'gatsby-image'
 
 // Import Components for App
 import { MainMenu } from '@components'
-import { MenuAlt3 } from '@styled-icons/heroicons-outline/MenuAlt3'
-import { X } from '@styled-icons/heroicons-outline/X'
+import { MenuAlt3, X } from '@styled-icons/heroicons-outline/'
 
 // Import styles from styled-components file and helpers
 import * as S from './NavBarMenuStyled'

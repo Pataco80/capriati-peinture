@@ -7,7 +7,7 @@ import useDeviceDetect from '../../hooks/useDeviceDetect'
 import { useStaticQuery, graphql } from 'gatsby'
 
 // Import Components for App
-import { Phone, MailSend, Map } from '@styled-icons/boxicons-regular'
+import { Phone, MailSend } from '@styled-icons/boxicons-regular'
 import { ToTopBtn, MapBtn } from '@components'
 
 // Import styles from styled-components file

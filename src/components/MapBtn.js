@@ -4,7 +4,7 @@ import React from 'react'
 import mapsSelector from '../utils/getGoogleMap'
 
 // Import Components for App
-import { Map } from '@styled-icons/boxicons-regular'
+import { Map } from '@styled-icons/boxicons-regular/Map'
 
 // Import styled-components, styledElements and helpers
 import styled from 'styled-components'
