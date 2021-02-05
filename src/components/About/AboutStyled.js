@@ -109,7 +109,7 @@ export const AuthorImgContainer = styled.div`
   `}
 `
 
-export const AuthorName = styled.h5`
+export const AuthorName = styled.h3`
   margin-bottom: 0.5rem;
   text-align: center;
 `

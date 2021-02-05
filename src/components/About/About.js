@@ -75,7 +75,7 @@ const About = props => {
           </S.AuthorImgContainer>
           {home ? (
             <>
-              <S.AuthorName>{bossName}</S.AuthorName>
+              <S.AuthorName className="h5">{bossName}</S.AuthorName>
               <small>{bossPosition}</small>
             </>
           ) : (
