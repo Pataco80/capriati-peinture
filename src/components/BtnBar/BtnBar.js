@@ -34,7 +34,10 @@ const MenuBar = () => {
   const { businessPhone, businessEmail } = site.siteMetadata
   const { isMobile } = useDeviceDetect()
 
-  const hrefPhone = `tel:${businessPhone}`.replaceAll(' ', '')
+  const removeSpaces = string => {
+    return string.replaceAll(' ', '')
+  }
+  const hrefPhone = `tel:${removeSpaces(businessPhone)}`
   const hrefEmail = `mailto:${businessEmail}`
 
   // Render Component
