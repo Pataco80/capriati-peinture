@@ -15,7 +15,7 @@ import { setTransition, setColor, setFlex } from '@helpers'
 const MapBtn = ({ className }) => {
   // Render Component
   return (
-    <MapButton className={className} onClick={mapsSelector}>
+    <MapButton type="button" className={className} onClick={mapsSelector} title="Nous Trouver">
       <Map />
     </MapButton>
   )

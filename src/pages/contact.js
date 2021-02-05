@@ -87,7 +87,7 @@ const contactPage = () => {
               {businessRoad} {businessRoadNumber} <br />
               {businessZipCode} {businessCity} <br /> {businessShortCanton} - {businessContry}
             </p>
-            <ButtonMap primary onClick={mapsSelector}>
+            <ButtonMap type="button" primary onClick={mapsSelector} title="Nous Trouver">
               <MapIcon />
               Nous trouver
             </ButtonMap>
@@ -95,22 +95,19 @@ const contactPage = () => {
           <ContactInfo>
             <Title tag="h5" title="Contact" noShadow />
             <p>
-              <strong>
-                <PhoneAlt className="contactInfo-icon" /> :{' '}
-              </strong>
-              <a href={hrefPhone}>{businessPhone}</a>
+              <PhoneAlt className="contactInfo-icon" /> :{' '}
+              <a href={hrefPhone} title="Appelez-vous">
+                {businessPhone}
+              </a>
             </p>
             <p>
-              <strong>
-                <Fax className="contactInfo-icon" /> :{' '}
-              </strong>
-              {businessFax}
+              <Fax className="contactInfo-icon" /> : {businessFax}
             </p>
             <p>
-              <strong>
-                <Envelope className="contactInfo-icon" /> :{' '}
-              </strong>
-              <a href={hrefEmail}>{businessEmail}</a>
+              <Envelope className="contactInfo-icon" /> :{' '}
+              <a href={hrefEmail} title="Ecrivez-nous un mail">
+                {businessEmail}
+              </a>
             </p>
           </ContactInfo>
         </ContactSectionContent>

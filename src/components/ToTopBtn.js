@@ -38,6 +38,7 @@ const ToTopBtn = ({ className, showBelow }) => {
     <>
       {show && (
         <Button
+          type="button"
           className={show ? `isShow ${className}` : `${className}`}
           showBelow={showBelow}
           onClick={handleClick}

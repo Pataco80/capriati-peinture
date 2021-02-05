@@ -48,10 +48,10 @@ const MenuBar = () => {
       {isMobile && (
         <S.MobileWrapper>
           <S.MenuBarGroup>
-            <ButtonLink className="btnIconBar" href={hrefPhone}>
+            <ButtonLink className="btnIconBar" href={hrefPhone} title="Appelez-vous">
               <Phone />
             </ButtonLink>
-            <ButtonLink className="btnIconBar" href={hrefEmail}>
+            <ButtonLink className="btnIconBar" href={hrefEmail} title="Ecrivez-nous un mail">
               <MailSend />
             </ButtonLink>
             <MapBtn className="btnIconBar mapIconBar" />
