@@ -58,7 +58,12 @@ const contactPage = () => {
     businessEmail,
   } = site.siteMetadata
 
-  const hrefPhone = `tel:${businessPhone}`.replaceAll(' ', '')
+  // fonction de suppression d'espaces pour les liens
+  const removeSpaces = string => {
+    return string.replace(/\s/g, '')
+  }
+
+  const hrefPhone = `tel:${removeSpaces(businessPhone)}`
   const hrefEmail = `mailto:${businessEmail}`
 
   // Render Component
