@@ -33,6 +33,9 @@ const businessInfo = {
     bossSlogan: 'Notre qualité au service des couleurs de votre lieu de vie.',
   },
 }
+const conceptorSiteInfo = {
+  conceptorBusiness: 'DWDevlopment',
+}
 
 // dates formats functions
 const months = [
@@ -59,19 +62,20 @@ let formatted_date =
 
 // Données du site
 const websiteConfig = {
+  siteUrl: 'https://www.dvwdesign.ch', // Domain of your website without pathPrefix.
+  pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  // Website description used for RSS feeds/meta description tag.
   siteTitle: `${businessInfo.businessName}`, // Site title.
   siteTitleShort: `${businessInfo.shortName}`, // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: `${businessInfo.altName}`, // Alternative site title for SEO.
-  favicon: 'src/assets/images/icons/favicon.png',
-  siteLogo: '/assets/images/logoCapriati.png', // Logo used for SEO and manifest.
-  siteLanguage: 'fr',
-  siteUrl: 'https://www.dvwdesign.ch', // Domain of your website without pathPrefix.
-  pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     'Société de peinture en bâtiments de la famille Capriati. Entreprise familiale basée à Rolle et travaillant sur la région de "La Côte" dans le canton de Vaud (CH)',
-  // Website description used for RSS feeds/meta description tag.
-  siteLanguage: 'fr', // Facebook Language
-  keywords: [
+  // Logo used for SEO and manifest.
+  siteLogo: '/assets/images/logoCapriati.png',
+  favicon: 'src/assets/images/icons/favicon.png',
+  siteLanguage: 'fr',
+
+  siteKeywords: [
     'Entreprise de peinture',
     'Entreprise familiale',
     'Peinture à Rolle',
@@ -129,9 +133,12 @@ const websiteConfig = {
       iconClassName: 'fa fa-envelope',
     },
   ],
-  copyright: `Copyright © ${businessInfo.name} ${new Date().getFullYear()}`, // Copyright string for the footer of the website and RSS feed.
+  copyright: `Copyright © ${
+    businessInfo.businessName
+  } ${new Date().getFullYear()}`, // Copyright string for the footer of the website and RSS feed.
   themeColor: '#EE332D', // Used for setting manifest and progress theme colors.
   backgroundColor: '#fff', // Used for setting manifest background color.
+  webSiteConceptor: 'DWDevlopment',
 }
 
 // Validate
@@ -141,10 +148,14 @@ if (websiteConfig.pathPrefix === '/') {
   websiteConfig.pathPrefix = ''
 } else {
   // Make sure pathPrefix only contains the first forward slash
-  websiteConfig.pathPrefix = `/${websiteConfig.pathPrefix.replace(/^\/|\/$/g, '')}`
+  websiteConfig.pathPrefix = `/${websiteConfig.pathPrefix.replace(
+    /^\/|\/$/g,
+    ''
+  )}`
 }
 
 // Make sure siteUrl doesn"t have an ending forward slash
-if (websiteConfig.siteUrl.substr(-1) === '/') websiteConfig.siteUrl = config.siteUrl.slice(0, -1)
+if (websiteConfig.siteUrl.substr(-1) === '/')
+  websiteConfig.siteUrl = config.siteUrl.slice(0, -1)
 
 module.exports = websiteConfig

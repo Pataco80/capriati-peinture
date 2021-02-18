@@ -16,11 +16,11 @@ module.exports = {
   siteMetadata: {
     siteUrl: siteUrl, // For gatsby-plugin-sitemap
     pathPrefix,
-    title: websiteConfig.siteTitle,
-    description: websiteConfig.siteDescription,
-    keywords: websiteConfig.keywords,
+    siteTitle: websiteConfig.siteTitle,
+    siteDescription: websiteConfig.siteDescription,
     logo: websiteConfig.siteLogo,
     siteLanguage: websiteConfig.siteLanguage,
+    siteKeywords: websiteConfig.siteKeywords,
     bossName: websiteConfig.bossFullName,
     bossPosition: websiteConfig.bossPosition,
     bossDescription: websiteConfig.bossDescription,
