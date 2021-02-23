@@ -39,6 +39,7 @@ module.exports = {
     copyright: websiteConfig.copyright,
     twitterUserName: websiteConfig.twitterUserName,
     facebookUserName: websiteConfig.facebookUserName,
+    conceptorWebSite: websiteConfig.webSiteConceptor,
   },
 
   /* Your site config here */
@@ -83,6 +84,7 @@ module.exports = {
           '@helpers': 'src/theme/helpers',
           '@hooks': 'src/hooks',
           '@utils': 'src/utils',
+          '@assets': 'src/assets',
         },
       },
     },
