@@ -39,6 +39,7 @@ export const setColor = {
   mainGreyL4: `${polishedColor.greyLighten4}`,
 }
 
+// Convert Hex color to rgba function to box-shadow or text-shadow
 const convertHexToRGBA = (hex, opacity) => {
   const tempHex = hex.replace('#', '')
   const r = parseInt(tempHex.substring(0, 2), 16)
@@ -48,7 +49,7 @@ const convertHexToRGBA = (hex, opacity) => {
   return `rgba(${r},${g},${b},${opacity / 100})`
 }
 
-// If project as theme, paste the variables and export in GlobalStyles
+/* If project as theme, paste the variables and export in GlobalStyles
 export const setTheme = {
   light: {
     background: `${setColor.mainWhite}`,
@@ -77,6 +78,7 @@ export const setTheme = {
     black: `${setColor.mainBlack}`,
   },
 }
+*/
 
 // Fonts Palette
 export const setFont = {
@@ -98,6 +100,10 @@ export const setPxToRem = (px = 16) => {
   return `${px / 16}rem`
 }
 
+export const setRem = (x) => {
+  return `${x}rem`
+}
+
 export const breakpoints = {
   mobile: 240,
   smTablet: 576,
@@ -115,7 +121,7 @@ export const media = generateMedia({
 })
 
 // Layout's Functions
-export const layout = ({ mW = 1140, pdX = 8, pdY = 0 } = {}) => {
+export const layout = ({ mW = 1140 } = {}) => {
   return `
     max-width:${setPxToRem(mW)};
     margin: 0 auto;
@@ -138,7 +144,12 @@ export const setFlex = ({
   `
 }
 
-export const setGrid = ({ x = 'space-evenly', y = 'space-evenly', xgap = 0, ygap = 0 } = {}) => {
+export const setGrid = ({
+  x = 'space-evenly',
+  y = 'space-evenly',
+  xgap = 0,
+  ygap = 0,
+} = {}) => {
   return `display: grid;
   justify-content: ${x};
   align-content: ${y};
@@ -157,7 +168,11 @@ export const setLinearBcg = ({
 `
 }
 
-export const setImgBcg = ({ size = 'cover', position = 'center', repeat = 'no-repeat' } = {}) => {
+export const setImgBcg = ({
+  size = 'cover',
+  position = 'center',
+  repeat = 'no-repeat',
+} = {}) => {
   return `background-size: ${size} !important;
   background-position: ${position} !important;background-repeat: ${repeat} !important;
 `
@@ -168,7 +183,11 @@ export const setLetterSpacing = (number = 3.2) => {
   return `letter-spacing: ${setPxToRem(number)}`
 }
 
-export const setBorder = ({ size = 2, style = 'solid', color = 'transparent' } = {}) => {
+export const setBorder = ({
+  size = 2,
+  style = 'solid',
+  color = 'transparent',
+} = {}) => {
   return `${setPxToRem(size)} ${style} ${color}`
 }
 
@@ -199,7 +218,11 @@ export const setRadius = ({
   }
 }
 
-export const setTransition = ({ style = 'all', duration = 0.3, speedCurve = 'linear' } = {}) => {
+export const setTransition = ({
+  style = 'all',
+  duration = 0.3,
+  speedCurve = 'linear',
+} = {}) => {
   return `transition: ${style} ${duration}s ${speedCurve}`
 }
 
@@ -210,7 +233,14 @@ export const setTransition = ({ style = 'all', duration = 0.3, speedCurve = 'lin
 
 export const setShadow = (
   style = '',
-  { inset = '', x = 0, y = 0, blur = 0, color = setColor.mainBlack, opacity = 100 } = {}
+  {
+    inset = '',
+    x = 0,
+    y = 0,
+    blur = 0,
+    color = setColor.mainBlack,
+    opacity = 100,
+  } = {}
 ) => {
   if (style === 'light') {
     return `${inset} 0 2px 8px ${convertHexToRGBA(setColor.mainBlack, 30)};`

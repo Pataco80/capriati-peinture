@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
-import { setColor, setTheme, setFont, setLetterSpacing } from './helpers'
-const { light, dark } = setTheme
+import { setColor, setFont, setLetterSpacing } from './helpers'
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -20,51 +19,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    --background: ${light.background};
-    --text: ${light.text};
-    --textShadow: ${light.textShadow};
-    --highlight: ${light.highlight};
-    --highlightHovered: ${light.highlightHovered};
-    --highlightTopNavActive: ${light.highlightTopNavActive};
-    --mediumBackground:${light.mediumBackground};
-    --lightBackground: ${light.lightBackground};
-    --white: ${light.white};
     font-family: ${setFont.bodyFont};
     font-size: calc(1rem + 0.35vw); /* Responsive base font size */
     line-height: calc(1rem + 1.333vw); /* Responsive Vertical Rhythm */
     ${setLetterSpacing(1.3)}
   }
-  /** Désactivation des class de thématisation.
-  body.light {
-  --background: ${light.background};
-  --text: ${light.text};
-  --textShadow: ${light.textShadow};
-  --highlight: ${light.highlight};
-  --highlightHovered: ${light.highlightHovered};
-  --highlightTopNavActive: ${light.highlightTopNavActive};
-  --mediumBackground:${light.mediumBackground};
-  --lightBackground: ${light.lightBackground};
-  --white: ${light.white};
-}
-body.dark {
-  --background: ${dark.background};
-  --text: ${dark.text};
-  --textShadow: ${dark.textShadow};
-  --highlight: ${dark.highlight};
-  --highlightHovered: ${dark.highlightHovered};
-  --highlightTopNavActive: ${dark.highlightTopNavActive};
-  --mediumBackground:${dark.mediumBackground};
-  --lightBackground: ${dark.lightBackground};
-  --white: ${dark.white};
-}
-*/
 
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: ${setFont.headingsFont};
     margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
-    color: var(--highlight);
+    color: ${setColor.primaryColor};
     font-weight: 900;
-    text-shadow: 2px 2px 2px var(--textShadow);
+    text-shadow: 2px 2px 2px ${setColor.mainGreyL1};
     ${setLetterSpacing()};
   }
 
