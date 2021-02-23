@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react'
 const useWindowSize = () => {
   const isWindowClient = typeof window === 'object'
 
-  const [windowSize, setWindowSize] = useState(isWindowClient ? window.innerWidth : undefined)
+  const [windowSize, setWindowSize] = useState(
+    isWindowClient ? window.innerWidth : undefined
+  )
   useEffect(() => {
     const setSize = () => {
       setWindowSize(window.innerWidth)
@@ -17,7 +19,7 @@ const useWindowSize = () => {
     }
   }, [isWindowClient, setWindowSize])
 
-  return windowSize
+  return { windowSize }
 }
 
 export default useWindowSize
