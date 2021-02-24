@@ -10,7 +10,7 @@
     "competences": [
       {
         "id": 1,
-        "text": "Gypsage sous dalle en béton, sur murs en briques, lissage fins sur murs et plafonds"
+        "text": "Gypsage sous dalle en béton, sur murs en briques, lissage fin sur murs et plafonds"
       },
       {
         "id": 2,
@@ -23,6 +23,14 @@
       {
         "id": 4,
         "text": "Isolation phonique et thermique avec laine de pierre et laine de verre"
+      },
+      {
+        "id": 5,
+        "text": "Isolation phonique, acoustique et thermique avec différents types de matériaux"
+      },
+      {
+        "id": 6,
+        "text": "Isolation périphérique des façades"
       }
     ],
     "gallery": [
@@ -57,7 +65,11 @@
     "competences": [
       {
         "id": 1,
-        "text": "Toutes techniques, y compris revêtement style crépi"
+        "text": "Les peintures d'aujourd'hui proposent de nombreuses caractéristiques techniques, l'analyse des supports à traiter est donc une étape importante afin d'appliquer les bons produits et ainsi garantir une tenue dans le temps."
+      },
+      {
+        "id": 2,
+        "text": "Il existe tout une variété d'aspects (mat, velours, soyeux, satiné, brillant) qui permettent d'optimiser votre habitat précisément selon vos goûts. Nous nous ferons un plaisir de vous accompagner et de vous conseiller dans vos choix de couleurs. Nous pouvons également raccorder des teintes sur mesure et réaliser des échantillons."
       }
     ],
     "gallery": [
@@ -92,7 +104,11 @@
     "competences": [
       {
         "id": 1,
-        "text": "Selon collections de nos divers fournisseurs, papiers vinyls, structurés à peindre, tissus sur papier, etc."
+        "text": "Aujourd'hui appelé ''vinyle'', ce type de revêtement revient à la mode en proposant des motifs de toutes sortes sur une matière résistante et facile d'entretien. Il est même possible de les personnaliser."
+      },
+      {
+        "id": 2,
+        "text": "Nous proposons également des revêtements plus courants comme les fibres de verre (Scandatex, Variovlies) ou encore le papier ''ingrain''."
       }
     ],
     "gallery": [
@@ -127,7 +143,11 @@
     "competences": [
       {
         "id": 1,
-        "text": "Peinture à l’essuyé, chaux brossée, plâtre cirés, masses structurées, stuccos et autres techniques sur demande, pose de corniches et moulures"
+        "text": "Peinture ''à l'essuyé'', chaux brossée, béton ciré , masse structurée, stucco, marmorino et autres techniques sur demande."
+      },
+      {
+        "id": 2,
+        "text": "Nous proposons également la fourniture et pose de corniches et moulures en polystyrène ou en plâtre avec possibilité d'intégrer une lumière indirecte."
       }
     ],
     "gallery": [
@@ -162,7 +182,7 @@
     "competences": [
       {
         "id": 1,
-        "text": "En cabine, airless, haute pression, basse pression, pour toute réalisation nécessitant l’emploi d’un pistolet"
+        "text": "Nos locaux sont équipés d'une cabine de giclage ou nous avons la possibilité de réaliser des travaux sur des objets tels que des radiateurs, des volets, du mobilier de jardin en bois ou en métal ainsi que des boiseries qui nécessitent un soin particulier au niveau de la finition."
       }
     ],
     "gallery": [

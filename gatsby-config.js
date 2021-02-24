@@ -38,6 +38,7 @@ module.exports = {
     businessEmail: websiteConfig.businessEmail,
     copyright: websiteConfig.copyright,
     twitterUserName: websiteConfig.twitterUserName,
+    socialMenu: websiteConfig.socialLinks,
     facebookUserName: websiteConfig.facebookUserName,
     conceptorWebSite: websiteConfig.webSiteConceptor,
   },

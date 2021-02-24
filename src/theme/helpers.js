@@ -105,7 +105,7 @@ export const setRem = (x) => {
 }
 
 export const breakpoints = {
-  mobile: 240,
+  mobile: 320,
   smTablet: 576,
   tablet: 768,
   lgTablet: 992,
