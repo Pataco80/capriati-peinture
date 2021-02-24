@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 // Import components from Gatsby and plugins Gatsby
 import { Link } from 'gatsby'
@@ -8,12 +8,19 @@ import { Section, SectionContentCenter } from '@styledElements/SectionStyled'
 import { GatsbyButtonLink } from '@styledElements/ButtonsStyled'
 
 // Import helpers
-import { layout, setFlex, media, setRadius, setColor, setShadow } from '@helpers'
+import {
+  layout,
+  setFlex,
+  setColor,
+  media,
+  setRadius,
+  setShadow,
+} from '@helpers'
 
 // Export Styles for the component
 export const ServicesWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  padding-bottom: 3rem;
+  padding: 3rem 1rem;
 `
 
 export const ServicesContent = styled(SectionContentCenter)`
@@ -33,8 +40,8 @@ export const ServiceItemCard = styled(Link)`
   align-content: flex-start;
   width: 100%;
   max-width: 400px;
-  color: var(--text);
-  background-color: var(--background);
+  color: ${setColor.mainBlack};
+  background-color: ${setColor.mainWhite};
   margin-bottom: 4rem;
   text-decoration: none;
   ${setRadius({ allPx: 12 })};

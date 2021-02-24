@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 
 // Import helpers
-import { setColor,media } from '@helpers'
+import { setColor, media } from '@helpers'
 
 // Export Styles for the component
 export const FooterWrapper = styled.footer`
-  background-color: var(--highlight);
-  padding-bottom:3rem;
+  background-color: ${setColor.primaryColor};
+  padding-bottom: ${(props) =>
+    props.paddingBottom ? props.paddingBottom : `3rem`};
 
-  ${media.greaterThan('tablet')`
-    padding-bottom:0;
-
+  ${media.greaterThan('desktop')`
+    padding-bottom: ${(props) =>
+      props.paddingBottom ? props.paddingBottom : `0`};
   `}
 `
 

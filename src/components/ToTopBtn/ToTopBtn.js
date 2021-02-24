@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+/* eslint-disable react/prop-types */
+import React, { useState, useEffect, useCallback } from 'react'
 
 // Import Components for App
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
@@ -12,13 +13,13 @@ const ToTopBtn = ({ className, showBelow }) => {
   const [show, setShow] = useState(showBelow ? false : true)
 
   // Component functions
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (window.pageYOffset > showBelow) {
       if (!show) setShow(true)
     } else {
       if (show) setShow(false)
     }
-  }
+  }, [show, showBelow])
 
   const handleClick = () => {
     window[`scrollTo`]({ top: 0, behavior: `smooth` })
@@ -31,18 +32,22 @@ const ToTopBtn = ({ className, showBelow }) => {
 
       return () => window.removeEventListener('scroll', handleScroll)
     }
-  }, [show])
+  }, [showBelow, handleScroll])
 
   // Render Component
   return (
     <>
       {show && (
         <Button
-          type="button"
-          className={show ? `isShow ${className}` : `${className}`}
+          type='button'
+          className={
+            (show ? `isShow ${className}` : `${className}`,
+            showBelow ? `showBelow ${className}` : `${className}`)
+          }
           showBelow={showBelow}
           onClick={handleClick}
-          title="Aller en haut">
+          title='Aller en haut'
+        >
           <Arrow />
         </Button>
       )}

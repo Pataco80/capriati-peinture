@@ -5,7 +5,7 @@ import { layout } from '@helpers'
 
 // Styled CSS
 const BannerCss = css`
-  padding: ${props => (props.padding ? props.padding : `2rem`)};
+  padding: ${(props) => (props.padding ? props.padding : `2rem`)};
 `
 
 // Export Styles for the component

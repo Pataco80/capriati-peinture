@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Import helpers
-import { setFlex, media } from '@helpers'
+import { setFlex, setColor, media } from '@helpers'
 
 // Export Styles for the component
 export const CadreItemWrapper = styled.div`
@@ -10,7 +10,7 @@ export const CadreItemWrapper = styled.div`
   width: 100%;
   max-width: 25rem;
   text-align: center;
-  color:var(--text);
+  color: ${setColor.mainBlack};
 
   ${media.greaterThan('tablet')`
     width: 50%;

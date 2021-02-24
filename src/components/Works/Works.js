@@ -9,6 +9,8 @@ import Gallery from '@browniebroke/gatsby-image-gallery'
 
 // Import styles from styled-components file and gallery CSS file
 import * as S from './WorksStyled'
+
+// Import styles from galery lightbox
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
 
 // Component
@@ -17,15 +19,6 @@ const Works = ({ background }) => {
   const data = useStaticQuery(getData)
 
   // Component Functions
-  const work1 = data.work1.edges.map(({ node }) => ({
-    ...node.childImageSharp,
-    // Use original name as caption.
-    // The `originalName` is queried inside the `thumb` field,
-    // but the `Gallery` component expects `caption` at the top level.
-    // caption: node.name
-    // caption: node.childImageSharp.thumb.originalName,
-  }))
-
   const anciensTravaux = data.anciensTravaux.edges.map(({ node }) => ({
     ...node.childImageSharp,
     // caption: node.name
@@ -44,12 +37,12 @@ const Works = ({ background }) => {
   // Render Component
   return (
     <S.WorksWrapper background={background}>
-      <Title tag="h2" title="Nos Réalisations" titleSection />
+      <Title tag='h2' title='Nos Réalisations' titleSection />
       <S.WorksContent>
         <S.WorkItem>
-          <S.GallerySection padding="3rem 0 5rem">
+          <S.GallerySection padding='3rem 0 5rem'>
             <Gallery
-              imgClass="galleryImg"
+              imgClass='galleryImg'
               images={anciensTravaux}
               lightboxOptions={lightboxOptions}
             />
@@ -63,7 +56,10 @@ const Works = ({ background }) => {
 // GraphQl Queries
 export const getData = graphql`
   query getGallery {
-    work1: allFile(filter: { relativeDirectory: { regex: "/work1/" } }, sort: { fields: name }) {
+    work1: allFile(
+      filter: { relativeDirectory: { regex: "/work1/" } }
+      sort: { fields: name }
+    ) {
       edges {
         node {
           ...getImage

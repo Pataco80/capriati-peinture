@@ -4,10 +4,10 @@ import React from 'react'
 import { TeamCadre } from '@components'
 
 // Import styles from styled-components file
-import * as S from './TeamCadresStyled'
+import * as S from './TeamCadresListStyled'
 
 // Component
-const TeamCadres = ({ team, teamPhoto }) => {
+const TeamCadresList = ({ team, teamCadrePhoto }) => {
   // Component Variables
 
   // Render Component
@@ -17,7 +17,9 @@ const TeamCadres = ({ team, teamPhoto }) => {
         // Images Variables and Functions
         const { altPhoto, name, shortName, job, certifications, date } = item
         const regExp = new RegExp(shortName, 'i')
-        const photoPath = teamPhoto.find(({ originalName }) => originalName.match(regExp)).photo
+        const photoPath = teamCadrePhoto.find(({ originalName }) =>
+          originalName.match(regExp)
+        ).photo
 
         // Return Team Images
         return (
@@ -36,4 +38,4 @@ const TeamCadres = ({ team, teamPhoto }) => {
   )
 }
 
-export default TeamCadres
+export default TeamCadresList

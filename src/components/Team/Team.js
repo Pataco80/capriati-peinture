@@ -4,7 +4,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 
 // Import Components for App
-import { Title, TeamCadres, TeamTable } from '@components'
+import { Title, TeamCadresList, TeamTable } from '@components'
 
 // Import styles from styled-components file
 import * as S from './TeamStyled'
@@ -59,7 +59,7 @@ const Team = ({ padding }) => {
   const teamStudents = data.studeents.nodes
 
   // Component Functions
-  const teamPhoto = photoList.map(({ node }) => ({
+  const teamCadrePhoto = photoList.map(({ node }) => ({
     photo: node.childImageSharp.fluid,
     originalName: node.childImageSharp.fluid.originalName,
   }))
@@ -67,13 +67,13 @@ const Team = ({ padding }) => {
   // Render Component
   return (
     <S.TeamWrapper padding={padding}>
-      <Title tag="h2" title="Notre Équipe" titleSection />
+      <Title tag='h2' title='Notre Équipe' titleSection />
       <S.TeamContent>
-        <TeamCadres teamPhoto={teamPhoto} team={teamCadres} />
+        <TeamCadresList teamCadrePhoto={teamCadrePhoto} team={teamCadres} />
       </S.TeamContent>
       <S.TeamContent>
-        <TeamTable team={teamCfc} title="Nos employés avec CFC" />
-        <TeamTable team={teamStudents} title="Nos aprentis" />
+        <TeamTable team={teamCfc} title='Nos employés avec CFC' />
+        <TeamTable team={teamStudents} title='Nos apprentis' />
       </S.TeamContent>
     </S.TeamWrapper>
   )

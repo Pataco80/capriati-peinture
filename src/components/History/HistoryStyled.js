@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { Section } from '@styledElements/SectionStyled'
 
 // Import helpers
-import { setFlex } from '@helpers'
+import { setFlex, setColor } from '@helpers'
 
 // Export Styles for the component
 export const HistoryWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background:var(--mediumBackground);
+  background: ${setColor.mainGreyL3};
 `

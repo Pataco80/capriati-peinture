@@ -54,14 +54,16 @@ const Parteners = () => {
   // Render Component
   return (
     <S.PartenersWrapper>
-      <Title tag="h2" title="Nos Partenaires" titleSection />
+      <Title tag='h2' title='Nous sommes membres' titleSection />
       <S.PartenersLogosContainer>
         {parteners.map((item, i) => {
           const { shortName, altLogo, url, urlTitle } = item
 
           // Variables and Functions for icon and featured images
           const regExp = new RegExp(shortName, 'i')
-          const logoPath = partenersLogo.find(({ originalName }) => originalName.match(regExp)).logo
+          const logoPath = partenersLogo.find(({ originalName }) =>
+            originalName.match(regExp)
+          ).logo
 
           // Return Item on Card or page format
           return (

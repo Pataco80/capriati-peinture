@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { Section, SectionContentCenter } from '@styledElements/SectionStyled'
 
 // Import helpers
-import { media, setFlex } from '@helpers'
+import { media, setFlex, setColor } from '@helpers'
 
 // Export Styles for the component
 export const PartenersWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background: var(--lightBackground);
+  background: ${setColor.mainWhite};
 `
 
 export const PartenersLogosContainer = styled(SectionContentCenter)`

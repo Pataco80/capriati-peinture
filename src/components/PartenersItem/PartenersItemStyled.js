@@ -9,8 +9,8 @@ import { media, setFlex } from '@helpers'
 // Export Styles for the component
 export const PartenersItemWrapper = styled.a`
   ${setFlex({ y: 'flex-start' })};
-  width: 100%;
-  max-width: 30rem;
+  width: 70%;
+  max-width: 20rem;
   margin-bottom: 3rem;
   text-align: center;
 

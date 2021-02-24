@@ -11,7 +11,7 @@ const History = () => {
   // Render Component
   return (
     <S.HistoryWrapper>
-      <Title tag="h2" title="Notre Histoire" titleSection />
+      <Title tag='h2' title='Notre Histoire' titleSection />
       <HistoryProfile />
       <Historical />
     </S.HistoryWrapper>

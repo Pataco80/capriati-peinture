@@ -16,7 +16,9 @@ import { breakpoints } from '@helpers'
 // GraphQl Queries
 export const getGalleryImages = graphql`
   {
-    servicesGallery: allFile(filter: { relativePath: { regex: "/gallery/services/" } }) {
+    servicesGallery: allFile(
+      filter: { relativePath: { regex: "/gallery/services/" } }
+    ) {
       edges {
         node {
           childImageSharp {
@@ -63,22 +65,34 @@ const ServiceItem = ({
     <S.ServiceWrapper key={id} className={home ? 'home' : ''}>
       <S.ServiceHeader home={home}>
         {windowSize < toHero || home ? (
-          <S.ServiceSmallBanner padding="0">
+          <S.ServiceSmallBanner padding='0'>
             <S.IconContainerCard>
-              <S.ServiceIcon name={name} shortName={shortName} alt={altIcon} fluid={Icon} />
+              <S.ServiceIcon
+                name={name}
+                shortName={shortName}
+                alt={altIcon}
+                fluid={Icon}
+              />
             </S.IconContainerCard>
-            <Title tag="h3" title={name} />
+            <Title tag='h3' title={name} />
           </S.ServiceSmallBanner>
         ) : (
           <S.ServiceBcgImage
             name={name}
             shortName={shortName}
             fluid={featuredImage}
-            altFeatured={altFeatured}>
+            altFeatured={altFeatured}
+            notOverlay
+          >
             <S.ServiceBanner>
-              <S.BannerContent padding="1rem">
+              <S.BannerContent>
                 <S.IconContainer>
-                  <S.ServiceIcon name={name} shortName={shortName} alt={altIcon} fluid={Icon} />
+                  <S.ServiceIcon
+                    name={name}
+                    shortName={shortName}
+                    alt={altIcon}
+                    fluid={Icon}
+                  />
                 </S.IconContainer>
                 <h3>{name}</h3>
               </S.BannerContent>
@@ -86,13 +100,15 @@ const ServiceItem = ({
           </S.ServiceBcgImage>
         )}
       </S.ServiceHeader>
-      <S.ServiceBody padding="0">
+      <S.ServiceBody padding='0'>
         {competencesList.map((item, i) => {
           // Return infos from services
           return <p key={i}>{item.text}</p>
         })}
       </S.ServiceBody>
-      {!home && <ServiceGallery gallery={gallery} servicesGalleryImg={galleryItem} />}
+      {!home && (
+        <ServiceGallery gallery={gallery} servicesGalleryImg={galleryItem} />
+      )}
     </S.ServiceWrapper>
   )
 }

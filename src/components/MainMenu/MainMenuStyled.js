@@ -4,7 +4,15 @@ import styled from 'styled-components'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 // Import helpers
-import { layout, media, setFlex, setTransition, setPxToRem, setColor, setBorder } from '@helpers'
+import {
+  layout,
+  media,
+  setFlex,
+  setTransition,
+  setPxToRem,
+  setColor,
+  setBorder,
+} from '@helpers'
 
 // Export Styles for the component
 export const MainNavItem = styled.li`
@@ -35,7 +43,9 @@ export const MainNavLink = styled(AniLink)`
   }
 
   ${media.greaterThan('lgTablet')`
-    padding: ${setPxToRem(0)} ${setPxToRem(16)} ${setPxToRem(0)} ${setPxToRem(16)};
+    padding: ${setPxToRem(0)} ${setPxToRem(16)} ${setPxToRem(0)} ${setPxToRem(
+    16
+  )};
     opacity: 1;
     transition: none;
     height: 40px;
@@ -56,23 +66,31 @@ export const MainNavMenu = styled.ul`
     text-decoration: none;
 
     &:hover {
-      color: var(--highlightHovered);
+      color: ${setColor.primaryColorD1};
     }
 
     &[aria-current] {
-      color: var(--highlightHovered);
+      color: ${setColor.primaryColorD1};
     }
     & .span:hover,
     &[aria-current] .span {
-      border-bottom: ${setBorder({ size: 2, style: 'solid', color: 'var(--highlightHovered)'})};
+      border-bottom: ${setBorder({
+        size: 2,
+        style: 'solid',
+        color: `${setColor.primaryColorD1}`,
+      })};
     }
-    
+
     ${media.greaterThan('lgTablet')`
     &[aria-current] {
-      color: var(--highlightTopNavActive);
+      color: ${setColor.primaryColorD1}
     }
     &[aria-current] .span {
-      border-bottom: ${setBorder({ size: 2, style: 'solid', color: 'var(--highlightTopNavActive)'})};
+      border-bottom: ${setBorder({
+        size: 2,
+        style: 'solid',
+        color: `${setColor.primaryColorD1}`,
+      })};
     }
   `}
   }
@@ -102,7 +120,11 @@ export const MainNavMenu = styled.ul`
 
       & .span:hover,
       &[aria-current] .span {
-        border-bottom: ${setBorder({ size: 2, style: 'solid', color: `${setColor.mainWhite}` })};
+        border-bottom: ${setBorder({
+          size: 2,
+          style: 'solid',
+          color: `${setColor.mainWhite}`,
+        })};
       }
     }
   }

@@ -20,7 +20,7 @@ const ImgSize = css`
 // Export Styles for the component
 export const ParallaxContainer = styled(Parallax)`
   ${ImgSize};
-  background-color: ${props => (props.background ? props.background : `${setColor.mainWhite}`)};
+  background-color: ${setColor.mainGreyL3};
 
   .react-parallax-background-children {
     width: 100%;

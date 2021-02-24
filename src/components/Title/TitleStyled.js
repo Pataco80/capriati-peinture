@@ -7,14 +7,13 @@ import { setFlex, setColor } from '@helpers'
 export const TitleWrapper = styled.div`
   ${setFlex()};
   text-align: center;
-  text-shadow: 2px 2px 2px var(--textShadow);
+  text-shadow: 2px 2px 2px ${setColor.mainGreyL1};
+  margin-bottom: 3rem;
 
-  ${({ titleSection }) =>
-    titleSection &&
+  ${({ notMargin }) =>
+    notMargin &&
     `
-    > * {
-      margin-top:0 !important;
-    }
+      margin-bottom: 0 !important;
   `}
 
   ${({ hidden }) =>

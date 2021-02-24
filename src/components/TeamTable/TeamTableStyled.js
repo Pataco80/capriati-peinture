@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Import helpers
-import { media } from '@helpers'
+import { setColor, media } from '@helpers'
 
 // Export Styles for the component
 export const TeamWrapper = styled.article`
@@ -14,5 +14,5 @@ export const TeamWrapper = styled.article`
 
 export const TeamItem = styled.li`
   text-align: center;
-  color:var(--text);
+  color: ${setColor.mainBlack};
 `

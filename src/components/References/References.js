@@ -32,7 +32,7 @@ const References = ({ background }) => {
   // Render Component
   return (
     <S.ReferencesWrapper background={background}>
-      <Title tag="h2" title="Nos Références" titleSection />
+      <Title tag='h2' title='Nos Références' titleSection />
       <SectionContentCenter>
         <ul>
           {referencesJsonData.map((item, i) => {

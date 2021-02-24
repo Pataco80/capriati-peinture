@@ -4,13 +4,20 @@ import styled from 'styled-components'
 import { Section, SectionContentCenter } from '@styledElements/SectionStyled'
 
 // Import helpers
-import { layout, setFlex, media, setRadius, setShadow } from '@helpers'
+import {
+  layout,
+  setFlex,
+  setColor,
+  media,
+  setRadius,
+  setShadow,
+} from '@helpers'
 
 // Export Styles for the component
 export const WorksWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
   padding-bottom: 3rem;
-  background:var(--background);
+  background: ${setColor.mainWhite};
 `
 
 export const WorksContent = styled(SectionContentCenter)`

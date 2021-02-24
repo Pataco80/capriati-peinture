@@ -37,7 +37,7 @@ const MainMenu = ({ isOpen, className }) => {
   // Render Compoent
   return (
     <S.MainNavMenu className={className}>
-      {linksList.map(itemLink => {
+      {linksList.map((itemLink) => {
         // Links Variables
         const { id, label, path } = itemLink
 
@@ -48,10 +48,11 @@ const MainMenu = ({ isOpen, className }) => {
               className={isOpen ? `topBarOpen` : ``}
               to={path}
               title={`Aller à la page ${label}`}
-              fade
+              fade='true'
               duration={1}
-              hex="#ffffff">
-              <span className="span">{label}</span>
+              hex='#ffffff'
+            >
+              <span className='span'>{label}</span>
             </S.MainNavLink>
           </S.MainNavItem>
         )

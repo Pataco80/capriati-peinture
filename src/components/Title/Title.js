@@ -4,10 +4,24 @@ import React from 'react'
 import * as S from './TitleStyled'
 
 // Component
-const Title = ({ title, tag: Tag, className, hidden, titleSection, noShadow, children }) => {
+const Title = ({
+  title,
+  tag: Tag,
+  className,
+  hidden,
+  titleSection,
+  noShadow,
+  notMargin,
+  children,
+}) => {
   // Render Component
   return (
-    <S.TitleWrapper hidden={hidden} noShadow={noShadow} titleSection={titleSection}>
+    <S.TitleWrapper
+      hidden={hidden}
+      noShadow={noShadow}
+      titleSection={titleSection}
+      notMargin={notMargin}
+    >
       <Tag className={className}>{title || children}</Tag>
     </S.TitleWrapper>
   )

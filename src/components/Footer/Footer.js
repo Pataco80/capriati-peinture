@@ -1,5 +1,9 @@
 import React from 'react'
 
+// Import Hooks
+import useDeviceDetect from '@hooks/useDeviceDetect'
+import useSiteMetadata from '@hooks/useSiteMetadata'
+
 // Import components from Gatsby and plugins Gatsby
 import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
@@ -23,28 +27,25 @@ const getData = graphql`
         }
       }
     }
-    siteData: site {
-      siteMetadata {
-        copyright
-      }
-    }
   }
 `
 
 // Component
 const Footer = ({ background }) => {
   // Component Variables
-  const { footerImg, siteData } = useStaticQuery(getData)
-
+  const { footerImg } = useStaticQuery(getData)
+  const { copyright, conceptorWebSite } = useSiteMetadata()
+  const { isMobile } = useDeviceDetect()
   // Render Component
   return (
-    <S.FooterWrapper>
-      <Section padding="0" background={background}>
-        <Img fluid={footerImg.childImageSharp.fluid} alt="Banière colorée" />
+    <S.FooterWrapper paddingBottom={isMobile ? `3rem` : `0`}>
+      <Section padding='0' background={background}>
+        <Img fluid={footerImg.childImageSharp.fluid} alt='Banière colorée' />
       </Section>
-      <SectionCenter background="transparent">
-        <MainMenu className="footer" />
-        <S.Copyright>{`${siteData.siteMetadata.copyright}`} - Tous droits réservés.</S.Copyright>
+      <SectionCenter background='transparent'>
+        <MainMenu className='footer' />
+        <S.Copyright>{copyright} - Tous droits réservés.</S.Copyright>
+        <S.Copyright>Site développé par {conceptorWebSite}</S.Copyright>
       </SectionCenter>
     </S.FooterWrapper>
   )

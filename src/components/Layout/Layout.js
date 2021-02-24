@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 // Import Components for App
 import { NavBarMenu, Footer, BtnBar } from '@components'
 
-// Import styles from styled-components file and helpers
-import * as S from './LayoutStyled'
+// Import GlobalStyles and styles from styled-components files
 import GlobalStyles from '../../theme/globalStyles'
+import * as S from './LayoutStyled'
 
 // Component
 const Layout = ({ children, background }) => {
@@ -33,7 +33,9 @@ const Layout = ({ children, background }) => {
       <GlobalStyles />
       <S.AppWrapper>
         <NavBarMenu toScroll={scrolled} />
-        <S.PageContainer className={scrolled ? `isScroll` : ``}>{children}</S.PageContainer>
+        <S.PageContainer className={scrolled ? `isScroll` : ``}>
+          {children}
+        </S.PageContainer>
         <Footer background={background} />
         <BtnBar />
       </S.AppWrapper>

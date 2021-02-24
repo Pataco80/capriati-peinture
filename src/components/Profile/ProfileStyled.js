@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 // Import helpers
-import { setFlex } from '@helpers'
+import { setFlex, setColor } from '@helpers'
 
 // Export Styles for the component
 export const ProfileWrapper = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
-  text-shadow:2px 2px 2px var(--textShadow);
+  text-shadow: 2px 2px 2px ${setColor.mainGreyL1};
 `
 
 export const ProfileName = styled.h4`

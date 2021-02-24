@@ -12,7 +12,7 @@ import { setFlex, media, setRadius, setShadow } from '@helpers'
 // Export Styles for the component
 export const GallerySection = styled(SectionContentCenter)`
   ${setFlex({ flDir: 'column' })};
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 
   ${media.greaterThan('smTablet')`
     ${setFlex({ flDir: 'row', x: 'space-around' })};
@@ -23,7 +23,8 @@ export const ImgWrapper = styled.div`
   width: 100%;
   ${setRadius({ allPx: 12 })};
   box-shadow: ${setShadow('medium')};
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  max-width: 30rem;
 
   ${media.greaterThan('tablet')`
     width: 30%;

@@ -5,7 +5,7 @@ import { Section, SectionContent } from '@styledElements/SectionStyled'
 import { GatsbyButtonLink } from '@styledElements/ButtonsStyled'
 
 // Import helpers
-import { layout, setFlex, media, setColor, setRadius, setBorder } from '@helpers'
+import { layout, setFlex, media, setColor, setBorder } from '@helpers'
 
 // Styled CSS
 const ArticleCSS = css`
@@ -19,7 +19,7 @@ const ArticleCSS = css`
 // Export Styles for the component
 export const AboutWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background: var(--background);
+  background: ${setColor.mainWhite};
 `
 
 export const AboutContent = styled(SectionContent)`
@@ -34,7 +34,7 @@ export const AboutContent = styled(SectionContent)`
 export const AboutArticle = styled.article`
   ${ArticleCSS}
   margin-bottom: 1rem;
-  color: var(--text);
+  color: ${setColor.mainBlack};
 
   ${media.greaterThan('tablet')`
     margin-bottom: 2rem;
@@ -44,12 +44,19 @@ export const AboutArticle = styled.article`
 export const Blockuote = styled.blockquote`
   ${ArticleCSS}
   justify-content: flex-end;
+  p {
+    margin-top: 1rem;
+  }
 
   footer {
     text-align: right;
-    border-right: ${setBorder({ size: 4, style: 'solid', color: 'var(--border)' })};
+    border-right: ${setBorder({
+      size: 4,
+      style: 'solid',
+      color: `${setColor.primaryColor}`,
+    })};
     padding-right: 1rem;
-    color: var(--highlight);
+    color: ${setColor.primaryColor};
 
     h6 {
       margin: 0.5rem 0;
@@ -66,35 +73,19 @@ export const AboutAuthorContainer = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
   padding-left: 0;
+  padding-top: 0;
+  margin-bottom: 2rem;
 
   ${media.greaterThan('tablet')`
-  padding-left: 2rem;
+        ${setFlex({ flDir: 'row' })};
+    max-width: 18rem;
+    padding-left:2rem;
+
   `}
 
   small {
-    color: var(--text);
+    color: ${setColor.mainBlack};
   }
-
-  ${({ about }) =>
-    about &&
-    `
-    ${setFlex({ flDir: 'column-reverse' })};
-    background-color: var(--mediumBackground);
-    ${setRadius({ allPx: 12 })};
-    padding: 2rem;
-  `}
-
-  ${media.greaterThan('tablet')`
-    ${setFlex({ flDir: 'row' })};
-    max-width: 18rem;
-    margin-bottom: 0;
-
-    ${({ about }) =>
-      about &&
-      `
-      max-width: 100%;
-    `}
-  `}
 `
 
 export const AuthorImgContainer = styled.div`
@@ -105,7 +96,7 @@ export const AuthorImgContainer = styled.div`
   text-align: center;
 
   ${media.greaterThan('tablet')`
-    padding: 0 0 0 2.5rem;
+    padding: 0rem 0 1rem 0;
   `}
 `
 

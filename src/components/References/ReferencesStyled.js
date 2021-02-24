@@ -4,13 +4,13 @@ import styled from 'styled-components'
 import { Section } from '@styledElements/SectionStyled'
 
 // Import helpers
-import { setFlex } from '@helpers'
+import { setFlex, setColor } from '@helpers'
 
 // Export Styles for the component
 export const ReferencesWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
   padding-bottom: 3rem;
-  background:var(--mediumBackground);
+  background: ${setColor.mainGreyL3};
 `
 
 export const ReferenceItem = styled.li`

@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 // Import components from Gatsby and plugins Gatsby
 import Img from 'gatsby-image'
@@ -18,24 +18,27 @@ export const ServiceHeader = styled.header`
   ${setFlex({ flDir: 'column' })};
   position: relative;
   width: 100%;
-
-  ${media.greaterThan('smTablet')`
-    align-items: flex-end;
-  `}
 `
 
 export const ServiceBanner = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
+  align-content: flex-end;
+  align-self: flex-end;
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    align-self: flex-end;
+
+    ${media.lessThan('smTablet')`
+        font-size: larger;
+
+  `}
+  }
 
   ${media.greaterThan('smTablet')`
     ${setFlex({ x: 'flex-end' })};
     align-self: flex-end;
-
-    h3 {
-      margin:0 0 0.5rem 0;
-      align-self: flex-end;
-    }
   `}
 `
 
@@ -52,10 +55,16 @@ export const BannerContent = styled(BannerStyled)`
   border-top-left-radius: 100%;
   min-height: 150px;
   align-content: flex-end;
+  padding: 1rem;
+
+  ${media.greaterThan('smTablet')`
+    padding: 2rem;
+  `}
 `
 
 export const ServiceBcgImage = styled(BcgImage)`
   margin-bottom: 3rem;
+  width: 100%;
 `
 
 export const IconContainerCard = styled.div`
@@ -65,8 +74,18 @@ export const IconContainerCard = styled.div`
 
 export const IconContainer = styled.div`
   margin-right: 1rem;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+
+  ${media.greaterThan('smTablet')`
+    width: 80px;
+    height: 80px;
+  `}
+
+  ${media.greaterThan('tablet')`
+    width: 100px;
+    height: 100px;
+  `}
 `
 
 export const ServiceIcon = styled(Img)`

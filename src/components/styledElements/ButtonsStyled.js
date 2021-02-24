@@ -23,17 +23,17 @@ const ButtonStyles = css`
   ${setTransition()};
   cursor: pointer;
   background: none;
-  ${props => props.radius || `${setRadius({ allPx: 12 })}`};
+  ${(props) => props.radius || `${setRadius({ allPx: 12 })}`};
   font-weight: 900;
 
   &.btnIconBar {
     width: ${setPxToRem(48)};
     padding: ${setPxToRem(8)} ${setPxToRem(4)};
     border: none;
-    height:auto;
+    height: auto;
     color: ${setColor.mainWhite};
-    border-radius:inherit;
-    
+    border-radius: inherit;
+
     &:focus,
     &:active,
     &:focus {
@@ -45,23 +45,23 @@ const ButtonStyles = css`
     primary &&
     `
     color: ${setColor.mainWhite};
-    border: ${setBorder({ color: `var(--highlight)` })};
-    background:var(--highlight);
+    border: ${setBorder({ color: `${setColor.primaryColor}` })};
+    background: ${setColor.primaryColor};
   `}
 
   ${({ secondary }) =>
     secondary &&
     `
-    color: var(--highlight);
+    color: ${setColor.primaryColor};
     border: ${setBorder({ color: setColor.mainWhite })};
-    background:${setColor.mainWhite};
+    background: ${setColor.mainWhite};
   `}
 
   ${({ primaryOutline }) =>
     primaryOutline &&
     `
-    color: var(--highlight);
-    border: ${setBorder({ color: `var(--highlight)` })};
+    color: ${setColor.primaryColor};
+    border: ${setBorder({ color: `${setColor.primaryColor}` })};
   `}
 
   ${({ outline }) =>
@@ -76,15 +76,15 @@ const ButtonStyles = css`
       (primary || secondary || primaryOutline) &&
       `
       color: ${setColor.mainWhite};
-      border: ${setBorder({ color: 'var(--highlightHovered)' })};
-      background:var(--highlightHovered);
+      border: ${setBorder({ color: `${setColor.primaryColorD1}` })};
+      background: ${setColor.primaryColorD1};
     `}
 
     ${({ outline }) =>
       outline &&
       `
       background: ${setColor.mainWhite};
-      color: var(--highlightHovered);
+      color: ${setColor.primaryColorD1};
     `}
   }
 `

@@ -7,9 +7,9 @@ import { Avatar } from '@components'
 import * as S from './ProfileStyled'
 
 // Component
-const Profile = ({ fluid, altPhoto, name, job }) => {
+const Profile = (props) => {
   // Component Variables
-
+  const { fluid, altPhoto, name, job } = props
   // Render Component
   return (
     <S.ProfileWrapper>

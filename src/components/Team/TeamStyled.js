@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { Section, SectionContentCenter } from '@styledElements/SectionStyled'
 
 // Import helpers
-import { layout, setFlex, media } from '@helpers'
+import { layout, setFlex, setColor, media } from '@helpers'
 
 // Export Styles for the component
 export const TeamWrapper = styled(Section)`
   ${setFlex({ flDir: 'column' })};
-  background: var(--mediumBackground);
+  background: ${setColor.mainGreyL3};
 `
 
 export const TeamContent = styled(SectionContentCenter)`

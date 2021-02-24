@@ -7,8 +7,9 @@ import { Profile } from '@components'
 import * as S from './TeamCadreStyled'
 
 // Component
-const TeamCadre = ({ fluid, altPhoto, name, job, certifications, date }) => {
+const TeamCadre = (props) => {
   // Component Variables
+  const { fluid, altPhoto, name, job, certifications, date } = props
 
   // Render Component
   return (

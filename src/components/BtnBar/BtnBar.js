@@ -1,75 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // Import Hooks
-import useDeviceDetect from '../../hooks/useDeviceDetect'
-
-// Import components from Gatsby and plugins Gatsby
-import { useStaticQuery, graphql } from 'gatsby'
+import useDeviceDetect from '@hooks/useDeviceDetect'
 
 // Import Components for App
-import { Phone, MailSend } from '@styled-icons/boxicons-regular'
-import { ToTopBtn, MapBtn } from '@components'
+import { ToTopBtn, ContactMenu, ShareMenu, ShareMenuBtn } from '@components'
 
 // Import styles from styled-components file
 import * as S from './BtnBarStyled'
 
-// Import StyledElements for basic styles
-import { ButtonLink } from '@styledElements/ButtonsStyled'
-
-const getData = graphql`
-  {
-    site {
-      siteMetadata {
-        businessPhone
-        businessEmail
-      }
-    }
-  }
-`
-
 // Component
-const MenuBar = () => {
+const BtnBar = () => {
   // component variables
-  const { site } = useStaticQuery(getData)
-  const { businessPhone, businessEmail } = site.siteMetadata
   const { isMobile } = useDeviceDetect()
+  const [isOpen, setIsOpen] = useState(false)
 
-  // fonction de suppression d'espaces pour les liens
-  const removeSpaces = string => {
-    return string.replace(/\s/g, '')
+  // Component functions
+  const showSocialMenu = () => {
+    setIsOpen((isOpen) => !isOpen)
   }
 
-  const hrefPhone = `tel:${removeSpaces(businessPhone)}`
-  const hrefEmail = `mailto:${businessEmail}`
-
-  // Render Component
+  // Render Componentv
   return (
-    <>
+    <S.BtnBarWrapper>
       {isMobile && (
         <S.MobileWrapper>
-          <S.MenuBarGroup>
-            <ButtonLink className="btnIconBar" href={hrefPhone} title="Appelez-vous">
-              <Phone />
-            </ButtonLink>
-            <ButtonLink className="btnIconBar" href={hrefEmail} title="Ecrivez-nous un mail">
-              <MailSend />
-            </ButtonLink>
-            <MapBtn className="btnIconBar mapIconBar" />
-          </S.MenuBarGroup>
-          <S.MenuBarGroup>
-            <ToTopBtn className="btnIconBar" />
-          </S.MenuBarGroup>
+          <S.MenuMobileCantainer className={isOpen ? `show-nav` : ``}>
+            <ShareMenu />
+          </S.MenuMobileCantainer>
+          <S.ButtonsContainer>
+            <ContactMenu />
+            <ShareMenuBtn isOnClick={showSocialMenu} className='btnIconBar' />
+            <ToTopBtn className='btnIconBar' />
+          </S.ButtonsContainer>
         </S.MobileWrapper>
       )}
       {!isMobile && (
         <S.DesktopWrapper>
-          <S.MenuBarGroup className="desktop">
-            <ToTopBtn showBelow={500} className="btnIconBar btnTop" />
-          </S.MenuBarGroup>
+          <S.MenuDesktopCantainer className={isOpen ? `show-nav` : ``}>
+            <ShareMenu isOpen={isOpen} className='desktop' />
+            <S.ButtonsContainer className='desktop'>
+              <ShareMenuBtn
+                isOnClick={showSocialMenu}
+                className='btnIconBar to-social'
+              />
+              <ToTopBtn showBelow={500} className='btnIconBar to-top' />
+            </S.ButtonsContainer>
+          </S.MenuDesktopCantainer>
         </S.DesktopWrapper>
       )}
-    </>
+    </S.BtnBarWrapper>
   )
 }
 
-export default MenuBar
+export default BtnBar

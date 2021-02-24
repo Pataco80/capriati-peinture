@@ -12,7 +12,9 @@ import * as S from './ServicesStyled'
 // GraphQl Queries
 export const getData = graphql`
   {
-    servicesIcon: allFile(filter: { relativePath: { regex: "/servicesIcons/" } }) {
+    servicesIcon: allFile(
+      filter: { relativePath: { regex: "/servicesIcons/" } }
+    ) {
       edges {
         node {
           childImageSharp {
@@ -65,9 +67,11 @@ export const getData = graphql`
 `
 
 // Component
-const Services = ({ home, background, padding }) => {
+const Services = (props) => {
   // Component Variables
+  const { home, background, padding } = props
   const data = useStaticQuery(getData)
+
   const servicesIconList = data.servicesIcon.edges
   const servicesFeaturedList = data.featuredImg.edges
   const servicesJsonData = data.servicesData.nodes
@@ -86,62 +90,68 @@ const Services = ({ home, background, padding }) => {
   // Render Component
   return (
     <S.ServicesWrapper background={background} padding={padding}>
-      {home ? <Title tag="h2" title="Nos Services" titleSection /> : ''}
-      <S.ServicesContent padding="0">
-        {servicesJsonData.map(({ name, shortName, competences, gallery, altIcon, altFeatured }) => {
-          // Variables and Functions for icon and featured images
-          const regExp = new RegExp(shortName, 'i')
-          const iconPath = serviceIcon.find(({ originalName }) => originalName.match(regExp)).icon
-          const featuredImgPath = servicefeatured.find(({ originalName }) =>
-            originalName.match(regExp)
-          ).featuredImg
+      {home ? <Title tag='h2' title='Nos Services' titleSection /> : ''}
+      <S.ServicesContent padding='0'>
+        {servicesJsonData.map(
+          ({ name, shortName, competences, gallery, altIcon, altFeatured }) => {
+            // Variables and Functions for icon and featured images
+            const regExp = new RegExp(shortName, 'i')
+            const iconPath = serviceIcon.find(({ originalName }) =>
+              originalName.match(regExp)
+            ).icon
+            const featuredImgPath = servicefeatured.find(({ originalName }) =>
+              originalName.match(regExp)
+            ).featuredImg
 
-          // Return Item on Card or page format
-          return (
-            <>
-              {home ? (
-                <S.ServiceItemCard
-                  to={`/services/#${shortName}`}
-                  className="cartelien"
-                  title={`Voir le service de ${name}`}
-                  fade
-                  duration={1}
-                  hex="#ffffff">
+            // Return Item on Card or page format
+            return (
+              <>
+                {home ? (
+                  <S.ServiceItemCard
+                    to={`/services/#${shortName}`}
+                    className='cartelien'
+                    title={`Voir le service de ${name}`}
+                    fade='true'
+                    duration={1}
+                    hex='#ffffff'
+                  >
+                    <ServiceItem
+                      key={shortName}
+                      shortName={shortName}
+                      Icon={iconPath}
+                      name={name}
+                      competences={competences}
+                      home={home}
+                      altIcon={altIcon}
+                    />
+                  </S.ServiceItemCard>
+                ) : (
                   <ServiceItem
                     key={shortName}
                     shortName={shortName}
                     Icon={iconPath}
+                    featuredImage={featuredImgPath}
                     name={name}
                     competences={competences}
-                    home={home}
+                    gallery={gallery}
                     altIcon={altIcon}
+                    altFeatured={altFeatured}
                   />
-                </S.ServiceItemCard>
-              ) : (
-                <ServiceItem
-                  key={shortName}
-                  shortName={shortName}
-                  Icon={iconPath}
-                  featuredImage={featuredImgPath}
-                  name={name}
-                  competences={competences}
-                  gallery={gallery}
-                  altIcon={altIcon}
-                  altFeatured={altFeatured}
-                />
-              )}
-            </>
-          )
-        })}
+                )}
+              </>
+            )
+          }
+        )}
       </S.ServicesContent>
       {home ? (
         <S.ServicesLink
-          primary="true"
-          to="/services/"
-          title="Voir nos Services"
-          fade
+          primary='true'
+          to='/services/'
+          title='Voir nos Services'
+          fade='true'
           duration={1}
-          hex="#ffffff">
+          hex='#ffffff'
+        >
           En savoir plus
         </S.ServicesLink>
       ) : (

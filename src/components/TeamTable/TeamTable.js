@@ -10,7 +10,7 @@ const TeamTable = ({ team, title }) => {
   // Render Component
   return (
     <S.TeamWrapper>
-      <Title tag="h3" title={title} />
+      <Title tag='h3' title={title} />
       <ul>
         {team.map(({ name, i }) => {
           return <S.TeamItem key={i}>{name}</S.TeamItem>

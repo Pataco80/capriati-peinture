@@ -21,7 +21,12 @@ export const HistoricalItem = styled.tr`
   margin-bottom: 2.5rem;
 
   ${media.greaterThan('tablet')`
-    ${setFlex({ flDir: 'row', x: 'flex-start', y: 'flex-start', wrap: 'nowrap' })};
+    ${setFlex({
+      flDir: 'row',
+      x: 'flex-start',
+      y: 'flex-start',
+      wrap: 'nowrap',
+    })};
     margin-bottom: 1.5rem;
   `}
 

@@ -31,7 +31,7 @@ const Historical = () => {
   // Render Component
   return (
     <S.HistoricalWrapper>
-      <Title tag="h3" title="Historique" />
+      <Title tag='h3' title='Historique' />
       <S.HistoricalTable>
         {historyJsonData.map((item, i) => {
           // Return Historic Items

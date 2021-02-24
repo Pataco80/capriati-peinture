@@ -53,12 +53,19 @@ const Historyprofile = () => {
       {historyProfile.map(({ id, name, shortName, altPhoto }) => {
         // Images Variables and Functions
         const regExp = new RegExp(shortName, 'i')
-        const photoPath = historyPhoto.find(({ originalName }) => originalName.match(regExp)).photo
+        const photoPath = historyPhoto.find(({ originalName }) =>
+          originalName.match(regExp)
+        ).photo
 
         // Return Profile Images
         return (
           <S.ProfileItem>
-            <Profile id={id} name={name} fluid={photoPath} altPhoto={altPhoto} />
+            <Profile
+              id={id}
+              name={name}
+              fluid={photoPath}
+              altPhoto={altPhoto}
+            />
           </S.ProfileItem>
         )
       })}

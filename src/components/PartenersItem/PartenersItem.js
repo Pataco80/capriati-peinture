@@ -4,7 +4,9 @@ import React from 'react'
 import * as S from './PartenersItemStyled'
 
 // Component
-const PartenersItem = ({ fluid, altLogo, url, urlTitle }) => {
+const PartenersItem = (props) => {
+  // Component Variables
+  const { fluid, altLogo, url, urlTitle } = props
   // Render Component
   return (
     <S.PartenersItemWrapper href={url} title={urlTitle}>
