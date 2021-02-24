@@ -20,6 +20,7 @@ const SEO = (props) => {
     keywords,
     shareHashTag,
     shareTitle,
+    pathname,
   } = props
 
   const {
@@ -32,15 +33,14 @@ const SEO = (props) => {
 
   const metaDescription = description || siteDescription
 
-  const url = siteUrl
-  const metaImage = `${url}/assets/images/${
+  const metaImage = `${siteUrl}/assets/images/${
     image || 'default'
   }-social-card.webp`
   const metaKeywords = keywords || siteKeywords
   const titleTemplate = `${title} | ${siteTitle}`
   const hashTag = shareHashTag || siteTitle
   const sharedTitle = `${siteTitle} - ${shareTitle}`
-
+  const canonical = pathname ? `${siteUrl}${pathname}` : `${siteUrl}`
   return (
     <Helmet
       htmlAttributes={{
@@ -48,6 +48,16 @@ const SEO = (props) => {
       }}
       title={title}
       titleTemplate={titleTemplate}
+      link={
+        canonical
+          ? [
+              {
+                rel: 'canonical',
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
@@ -152,6 +162,7 @@ SEO.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }),
+  pathname: PropTypes.string,
 }
 
 export default SEO

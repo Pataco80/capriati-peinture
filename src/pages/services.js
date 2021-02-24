@@ -30,6 +30,7 @@ const ServicesPage = ({ data }) => {
   return (
     <Layout background={`${setColor.mainGreyL3}`}>
       <SEO
+        pathname='/services/'
         title='Nos Services'
         description='Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives'
         keywords='Plâtre, crépi, papiers-peints, giclage, fresques décoratives'

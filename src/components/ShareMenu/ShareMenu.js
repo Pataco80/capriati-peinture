@@ -1,7 +1,7 @@
 import React from 'react'
 
-// Import Hooks
-import useSiteMetadata from '@hooks/useSiteMetadata'
+// Import utils
+import { getMeta, getLink } from '../../utils/getHeadTags'
 
 // Import Components for App
 import {
@@ -21,25 +21,10 @@ import * as S from './ShareMenuStyled'
 // Component
 const ShareBtn = ({ isOpen, className }) => {
   // Component Variables
-  const { siteUrl } = useSiteMetadata()
-  const pathPage = window.location.pathname
-  const url = `${siteUrl}${pathPage}`
-
-  // Component Functions
-  function getMeta(metaName) {
-    const metas = document.getElementsByTagName('meta')
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('property') === metaName) {
-        return metas[i].getAttribute('content')
-      }
-    }
-    return metas
-  }
-
-  // Datas extracted for getMeta function
   const hashTag = getMeta('og:hashtag')
   const socialTitle = getMeta('og:quote')
   const metaImage = getMeta('og:image')
+  const url = getLink('canonical')
 
   // Render Component
   return (

@@ -28,6 +28,7 @@ const WorksPage = ({ data }) => {
   return (
     <Layout background={`${setColor.mainGreyL3}`}>
       <SEO
+        pathname='/works/'
         title='Nos Travaux'
         description='Nos travaux éféctués au fil des années'
         keywords='nos travaux, nos références, gallerie'

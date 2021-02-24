@@ -1,4 +1,7 @@
 import React from 'react'
+// Import React Hooks
+import useSiteMetadata from '@hooks/useSiteMetadata'
+
 import mapsSelector from '../utils/getGoogleMap'
 
 // Import components from Gatsby and plugins Gatsby
@@ -27,26 +30,12 @@ const getData = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        siteTitle
-        businessRoad
-        businessRoadNumber
-        businessZipCode
-        businessCity
-        businessShortCanton
-        businessContry
-        businessPhone
-        businessFax
-        businessEmail
-      }
-    }
   }
 `
 
 // Component
 const ContactPage = () => {
-  const { heroBcg, site } = useStaticQuery(getData)
+  const { heroBcg } = useStaticQuery(getData)
   const {
     siteTitle,
     businessRoad,
@@ -58,13 +47,12 @@ const ContactPage = () => {
     businessPhone,
     businessFax,
     businessEmail,
-  } = site.siteMetadata
+  } = useSiteMetadata()
 
   // fonction de suppression d'espaces pour les liens
   const removeSpaces = (string) => {
     return string.replace(/\s/g, '')
   }
-  console.log(siteTitle)
   const hrefPhone = `tel:${removeSpaces(businessPhone)}`
   const hrefEmail = `mailto:${businessEmail}`
 
@@ -72,6 +60,7 @@ const ContactPage = () => {
   return (
     <Layout background={`${setColor.mainGreyL3}`}>
       <SEO
+        pathname='/contact/'
         title='Nous Contacter'
         description={`Contactez l'entreprise ${siteTitle}.`}
         keywords='Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail'
