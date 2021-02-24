@@ -8,31 +8,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import useSiteMetadata from '@hooks/useSiteMetadata'
 
-const SEO = ({ description, lang, meta, title, image, keywords }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            keywords
-            bossName
-            siteUrl
-          }
-        }
-      }
-    `
-  )
+const SEO = (props) => {
+  const {
+    description,
+    lang,
+    meta,
+    title,
+    image,
+    keywords,
+    shareHashTag,
+    shareTitle,
+  } = props
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    siteUrl,
+    siteTitle,
+    siteDescription,
+    siteKeywords,
+    bossName,
+  } = useSiteMetadata()
 
-  const url = site.siteMetadata.siteUrl
-  const metaImage = `${url}/assets/images/${image || 'default'}-social-card.webp`
-  const metaKeywords = keywords || site.siteMetadata.keywords
-  const titleTemplate = `${title} | ${site.siteMetadata.title}`
+  const metaDescription = description || siteDescription
+
+  const url = siteUrl
+  const metaImage = `${url}/assets/images/${
+    image || 'default'
+  }-social-card.webp`
+  const metaKeywords = keywords || siteKeywords
+  const titleTemplate = `${title} | ${siteTitle}`
+  const hashTag = shareHashTag || siteTitle
+  const sharedTitle = `${siteTitle} - ${shareTitle}`
 
   return (
     <Helmet
@@ -55,6 +62,14 @@ const SEO = ({ description, lang, meta, title, image, keywords }) => {
           content: metaDescription,
         },
         {
+          property: `og:quote`,
+          content: sharedTitle,
+        },
+        {
+          property: `og:hashtag`,
+          content: hashTag,
+        },
+        {
           property: `og:type`,
           content: `website`,
         },
@@ -64,7 +79,7 @@ const SEO = ({ description, lang, meta, title, image, keywords }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.bossName,
+          content: bossName,
         },
         {
           name: `twitter:title`,
