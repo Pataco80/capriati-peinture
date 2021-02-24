@@ -18,7 +18,9 @@ import { setFlex, media, setColor, setPxToRem } from '@helpers'
 // GraphQl Queries
 const getData = graphql`
   {
-    heroBcg: file(relativePath: { eq: "images/banners/contact-page-banner.jpg" }) {
+    heroBcg: file(
+      relativePath: { eq: "images/banners/contact-page-banner.jpg" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
@@ -27,7 +29,7 @@ const getData = graphql`
     }
     site {
       siteMetadata {
-        title
+        siteTitle
         businessRoad
         businessRoadNumber
         businessZipCode
@@ -43,10 +45,10 @@ const getData = graphql`
 `
 
 // Component
-const contactPage = () => {
+const ContactPage = () => {
   const { heroBcg, site } = useStaticQuery(getData)
   const {
-    title,
+    siteTitle,
     businessRoad,
     businessRoadNumber,
     businessZipCode,
@@ -59,53 +61,60 @@ const contactPage = () => {
   } = site.siteMetadata
 
   // fonction de suppression d'espaces pour les liens
-  const removeSpaces = string => {
+  const removeSpaces = (string) => {
     return string.replace(/\s/g, '')
   }
-
+  console.log(siteTitle)
   const hrefPhone = `tel:${removeSpaces(businessPhone)}`
   const hrefEmail = `mailto:${businessEmail}`
 
   // Render Component
   return (
-    <Layout background="var(--mediumBackground)">
+    <Layout background={`${setColor.mainGreyL3}`}>
       <SEO
-        title="Nous Contacter"
-        description={`Contactez l'entreprise ${title}.`}
-        keywords="Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail"
-        image="contact"
+        title='Nous Contacter'
+        description={`Contactez l'entreprise ${siteTitle}.`}
+        keywords='Nous contacter, formulaire de contact, Nos Coordonées, téléphone, e-mail'
+        image='contact'
+        shareTitle='Contactez-nous, nous sommes à votre entière disposition.'
       />
-      <Hero title="Nous Contacter" bcgImage={heroBcg.childImageSharp.fluid} />
+      <Hero title='Nous Contacter' bcgImage={heroBcg.childImageSharp.fluid} />
       <ContactForm />
-      <ContactSection background="var(--mediumBackground)">
-        <Title tag="h3" title="Nos Coordonées" titleSection />
+      <ContactSection background={`${setColor.mainGreyL3}`}>
+        <Title tag='h3' title='Nos Coordonées' titleSection />
         <ContactSectionContent>
           <ContactInfo>
-            <Title tag="h5" title="Adresse" noShadow />
-            <Title tag="h6" title={`${title}`} noShadow />
+            <Title tag='h5' title='Adresse' noShadow />
+            <Title tag='h6' title={siteTitle} noShadow notMargin />
             <p>
               {businessRoad} {businessRoadNumber} <br />
-              {businessZipCode} {businessCity} <br /> {businessShortCanton} - {businessContry}
+              {businessZipCode} {businessCity} <br /> {businessShortCanton} -{' '}
+              {businessContry}
             </p>
-            <ButtonMap type="button" primary onClick={mapsSelector} title="Nous Trouver">
+            <ButtonMap
+              type='button'
+              primary
+              onClick={mapsSelector}
+              title='Nous Trouver'
+            >
               <MapIcon />
               Nous trouver
             </ButtonMap>
           </ContactInfo>
           <ContactInfo>
-            <Title tag="h5" title="Contact" noShadow />
+            <Title tag='h5' title='Contact' noShadow />
             <p>
-              <PhoneAlt className="contactInfo-icon" /> :{' '}
-              <a href={hrefPhone} title="Appelez-vous">
+              <PhoneAlt className='contactInfo-icon' /> :{' '}
+              <a href={hrefPhone} title='Appelez-vous'>
                 {businessPhone}
               </a>
             </p>
             <p>
-              <Fax className="contactInfo-icon" /> : {businessFax}
+              <Fax className='contactInfo-icon' /> : {businessFax}
             </p>
             <p>
-              <Envelope className="contactInfo-icon" /> :{' '}
-              <a href={hrefEmail} title="Ecrivez-nous un mail">
+              <Envelope className='contactInfo-icon' /> :{' '}
+              <a href={hrefEmail} title='Ecrivez-nous un mail'>
                 {businessEmail}
               </a>
             </p>
@@ -152,14 +161,14 @@ const ContactInfo = styled.div`
   }
 `
 
-export const ButtonMap = styled(Button)`
+const ButtonMap = styled(Button)`
   ${setFlex()};
   padding: ${setPxToRem(8)} ${setPxToRem(26)};
 `
 
-export const MapIcon = styled(Map)`
+const MapIcon = styled(Map)`
   width: 1.6rem;
   height: auto;
 `
 
-export default contactPage
+export default ContactPage

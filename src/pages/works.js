@@ -23,21 +23,22 @@ export const getImage = graphql`
 `
 
 // Component
-const worksPage = ({ data }) => {
+const WorksPage = ({ data }) => {
   // Render Component
   return (
-    <Layout background='var(--mediumBackground)'>
+    <Layout background={`${setColor.mainGreyL3}`}>
       <SEO
-        title="Nos Travaux"
-        description="Nos travaux éféctués au fil des années"
-        keywords="nos travaux, nos références, gallerie"
-        image="work"
+        title='Nos Travaux'
+        description='Nos travaux éféctués au fil des années'
+        keywords='nos travaux, nos références, gallerie'
+        image='work'
+        shareTitle='Nos réalisations... pour vos inspirations.'
       />
-      <Hero title="Nos Travaux" bcgImage={data.heroBcg.childImageSharp.fluid} />
+      <Hero title='Nos Travaux' bcgImage={data.heroBcg.childImageSharp.fluid} />
       <Works />
       <References background={setColor.mainGreyL3} />
     </Layout>
   )
 }
 
-export default worksPage
+export default WorksPage

@@ -4,16 +4,21 @@ import React from 'react'
 import { Layout, SEO, Hero, About, Services } from '@components'
 
 // Import styled-components, styledElements and helpers
+import { setColor } from '@helpers'
 
-const indexPage = () => {
+const IndexPage = () => {
   return (
-    <Layout home background={`var(--mediumBackground)`}>
-      <SEO title="Accueil" keywords="Page d'Accueil, A propos de nous, Nos Services" />
-      <Hero home title="Home Page" />
+    <Layout home background={`${setColor.mainGreyL3}`}>
+      <SEO
+        title='Accueil'
+        keywords="Page d'Accueil, A propos de nous, Nos Services"
+        shareTitle='Bienvenue chez nous.'
+      />
+      <Hero home title='Home Page' />
       <About home />
-      <Services background={`var(--mediumBackground)`} card home />
+      <Services background={`${setColor.mainGreyL3}`} card home />
     </Layout>
   )
 }
 
-export default indexPage
+export default IndexPage
