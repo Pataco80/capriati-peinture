@@ -22,7 +22,8 @@ import * as S from './ShareMenuStyled'
 const ShareBtn = ({ isOpen, className }) => {
   // Component Variables
   const { siteUrl } = useSiteMetadata()
-  const url = `${siteUrl}${window.location.pathname}`
+  const pathPage = window.location.pathname
+  const url = `${siteUrl}${pathPage}`
 
   // Component Functions
   function getMeta(metaName) {
