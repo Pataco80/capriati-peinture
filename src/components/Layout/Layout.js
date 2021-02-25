@@ -9,7 +9,7 @@ import GlobalStyles from '../../theme/globalStyles'
 import * as S from './LayoutStyled'
 
 // Component
-const Layout = ({ children, background }) => {
+const Layout = ({ children, background, location }) => {
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
 
@@ -26,7 +26,6 @@ const Layout = ({ children, background }) => {
       document.removeEventListener('scroll', handleScroll)
     }
   }, [scrolled])
-
   // Render Component
   return (
     <>
@@ -37,7 +36,7 @@ const Layout = ({ children, background }) => {
           {children}
         </S.PageContainer>
         <Footer background={background} />
-        <BtnBar />
+        <BtnBar location={location} />
       </S.AppWrapper>
     </>
   )

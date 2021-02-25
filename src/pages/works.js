@@ -23,10 +23,10 @@ export const getImage = graphql`
 `
 
 // Component
-const WorksPage = ({ data }) => {
+const WorksPage = ({ data, location }) => {
   // Render Component
   return (
-    <Layout background={`${setColor.mainGreyL3}`}>
+    <Layout background={`${setColor.mainGreyL3}`} location={location}>
       <SEO
         pathname='/works/'
         title='Nos Travaux'

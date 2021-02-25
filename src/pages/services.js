@@ -25,10 +25,10 @@ export const query = graphql`
 `
 
 // Component
-const ServicesPage = ({ data }) => {
+const ServicesPage = ({ data, location }) => {
   // Render Component
   return (
-    <Layout background={`${setColor.mainGreyL3}`}>
+    <Layout background={`${setColor.mainGreyL3}`} location={location}>
       <SEO
         pathname='/services/'
         title='Nos Services'

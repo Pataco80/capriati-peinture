@@ -34,7 +34,7 @@ const getData = graphql`
 `
 
 // Component
-const ContactPage = () => {
+const ContactPage = ({ location }) => {
   const { heroBcg } = useStaticQuery(getData)
   const {
     siteTitle,
@@ -58,7 +58,7 @@ const ContactPage = () => {
 
   // Render Component
   return (
-    <Layout background={`${setColor.mainGreyL3}`}>
+    <Layout background={`${setColor.mainGreyL3}`} location={location}>
       <SEO
         pathname='/contact/'
         title='Nous Contacter'

@@ -40,7 +40,7 @@ const SEO = (props) => {
   const titleTemplate = `${title} | ${siteTitle}`
   const hashTag = shareHashTag || siteTitle
   const sharedTitle = `${siteTitle} - ${shareTitle}`
-  const canonical = pathname ? `${siteUrl}${pathname}` : `${siteUrl}`
+  const canonical = pathname ? `${siteUrl}.location.${pathname}` : `${siteUrl}`
   return (
     <Helmet
       htmlAttributes={{

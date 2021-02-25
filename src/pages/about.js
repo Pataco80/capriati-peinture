@@ -45,12 +45,12 @@ export const getImage = graphql`
 `
 
 // Component
-const AboutPage = ({ data }) => {
+const AboutPage = ({ data, location }) => {
   const { siteTitle } = useSiteMetadata()
 
   // Render Component
   return (
-    <Layout background={`${setColor.mainWhite}`}>
+    <Layout background={`${setColor.mainWhite}`} location={location}>
       <SEO
         pathname='/about/'
         title='A Propos de Nous'
