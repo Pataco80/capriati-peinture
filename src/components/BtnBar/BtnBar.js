@@ -10,7 +10,7 @@ import { ToTopBtn, ContactMenu, ShareMenu, ShareMenuBtn } from '@components'
 import * as S from './BtnBarStyled'
 
 // Component
-const BtnBar = ({ location }) => {
+const BtnBar = ({ currentPage }) => {
   // component variables
   const { isMobile } = useDeviceDetect()
   const [isOpen, setIsOpen] = useState(false)
@@ -19,15 +19,14 @@ const BtnBar = ({ location }) => {
   const showSocialMenu = () => {
     setIsOpen((isOpen) => !isOpen)
   }
-  const currentPage = `${location.pathname}`
-
+  console.log(`je suis sur la barre de bouttons:${currentPage}`)
   // Render Componentv
   return (
     <S.BtnBarWrapper>
       {isMobile && (
         <S.MobileWrapper>
           <S.MenuMobileCantainer className={isOpen ? `show-nav` : ``}>
-            <ShareMenu sharePage={currentPage} />
+            <ShareMenu currentPage={currentPage} />
           </S.MenuMobileCantainer>
           <S.ButtonsContainer>
             <ContactMenu />
@@ -39,7 +38,11 @@ const BtnBar = ({ location }) => {
       {!isMobile && (
         <S.DesktopWrapper>
           <S.MenuDesktopCantainer className={isOpen ? `show-nav` : ``}>
-            <ShareMenu isOpen={isOpen} className='desktop' />
+            <ShareMenu
+              isOpen={isOpen}
+              className='desktop'
+              currentPage={currentPage}
+            />
             <S.ButtonsContainer className='desktop'>
               <ShareMenuBtn
                 isOnClick={showSocialMenu}

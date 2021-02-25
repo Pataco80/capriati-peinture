@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Import utils
-import { getMeta, getLink } from '../../utils/getHeadTags'
+import { getMeta } from '../../utils/getHeadTags'
 import useSiteMetadata from '../../hooks/useSiteMetadata'
 // Import Components for App
 import {
@@ -19,13 +19,13 @@ import {
 import * as S from './ShareMenuStyled'
 
 // Component
-const ShareBtn = ({ isOpen, className, sharePage }) => {
+const ShareBtn = ({ isOpen, className, currentPage }) => {
   // Component Variables
   const { siteUrl } = useSiteMetadata()
   const hashTag = getMeta('og:hashtag')
   const socialTitle = getMeta('og:quote')
   const metaImage = getMeta('og:image')
-  const url = `${siteUrl}${sharePage}`
+  const url = `${siteUrl}${currentPage}`
   //const newUrl = `${siteUrl}${location.pathname}`
   console.log(`sharemenu: ${url}`)
 

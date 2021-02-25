@@ -9,7 +9,7 @@ import GlobalStyles from '../../theme/globalStyles'
 import * as S from './LayoutStyled'
 
 // Component
-const Layout = ({ children, background, location }) => {
+const Layout = ({ children, background, currentPage }) => {
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
 
@@ -27,6 +27,8 @@ const Layout = ({ children, background, location }) => {
     }
   }, [scrolled])
   // Render Component
+
+  console.log(`je suis sur le layout: ${currentPage}`)
   return (
     <>
       <GlobalStyles />
@@ -36,7 +38,7 @@ const Layout = ({ children, background, location }) => {
           {children}
         </S.PageContainer>
         <Footer background={background} />
-        <BtnBar location={location} />
+        <BtnBar currentPage={currentPage} />
       </S.AppWrapper>
     </>
   )

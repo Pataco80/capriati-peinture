@@ -47,10 +47,12 @@ export const getImage = graphql`
 // Component
 const AboutPage = ({ data, location }) => {
   const { siteTitle } = useSiteMetadata()
+  const currentPage = location.href
+  console.log(`je suis la page href: ${currentPage}`)
 
   // Render Component
   return (
-    <Layout background={`${setColor.mainWhite}`} location={location}>
+    <Layout background={`${setColor.mainWhite}`} location={currentPage}>
       <SEO
         pathname='/about/'
         title='A Propos de Nous'

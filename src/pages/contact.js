@@ -48,6 +48,8 @@ const ContactPage = ({ location }) => {
     businessFax,
     businessEmail,
   } = useSiteMetadata()
+  const currentPage = location.href
+  console.log(`je suis la page href: ${currentPage}`)
 
   // fonction de suppression d'espaces pour les liens
   const removeSpaces = (string) => {
@@ -58,7 +60,7 @@ const ContactPage = ({ location }) => {
 
   // Render Component
   return (
-    <Layout background={`${setColor.mainGreyL3}`} location={location}>
+    <Layout background={`${setColor.mainGreyL3}`} location={currentPage}>
       <SEO
         pathname='/contact/'
         title='Nous Contacter'

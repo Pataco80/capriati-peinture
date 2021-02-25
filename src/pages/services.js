@@ -26,9 +26,12 @@ export const query = graphql`
 
 // Component
 const ServicesPage = ({ data, location }) => {
+  const currentPage = location.href
+  console.log(`je suis la page href: ${currentPage}`)
+
   // Render Component
   return (
-    <Layout background={`${setColor.mainGreyL3}`} location={location}>
+    <Layout background={`${setColor.mainGreyL3}`} location={currentPage}>
       <SEO
         pathname='/services/'
         title='Nos Services'

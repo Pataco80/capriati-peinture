@@ -9,8 +9,14 @@ import { Layout, SEO, Hero, About, Services } from '@components'
 import { setColor } from '@helpers'
 
 const IndexPage = ({ location }) => {
+  const currentPage = location.href
+  console.log(`je suis la page href: ${currentPage}`)
   return (
-    <Layout home background={`${setColor.mainGreyL3}`} location={location}>
+    <Layout
+      home
+      background={`${setColor.mainGreyL3}`}
+      currentPage={currentPage}
+    >
       <SEO
         title='Accueil'
         keywords="Page d'Accueil, A propos de nous, Nos Services"
