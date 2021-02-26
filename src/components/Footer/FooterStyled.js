@@ -11,11 +11,11 @@ export const FooterWrapper = styled.footer`
 
   ${media.greaterThan('desktop')`
     padding-bottom: ${(props) =>
-      props.paddingBottom ? props.paddingBottom : `0`};
+      props.paddingBottom ? props.paddingBottom : `1rem`};
   `}
 `
 
-export const Copyright = styled.p`
+export const Text = styled.p`
   margin: 2rem 0 0 0;
   color: ${setColor.mainWhite};
   text-align: center;

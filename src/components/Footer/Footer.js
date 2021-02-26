@@ -44,8 +44,8 @@ const Footer = ({ background }) => {
       </Section>
       <SectionCenter background='transparent'>
         <MainMenu className='footer' />
-        <S.Copyright>{copyright} - Tous droits réservés.</S.Copyright>
-        <S.Copyright>Site développé par {conceptorWebSite}</S.Copyright>
+        <S.Text>{copyright} - Tous droits réservés.</S.Text>
+        <S.Text>Site développé par {conceptorWebSite}</S.Text>
       </SectionCenter>
     </S.FooterWrapper>
   )

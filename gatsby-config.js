@@ -159,6 +159,18 @@ module.exports = {
         cache_busting_mode: 'none',
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+        workboxConfig: {
+          globDirectory: 'public',
+          globIgnores: [
+            '**/workbox-v4.3.1/*.+(js|mjs)*',
+            '**/node_modules/**/*',
+            '**/sw.js',
+          ],
+        },
+      },
+    },
   ],
 }
