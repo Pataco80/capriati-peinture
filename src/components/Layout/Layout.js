@@ -28,7 +28,7 @@ const Layout = ({ children, background, currentPage }) => {
   }, [scrolled])
   // Render Component
 
-  console.log(`je suis sur le layout: ${currentPage}`)
+  //console.log(`je suis sur le layout: ${currentPage}`)
   return (
     <>
       <GlobalStyles />
@@ -38,7 +38,7 @@ const Layout = ({ children, background, currentPage }) => {
           {children}
         </S.PageContainer>
         <Footer background={background} />
-        <BtnBar currentPage={currentPage} />
+        <BtnBar />
       </S.AppWrapper>
     </>
   )

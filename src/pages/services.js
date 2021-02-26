@@ -27,7 +27,7 @@ export const query = graphql`
 // Component
 const ServicesPage = ({ data, location }) => {
   const currentPage = location.href
-  console.log(`je suis la page href: ${currentPage}`)
+  //console.log(`je suis la page href: ${currentPage}`)
 
   // Render Component
   return (

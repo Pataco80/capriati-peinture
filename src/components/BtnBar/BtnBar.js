@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import useDeviceDetect from '@hooks/useDeviceDetect'
 
 // Import Components for App
-import { ToTopBtn, ContactMenu, ShareMenu, ShareMenuBtn } from '@components'
+import { ToTopBtn, ContactMenu } from '@components'
 
 // Import styles from styled-components file
 import * as S from './BtnBarStyled'
@@ -19,18 +19,14 @@ const BtnBar = ({ currentPage }) => {
   const showSocialMenu = () => {
     setIsOpen((isOpen) => !isOpen)
   }
-  console.log(`je suis sur la barre de bouttons:${currentPage}`)
+  //console.log(`je suis sur la barre de bouttons:${currentPage}`)
   // Render Componentv
   return (
     <S.BtnBarWrapper>
       {isMobile && (
         <S.MobileWrapper>
-          <S.MenuMobileCantainer className={isOpen ? `show-nav` : ``}>
-            <ShareMenu currentPage={currentPage} />
-          </S.MenuMobileCantainer>
           <S.ButtonsContainer>
             <ContactMenu />
-            <ShareMenuBtn isOnClick={showSocialMenu} className='btnIconBar' />
             <ToTopBtn className='btnIconBar' />
           </S.ButtonsContainer>
         </S.MobileWrapper>
@@ -38,16 +34,7 @@ const BtnBar = ({ currentPage }) => {
       {!isMobile && (
         <S.DesktopWrapper>
           <S.MenuDesktopCantainer className={isOpen ? `show-nav` : ``}>
-            <ShareMenu
-              isOpen={isOpen}
-              className='desktop'
-              currentPage={currentPage}
-            />
             <S.ButtonsContainer className='desktop'>
-              <ShareMenuBtn
-                isOnClick={showSocialMenu}
-                className='btnIconBar to-social'
-              />
               <ToTopBtn showBelow={500} className='btnIconBar to-top' />
             </S.ButtonsContainer>
           </S.MenuDesktopCantainer>

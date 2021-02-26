@@ -48,7 +48,7 @@ export const getImage = graphql`
 const AboutPage = ({ data, location }) => {
   const { siteTitle } = useSiteMetadata()
   const currentPage = location.href
-  console.log(`je suis la page href: ${currentPage}`)
+  //console.log(`je suis la page href: ${currentPage}`)
 
   // Render Component
   return (

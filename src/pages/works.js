@@ -25,7 +25,7 @@ export const getImage = graphql`
 // Component
 const WorksPage = ({ data, location }) => {
   const currentPage = location.href
-  console.log(`je suis la page href: ${currentPage}`)
+  //console.log(`je suis la page href: ${currentPage}`)
 
   // Render Component
   return (

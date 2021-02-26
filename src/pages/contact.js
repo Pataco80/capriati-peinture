@@ -49,7 +49,7 @@ const ContactPage = ({ location }) => {
     businessEmail,
   } = useSiteMetadata()
   const currentPage = location.href
-  console.log(`je suis la page href: ${currentPage}`)
+  //console.log(`je suis la page href: ${currentPage}`)
 
   // fonction de suppression d'espaces pour les liens
   const removeSpaces = (string) => {

@@ -27,7 +27,7 @@ const ShareBtn = ({ isOpen, className, currentPage }) => {
   const metaImage = getMeta('og:image')
   const url = `${siteUrl}${currentPage}`
   //const newUrl = `${siteUrl}${location.pathname}`
-  console.log(`sharemenu: ${url}`)
+  //console.log(`sharemenu: ${url}`)
 
   // Render Component
   return (

@@ -10,7 +10,7 @@ import { setColor } from '@helpers'
 
 const IndexPage = ({ location }) => {
   const currentPage = location.href
-  console.log(`je suis la page href: ${currentPage}`)
+  //console.log(`je suis la page href: ${currentPage}`)
   return (
     <Layout
       home
