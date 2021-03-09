@@ -24,6 +24,7 @@ export const MobileWrapper = styled.div`
   ${setFlex({ flDir: 'column' })};
   position: relative;
   ${setTransition()};
+  padding: 0.5rem 0;
 `
 
 export const MenuMobileCantainer = styled.div`

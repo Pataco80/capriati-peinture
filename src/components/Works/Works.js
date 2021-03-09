@@ -85,7 +85,7 @@ export const getData = graphql`
         ...GatsbyImageSharpFluid_withWebp
         originalName
       }
-      full: fluid(maxWidth: 1200, maxHeight: 1200) {
+      full: fluid(maxWidth: 1200) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }
