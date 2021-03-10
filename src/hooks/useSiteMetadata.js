@@ -30,6 +30,7 @@ const useSiteMetadata = () => {
           twitterUserName
           facebookUserName
           conceptorWebSite
+          formSpree
         }
       }
     }
