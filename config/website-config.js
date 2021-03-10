@@ -1,4 +1,5 @@
 // Fichier de configuration des données du site et de l'entreprise
+require('dotenv').config()
 
 // Données de l'entreprise
 const businessInfo = {
@@ -139,6 +140,9 @@ const websiteConfig = {
   themeColor: '#EE332D', // Used for setting manifest and progress theme colors.
   backgroundColor: '#fff', // Used for setting manifest background color.
   webSiteConceptor: 'DWDevlopment',
+
+  // Access API
+  formSpreeID: process.env.GATSBY_FORMSPREE_ID,
 }
 
 // Validate

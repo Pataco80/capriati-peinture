@@ -10,7 +10,7 @@ import { ToTopBtn, ContactMenu } from '@components'
 import * as S from './BtnBarStyled'
 
 // Component
-const BtnBar = ({ currentPage }) => {
+const BtnBar = () => {
   // component variables
   const { isMobile } = useDeviceDetect()
   const [isOpen, setIsOpen] = useState(false)
@@ -19,7 +19,6 @@ const BtnBar = ({ currentPage }) => {
   const showSocialMenu = () => {
     setIsOpen((isOpen) => !isOpen)
   }
-  //console.log(`je suis sur la barre de bouttons:${currentPage}`)
   // Render Componentv
   return (
     <S.BtnBarWrapper>
