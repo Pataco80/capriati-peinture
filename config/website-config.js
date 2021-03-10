@@ -1,5 +1,4 @@
 // Fichier de configuration des données du site et de l'entreprise
-require('dotenv').config()
 
 // Données de l'entreprise
 const businessInfo = {
@@ -142,7 +141,7 @@ const websiteConfig = {
   webSiteConceptor: 'DWDevlopment',
 
   // Access API
-  formSpreeID: process.env.GATSBY_FORMSPREE_ID,
+  formSpree: 'https://formspree.io/f/xzbkneqk',
 }
 
 // Validate

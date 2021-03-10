@@ -13,7 +13,7 @@ import * as S from './ContactFormStyled'
 
 // Component
 const Contactform = () => {
-  const { formSpreeId } = useSiteMetadata()
+  const { formSpree } = useSiteMetadata()
   // Render Component
   return (
     <Section>
@@ -23,11 +23,7 @@ const Contactform = () => {
         titleSection
       />
       <S.FormContainer padding='0'>
-        <S.ContactForm
-          action={`https://formspree.io/${formSpreeId}`}
-          method='POST'
-          autocomplete='on'
-        >
+        <S.ContactForm action={formSpree} method='POST' autocomplete='on'>
           <S.ContactInfo>
             <S.ContactName>
               <S.Label htmlFor='name'>Nom</S.Label>

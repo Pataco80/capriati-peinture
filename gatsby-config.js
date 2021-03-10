@@ -41,7 +41,7 @@ module.exports = {
     socialMenu: websiteConfig.socialLinks,
     facebookUserName: websiteConfig.facebookUserName,
     conceptorWebSite: websiteConfig.webSiteConceptor,
-    formSpreeId: websiteConfig.formSpreeID,
+    formSpree: websiteConfig.formSpree,
   },
 
   /* Your site config here */
