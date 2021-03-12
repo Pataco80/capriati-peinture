@@ -63,7 +63,7 @@ let formatted_date =
 
 // Données du site
 const websiteConfig = {
-  siteUrl: 'https://capriati.netlify.app', // Domain of your website without pathPrefix.
+  siteUrl: 'https://capriati.ch', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   // Website description used for RSS feeds/meta description tag.
   siteTitle: `${businessInfo.businessName}`, // Site title.
