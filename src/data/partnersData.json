@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Fédération Vaudoise des Entrepreneurs",
+    "shortName": "logoFve",
+    "logo": "logoFve.png",
+    "altLogo": "Logo de la Fédération Vaudoise des Entrepreneurs",
+    "url": "#",
+    "urlTitle": "Aller à la Fédération Vaudoise des Entrepreneurs"
+  },
+  {
+    "id": 2,
+    "name": "Fédération Romande des Entreprises de Plâtrerie-peinture",
+    "shortName": "logoFrepp",
+    "logo": "logoFrepp.png",
+    "altLogo": "Logo de la Fédération Romande des Entreprises de Plâtrerie-peinture",
+    "url": "#",
+    "urlTitle": "Aller à la Fédération Romande des Entreprises de Plâtrerie-peinture"
+  },
+  {
+    "id": 3,
+    "name": "Formation Professionnelle Plus",
+    "shortName": "logoFormaProf",
+    "logo": "logoFormaProf.png",
+    "altLogo": "Logo de la Formation Professionnelle Plus",
+    "url": "#",
+    "urlTitle": "Aller à la Formation Professionnelle Plus"
+  }
+]

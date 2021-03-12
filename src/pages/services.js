@@ -1,13 +1,52 @@
 import React from 'react'
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-const servicesPage = () => {
+
+// Import components from Gatsby and plugins Gatsby
+import { graphql } from 'gatsby'
+
+// Import Components for App
+import { Layout, SEO, Hero, Services } from '@components'
+
+// Import styled-components, styledElements and helpers
+import { setColor } from '@helpers'
+
+// GraphQl Queries
+export const query = graphql`
+  {
+    heroBcg: file(
+      relativePath: { eq: "images/banners/services-page-banner.jpg" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
+
+// Component
+const ServicesPage = ({ data, location }) => {
+  const currentPage = location.href
+  //console.log(`je suis la page href: ${currentPage}`)
+
+  // Render Component
   return (
-    <Layout>
-      <Title title={'Services Page'}/>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, excepturi eaque corrupti ipsa ratione beatae quas tenetur architecto dolores, mollitia saepe accusantium amet recusandae dicta voluptatem explicabo illo aut a?s</p>
+    <Layout background={`${setColor.mainGreyL3}`} location={currentPage}>
+      <SEO
+        pathname='/services/'
+        title='Nos Services'
+        description='Liste de nos services en plâtrerie, peinture, papier-peint, giclage et fresques décoratives'
+        keywords='Plâtre, crépi, papiers-peints, giclage, fresques décoratives'
+        image='services'
+        shareTitle='Notre expérience et qualités à votre service.'
+      />
+      <Hero
+        title='Nos Services'
+        bcgImage={data.heroBcg.childImageSharp.fluid}
+      />
+      <Services background={`${setColor.mainGreyL3}`} />
     </Layout>
   )
 }
 
-export default servicesPage
+export default ServicesPage

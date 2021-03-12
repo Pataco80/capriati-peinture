@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Capriati Vincent",
+    "shortName": "vincentCapriati",
+    "photo": "vincentCapriati.jpg",
+    "altPhoto": "Vincent Capriati",
+    "job": "Directeur Administratif",
+    "certifications": [
+      "CFC de peintre en Bâtiment",
+      "Brevet fédéral de contremaître",
+      "Maîtrise fédérale de peintre",
+      "Directeur depuis 2012"
+    ],
+    "date": "Administrateur depuis 2020"
+  },
+  {
+    "id": 2,
+    "name": "Brigitte Capriati",
+    "shortName": "brigitteCapriati",
+    "photo": "brigitteCapriati.jpg",
+    "altPhoto": "Brigitte Capriati",
+    "job": "Secrétaire",
+    "certifications": ["CFC de Commerce"],
+    "date": "A notre Service depuis janvier 2007"
+  },
+  {
+    "id": 3,
+    "name": "Rodriguez José",
+    "shortName": "joseRodriguez",
+    "photo": "joseRodriguez.jpg",
+    "altPhoto": "José Rodriguez",
+    "job": "Contremaître",
+    "certifications": ["CFC de peintre", "Contremaitre"],
+    "date": "A notre service depuis septembre 2018"
+  },
+  {
+    "id": 4,
+    "name": "Schmid Valentin",
+    "shortName": "valentinSchmid",
+    "photo": "valentinSchmid.jpg",
+    "altPhoto": "Valentin Schmid",
+    "job": "Contremaître",
+    "certifications": [
+      "CFC de peintre",
+      "CFC de plâtrier",
+      "Brevet fédéral de contremaitre",
+      "Maîtrise fédérale de plâtrier"
+    ],
+    "date": "A notre service depuis avril 2014"
+  }
+]

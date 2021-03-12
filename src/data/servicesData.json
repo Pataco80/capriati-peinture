@@ -1,0 +1,205 @@
+[
+  {
+    "id": 1,
+    "name": "Plâtre",
+    "shortName": "platre",
+    "icon": "platre.png",
+    "altIcon": "Logo plâtre",
+    "featuredImg": "platre.jpg",
+    "altFeatured": "photo featured plâtre",
+    "competences": [
+      {
+        "id": 1,
+        "text": "Gypsage sous dalle en béton, sur murs en briques, lissage fin sur murs et plafonds"
+      },
+      {
+        "id": 2,
+        "text": "Doublages et cloisons en placoplâtre avec ossature métallique et/ou en carreaux de plâtre \"Alba\""
+      },
+      {
+        "id": 3,
+        "text": "Faux-plafonds en placoplâtre avec châssis métallique"
+      },
+      {
+        "id": 4,
+        "text": "Isolation phonique, acoustique et thermique avec différents types de matériaux"
+      },
+      {
+        "id": 5,
+        "text": "Isolation périphérique des façades"
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "shortName": "platre1",
+        "image": "assets/images/gallery/services/platre1.jpg",
+        "altImg": "Quand on fait des bétises..."
+      },
+      {
+        "id": 2,
+        "shortName": "platre2",
+        "image": "assets/images/gallery/services/platre2.jpg",
+        "altImg": "On se casse la figure..."
+      },
+      {
+        "id": 3,
+        "shortName": "platre3",
+        "image": "assets/images/gallery/services/platre3.jpg",
+        "altImg": "Et on finit avec un plâtre"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Peinture",
+    "shortName": "peinture",
+    "icon": "peinture.png",
+    "altIcon": "Logo peinture",
+    "featuredImg": "peinture.jpg",
+    "altFeatured": "photo featured peinture",
+    "competences": [
+      {
+        "id": 1,
+        "text": "Les peintures d'aujourd'hui proposent de nombreuses caractéristiques techniques, l'analyse des supports à traiter est donc une étape importante afin d'appliquer les bons produits et ainsi garantir une tenue dans le temps."
+      },
+      {
+        "id": 2,
+        "text": "Il existe tout une variété d'aspects (mat, velours, soyeux, satiné, brillant) qui permettent d'optimiser votre habitat précisément selon vos goûts. Nous nous ferons un plaisir de vous accompagner et de vous conseiller dans vos choix de couleurs. Nous pouvons également raccorder des teintes sur mesure et réaliser des échantillons."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "shortName": "peinture1",
+        "image": "assets/images/gallery/services/peinture1.jpg",
+        "altImg": "peinture1"
+      },
+      {
+        "id": 2,
+        "shortName": "peinture2",
+        "image": "assets/images/gallery/services/peinture2.jpg",
+        "altImg": "peinture2"
+      },
+      {
+        "id": 3,
+        "shortName": "peinture3",
+        "image": "assets/images/gallery/services/peinture3.jpg",
+        "altImg": "peinture3"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Papier-peint",
+    "shortName": "papierPeint",
+    "icon": "papierPeint.png",
+    "altIcon": "Logo Papier-Peint",
+    "featuredImg": "papierPeint.jpg",
+    "altFeatured": "photo featured Papier-Peint",
+    "competences": [
+      {
+        "id": 1,
+        "text": "Aujourd'hui appelé ''vinyle'', ce type de revêtement revient à la mode en proposant des motifs de toutes sortes sur une matière résistante et facile d'entretien. Il est même possible de les personnaliser."
+      },
+      {
+        "id": 2,
+        "text": "Nous proposons également des revêtements plus courants comme les fibres de verre (Scandatex, Variovlies) ou encore le papier ''ingrain''."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "shortName": "papierspeints1",
+        "image": "assets/images/gallery/services/papierspeints1.jpg",
+        "altImg": "papierspeints1"
+      },
+      {
+        "id": 2,
+        "shortName": "papierspeints2",
+        "image": "assets/images/gallery/services/papierspeints2.jpg",
+        "altImg": "papierspeints2"
+      },
+      {
+        "id": 3,
+        "shortName": "papierspeints3",
+        "image": "assets/images/gallery/services/papierspeints3.jpg",
+        "altImg": "papierspeints3"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Décoration",
+    "shortName": "decoration",
+    "icon": "decoration.png",
+    "altIcon": "Logo decoration",
+    "featuredImg": "decoration.jpg",
+    "altFeatured": "photo featured decoration",
+    "competences": [
+      {
+        "id": 1,
+        "text": "Peinture ''à l'essuyé'', chaux brossée, béton ciré , masse structurée, stucco, marmorino et autres techniques sur demande."
+      },
+      {
+        "id": 2,
+        "text": "Nous proposons également la fourniture et pose de corniches et moulures en polystyrène ou en plâtre avec possibilité d'intégrer une lumière indirecte."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "shortName": "decoration1",
+        "image": "assets/images/gallery/services/decoration1.jpg",
+        "altImg": "decoration1"
+      },
+      {
+        "id": 2,
+        "shortName": "decoration2",
+        "image": "assets/images/gallery/services/decoration2.jpg",
+        "altImg": "decoration2"
+      },
+      {
+        "id": 3,
+        "shortName": "decoration3",
+        "image": "assets/images/gallery/services/decoration3.jpg",
+        "altImg": "decoration3"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Giclage",
+    "shortName": "giclage",
+    "icon": "giclage.png",
+    "altIcon": "Logo giclage",
+    "featuredImg": "giclage.jpg",
+    "altFeatured": "photo featured giclage",
+    "competences": [
+      {
+        "id": 1,
+        "text": "Nos locaux sont équipés d'une cabine de giclage ou nous avons la possibilité de réaliser des travaux sur des objets tels que des radiateurs, des volets, du mobilier de jardin en bois ou en métal ainsi que des boiseries qui nécessitent un soin particulier au niveau de la finition."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "shortName": "giclage1",
+        "image": "assets/images/gallery/services/giclage1.jpg",
+        "altImg": "giclage1"
+      },
+      {
+        "id": 2,
+        "shortName": "giclage2",
+        "image": "assets/images/gallery/services/giclage2.jpg",
+        "altImg": "giclage2"
+      },
+      {
+        "id": 3,
+        "shortName": "giclage3",
+        "image": "assets/images/gallery/services/giclage3.jpg",
+        "altImg": "giclage3"
+      }
+    ]
+  }
+]
