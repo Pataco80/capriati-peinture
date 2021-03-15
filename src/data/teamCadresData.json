@@ -9,20 +9,25 @@
     "certifications": [
       "CFC de peintre en Bâtiment",
       "Brevet fédéral de contremaître",
-      "Maîtrise fédérale de peintre",
-      "Directeur depuis 2012"
+      "Maîtrise fédérale de peintre"
     ],
-    "date": "Administrateur depuis 2020"
+    "functionDates": [
+      "Directeur depuis 2012",
+      "Directeur administratif depuis 2020"
+    ]
   },
   {
     "id": 2,
-    "name": "Brigitte Capriati",
+    "name": "Capriati Brigitte",
     "shortName": "brigitteCapriati",
     "photo": "brigitteCapriati.jpg",
     "altPhoto": "Brigitte Capriati",
     "job": "Secrétaire",
-    "certifications": ["CFC de Commerce"],
-    "date": "A notre Service depuis janvier 2007"
+    "certifications": ["CFC d’employée de commerce"],
+    "functionDates": [
+      "A notre ervice depuis janvier 2007",
+      "Directrice depuis 2012"
+    ]
   },
   {
     "id": 3,
@@ -31,8 +36,8 @@
     "photo": "joseRodriguez.jpg",
     "altPhoto": "José Rodriguez",
     "job": "Contremaître",
-    "certifications": ["CFC de peintre", "Contremaitre"],
-    "date": "A notre service depuis septembre 2018"
+    "certifications": ["CFC de peintre", "Contremaître"],
+    "functionDates": ["A notre service depuis septembre 2018"]
   },
   {
     "id": 4,
@@ -44,9 +49,9 @@
     "certifications": [
       "CFC de peintre",
       "CFC de plâtrier",
-      "Brevet fédéral de contremaitre",
+      "brevet de contremaître",
       "Maîtrise fédérale de plâtrier"
     ],
-    "date": "A notre service depuis avril 2014"
+    "functionDates": ["A notre service depuis avril 2014"]
   }
 ]

@@ -15,7 +15,14 @@ const TeamCadresList = ({ team, teamCadrePhoto }) => {
     <S.TeamCadresWrapper>
       {team.map((item, i) => {
         // Images Variables and Functions
-        const { altPhoto, name, shortName, job, certifications, date } = item
+        const {
+          altPhoto,
+          name,
+          shortName,
+          job,
+          certifications,
+          functionDates,
+        } = item
         const regExp = new RegExp(shortName, 'i')
         const photoPath = teamCadrePhoto.find(({ originalName }) =>
           originalName.match(regExp)
@@ -30,7 +37,7 @@ const TeamCadresList = ({ team, teamCadrePhoto }) => {
             name={name}
             job={job}
             certifications={certifications}
-            date={date}
+            functionDates={functionDates}
           />
         )
       })}

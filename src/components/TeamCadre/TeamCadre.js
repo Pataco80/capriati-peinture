@@ -9,16 +9,30 @@ import * as S from './TeamCadreStyled'
 // Component
 const TeamCadre = (props) => {
   // Component Variables
-  const { fluid, altPhoto, name, job, certifications, date } = props
+  const { fluid, altPhoto, name, job, certifications, functionDates } = props
 
   // Render Component
   return (
     <S.CadreItemWrapper>
-      <Profile fluid={fluid} alt={altPhoto} name={name} job={job} />
-      {certifications.map((item, i) => {
-        return <p Key={i}>{item}</p>
-      })}
-      <p>{date}</p>
+      <Profile
+        className='team-profile'
+        fluid={fluid}
+        alt={altPhoto}
+        name={name}
+        job={job}
+      />
+      <S.CadresTable>
+        <tr>
+          {certifications.map((item, i) => {
+            return <td Key={i}>{item}</td>
+          })}
+        </tr>
+        <tr className='functionDates'>
+          {functionDates.map((item, i) => {
+            return <td Key={i}>{item}</td>
+          })}
+        </tr>
+      </S.CadresTable>
     </S.CadreItemWrapper>
   )
 }

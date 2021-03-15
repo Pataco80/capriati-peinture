@@ -9,7 +9,7 @@ const PartenersItem = (props) => {
   const { fluid, altLogo, url, urlTitle } = props
   // Render Component
   return (
-    <S.PartenersItemWrapper href={url} title={urlTitle}>
+    <S.PartenersItemWrapper href={url} title={urlTitle} target='_blank'>
       <S.PartenersLogo fluid={fluid} alt={altLogo} />
     </S.PartenersItemWrapper>
   )
