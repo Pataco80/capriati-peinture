@@ -5,14 +5,16 @@ import PropTypes from 'prop-types'
 import * as S from './AvatarStyled'
 
 // Component
-const Avatar = ({ fluid, alt }) => {
+const Avatar = (props) => {
+  // Component Variables
+  const { fluid, alt } = props
   // Render Component
   return <S.AvatarImage fluid={fluid} alt={alt} />
 }
 
 // React PropTypes and more...
 Avatar.defaultProps = {
-  alt: ``,
+  alt: `Photo de profil`,
 }
 
 Avatar.propTypes = {

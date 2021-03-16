@@ -30,7 +30,6 @@ const GlobalStyle = createGlobalStyle`
     margin: calc(1.5rem + 1vw) 0; /* Responsive margins */
     color: ${setColor.primaryColor};
     font-weight: 900;
-    text-shadow: 2px 2px 2px ${setColor.mainGreyL1};
     ${setLetterSpacing()};
   }
 

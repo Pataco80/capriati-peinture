@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Components for App
 import { Avatar } from '@components'
@@ -20,4 +21,15 @@ const Profile = (props) => {
   )
 }
 
+// React PropTypes and more...
+Profile.defaultProps = {
+  altPhoto: `Photo de Profile`,
+}
+
+Profile.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  altPhoto: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  job: PropTypes.string,
+}
 export default Profile

@@ -24,14 +24,13 @@ export const CadreItemWrapper = styled.div`
   `}
 `
 
-export const CadresTable = styled.table`
+export const CadreInfo = styled.div`
   ${setFlex({ flDir: 'column', x: 'flex-start' })};
-  tr {
-    ${setFlex({ flDir: 'column' })};
-    margin-bottom: 2rem;
+`
 
-    &::last-child {
-      margin-bottom: 0;
-    }
+export const InfoList = styled.ul`
+  list-style: none;
+  &:last-child {
+    margin-top: 2rem;
   }
 `

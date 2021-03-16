@@ -17,11 +17,7 @@ const Contactform = () => {
   // Render Component
   return (
     <Section>
-      <Title
-        tag='h3'
-        title='Contactez-nous via notre formulaire'
-        titleSection
-      />
+      <Title tag='h3' title='Contactez-nous via notre formulaire' />
       <S.FormContainer padding='0'>
         <S.ContactForm action={formSpree} method='POST' autocomplete='on'>
           <S.ContactInfo>

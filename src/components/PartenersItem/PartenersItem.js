@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import styles from styled-components file
 import * as S from './PartenersItemStyled'
@@ -15,4 +16,17 @@ const PartenersItem = (props) => {
   )
 }
 
+// React PropTypes and more...
+PartenersItem.defaultProps = {
+  altLogo: `Logo du partenaire`,
+  url: `#`,
+  urlTitle: `Visiter notre partenaire`,
+}
+
+PartenersItem.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  altLogo: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  urlTitle: PropTypes.string.isRequired,
+}
 export default PartenersItem

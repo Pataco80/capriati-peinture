@@ -33,7 +33,9 @@ const linksList = [
 ]
 
 // Component
-const MainMenu = ({ isOpen, className }) => {
+const MainMenu = (props) => {
+  // Component Variables
+  const { isOpen, className } = props
   // Render Compoent
   return (
     <S.MainNavMenu className={className}>

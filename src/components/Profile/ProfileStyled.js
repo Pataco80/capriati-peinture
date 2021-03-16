@@ -16,4 +16,5 @@ export const ProfileName = styled.h4`
 
 export const ProfileJob = styled.h6`
   text-align: center;
+  text-shadow: none;
 `

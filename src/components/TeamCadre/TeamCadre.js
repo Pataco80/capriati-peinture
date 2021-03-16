@@ -21,18 +21,18 @@ const TeamCadre = (props) => {
         name={name}
         job={job}
       />
-      <S.CadresTable>
-        <tr>
+      <S.CadreInfo>
+        <S.InfoList>
           {certifications.map((item, i) => {
-            return <td Key={i}>{item}</td>
+            return <li Key={i}>{item}</li>
           })}
-        </tr>
-        <tr className='functionDates'>
+        </S.InfoList>
+        <S.InfoList className='functionDates'>
           {functionDates.map((item, i) => {
-            return <td Key={i}>{item}</td>
+            return <li Key={i}>{item}</li>
           })}
-        </tr>
-      </S.CadresTable>
+        </S.InfoList>
+      </S.CadreInfo>
     </S.CadreItemWrapper>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 // Import Hooks
 import useWindowSize from '@hooks/useWindowSize'
 
@@ -10,8 +10,9 @@ import * as S from './ParallaxImgStyled'
 import { breakpoints } from '@helpers'
 
 // Component
-const ParallaxImg = ({ fluid, altImg }) => {
+const ParallaxImg = (props) => {
   // Component Variables
+  const { fluid, altImg } = props
   const windowSize = useWindowSize()
 
   let strength = 150
@@ -30,6 +31,16 @@ const ParallaxImg = ({ fluid, altImg }) => {
       </S.BackgroundImg>
     </S.ParallaxContainer>
   )
+}
+// React PropTypes and more...
+
+ParallaxImg.defaultProps = {
+  altImg: `Photo du Paralaxe`,
+}
+
+ParallaxImg.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  altImg: PropTypes.string.isRequired,
 }
 
 export default ParallaxImg

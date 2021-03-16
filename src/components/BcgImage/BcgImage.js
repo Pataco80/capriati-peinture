@@ -8,15 +8,17 @@ import * as S from './BcgImageStyled'
 import { setColor } from '@helpers'
 
 // Component
-const BcgImage = ({
-  className,
-  tag,
-  fluid,
-  altBcgImage,
-  children,
-  error,
-  notOverlay,
-}) => {
+const BcgImage = (props) => {
+  // Component Variables
+  const {
+    className,
+    tag,
+    fluid,
+    altBcgImage,
+    children,
+    error,
+    notOverlay,
+  } = props
   // Render Component
   return (
     <S.BcgImageWrapper

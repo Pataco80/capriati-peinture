@@ -72,10 +72,10 @@ const ContactPage = ({ location }) => {
       <Hero title='Nous Contacter' bcgImage={heroBcg.childImageSharp.fluid} />
       <ContactForm />
       <ContactSection background={`${setColor.mainGreyL3}`}>
-        <Title tag='h3' title='Nos Coordonées' titleSection />
+        <Title tag='h3' title='Nos Coordonées' />
         <ContactSectionContent>
           <ContactInfo>
-            <Title tag='h5' title='Adresse' noShadow notMargin />
+            <Title tag='h5' title='Adresse' notMargin />
             <Title tag='h6' title={siteTitle} noShadow notMargin />
             <p>
               {businessRoad} {businessRoadNumber} <br />
@@ -93,7 +93,7 @@ const ContactPage = ({ location }) => {
             </ButtonMap>
           </ContactInfo>
           <ContactInfo>
-            <Title tag='h5' title='Contact' noShadow notMargin />
+            <Title tag='h5' title='Contact' notMargin />
             <p>
               <PhoneAlt className='contactInfo-icon' /> :{' '}
               <a href={hrefPhone} title='Appelez-nous'>

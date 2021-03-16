@@ -66,7 +66,7 @@ const Team = ({ padding }) => {
   // Render Component
   return (
     <S.TeamWrapper padding={padding}>
-      <Title tag='h2' title='Notre Équipe' titleSection />
+      <Title tag='h2' title='Notre Équipe' />
       <S.TeamContent>
         <TeamCadresList teamCadrePhoto={teamCadrePhoto} team={teamCadres} />
       </S.TeamContent>
