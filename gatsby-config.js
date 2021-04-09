@@ -158,13 +158,6 @@ module.exports = {
         cache_busting_mode: 'none',
       },
     },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        workboxConfig: {
-          globDirectory: 'public',
-        },
-      },
-    },
+    'gatsby-plugin-offline',
   ],
 }
