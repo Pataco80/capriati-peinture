@@ -21,24 +21,44 @@ const Contactform = () => {
       <S.FormContainer padding='0'>
         <S.ContactForm action={formSpree} method='POST' autocomplete='on'>
           <S.ContactInfo>
-            <S.ContactName>
+            <S.InputWrapper>
               <S.Label htmlFor='name'>Nom</S.Label>
               <S.Input
                 type='text'
                 name='name'
                 id='name'
                 placeholder='Saisissez votre Nom'
+                required
               />
-            </S.ContactName>
-            <S.ContactMail>
+            </S.InputWrapper>
+            <S.InputWrapper>
               <S.Label htmlFor='email'>Email</S.Label>
               <S.Input
                 type='email'
                 name='email'
                 id='email'
                 placeholder='Saisissez votre adresse mail'
+                required
               />
-            </S.ContactMail>
+            </S.InputWrapper>
+            <S.InputWrapper>
+              <S.Label htmlFor='phone'>Tel. Fixe</S.Label>
+              <S.Input
+                type='tel'
+                name='phone'
+                id='phone'
+                placeholder='Votre N° fixe (facultatif)'
+              />
+            </S.InputWrapper>
+            <S.InputWrapper>
+              <S.Label htmlFor='mobile'>Tel. Mobile</S.Label>
+              <S.Input
+                type='tel'
+                name='mobile'
+                id='mobile'
+                placeholder='Votre N° mobile (facultatif)'
+              />
+            </S.InputWrapper>
           </S.ContactInfo>
           <S.ContactMessage>
             <S.Label htmlFor='message'>Message</S.Label>
@@ -47,6 +67,7 @@ const Contactform = () => {
               id='message'
               placeholder='Saisissez votre Message'
               rows='10'
+              required
             />
           </S.ContactMessage>
           <S.Input type='text' name='_gotcha' style={{ display: 'none' }} />

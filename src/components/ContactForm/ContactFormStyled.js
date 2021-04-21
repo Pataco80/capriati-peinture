@@ -63,15 +63,7 @@ export const ContactMessage = styled.section`
   width: 100%;
 `
 
-export const ContactName = styled.div`
-  width: 100%;
-
-  ${media.greaterThan('smTablet')`
-    width: 45%;
-  `}
-`
-
-export const ContactMail = styled.div`
+export const InputWrapper = styled.div`
   width: 100%;
 
   ${media.greaterThan('smTablet')`
