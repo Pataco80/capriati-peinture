@@ -90,7 +90,7 @@ const Services = (props) => {
   // Render Component
   return (
     <S.ServicesWrapper background={background} padding={padding}>
-      {home ? <Title tag='h2' title='Nos Services' titleSection /> : ''}
+      {home ? <Title tag='h2' title='Nos Services' /> : ''}
       <S.ServicesContent padding='0'>
         {servicesJsonData.map(
           ({ name, shortName, competences, gallery, altIcon, altFeatured }) => {

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect, useCallback } from 'react'
+import PropTypes from 'prop-types'
 
 // Import Components for App
 import { UpArrowAlt as Arrow } from '@styled-icons/boxicons-regular/UpArrowAlt'
@@ -55,4 +56,15 @@ const ToTopBtn = ({ className, showBelow }) => {
   )
 }
 
+// React PropTypes and more...
+ToTopBtn.defaultProps = {
+  showBelow: 0,
+  title: ``,
+}
+
+ToTopBtn.propTypes = {
+  showBelow: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  className: PropTypes.string,
+}
 export default ToTopBtn

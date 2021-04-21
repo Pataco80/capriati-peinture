@@ -5,7 +5,7 @@
     "shortName": "logoFve",
     "logo": "logoFve.png",
     "altLogo": "Logo de la Fédération Vaudoise des Entrepreneurs",
-    "url": "#",
+    "url": "https://fve.ch/",
     "urlTitle": "Aller à la Fédération Vaudoise des Entrepreneurs"
   },
   {
@@ -14,7 +14,7 @@
     "shortName": "logoFrepp",
     "logo": "logoFrepp.png",
     "altLogo": "Logo de la Fédération Romande des Entreprises de Plâtrerie-peinture",
-    "url": "#",
+    "url": "https://www.frepp.ch/",
     "urlTitle": "Aller à la Fédération Romande des Entreprises de Plâtrerie-peinture"
   },
   {
@@ -23,7 +23,7 @@
     "shortName": "logoFormaProf",
     "logo": "logoFormaProf.png",
     "altLogo": "Logo de la Formation Professionnelle Plus",
-    "url": "#",
+    "url": "https://www.berufsbildungplus.ch/fr/berufsbildungplus/berufsbildung",
     "urlTitle": "Aller à la Formation Professionnelle Plus"
   }
 ]

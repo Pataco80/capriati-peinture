@@ -74,7 +74,7 @@ const ServiceItem = ({
                 fluid={Icon}
               />
             </S.IconContainerCard>
-            <Title tag='h3' title={name} />
+            <Title tag='h3' title={name} noShadow notMargin />
           </S.ServiceSmallBanner>
         ) : (
           <S.ServiceBcgImage

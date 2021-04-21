@@ -14,13 +14,23 @@ export const CadreItemWrapper = styled.div`
 
   ${media.greaterThan('tablet')`
     width: 50%;
-    margin-bottom: 0;
     padding: 0 1.5rem;
   `}
 
   ${media.greaterThan('desktop')`
     width: 30%;
-    margin-bottom: 0;
     padding: 0 1.5rem;
+    margin-bottom:3rem;
   `}
+`
+
+export const CadreInfo = styled.div`
+  ${setFlex({ flDir: 'column', x: 'flex-start' })};
+`
+
+export const InfoList = styled.ul`
+  list-style: none;
+  &:last-child {
+    margin-top: 2rem;
+  }
 `

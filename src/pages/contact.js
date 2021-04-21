@@ -72,10 +72,10 @@ const ContactPage = ({ location }) => {
       <Hero title='Nous Contacter' bcgImage={heroBcg.childImageSharp.fluid} />
       <ContactForm />
       <ContactSection background={`${setColor.mainGreyL3}`}>
-        <Title tag='h3' title='Nos Coordonées' titleSection />
+        <Title tag='h3' title='Nos Coordonées' />
         <ContactSectionContent>
           <ContactInfo>
-            <Title tag='h5' title='Adresse' noShadow />
+            <Title tag='h5' title='Adresse' notMargin />
             <Title tag='h6' title={siteTitle} noShadow notMargin />
             <p>
               {businessRoad} {businessRoadNumber} <br />
@@ -93,10 +93,10 @@ const ContactPage = ({ location }) => {
             </ButtonMap>
           </ContactInfo>
           <ContactInfo>
-            <Title tag='h5' title='Contact' noShadow />
+            <Title tag='h5' title='Contact' notMargin />
             <p>
               <PhoneAlt className='contactInfo-icon' /> :{' '}
-              <a href={hrefPhone} title='Appelez-vous'>
+              <a href={hrefPhone} title='Appelez-nous'>
                 {businessPhone}
               </a>
             </p>
@@ -135,10 +135,17 @@ const ContactInfo = styled.div`
   ${setFlex({ flDir: 'column' })};
   width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
+
+  &:first-child {
+    margin-bottom: 4rem;
+  }
 
   ${media.greaterThan('smTablet')`
     width: 50%;
+
+    &:first-child {
+    margin-bottom:0;
+  }
   `}
 
   a {
@@ -155,6 +162,7 @@ const ContactInfo = styled.div`
 const ButtonMap = styled(Button)`
   ${setFlex()};
   padding: ${setPxToRem(8)} ${setPxToRem(26)};
+  margin-top: 1.5rem;
 `
 
 const MapIcon = styled(Map)`

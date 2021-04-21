@@ -33,7 +33,7 @@ export const getData = graphql`
         altPhoto
         job
         certifications
-        date
+        functionDates
       }
     }
     cFc: allTeanCfcDataJson {
@@ -57,7 +57,6 @@ const Team = ({ padding }) => {
   const teamCadres = data.teamCadres.nodes
   const teamCfc = data.cFc.nodes
   const teamStudents = data.studeents.nodes
-
   // Component Functions
   const teamCadrePhoto = photoList.map(({ node }) => ({
     photo: node.childImageSharp.fluid,
@@ -67,7 +66,7 @@ const Team = ({ padding }) => {
   // Render Component
   return (
     <S.TeamWrapper padding={padding}>
-      <Title tag='h2' title='Notre Équipe' titleSection />
+      <Title tag='h2' title='Notre Équipe' />
       <S.TeamContent>
         <TeamCadresList teamCadrePhoto={teamCadrePhoto} team={teamCadres} />
       </S.TeamContent>

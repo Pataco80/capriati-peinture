@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Hooks
 import useDeviceDetect from '@hooks/useDeviceDetect'
@@ -15,6 +16,7 @@ import { MainMenu } from '@components'
 import { Section, SectionCenter } from '@styledElements/SectionStyled'
 
 // Import styles from styled-components file
+import { setColor } from '@helpers'
 import * as S from './FooterStyled'
 
 // GraphQl Queries
@@ -39,7 +41,10 @@ const Footer = ({ background }) => {
   // Render Component
   return (
     <S.FooterWrapper paddingBottom={isMobile ? `3rem` : `0`}>
-      <Section padding='0' background={background}>
+      <Section
+        padding='0'
+        background={background ? background : setColor.mainWhite}
+      >
         <Img fluid={footerImg.childImageSharp.fluid} alt='Banière colorée' />
       </Section>
       <SectionCenter background='transparent'>
@@ -50,5 +55,8 @@ const Footer = ({ background }) => {
     </S.FooterWrapper>
   )
 }
-
+// React PropTypes and more..
+Footer.propTypes = {
+  background: PropTypes.string,
+}
 export default Footer

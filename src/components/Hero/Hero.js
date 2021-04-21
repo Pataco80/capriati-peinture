@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // Import Components for App
 import { Banner, BannerHome, BcgImage, VideoBcg } from '@components'
@@ -7,7 +8,9 @@ import { Banner, BannerHome, BcgImage, VideoBcg } from '@components'
 import * as S from './HeroStyled'
 
 // Component
-const Hero = ({ home, error, title, bcgImage, altBcgImage, children }) => {
+const Hero = (props) => {
+  // Component variables
+  const { home, error, title, bcgImage, altBcgImage, children } = props
   // Render Component
   return (
     <>
@@ -27,4 +30,19 @@ const Hero = ({ home, error, title, bcgImage, altBcgImage, children }) => {
   )
 }
 
+// React PropTypes and more...
+BcgImage.defaultProps = {
+  home: false.toString(),
+  error: false.toString(),
+  altBcgImage: `Arière-plan du Hero`,
+}
+
+BcgImage.propTypes = {
+  fluid: PropTypes.object.isRequired,
+  altBcgImage: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  children: PropTypes.node,
+  home: PropTypes.bool.toString(),
+  error: PropTypes.bool.toString(),
+}
 export default Hero

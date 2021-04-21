@@ -100,14 +100,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ['Noto Sans JP', 'Roboto'],
-        },
+        fonts: ['Noto Sans JP', 'Roboto'],
+        display: 'swap',
       },
     },
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-styled-components`,
     {
@@ -160,13 +158,6 @@ module.exports = {
         cache_busting_mode: 'none',
       },
     },
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-        workboxConfig: {
-          globDirectory: 'public',
-        },
-      },
-    },
+    'gatsby-plugin-offline',
   ],
 }

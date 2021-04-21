@@ -37,7 +37,7 @@ const Works = ({ background }) => {
   // Render Component
   return (
     <S.WorksWrapper background={background}>
-      <Title tag='h2' title='Nos Réalisations' titleSection />
+      <Title tag='h2' title='Nos Réalisations' />
       <S.WorksContent>
         <S.WorkItem>
           <S.GallerySection padding='3rem 0 5rem'>
@@ -56,16 +56,6 @@ const Works = ({ background }) => {
 // GraphQl Queries
 export const getData = graphql`
   query getGallery {
-    work1: allFile(
-      filter: { relativeDirectory: { regex: "/work1/" } }
-      sort: { fields: name }
-    ) {
-      edges {
-        node {
-          ...getImage
-        }
-      }
-    }
     anciensTravaux: allFile(
       filter: { relativeDirectory: { regex: "/anciens-travaux/" } }
       sort: { fields: name }

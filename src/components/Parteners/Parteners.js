@@ -54,7 +54,7 @@ const Parteners = () => {
   // Render Component
   return (
     <S.PartenersWrapper>
-      <Title tag='h2' title='Nous sommes membres' titleSection />
+      <Title tag='h2' title='Nous sommes membres' />
       <S.PartenersLogosContainer>
         {parteners.map((item, i) => {
           const { shortName, altLogo, url, urlTitle } = item

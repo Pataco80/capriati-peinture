@@ -9,7 +9,9 @@ import GlobalStyles from '../../theme/globalStyles'
 import * as S from './LayoutStyled'
 
 // Component
-const Layout = ({ children, background, currentPage }) => {
+const Layout = (props) => {
+  // Component Variables
+  const { children, background, currentPage } = props
   // Component Variables
   const [scrolled, setScrolled] = useState(false)
 
