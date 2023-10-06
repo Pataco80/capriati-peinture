@@ -1,4 +1,161 @@
-node_modules/
+############################
+# VSCode
+############################
+.history/
+.vscode/
+
+############################
+# Gatsby
+############################
 .cache/
 public
-src/gatsby-types.d.ts
+
+############################
+# OS X
+############################
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+
+
+############################
+# Linux
+############################
+
+*~
+
+
+############################
+# Windows
+############################
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+############################
+# Packages
+############################
+
+*.7z
+*.csv
+*.dat
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.seed
+*.so
+*.swo
+*.swp
+*.swn
+*.swm
+*.out
+*.pid
+*.tgz
+
+
+############################
+# Logs and databases
+############################
+
+.tmp
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sql
+*.sqlite
+*.sqlite3
+*.pid.lock
+
+
+############################
+# Misc.
+############################
+
+*#
+ssl
+.idea
+nbproject
+public/uploads/*
+!public/uploads/.gitkeep
+
+############################
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+############################
+
+.grunt
+
+############################
+# Node.js
+############################
+
+lib-cov
+lcov.info
+pids
+logs
+results
+node_modules/
+jspm_packages/
+.node_history
+.env
+bower_components
+.lock-wscript
+.node_repl_history
+build/Release
+
+
+############################
+# Yarn and npm
+############################
+yarn-error.log
+.pnp/
+.pnp.js
+.yarn-integrity
+.npm
+
+
+############################
+# TypeScript
+############################
+typings/
+
+############################
+# Tests
+############################
+
+testApp
+coverage
+nyc_output
+
+.eslintcache
+// files for small various informations
+info.txt
+
+elementsSaving/
+
+############################
+# This project
+############################
+
+ressources/
